@@ -1,0 +1,363 @@
+
+# EBIO338/358: Analysis and Visualization of Biological Data
+# Class 2: R Essentials
+
+
+# Type in your own versions of the code examples yourself; 
+# Passively following along won't build your R muscles!
+
+
+
+# Basic math:
+
+3 + 2
+4 * 5
+5 - 3
+
+
+
+# Spaces don't affect functionality (in most contexts).
+
+
+4/5
+4 / 5
+4           /              5
+
+
+
+# If you haven't completed a line, R will ask you to finish it.
+
+
+5 + 6 + 89 - 4 +
+# finish the command on the next line, or use ESC to exit
+# text or lines preceded by '#' are not executed
+
+lines not preceded by '#' are executed  #oops 
+
+
+
+# Use up and down arrows to move around in your history.
+
+# Stack multiple expressions in a line using semi-colons.
+
+45 * 56
+3.8 / 19
+24 * 3
+
+45 * 56; 3.8 / 19; 24 * 3
+# This can make for ugly code as soon as you have more than a few lines so not typically good practice
+
+# Your turn now:
+# a) Add today's month plus day plus year
+# b) Multiply the number of letters in the alphabet by 5
+
+
+# Create sequences of numbers.
+
+4:8
+12:1
+
+# seq (from, to, by)
+seq(1, 10, 2)           
+seq(5, 4, -0.1)
+
+# but
+seq(5, 4, 0.1)
+
+# get help to understand how the function works
+?seq
+
+# note the following three produce the same sequence
+
+seq(1, 10, 2)
+seq(from = 1, to = 10, by = 2)
+seq(from = 1, 
+    to = 10, 
+    by = 2)
+
+# Adding the additional text can help make your code more easily understood. 
+# It is a good way to make your code easier to understand when you return to it.
+
+
+# Your turn now: 
+# a) Create a sequence of integers from 777 to 833
+# b) Create a sequence of numbers from -45 to -30 that increases by 0.25
+
+
+# Generate repeats.
+
+rep(5, 3)
+rep(1:4, 8)
+rep(1:4, each = 2)
+rep(1:4, each = 2, times = 3)
+
+# if you specify the terms, the order doesn't matter
+rep(1:4, times = 3, each = 2)
+
+# repeat elements a different number of times
+rep(1:4, 1:4)
+# lengths must be equal
+rep(1:4, 1:5)
+
+
+
+
+# Your turn now:
+# a) Generate a sequence of 25 to 30 that repeats 50 times
+# b) Generate a sequence that has 10 replicates each for -10 to -25
+
+
+# R displays big and small #s using normal scientific notation.
+
+456000000000000000
+5 / 298657635
+
+
+# Note: some basic operators mean different things inside and outside formulae
+# e.g., * (multiply / main effects + interaction); : (sequence, interaction)
+
+
+## Arithmetic functions 
+sqrt(9)
+4 ^ 3
+abs(-945.2368)
+log(8)
+
+# you can always use ? to get help
+?log
+
+# or get an example
+example(log)
+example(seq)
+
+
+# Common arithmetic functions:
+# abs(x)	                 absolute value
+# sqrt(x)                  square root
+# factorial (x)            x!
+# ceiling(x)	             ceiling(3.475) is 4
+# floor(x)	               floor(3.475) is 3
+# trunc(x)	               trunc(5.99) is 5
+# round(x, digits = n)     round(3.475, digits  2) is 3.48
+# signif(x, digits = n)	   signif(3.475, digits = 2) is 3.5
+# cos(x), sin(x), tan(x)   basic trig
+# log(x)	                 natural logarithm
+# log10(x)	               common logarithm
+# exp(x)	                 e^x
+
+  
+#  Order of operations matters; use parentheses
+
+3 / 5 + 7
+7 + 3 / 5
+(7 + 3) / 5
+sqrt(144) / 3 + 1
+sqrt(144) / (3 + 1)
+
+
+# Your turn now:
+# a) Compute the difference between 2022 and the year you started at Rice. 
+# b) Divide this by the difference between 2022 and the year you were born.
+# c) Multiply this with 100 to get the percent of your life you have spent at Rice.
+
+
+# R resolves ambiguities in the following order:
+# Function calls & grouping expressions   (), {}
+# Index and lookup operators              [ ]
+# Arithmetic                              * , /, + , - 
+# Comparison                              > , ≤
+# Formulas                                P ~ I - E          
+# Assignment                              x <- 3 + 4
+# Help                                    ?mean
+ 
+  
+## Logical operators
+
+# Essentially, you are asking R logical questions requiring TRUE / FALSE responses
+
+4 < 5
+23 ^ 0.5 < 34 / 56
+4 == 8 / 2
+4 != 4
+
+# careful!
+4 = 8 / 2
+
+
+# Operator	 Description
+# <	         less than
+# <=	       less than or equal to
+# >	         greater than
+# >=	       greater than or equal to
+# ==	       exactly equal to
+# !=	       not equal to
+# !x	       not x
+# x | y	     x OR y
+# x & y	     x AND y
+# isTRUE(x)  test if X is TRUE
+
+  
+## Assigning variables 
+
+# Use '<-' to assign anything you want to a variable.
+
+x <- 5
+x
+
+z <- "we the people"
+
+
+# mind the space!
+y <- 67
+y
+y < -7
+y
+
+# this works, but avoid it:
+x = 6
+x
+
+# you can then use the variable to represent that item(s) in a formula
+x * 8
+y <- sqrt(4)
+
+x * y
+x == y
+
+
+# Important things to note regarding variables:
+    # case sensitive (g != G)
+    # should not begin with numbers or symbols (5x, %cover)
+    # should not contain spaces (fun_games not fun games)
+    # make as short and intuitive as possible
+
+
+# Your turn now. Repeat the last TO DO using several steps in between giving any name you want to the variable starting with a letter:
+# a) Compute the difference between 2022 and the year you started at Rice. 
+# b) Divide this by the difference between 2022 and the year you were born.
+# c) Multiply this with 100 to get the percent of your life you have spent at Rice.
+
+
+######## END OF CLASS 02 on 1/13/2022 ##########
+
+
+# Combine 'c()' values into a vector object
+
+x <- c(5, 7, 8, 10)
+x
+# as before, the variable represets its contents in a formula
+x * 2
+
+
+
+# We can use logical operators on vectors just like values.
+x <- c(1:10)
+x > 8
+x < 5
+x > 8 | x < 5
+
+
+
+# Your turn now.
+# a) Create a vector called my_object that has the numbers -2, 7, 12, 27 and 99
+# b) Multiple the numbers in my_object by 7
+# c) Use code to show which values in my_object are negative (i.e., TRUE or FALSE)
+
+
+
+# doesn't have to be numbers
+cities <- c("Houston", "New York", "Atlanta", "Seattle")
+cities
+cities == "Los Angeles"
+"Houston" > "New York"
+"Seattle" > "Atlanta"
+
+#oops
+cities * 2
+cities <- c(Houston, New York, Atlanta, Seattle)
+
+rep(1:4, c(2, 1, 4, 9))
+#but
+rep(1:4, c(2, 1, 4, 9, 1))
+
+rep(cities, 5)
+rep(cities, c(1,3,6,0))
+
+
+
+## Basic statistical functions 
+
+x <- c (4, 5, 7, 8, 9, 10)
+mean(x)
+mean(2 * x)
+2 * mean(x)
+sum(x)
+min(x)
+max(x)
+range(x)
+
+
+
+# Simple statistical functions
+# mean (x)               mean of object x
+# mean(x, trim = 0.5)    trimmed mean 
+# sd(x)	                 standard deviation of object x
+# var (x)                variance of object x
+# median(x)	             median of object x
+# quantile(x, probs)	   quantiles where x is the numeric vector whose quantiles are desired and probs is a numeric vector with probabilities in [0,1]. e.g., 30th and 84th percentiles of x: 
+                             # y <- quantile(x, c(0.3, 0.84))
+# range(x)	             range of object x
+# sum(x), max(x), min(x)  ... etc
+# abs(x)                 absolute value of object x
+
+
+
+
+
+
+## Getting help 
+
+# Option 1:"?function"
+
+?lm
+?plot
+# R will tell you if you look for something that doesn't exist:
+?gr
+
+
+
+# Option 2:"help()"
+
+help(lm)
+?help
+
+
+
+# option 3: "help.search("keyword")
+
+help.search("mle")
+# the "??" shortcut gives you the same thing:
+??"mle"
+
+
+
+############ GOOD HOUSEKEEPING ############
+
+# List the objects we created:
+ls()
+
+
+# Remove objects
+rm(x)
+ls()
+
+
+# Remove all objects
+rm(list = ls(all = TRUE))
+ls()
+
+
+# Save the r code file (i.e., .R file), not the workspace
+
+# For more practice, see Class_02_Practice.R
+
