@@ -1,0 +1,272 @@
+---
+title: 'BIOS 338/538: Analysis and Visualization of Biological Data'
+# subtitle: 'Dr. Prashant Kalvapalle'
+author: Prashant Kalvapalle
+date: 2023-12-31
+output:
+  xaringan::moon_reader:
+  lib_dir: libs
+  nature:
+    highlightStyle: github
+    highlightLines: true
+    countIncrementalSlides: false
+---
+<!-- #  Tell me about yourself (on an index card)  -->
+
+<!-- Preferred name (and pronouns if you like) -->
+<!-- Year and major/degree program -->
+<!-- Why you are you taking this class -->
+<!-- What you hope to get out of this class -->
+<!-- Interests after finishing school -->
+<!-- Background in math, statistics, coding -->
+
+<!-- --- -->
+<!-- #  Now tell your group about yourself  -->
+
+<!-- Name (and pronouns if you like) -->
+<!-- Year and major/degree program -->
+<!-- Why you are you taking this class -->
+<!-- What you hope to get out of this class -->
+<!-- Biggest concern about this class -->
+<!-- Interests outside of academics -->
+
+---
+# A little bit about myself
+
+--
+- Grew up in India, finished undergrad there 
+(_knew some C back then_)
+--
+
+- Did a Masters in Biomedical Engg. at Johns Hopkins
+(_I used python back then_)
+--
+
+- Recently finished PhD. in Systems, Synthetic and Physical biology at Rice
+(_These days, I use R, commandline etc._)
+--
+
+
+## How I got into R for data analysis?
+- How do I save effort by **automating** data analysis for **repeated experiments**
+
+--
+I ran 50 sets of qPCR during my Ph.D.
+- Need the same analysis on all of them
+  - Attach sample names to data
+  - Calibrate values to a standard curve
+  - Plot graph, label axes, make it pretty
+- Now did the same for other datasets
+  - bacterial growth data : plate reader
+  - Flow cytometry
+
+---
+# Meet the wonderful TAs
+
+.pull-left[
+## Annie Finneran
+
+
+]
+
+.pull-right[
+## Sam Schwartz
+
+]
+
+## Office hours: 
+
+
+---
+# What can you expect to learn from this class? 
+
+
+---
+# Detailed syllabus and resources
+
+Here's the course website where you can find the detailed syllabus and lesson plan for every class
+- Put website
+
+_Please keep in mind that this syllabus is tentative and we will add or remove sections based on your feedback and how the class is doing_
+
+
+---
+# Rice Honour Code
+
+--
+## List the author contributions for all team projects
+- A good idea is to divide tasks first thing and write them down before starting action
+  - Is a great tip for when beginning a collaborative research project as well
+  - Minimizes skirmishes when publishing papers
+
+???
+
+Similar concept to pre-determining a statistical plan before beginning to collect data
+
+
+---
+#  Today’s Class 
+
+- Introductory background on R and RStudio
+- Software Installation
+- Tour of RStudio
+
+## Next class: 
+- basic uses of R as a calculator, using functions, assigning variables
+
+
+---
+#  What is R? 
+
+- Free, open source software
+--
+
+- Composed of a “base” R system and other packages
+
+--
+- Vibrant user community creates new tools
+
+--
+.pull-left[![](assets/img/R_logo.png)]
+
+.pull-right[![](assets/img/R_rising_tide.png)]
+
+---
+#  R is quite beginner friendly 
+
+**Key point**: You don’t have to be a great R programmer to use R effectively and do some amazing things, but you do have to be an excellent programmer to do the same things in other programs
+
+.pull-left[![](assets/img/R_logo.png)]
+
+.pull-right[![](assets/img/R_rising_tide.png)]
+
+
+---
+#  Limitations of R 
+
+- Requires learning new language
+- Documentation of variable quality
+- Packages of variable quality
+- Inconsistencies among packages
+- Memory hungry
+![](assets/img/R_logo.png)
+
+
+---
+
+![](assets/img/image3.png)
+
+---
+class: inverse
+background-image: url('assets/img/image1.tif')
+background-size: cover
+
+
+---
+class: inverse
+background-image: url('assets/img/image2.tif')
+background-size: cover
+
+
+---
+class: inverse
+background-image: url('assets/img/image3.tif')
+background-size: cover
+
+
+---
+
+
+---
+class: inverse
+background-image: url('assets/img/image4.tif')
+background-size: cover
+
+
+---
+class: inverse
+background-image: url('assets/img/image5.tif')
+background-size: cover
+
+
+---
+class: inverse
+background-image: url('assets/img/image6.tif')
+background-size: cover
+
+
+---
+#  History of R 
+
+![](assets/img/image1.png)
+
+---
+#  History of R 
+
+R language first developed in 1991 as an open-source alternative to “S”, which was only available in “S-PLUS” commercial software
+R Core Development Team formed in 1997
+R version 1.0.0 release to public in 2000
+![](assets/img/image1.png)
+
+
+---
+#  What is RStudio? 
+
+- Free, open source integrated development environment (IDE) for R
+- ie.) Rstudio is the software we use to interact with R programs and their outputs
+
+- First public version in 2011
+![](assets/img/image4.png)
+
+
+---
+#  R Installation 
+
+To Install R Open an internet browser and go to  www.r-project.org .
+Click the "download R" link in the middle of the page under "Getting Started."
+Select a CRAN location (a mirror site) and click the corresponding link.
+Mac
+Click on the "Download R for (Mac) OS X" link at the top of the page.
+Click on the file containing the latest version of R under "Files."
+Save the .pkg file, double-click it to open, and follow the installation instructions.
+Windows
+3. Click on the "Download R for Windows" link at the top of the page.
+4. Click on the "install R for the first time" link at the top of the page.
+5. Click "Download R for Windows" and save the executable file somewhere on
+your computer. Run the .exe file and follow the installation instructions.
+Now that R is installed, you need to download and install RStudio.
+[To Install R Open an internet browser and go to](http://www.r-project.org/)
+[www.r-project.org](http://www.r-project.org/)
+[Click the "download R" link in the middle of the page under "Getting Started."](http://www.r-project.org/)
+[Mac](http://www.r-project.org/)
+[Click on the file containing the latest version of R under "Files."](http://www.r-project.org/)
+[Windows](http://www.r-project.org/)
+[         4. Click on the "install R for the first time" link at the top of the page.](http://www.r-project.org/)
+[             your computer. Run the .exe file and follow the installation instructions.  ](http://www.r-project.org/)
+
+---
+#  RStudio Installation 
+
+To Install RStudio:
+Go to www.rstudio.com and click on the "Download RStudio" button.
+Click on "Download RStudio Desktop."
+**Mac users** : Click on the version recommended for your system, or the latest Mac version, save the .dmg file on your computer, double-click it to open, and then drag and drop it to your applications folder.
+**Windows users** : Click on the version recommended for your system, or the latest Windows version, and save the executable file.  Run the .exe file and follow the installation instructions. 
+[RStudio Installation](http://www.rstudio.com/)
+[ and click on the "Download RStudio" button.](http://www.rstudio.com/)
+[Windows users](http://www.rstudio.com/)
+
+---
+#  R Studio Tour 
+
+
+
+---
+# Summary: Today’s Class 
+
+- Introductory background on R and RStudio
+- Software Installation
+- Tour of RStudio
+
+## Next class: 
+basic uses of R as a calculator, using functions, assigning variables
