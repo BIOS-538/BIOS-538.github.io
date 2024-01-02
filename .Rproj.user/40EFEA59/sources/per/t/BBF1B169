@@ -1,9 +1,9 @@
 {
     "id": "BBF1B169",
-    "path": "C:/Users/new/Box Sync/BIOS 338 538 Materials/ppt_to_xaringan.R",
+    "path": "C:/Users/new/Box Sync/BIOS_338_538/ppt_to_xaringan.R",
     "project_path": "ppt_to_xaringan.R",
     "type": "r_source",
-    "hash": "3216493646",
+    "hash": "2162251609",
     "contents": "",
     "dirty": false,
     "created": 1702284304849.0,
@@ -17,11 +17,11 @@
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1702286701,
+    "lastKnownWriteTime": 1704001970,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1702286701282,
+    "last_content_update": 1704001970,
     "read_only": false,
     "read_only_alternatives": []
 }
