@@ -1,15 +1,17 @@
 ---
 title: 'BIOS 338/538: Analysis and Visualization of Biological Data'
 # subtitle: 'Dr. Prashant Kalvapalle'
-author: Prashant Kalvapalle
-date: 2023-12-31
+author: Prashant Kalvapalle, Ph.D.
+date: 9th Jan-2024
 output:
   xaringan::moon_reader:
-  lib_dir: libs
-  nature:
-    highlightStyle: github
-    highlightLines: true
-    countIncrementalSlides: false
+    lib_dir: libs
+    css: ["default", "rladies", "rladies-fonts"]
+    nature:
+      beforeInit: "macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
 ---
 <!-- #  Tell me about yourself (on an index card)  -->
 
@@ -35,30 +37,60 @@ output:
 
 --
 - Grew up in India, finished undergrad there 
-(_knew some C back then_)
+  - _knew some C programming back then_
 --
 
 - Did a Masters in Biomedical Engg. at Johns Hopkins
-(_I used python back then_)
+  - _I used python here_
 --
 
-- Recently finished PhD. in Systems, Synthetic and Physical biology at Rice
-(_These days, I use R, commandline etc._)
+- Recently finished Ph.D. in Systems, Synthetic and Physical biology at Rice
+  - _These days, I use R and other command line tools_
 --
 
 
 ## How I got into R for data analysis?
-- How do I save effort by **automating** data analysis for **repeated experiments**
+- Trying to save effort by **automating** data analysis for **repeated experiments**
+  - Ended up spending too much time coding in R
+  - So I have to transfer my R skills before I leave Rice `r emo::ji('wink')`
 
+---
+# Was it useful to analyze my data in R?
+Verdict : Yes, definitely!
+
+.pull-left[
+![qpcr github](assets/img/qpcr_github.png)
+]
+
+.pull-right[
+- Ran **50 qPCRs** during Ph.D.
+- Repetitive analysis required
+  - Attach sample names
+  - Calibrate: standard curve
+  - Plot graph, label axes
+  ]
 --
-I ran 50 sets of qPCR during my Ph.D.
-- Need the same analysis on all of them
-  - Attach sample names to data
-  - Calibrate values to a standard curve
-  - Plot graph, label axes, make it pretty
-- Now did the same for other datasets
+
+.pull-left[
+
+```{r demographs, echo=FALSE, out.width='50%'}
+knitr::include_graphics('assets/img/qPCR_example.png')
+knitr::include_graphics('assets/img/growth_curve.png')
+```
+]
+
+.pull-right[
+- I have similar R pipelines for other datasets too
   - bacterial growth data : plate reader
   - Flow cytometry
+
+```{r demograph2, echo=FALSE, out.width='50%'}
+knitr::include_graphics('assets/img/flowcyt_example.png')
+```
+
+  
+]
+
 
 ---
 # Meet the wonderful TAs
@@ -73,13 +105,26 @@ I ran 50 sets of qPCR during my Ph.D.
 ## Sam Schwartz
 
 ]
+--
 
 ## Office hours: 
+
+TBD
+--
+
+## Discussion board
+You can interact with the TAs, me and other classmates in this portal online -
+[edsteam.org](https://edstem.org/us/courses/31344/discussion/)
 
 
 ---
 # What can you expect to learn from this class? 
 
+- To use R to Load, process and analyze data 
+  - Making nice plots with `ggplot()` and reproducible reports with `Rmarkdown` / `quarto`
+- The intuition behind statistical tests _without going into rigorous mathematics_
+- To critically evaluate statistics published in papers
+  
 
 ---
 # Detailed syllabus and resources
@@ -89,6 +134,20 @@ Here's the course website where you can find the detailed syllabus and lesson pl
 
 _Please keep in mind that this syllabus is tentative and we will add or remove sections based on your feedback and how the class is doing_
 
+TODO : put a table with the syllabus here
+
+---
+# Textbooks?
+
+
+---
+# Grading 
+
+TODO : put grading scheme here
+
+## Opportunities for extra credit
+- TODO : add stuff
+- Editing a Wikipedia article
 
 ---
 # Rice Honour Code
@@ -112,7 +171,8 @@ Similar concept to pre-determining a statistical plan before beginning to collec
 - Tour of RStudio
 
 ## Next class: 
-- basic uses of R as a calculator, using functions, assigning variables
+Hands-on activity to understand histograms and basic t-test
+- please come to class in-person to participate!
 
 
 ---
@@ -121,7 +181,7 @@ Similar concept to pre-determining a statistical plan before beginning to collec
 - Free, open source software
 --
 
-- Composed of a “base” R system and other packages
+- Composed of a “base” R system and other packages for specific enhancements or tasks
 
 --
 - Vibrant user community creates new tools
@@ -132,75 +192,47 @@ Similar concept to pre-determining a statistical plan before beginning to collec
 .pull-right[![](assets/img/R_rising_tide.png)]
 
 ---
-#  R is quite beginner friendly 
+#  R is quite beginner friendly `r emo::ji('smile')`
 
-**Key point**: You don’t have to be a great R programmer to use R effectively and do some amazing things, but you do have to be an excellent programmer to do the same things in other programs
+**Key point**: You don’t have to be a great R programmer to use R effectively and do some amazing things, unlike many other programs
 
 .pull-left[![](assets/img/R_logo.png)]
 
 .pull-right[![](assets/img/R_rising_tide.png)]
+--
+
+## Best way to learn R is by using it
+- Practice by doing problem sets
+- Pursuing hobby questions
+- Analyzing your own data
+  - Works great when there is no deadline ;)
 
 
 ---
+exclude: true
+
 #  Limitations of R 
+
+Avoid R for any large data sets (_NGS sequencing type_) since R is quite memory hungry and likes to keep too much in the RAM
 
 - Requires learning new language
 - Documentation of variable quality
 - Packages of variable quality
 - Inconsistencies among packages
 - Memory hungry
+
 ![](assets/img/R_logo.png)
 
 
 ---
 
-![](assets/img/image3.png)
-
----
-class: inverse
-background-image: url('assets/img/image1.tif')
-background-size: cover
+The CRAN website houses many R packages
+![CRAN](assets/img/image3.png)
 
 
 ---
-class: inverse
-background-image: url('assets/img/image2.tif')
-background-size: cover
+exclude: true
 
-
----
-class: inverse
-background-image: url('assets/img/image3.tif')
-background-size: cover
-
-
----
-
-
----
-class: inverse
-background-image: url('assets/img/image4.tif')
-background-size: cover
-
-
----
-class: inverse
-background-image: url('assets/img/image5.tif')
-background-size: cover
-
-
----
-class: inverse
-background-image: url('assets/img/image6.tif')
-background-size: cover
-
-
----
-#  History of R 
-
-![](assets/img/image1.png)
-
----
 #  History of R 
 
 R language first developed in 1991 as an open-source alternative to “S”, which was only available in “S-PLUS” commercial software
@@ -212,11 +244,13 @@ R version 1.0.0 release to public in 2000
 ---
 #  What is RStudio? 
 
-- Free, open source integrated development environment (IDE) for R
-- ie.) Rstudio is the software we use to interact with R programs and their outputs
-
-- First public version in 2011
 ![](assets/img/image4.png)
+- Free, open source integrated development environment (IDE) for R
+- ie.) Rstudio is the software we use to interact with R programs and their outputs such as data and plots
+- Rstudio is run by [Posit.co](https://posit.co/), a [Bcorp](https://www.bcorporation.net/en-us/find-a-b-corp/company/rstudio/) committed to open-source movement
+  - Posit employs quite a few developers who make excellent packages for R, including the amazing [tidyverse](https://www.tidyverse.org/) ecosystem of packages
+<!-- - First public version in 2011 -->
+
 
 
 ---
@@ -269,4 +303,5 @@ Click on "Download RStudio Desktop."
 - Tour of RStudio
 
 ## Next class: 
-basic uses of R as a calculator, using functions, assigning variables
+Hands-on activity to understand histograms and basic t-test
+- please come to class in-person to participate!
