@@ -28,7 +28,7 @@ PhD student in Systems, Synthetic and Physical Biology Email: Sam.Schwartz [at] 
 
 ## Lecture slides
 
--   [Lecture 1]('slides/_lecture01/lecture01.html') : 9th Jan, 2024
+-   [Lecture 1](slides/_lecture01/lecture01.html) : 9th Jan, 2024
 
 ## Course Description and General Information
 
