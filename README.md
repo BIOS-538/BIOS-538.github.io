@@ -1,38 +1,30 @@
+# BIOS 338/538 Syllabus: Analysis and Visualization of Biological Data, Spring 2024
+
+## Overview
+
+**Location**: ? (or via zoom with prior intimation
+
+**Time**: Tuesdays and Thursdays 2:30-3:45 pm
+
+**Instructor**: Dr. Prashant Kalvapalle, Lecturer/Postdoctoral scientist, Biosciences
+
+Email: pbk1 [at] rice.edu
+
+Office: Keck 205
+
+Office hours: TBD
+
 ---
-title: "BIOS 338/538 Syllabus : Analysis and Visualization of Biological Data, Spring 2024"
-author: "Prashant Kalvapalle"
-format: 
-  html:
-    self-contained: true # keeps all attachments in a large .html file
-    theme: flatly
-    toc: TRUE
-    toc_float: TRUE
-#   pdf : default
-# prefer-html: true
-editor: visual
----
 
-<!-- ## Overview -->
+## TAS
 
-<!-- **Location**: Space Science & Technology 106 (or via zoom when required by university policy)\ -->
+Annie Finneran, PhD student in Ecology & Evolutionary Biology\
+Email: af58 [at] rice.edu
+Office hours: ?Tuesdays 1:30 -- 2:20 pm ABL 105
 
-<!-- **Time**: Tuesdays and Thursdays 2:30-3:45 pm\ -->
+Sam...
 
-<!-- **Instructor**: Dr. Prashant Kalvapalle, Postdoctoral scientist, Biosciences\ -->
 
-<!-- Phone:\ -->
-
-<!-- Email: pbk1\@rice.edu\ -->
-
-<!-- Office:\ -->
-
-<!-- Office hours: \~Mondays 3:00 -- 4:00 pm\ -->
-
-<!-- TA: Annie Finneran, PhD student in Ecology & Evolutionary Biology\ -->
-
-<!-- Email: af58\@rice.edu\ -->
-
-<!-- Office hours: ?Tuesdays 1:30 -- 2:20 pm ABL 105 -->
 
 ## Course Description and General Information
 
