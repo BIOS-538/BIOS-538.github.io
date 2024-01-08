@@ -14,17 +14,17 @@ Office: Keck 205
 
 Office hours: TBD
 
----
-
 ## TAS
 
-Annie Finneran, PhD student in Ecology & Evolutionary Biology\
-Email: af58 [at] rice.edu
-Office hours: ?Tuesdays 1:30 -- 2:20 pm ABL 105
+### Annie Finneran
 
-Sam...
+PhD student in Ecology & Evolutionary Biology Email: af58 [at] rice.edu Office hours: ? (Tuesdays 1:30 -- 2:20 pm), ABL 105
 
+### Sam Schwartz
 
+PhD student in Systems, Synthetic and Physical Biology Email: Sam.Schwartz [at] rice.edu Office hours: ?, Keck ??
+
+------------------------------------------------------------------------
 
 ## Course Description and General Information
 
@@ -32,20 +32,16 @@ This course addresses how to analyze, visualize and draw conclusions from biolog
 
 There will be a series of problem sets, which will each be posted on the course website a week before they are due. Problem sets must be submitted following the instructions posted with them. You are welcome to work with other students or use any outside resources when completing problem sets, but each student must submit their own written responses unless otherwise explicitly indicated in the problem set. Students enrolled at the graduate level will produce a final project report detailing a specific biological research question, statistical methods and results and will present their final project to the class at the end of the semester.
 
-<!-- ## Course Material -->
+## Course Material
 
-<!-- ?There is no textbook for the course. All required readings and supplementary materials will be posted on the course website. All code and data files will also be posted on the course canvas site. Code and data files will typically be made available before class meetings; slides will be posted afterwards. -->
+There is no single textbook for the course. There will be multiple references, mostly free textbooks or materials available online. All required readings and supplementary materials will be posted on the course website. All code and data files will also be posted on the course canvas site. Code and data files will typically be made available before class meetings; slides will be posted afterwards.
 
 ## Assessment
 
--   Attendance 20%
-
+-   Attendance 20% ??
 -   Problem sets 40%
-
 -   Midterm 20%
-
 -   Final 20%
-
     -   For BIOS 538 : Final project presentation : `10%` and report `10%`
 
 ## Course Topics
@@ -53,34 +49,4 @@ There will be a series of problem sets, which will each be posted on the course 
 *Tentative list here ; final list will be posted by Dec 1st*
 
 Below is a general description of the material to be covered. Note that topics and dates are\
-subject to change. *Eventually*, see course Canvas site for most up to date version\
-![](images/paste-E2D0A88E.png)
-
-*Week 11 topics skipped for now*
-
-![](images/paste-CA303858.png){width="400"}
-
-::: callout-note
-## Fun tidbit!
-
-As a part of the course, I'll also teach you how to make this `.html` document/presentation and the interactive graph below that you can explore by zooming in-out/selecting subcategories
-
-## Interactive graph example :)
-
-```{r, echo=FALSE, warning=FALSE,message=FALSE}
-library(tidyverse)
-numpoints <- 100
-dt <- tibble(happiness = c(rnorm(numpoints, 4), rnorm(numpoints)),
-       day = rep(c('weekend', 'weekday'), each = numpoints))
-
-dt %>%
-
-  {ggplot(., aes(x = 1, y = happiness, colour = day)) +
-      geom_point(position = ggbeeswarm::position_quasirandom()) +
-      # geom_point(position = position_jitter(width = .6, height = 0)) +
-      scale_colour_brewer(palette = 'Dark2')
-      } %>%
-  plotly::ggplotly(dynamicTicks = T)
-
-```
-:::
+subject to change. *Eventually*, see course Canvas site for most up to date version
