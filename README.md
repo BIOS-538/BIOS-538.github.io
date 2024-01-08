@@ -2,11 +2,11 @@
 
 ## Overview
 
-**Location**: ? (or via zoom with prior intimation
+**Location**: BRC 282 (*or via zoom with prior intimation*)
 
-**Time**: Tuesdays and Thursdays 2:30-3:45 pm
+**Time**: Tuesdays and Thursdays. 2:30-3:45 pm
 
-**Instructor**: Dr. Prashant Kalvapalle, Lecturer/Postdoctoral scientist, Biosciences
+**Instructor**: Dr. Prashant Kalvapalle, Lecturer/Postdoctoral scientist, Biosciences, Rice University
 
 Email: pbk1 [at] rice.edu
 
@@ -25,6 +25,10 @@ PhD student in Ecology & Evolutionary Biology Email: af58 [at] rice.edu Office h
 PhD student in Systems, Synthetic and Physical Biology Email: Sam.Schwartz [at] rice.edu Office hours: ?, Keck ??
 
 ------------------------------------------------------------------------
+
+## Lecture slides
+
+-   [Lecture 1]('slides/_lecture01/lecture01.html') : 9th Jan, 2024
 
 ## Course Description and General Information
 
