@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>BIOS 338/538: Analysis and Visualization of Biological Data</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Prashant Kalvapalle, Ph.D." />
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rladies-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# BIOS 338/538: Analysis and Visualization of Biological Data
+]
+.author[
+### Prashant Kalvapalle, Ph.D.
+]
+.date[
+### 9th Jan-2024
+]
+
+---
+
+&lt;!-- #  Tell me about yourself (on an index card)  --&gt;
+
+&lt;!-- Preferred name (and pronouns if you like) --&gt;
+&lt;!-- Year and major/degree program --&gt;
+&lt;!-- Why you are you taking this class --&gt;
+&lt;!-- What you hope to get out of this class --&gt;
+&lt;!-- Interests after finishing school --&gt;
+&lt;!-- Background in math, statistics, coding --&gt;
+
+&lt;!-- --- --&gt;
+&lt;!-- #  Now tell your group about yourself  --&gt;
+
+&lt;!-- Name (and pronouns if you like) --&gt;
+&lt;!-- Year and major/degree program --&gt;
+&lt;!-- Why you are you taking this class --&gt;
+&lt;!-- What you hope to get out of this class --&gt;
+&lt;!-- Biggest concern about this class --&gt;
+&lt;!-- Interests outside of academics --&gt;
+
+---
+# A little bit about myself
+
+--
+- Grew up in India, finished undergrad there 
+  - _knew some C programming back then_
+--
+
+- Did a Masters in Biomedical Engg. at Johns Hopkins
+  - _I used python here_
+--
+
+- Recently finished Ph.D. in Systems, Synthetic and Physical biology at Rice
+  - _These days, I use R and other command line tools_
+--
+
+
+## How I got into R for data analysis?
+- Trying to save effort by **automating** data analysis for **repeated experiments**
+  - Ended up spending too much time coding in R
+  - So I have to transfer my R skills before I leave Rice 😉
+
+---
+# Was it useful to analyze my data in R?
+Verdict : Yes, definitely!
+
+.pull-left[
+![qpcr github](img/qpcr_github.png)
+]
+
+.pull-right[
+- Ran **50 qPCRs** during Ph.D.
+- Repetitive analysis required
+  - Attach sample names
+  - Calibrate: standard curve
+  - Plot graph, label axes
+  ]
+--
+
+.pull-left[
+
+&lt;img src="img/qPCR_example.png" width="50%" /&gt;&lt;img src="img/growth_curve.png" width="50%" /&gt;
+]
+
+.pull-right[
+- I have similar R pipelines for other datasets too
+  - bacterial growth data : plate reader
+  - Flow cytometry
+
+&lt;img src="img/flowcyt_example.png" width="50%" /&gt;
+
+  
+]
+
+
+---
+# Meet the wonderful TAs
+
+.pull-left[
+## Annie Finneran
+
+
+]
+
+.pull-right[
+## Sam Schwartz
+
+]
+--
+
+## Office hours: 
+
+TBD
+--
+
+## Discussion board
+You can interact with the TAs, me and other classmates in this portal online -
+[edsteam.org](https://edstem.org/us/courses/31344/discussion/)
+
+
+---
+# What can you expect to learn from this class? 
+
+- To use R to Load, process and analyze data 
+  - Making nice plots with `ggplot()` and reproducible reports with `Rmarkdown` / `quarto`
+- The intuition behind statistical tests _without going into rigorous mathematics_
+- To critically evaluate statistics published in papers
+  
+
+---
+# Detailed syllabus and resources
+
+Here's the course website where you can find the detailed syllabus and lesson plan for every class
+- Put website
+
+_Please keep in mind that this syllabus is tentative and we will add or remove sections based on your feedback and how the class is doing_
+
+TODO : put a table with the syllabus here
+
+---
+# Textbooks?
+
+
+---
+# Grading 
+
+TODO : put grading scheme here
+
+## Opportunities for extra credit
+- TODO : add stuff
+- Editing a Wikipedia article
+
+---
+# Rice Honour Code
+
+--
+## List the author contributions for all team projects
+- A good idea is to divide tasks first thing and write them down before starting action
+  - Is a great tip for when beginning a collaborative research project as well
+  - Minimizes skirmishes when publishing papers
+
+???
+
+Similar concept to pre-determining a statistical plan before beginning to collect data
+
+
+---
+#  Today’s Class 
+
+- Introductory background on R and RStudio
+- Software Installation
+- Tour of RStudio
+
+## Next class: 
+Hands-on activity to understand histograms and basic t-test
+- please come to class in-person to participate!
+
+
+---
+#  What is R? 
+
+- Free, open source software
+--
+
+- Composed of a “base” R system and other packages for specific enhancements or tasks
+
+--
+- Vibrant user community creates new tools
+
+--
+.pull-left[![](img/R_logo.png)]
+
+.pull-right[![](img/R_rising_tide.png)]
+
+---
+#  R is quite beginner friendly 😄
+
+**Key point**: You don’t have to be a great R programmer to use R effectively and do some amazing things, unlike many other programs
+
+.pull-left[![](img/R_logo.png)]
+
+.pull-right[![](img/R_rising_tide.png)]
+--
+
+## Best way to learn R is by using it
+- Practice by doing problem sets
+- Pursuing hobby questions
+- Analyzing your own data
+  - Works great when there is no deadline ;)
+
+
+---
+exclude: true
+
+#  Limitations of R 
+
+Avoid R for any large data sets (_NGS sequencing type_) since R is quite memory hungry and likes to keep too much in the RAM
+
+- Requires learning new language
+- Documentation of variable quality
+- Packages of variable quality
+- Inconsistencies among packages
+- Memory hungry
+
+![](img/R_logo.png)
+
+
+---
+
+The CRAN website houses many R packages
+![CRAN](img/image3.png)
+
+
+---
+exclude: true
+
+#  History of R 
+
+R language first developed in 1991 as an open-source alternative to “S”, which was only available in “S-PLUS” commercial software
+R Core Development Team formed in 1997
+R version 1.0.0 release to public in 2000
+![](img/image1.png)
+
+
+---
+#  What is RStudio? 
+
+![](img/image4.png)
+- Free, open source integrated development environment (IDE) for R
+- ie.) Rstudio is the software we use to interact with R programs and their outputs such as data and plots
+- Rstudio is run by [Posit.co](https://posit.co/), a [Bcorp](https://www.bcorporation.net/en-us/find-a-b-corp/company/rstudio/) committed to open-source movement
+  - Posit employs quite a few developers who make excellent packages for R, including the amazing [tidyverse](https://www.tidyverse.org/) ecosystem of packages
+&lt;!-- - First public version in 2011 --&gt;
+
+
+
+---
+#  R Installation 
+
+To Install R Open an internet browser and go to  www.r-project.org .
+Click the "download R" link in the middle of the page under "Getting Started."
+Select a CRAN location (a mirror site) and click the corresponding link.
+Mac
+Click on the "Download R for (Mac) OS X" link at the top of the page.
+Click on the file containing the latest version of R under "Files."
+Save the .pkg file, double-click it to open, and follow the installation instructions.
+Windows
+3. Click on the "Download R for Windows" link at the top of the page.
+4. Click on the "install R for the first time" link at the top of the page.
+5. Click "Download R for Windows" and save the executable file somewhere on
+your computer. Run the .exe file and follow the installation instructions.
+Now that R is installed, you need to download and install RStudio.
+[To Install R Open an internet browser and go to](http://www.r-project.org/)
+[www.r-project.org](http://www.r-project.org/)
+[Click the "download R" link in the middle of the page under "Getting Started."](http://www.r-project.org/)
+[Mac](http://www.r-project.org/)
+[Click on the file containing the latest version of R under "Files."](http://www.r-project.org/)
+[Windows](http://www.r-project.org/)
+[         4. Click on the "install R for the first time" link at the top of the page.](http://www.r-project.org/)
+[             your computer. Run the .exe file and follow the installation instructions.  ](http://www.r-project.org/)
+
+---
+#  RStudio Installation 
+
+To Install RStudio:
+Go to www.rstudio.com and click on the "Download RStudio" button.
+Click on "Download RStudio Desktop."
+**Mac users** : Click on the version recommended for your system, or the latest Mac version, save the .dmg file on your computer, double-click it to open, and then drag and drop it to your applications folder.
+**Windows users** : Click on the version recommended for your system, or the latest Windows version, and save the executable file.  Run the .exe file and follow the installation instructions. 
+[RStudio Installation](http://www.rstudio.com/)
+[ and click on the "Download RStudio" button.](http://www.rstudio.com/)
+[Windows users](http://www.rstudio.com/)
+
+---
+#  R Studio Tour 
+
+
+
+---
+# Summary: Today’s Class 
+
+- Introductory background on R and RStudio
+- Software Installation
+- Tour of RStudio
+
+## Next class: 
+Hands-on activity to understand histograms and basic t-test
+- please come to class in-person to participate!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

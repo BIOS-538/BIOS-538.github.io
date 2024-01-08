@@ -1,0 +1,13 @@
+---
+output:
+  xaringan::moon_reader:
+    seal: false
+    nature:
+      beforeInit: "macros.js"
+---
+
+![:scale 50%](assets/img/qPCR_example.png)
+
+---
+
+![](assets/img/qPCR_example.png)

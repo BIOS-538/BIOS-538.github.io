@@ -1,0 +1,7 @@
+---
+title: "BIOS 338/538 slides"
+---
+
+Slides for the lectures can be accessed online here
+
+- [Lecture 1](_lecture01/lecture01.html)
