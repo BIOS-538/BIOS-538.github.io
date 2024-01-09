@@ -1,8 +1,9 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "BIOS 338/538 slides"
+  title: "BIOS-338/538"
   navbar:
     left:
       - href: index.qmd
