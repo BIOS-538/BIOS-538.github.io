@@ -8,40 +8,21 @@ output:
     lib_dir: libs
     css: ["default", "rladies", "rladies-fonts"]
     nature:
-      beforeInit: "macros.js"
+      # beforeInit: "macros.js"
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
 ---
-<!-- #  Tell me about yourself (on an index card)  -->
 
-<!-- Preferred name (and pronouns if you like) -->
-<!-- Year and major/degree program -->
-<!-- Why you are you taking this class -->
-<!-- What you hope to get out of this class -->
-<!-- Interests after finishing school -->
-<!-- Background in math, statistics, coding -->
-
-<!-- --- -->
-<!-- #  Now tell your group about yourself  -->
-
-<!-- Name (and pronouns if you like) -->
-<!-- Year and major/degree program -->
-<!-- Why you are you taking this class -->
-<!-- What you hope to get out of this class -->
-<!-- Biggest concern about this class -->
-<!-- Interests outside of academics -->
-
----
 # A little bit about myself
 
 --
-- Grew up in India, finished undergrad there 
+- Grew up in India, finished undergrad in Biological Sciences & Bioengineering 
   - _knew some C programming back then_
 --
 
 - Did a Masters in Biomedical Engg. at Johns Hopkins
-  - _I used python here_
+  - _I used Python here_
 --
 
 - Recently finished Ph.D. in Systems, Synthetic and Physical biology at Rice
@@ -97,19 +78,27 @@ knitr::include_graphics('img/flowcyt_example.png')
 
 .pull-left[
 ## Annie Finneran
-
+PhD student in Ecology & Evolutionary Biology
+[website](https://anniefinneran.weebly.com/)
+Email: af58 [at] rice.edu.
+Office hours: Tuesdays 11:30 am – 12:30 pm, ABL 105
 
 ]
 
 .pull-right[
 ## Sam Schwartz
+PhD student in Systems, Synthetic and Physical Biology
+[website](https://www.linkedin.com/in/samuel-schwartz29/)
+Email: Sam.Schwartz [at] rice.edu
+Office hours: Mondays, 3 - 4 pm, Keck 305 conference room
 
 ]
 --
 
-## Office hours: 
+## My office hours: 
 
-TBD
+Friday, 3-3:45 pm (in person), 3:45 - 4:30 pm (on zoom), Keck 305
+
 --
 
 ## Discussion board
@@ -120,7 +109,7 @@ You can interact with the TAs, me and other classmates in this portal online -
 ---
 # What can you expect to learn from this class? 
 
-- To use R to Load, process and analyze data 
+- To use R to load, process and analyze data statistically
   - Making nice plots with `ggplot()` and reproducible reports with `Rmarkdown` / `quarto`
 - The intuition behind statistical tests _without going into rigorous mathematics_
 - To critically evaluate statistics published in papers
@@ -129,31 +118,62 @@ You can interact with the TAs, me and other classmates in this portal online -
 ---
 # Detailed syllabus and resources
 
-Here's the course website where you can find the detailed syllabus and lesson plan for every class
-- Put website
+Here's the [course website](https://bios-538.github.io/) where you can find the detailed syllabus and lesson plan for every class: https://bios-538.github.io/#course-topics-schedule
 
-_Please keep in mind that this syllabus is tentative and we will add or remove sections based on your feedback and how the class is doing_
+_Please keep in mind that this syllabus is tentative and we will add or expand certain based on your feedback and how the class is doing_
 
-TODO : put a table with the syllabus here
+## Summary of modules
+- Intro, statistics refresher
+- **R module**: getting started, data wrangling, plotting, ending with a in-class workshop
+- **R advanced**: version control `git`, `Rmarkdown`, and using them with a workshop
+- **Statistics module**: Normal distributions, t-tests, p-values and caveats, 
+- **model fitting**: 2-dimensional data, linear and non-linear regressions
+- higher dimensional data
+
 
 ---
-# Textbooks?
+# Textbooks
+
+There is no standard textbook for this class, but there are quite a few open online textbooks that we will borrow material from.
+_Note: most of the textbooks were written in `R`, using `Rmarkdown`
+
+Here's a few good ones
+- [Modern statistics with R](https://modernstatisticswithr.com/index.html)
+- [Statistical Thinking for the 21st Century (Poldrack)](https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Statistical_Thinking_for_the_21st_Century_(Poldrack)) : Libre text - Simulation, bayesian?
+- [An introduction to data analysis](https://michael-franke.github.io/intro-data-analysis/Chap-01-00-intro-learning-goals.html)
+- Statistical Inference via Data Science : A ModernDive into R and the Tidyverse - [moderndive](https://moderndive.com/)
+ > 	We have intentionally minimized the number of mathematical formulas used. Instead, you’ll develop a conceptual understanding of statistics using data visualization and computer simulations. We hope this is a more intuitive experience than the way statistics has traditionally been taught in the past and how it is commonly perceived.
+- Tidy Modeling with R -[Tmwr](https://www.tmwr.org/) : _how to use tidymodels packages ; develop good statistical practice_
 
 
 ---
 # Grading 
 
-TODO : put grading scheme here
+| Assignment      | Total grade | Details                                                                      |
+|-------------|-------------|----------------------------------------------|
+| Attendance      | 10%         | *on zoom with permission*                                                    |
+| Participation   | 10%         | online discussion boards (*ask/answer*), office hours, in-class participation |
+| Problem sets    | 40%         |                                                                              |
+| Midterm         | 20%         |                                                                              |
+| Final / project | 20%         | For BIOS 538 : Final project presentation : `10%` and report `10%`           |
+
 
 ## Opportunities for extra credit
-- TODO : add stuff
-- Editing a Wikipedia article
+Upto 20% of the total grade of the class
+- Asking a detailed question at [stackoverflow](https://stackoverflow.com/)
+- Editing a Wikipedia article on topics related to the class/ statistics in general
+- Helping your peers!
+
+_We don't have a structure for these as of now, but please do write to us with a short summary of what you did for the extra credit and you shall get the credit_  
 
 ---
 # Rice Honour Code
 
+All students will be held to the standards of Rice's honour code for academic integrity.
+These include not indulging in plagiarism, providing due credit to sources and acknowledging collaborators on assignments etc. 
+
 --
-## List the author contributions for all team projects
+## List the author contributions for all collaborations
 - A good idea is to divide tasks first thing and write them down before starting action
   - Is a great tip for when beginning a collaborative research project as well
   - Minimizes skirmishes when publishing papers
@@ -169,6 +189,7 @@ Similar concept to pre-determining a statistical plan before beginning to collec
 - Introductory background on R and RStudio
 - Software Installation
 - Tour of RStudio
+--
 
 ## Next class: 
 Hands-on activity to understand histograms and basic t-test
@@ -178,27 +199,35 @@ Hands-on activity to understand histograms and basic t-test
 ---
 #  What is R? 
 
-- Free, open source software
+- Free, open source software software primarily used for statistical analysis by academics
 --
 
-- Composed of a “base” R system and other packages for specific enhancements or tasks
+- Composed of a “base” R system and other packages that can be installed for specific tasks
 
 --
-- Vibrant user community creates new tools
-
+- Vibrant user community creates new tools. 
+  - Lot of biologists have packages that could be useful to you!
 --
-.pull-left[![](img/R_logo.png)]
 
-.pull-right[![](img/R_rising_tide.png)]
+.pull-left[
+```{r rlogo, echo=FALSE, out.width='50%'}
+knitr::include_graphics('img/R_logo.png')
+```
+]
+
+.pull-right[
+```{r rrise, echo=FALSE, out.width='70%'}
+knitr::include_graphics('img/R_rising_tide.png')
+```
+
+]
 
 ---
 #  R is quite beginner friendly `r emo::ji('smile')`
 
 **Key point**: You don’t have to be a great R programmer to use R effectively and do some amazing things, unlike many other programs
 
-.pull-left[![](img/R_logo.png)]
-
-.pull-right[![](img/R_rising_tide.png)]
+_I also mostly get by with a lot of internet search_ `emo::ji('wink')`
 --
 
 ## Best way to learn R is by using it
@@ -206,52 +235,36 @@ Hands-on activity to understand histograms and basic t-test
 - Pursuing hobby questions
 - Analyzing your own data
   - Works great when there is no deadline ;)
+--
 
-
----
-exclude: true
-
-#  Limitations of R 
+#  Limitations 
 
 Avoid R for any large data sets (_NGS sequencing type_) since R is quite memory hungry and likes to keep too much in the RAM
-
-- Requires learning new language
-- Documentation of variable quality
-- Packages of variable quality
-- Inconsistencies among packages
-- Memory hungry
-
-![](img/R_logo.png)
-
-
----
-
-The CRAN website houses many R packages
-![CRAN](img/image3.png)
-
-
----
-exclude: true
-
-#  History of R 
-
-R language first developed in 1991 as an open-source alternative to “S”, which was only available in “S-PLUS” commercial software
-R Core Development Team formed in 1997
-R version 1.0.0 release to public in 2000
-![](img/image1.png)
-
 
 ---
 #  What is RStudio? 
 
-![](img/image4.png)
+```{r rstudiologo, out.width='50%'}
+knitr::include_graphics('img/Rstudio_logo.png')
+```
+
 - Free, open source integrated development environment (IDE) for R
 - ie.) Rstudio is the software we use to interact with R programs and their outputs such as data and plots
 - Rstudio is run by [Posit.co](https://posit.co/), a [Bcorp](https://www.bcorporation.net/en-us/find-a-b-corp/company/rstudio/) committed to open-source movement
   - Posit employs quite a few developers who make excellent packages for R, including the amazing [tidyverse](https://www.tidyverse.org/) ecosystem of packages
 <!-- - First public version in 2011 -->
 
+---
+class: center, middle
 
+## Installing R and Rstudio
+[Modern statistics with R](https://modernstatisticswithr.com/)
+
+---
+class: center, middle
+
+## Touring around Rstudio
+_if we have time.._
 
 ---
 #  R Installation 
