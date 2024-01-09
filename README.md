@@ -8,7 +8,7 @@
 
 **Instructor**: Dr. Prashant Kalvapalle, Lecturer/Postdoctoral scientist, Biosciences, Rice University
 
-Email: pbk1 [at] rice.edu
+Email: pbk1 \[at\] rice.edu
 
 Office: Keck 205
 
@@ -18,11 +18,11 @@ Office hours: TBD
 
 ### Annie Finneran
 
-PhD student in Ecology & Evolutionary Biology Email: af58 [at] rice.edu Office hours: ? (Tuesdays 1:30 -- 2:20 pm), ABL 105
+PhD student in Ecology & Evolutionary Biology Email: af58 \[at\] rice.edu Office hours: ? (Tuesdays 1:30 -- 2:20 pm), ABL 105
 
 ### Sam Schwartz
 
-PhD student in Systems, Synthetic and Physical Biology Email: Sam.Schwartz [at] rice.edu Office hours: ?, Keck ??
+PhD student in Systems, Synthetic and Physical Biology Email: Sam.Schwartz \[at\] rice.edu Office hours: ?, Keck ??
 
 ------------------------------------------------------------------------
 
