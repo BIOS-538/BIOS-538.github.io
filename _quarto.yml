@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: docs
 
+execute:
+  freeze: auto  # re-render only when source changes
+
 website:
   title: "BIOS-338/538"
   navbar:
@@ -9,7 +12,9 @@ website:
       - href: index.qmd
         text: Home
       # - about.qmd
-
+  repo-url: https://github.com/BIOS-538.github.io # links to github
+  repo-actions: [edit, issue]  
+    
 format:
   html:
     theme: cosmo
