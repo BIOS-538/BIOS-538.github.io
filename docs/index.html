@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>BIOS 338/538 Syllabus: Analysis and Visualization of Biological Data, Spring 2024</h1>
 <section id="course-description" class="level2">
 <h2 class="anchored" data-anchor-id="course-description">Course Description</h2>
-<p>This course addresses how to analyze, visualize and draw conclusions from biological data. It introduces basic concepts in statistics and the intuition behind them interwoven with training in data analysis using the <code>R</code> computing environment. Students will learn to identify underlying data structures and wrangle data. Students will also learn to effectively convey results using statistical graphics. Topics include basic <code>R</code> programming, data wrangling using modern <code>[tidyverse]</code> packages, t-tests, statistical modeling (<em>linear regression, dose response curves)</em>. This class is targeted towards biologists, hence focuses on biological data for examples and omits rigorous statistical formulas. No prior experience with <code>R</code> required.</p>
+<p>This course addresses how to analyze, visualize and draw conclusions from biological data. It introduces basic concepts in statistics and the intuition behind them interwoven with training in data analysis using the <code>R</code> computing environment. Students will learn to identify underlying data structures and wrangle data. Students will also learn to effectively convey results using statistical graphics. Topics include basic <code>R</code> programming, data wrangling using modern <a href="https://www.tidyverse.org/"><code>tidyverse</code></a> packages, t-tests, statistical modeling (<em>linear regression, dose response curves)</em>. This class is targeted towards biologists, hence focuses on biological data for examples and omits rigorous statistical formulas. No prior experience with <code>R</code> required.</p>
 <p>There will be a series of problem sets posted on the course website with instructions a week before they are due. You are encouraged to work with other students or use any outside resources when completing problem sets, but each student must submit their own written responses unless otherwise explicitly indicated in the problem set. Any group submissions or work should include attribution section detailing who did what. Students enrolled at the graduate level will produce a final project report detailing a specific biological research question, statistical methods and results and will present their final project to the class at the end of the semester.</p>
 </section>
 <section id="course-logistics" class="level2">
@@ -183,9 +183,9 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="assessment">Assessment</h2>
 <table class="table">
 <colgroup>
-<col style="width: 21%">
-<col style="width: 21%">
-<col style="width: 56%">
+<col style="width: 15%">
+<col style="width: 12%">
+<col style="width: 72%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -242,9 +242,9 @@ ul.task-list li input[type="checkbox"] {
 subject to change</em>. See <a href="https://bios-538.github.io/">course website</a> for most up to date version.</p>
 <table class="table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 3%">
+<col style="width: 22%">
+<col style="width: 74%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -271,7 +271,7 @@ subject to change</em>. See <a href="https://bios-538.github.io/">course website
 </tr>
 <tr class="even">
 <td>18/Jan</td>
-<td>Data wrangling in R with <code>tidyverse</code>, <code>dplyr</code> and such</td>
+<td>Data wrangling in R with <code>tidyverse</code>, <code>dplyr</code></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -281,110 +281,115 @@ subject to change</em>. See <a href="https://bios-538.github.io/">course website
 </tr>
 <tr class="even">
 <td>25/Jan</td>
-<td>Version control using <code>git</code></td>
-<td>why version control? Setup git with Rstudio. Learn some command line basics : <code>cd</code>, <code>ls</code>, <code>git add, git commit</code>, <code>grep "function-name"</code></td>
+<td><code>ggplot()</code> plotting</td>
+<td><code>ggplot</code>, <code>geom_point()</code> and <code>geom_line()</code>, interactive plots with <code>plotly::ggplotly()</code>. What should you show in a plot?</td>
 </tr>
 <tr class="odd">
 <td>30/Jan</td>
-<td>Rmarkdown/quarto to produce reports</td>
-<td>motivation for reproducible data analysis, <em>benefits of keeping thoughts, code and outputs in one document</em></td>
+<td>Version control using <code>git</code></td>
+<td>why version control? Setup git with Rstudio. Learn some command line basics : <code>cd</code>, <code>ls</code>, <code>git add, git commit</code>, <code>grep "function-name"</code></td>
 </tr>
 <tr class="even">
 <td>6/Feb</td>
-<td>Data -&gt; figure pipeline from a research article, <strong>workshop</strong></td>
-<td>using <code>Rmd/quarto</code> to walk through the steps required to reproduce plots from a published paper</td>
+<td>Rmarkdown/quarto to produce reports</td>
+<td>motivation for reproducible data analysis, <em>benefits of keeping thoughts, code and outputs in one document</em></td>
 </tr>
 <tr class="odd">
 <td>8/Feb</td>
-<td>Normal-distributions</td>
-<td>_understand central limit theorem intuitively + using R simulations; why ~normal is a useful default. Learn cases when it doesn’t apply. Students distribution is got by sampling from a normal and calculating the mean.</td>
+<td>Data -&gt; figure pipeline from a research article, <strong>workshop</strong></td>
+<td>using <code>Rmd/quarto</code> to walk through the steps required to reproduce plots from a published paper</td>
 </tr>
 <tr class="even">
 <td>13/Feb</td>
-<td>Intro to hypothesis testing (<em>t-tests</em>)</td>
-<td>experimental science usually involves comparisons =&gt; hence hypothesis testing to compare distributions / means. <em>Concept: Students t-distribution is got by sampling from a normal and calculating the mean.</em></td>
+<td>Normal-distributions</td>
+<td>_understand central limit theorem intuitively + using R simulations; why ~normal is a useful default. Learn cases when it doesn’t apply. Students distribution is got by sampling from a normal and calculating the mean.</td>
 </tr>
 <tr class="odd">
 <td>15/Feb</td>
-<td>Problems with p-values</td>
-<td>motivate misunderstandings people have, how p-values contribute to non-reproducible science. <em>Touch upon Surprise value (S-value) ; alternatives : bayesian t.test - when to use them</em></td>
+<td>Intro to hypothesis testing (<em>t-tests</em>)</td>
+<td>experimental science usually involves comparisons =&gt; hence hypothesis testing to compare distributions / means. <em>Concept: Students t-distribution is got by sampling from a normal and calculating the mean.</em></td>
 </tr>
 <tr class="even">
 <td>20/Feb</td>
-<td>Linear regression (<em>2 dimensional data</em>)</td>
-<td>2D data with one independent variable. <em>Rehash straight line equation:</em> <code>y = mx + c</code>. _show an interactive tutorial on how fitting works. Show <code>geom_smooth()</code> in R.</td>
+<td>Problems with p-values</td>
+<td>motivate misunderstandings people have, how p-values contribute to non-reproducible science. <em>Touch upon Surprise value (S-value) ; alternatives : bayesian t.test - when to use them</em></td>
 </tr>
 <tr class="odd">
 <td>22/Feb</td>
-<td>Linear regression fitting</td>
-<td>key concept is the % of variance explained by the fit. <em>Do <code>lm</code> and show how to interpret results and p.values</em></td>
+<td>Linear regression (<em>2 dimensional data</em>)</td>
+<td>2D data with one independent variable. <em>Rehash straight line equation:</em> <code>y = mx + c</code>. _show an interactive tutorial on how fitting works. Show <code>geom_smooth()</code> in R.</td>
 </tr>
 <tr class="even">
 <td>27/Feb</td>
-<td>Re-capitulate t-tests using linear regression fitting</td>
-<td><em>hypothesis testing is akin to fitting 1D data + 2nd D of categorical variable</em></td>
+<td>Linear regression fitting</td>
+<td>key concept is the % of variance explained by the fit. <em>Do <code>lm</code> and show how to interpret results and p.values</em></td>
 </tr>
 <tr class="odd">
 <td>5/Mar</td>
-<td>Data -&gt; statistics pipeline from a research article, <strong>workshop</strong></td>
-<td>using <code>Rmd/quarto</code> to walk through the steps required to reproduce statistics from a published paper</td>
+<td>Re-capitulate t-tests using linear regression fitting</td>
+<td><em>hypothesis testing is akin to fitting 1D data + 2nd D of categorical variable</em></td>
 </tr>
 <tr class="even">
 <td>7/Mar</td>
-<td>Non-linear regressions</td>
-<td>examples: <em>fitting dose-response curves and bacterial growth curves</em>. Explain why initial conditions matter for nls, using self starting functions. <code>map; safely() workflow</code> to avoid breaking code due to convergence issues_</td>
+<td>Data -&gt; statistics pipeline from a research article, <strong>workshop</strong></td>
+<td>using <code>Rmd/quarto</code> to walk through the steps required to reproduce statistics from a published paper</td>
 </tr>
 <tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
 <td>9-17/Mar</td>
 <td><em>Spring break</em></td>
+<td>no class</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>19/Mar</td>
-<td>Bootstrapping</td>
-<td>benefits: <em>a better non-parametric test without making any assumptions about the data distribution</em></td>
+<td>Non-linear regressions</td>
+<td>examples: <em>fitting dose-response curves and bacterial growth curves</em>. Explain why initial conditions matter for nls, using self starting functions. <code>map; safely() workflow</code> to avoid breaking code due to convergence issues_</td>
 </tr>
 <tr class="even">
 <td>21/Mar</td>
-<td>Bootstrapping in R</td>
-<td><em>using a vectorized workflow to achieve bootstrapping and simple hypothesis testing</em></td>
+<td>Bootstrapping</td>
+<td>benefits: <em>a better non-parametric test without making any assumptions about the data distribution</em></td>
 </tr>
 <tr class="odd">
 <td>26/Mar</td>
-<td>Working with higher dimensional data</td>
-<td>explain dimensionality reduction concept. Techniques: <code>PCA</code>, weighted techniques, clustering. <em>likely using sequencing microbiome datasets examples</em></td>
+<td>Bootstrapping in R</td>
+<td><em>using a vectorized workflow to achieve bootstrapping and simple hypothesis testing</em></td>
 </tr>
 <tr class="even">
 <td>28/Mar</td>
+<td>Working with higher dimensional data</td>
+<td>explain dimensionality reduction concept. Techniques: <code>PCA</code>, weighted techniques, clustering. <em>likely using sequencing microbiome datasets examples</em></td>
+</tr>
+<tr class="odd">
+<td>2/Apr</td>
 <td>critique statistics from a research article, <strong>workshop</strong></td>
 <td>using <code>Rmd/quarto</code> to recreate statistics from a published paper, finding faults, redoing analysis with better methods</td>
 </tr>
-<tr class="odd">
-<td>2-9/Apr</td>
-<td>TBD based on feedback (3 classes)</td>
+<tr class="even">
+<td>4-9/Apr</td>
+<td>TBD based on feedback (2 classes)</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>11/Apr</td>
 <td>Student presentations 1</td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>16/Apr</td>
 <td>Student presentations 2</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>18/Apr</td>
 <td>Student presentations 3</td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>24-30/Apr</td>
 <td>Final exam</td>
 <td></td>
