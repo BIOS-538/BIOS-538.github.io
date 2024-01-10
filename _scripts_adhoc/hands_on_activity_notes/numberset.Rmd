@@ -1,0 +1,42 @@
+---
+title: "Random Number Generation"
+author: "Sam Schwartz"
+date: "2024-01-09"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, warning = FALSE}
+library(tidyverse)
+```
+
+```{r}
+#quick function for speed
+ndis <- function(mean, sd) {
+  round(rnorm(50, mean, sd), 1)
+}
+```
+
+```{r}
+#Setting random seed to get same numbers every time
+set.seed(214)
+
+numberset <- data.frame(matrix(data = NA, nrow = 50, ncol = 6))
+
+numberset[1] <- ndis(20, 1)
+numberset[2] <- ndis(20, 3)
+numberset[3] <- ndis(40,1)
+numberset[4] <- ndis(40, 5)
+numberset[5] <- ndis(70, 1)
+numberset[6] <- ndis(70, 8)
+```
+
+```{r}
+numberset %>%
+  knitr::kable()
+```
+
+
