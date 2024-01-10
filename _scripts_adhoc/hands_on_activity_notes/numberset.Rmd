@@ -1,42 +1,91 @@
 ---
-title: "Random Number Generation"
-author: "Sam Schwartz"
-date: "2024-01-09"
-output: word_document
+# title: "Random Number Generation" # hide these metadata in the output
+# author: "Sam Schwartz"
+# date: "2024-01-09"
+output: pdf_document # output as word_document to edit later
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r setup, include=FALSE, warning=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE) # set all chunks to hide code by default
+library(tidyverse) # initialize tidyverse for data handling basics
+library(patchwork) # for joining multiple plots
+library(kableExtra) # for formatting table colours etc.
+
 ```
 
-```{r, warning = FALSE}
-library(tidyverse)
-```
-
-```{r}
-#quick function for speed
-ndis <- function(mean, sd) {
-  round(rnorm(50, mean, sd), 1)
-}
-```
-
-```{r}
-#Setting random seed to get same numbers every time
+```{r generaterand}
+# Setting random seed to get same numbers every time
 set.seed(214)
 
-numberset <- data.frame(matrix(data = NA, nrow = 50, ncol = 6))
+# generate 3 series of normal distributions
+numberset <-  
+  tibble(x1 = rnorm(n = 120, mean = 4, sd = 1), # black
+         x2 = rnorm(n = 120, mean = 6, sd = 1), # blue, italic
+         x3 = rnorm(n = 120, mean = 7, sd = 1), # orange, bold
+         colid = 0:119 %/% 40, # format each series into 3 columns
+         rowid = rep(1:40, 3)) # and 40 rows ; will try to print 20 rows per page
 
-numberset[1] <- ndis(20, 1)
-numberset[2] <- ndis(20, 3)
-numberset[3] <- ndis(40,1)
-numberset[4] <- ndis(40, 5)
-numberset[5] <- ndis(70, 1)
-numberset[6] <- ndis(70, 8)
+# round off to 1 decimal
+rounded_rands <-    
+  mutate(numberset,
+         across(c(1:3), # modify the random numbers
+                ~ num(.x, digits = 1))) # round off to 2 decimals
+
 ```
 
-```{r}
-numberset %>%
-  knitr::kable()
+```{r quickplot, eval=FALSE, include=FALSE}
+# To run : make eval = TRUE, include = TRUE or run chunk manually in Rstudio
+
+# plot the random numbers to ~check normality before and after rounding off
+histogram_plots <- 
+  list(numberset, rounded_rands) %>% # for each dataset
+  
+  map( # for each dataset above, modify it for plotting
+    ~ pivot_longer(.x,
+                   cols = -c(rowid, colid), # remove id columns for this plot
+                   names_to = 'series', # bring all series into the same column: labels here
+                   values_to = 'random_number') %>%  # numbers here
+      
+      {ggplot(aes(x = random_number, fill = series), data = .) + 
+          geom_histogram(alpha = 0.2) +
+          scale_fill_manual(values = c('black', '#0072b2', '#e69f00')) # colour the distributions
+      }
+  )
+      
+histogram_plots[[1]] / histogram_plots[[2]]
+
 ```
 
+```{r formattingdata}
 
+# split each rnorm series into 3 columns for printing (colids = 0,1 or 2)
+formatted_rands <-
+  pivot_wider(rounded_rands, 
+              names_from = colid, # column ids are appended to x1-x3
+              values_from = c(x1, x2, x3)) # the normal dist becomes values
+
+```
+
+```{r rendertable, eval=FALSE, include=FALSE}
+knitr::kable(formatted_rands, align = 'c') # simple unformatted output
+# problem: renders into single column in word
+
+```
+
+```{r rendertable_html}
+# cannot control row height or number of rows/page. Gave up. use word
+
+kable(formatted_rands,
+      align = 'c', # centre align columns
+      longtable = TRUE) %>%
+  
+# rmarkdown::paged_table(formatted_rands, 
+#                        options = c(rows.print = 20)) %>% # control nrow/page
+             
+  kable_styling(full_width = T, font_size = 13, ) %>% 
+  column_spec(column = 5:7, italic = T, color = '#0072b2') %>% # format x2 columns to blue, italic
+  column_spec(column = 8:10, bold = T, color = '#e69f00') # format x3 columns to orange, bold
+
+
+```
