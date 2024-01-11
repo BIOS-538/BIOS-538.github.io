@@ -40,10 +40,6 @@ So 25% of the assignment will already be done in class!
 
 Practicing by working through code at your own time is the only way to actually learn coding.
 
-::: aside
-> Final option: Learn at your own pace using the resources provided. But don't put this off for later than 2nd year in your Ph.D. (*things will only get busier..*)
-:::
-
 ## Assignment logistics
 
 -   *Thursday*: Assignment uploaded and introduced in class
@@ -206,7 +202,7 @@ uniform distribution has the most randomness (*maximum uncertainty*) since every
 
 **Data**: We generated "populations" of data from 3 different distributions. For the final task, you can compare your data with another groups data from a different population for best results.
 
-## Logistics  {.smaller}
+## Logistics {.smaller}
 
 -   We need 9 volunteers to sample the data for the 9 groups
 
@@ -262,7 +258,7 @@ Mark each of these quantities visually on the chart below the distribution (*app
 
 -   Count the number of points within the `1 SD` and `2 SD` intervals
 
-## task 4.1 Hypothesis testing: are two different samples identical? 
+## task 4.1 Hypothesis testing: are two different samples identical?
 
 **Merging the distributions**: Is a visual way to tell if two distributions are similar or not.
 
@@ -270,7 +266,7 @@ Mark each of these quantities visually on the chart below the distribution (*app
 
 -   Together both teams will assemble two histograms in the same chart (*start from any groups*) ; and mark the tops of the guest group for easy visualization
 
-## task 4.2 Hypothesis testing: are two different samples identical? 
+## task 4.2 Hypothesis testing: are two different samples identical?
 
 **Quantitative value**: But we need to depend on more concrete statistics than gut feeling, hence we do hypothesis testing using t.tests.
 
@@ -280,9 +276,8 @@ Mark each of these quantities visually on the chart below the distribution (*app
 
     -   Also do another test comparing to another group from the same population.
 
-```{=html}
 <!-- -->
-```
+
 -   Rule of thumb: if the `p.value < 0.05` ; then the data-sets have very little likelihood of being sampled from the same distribution.
 
 # Summary
