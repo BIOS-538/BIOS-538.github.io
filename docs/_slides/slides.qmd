@@ -1,0 +1,8 @@
+---
+title: "Lecture slides"
+editor: visual
+---
+
+Slides for the lectures can be accessed here
+
+-   [Lecture 1](_slides/lecture01.qmd)

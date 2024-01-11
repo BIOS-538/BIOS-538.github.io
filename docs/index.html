@@ -92,6 +92,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./slides/slides.html"> 
+<span class="menu-text">Lecture slides</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
@@ -117,14 +121,18 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#annie-finneran" id="toc-annie-finneran" class="nav-link" data-scroll-target="#annie-finneran">Annie Finneran</a></li>
   <li><a href="#sam-schwartz" id="toc-sam-schwartz" class="nav-link" data-scroll-target="#sam-schwartz">Sam Schwartz</a></li>
   </ul></li>
-  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a></li>
+  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a>
+  <ul class="collapse">
+  <li><a href="#assignment-timelines" id="toc-assignment-timelines" class="nav-link" data-scroll-target="#assignment-timelines">Assignment timelines</a></li>
+  <li><a href="#how-challenging-will-it-be-if-i-am-very-new-to-r" id="toc-how-challenging-will-it-be-if-i-am-very-new-to-r" class="nav-link" data-scroll-target="#how-challenging-will-it-be-if-i-am-very-new-to-r">How challenging will it be if I am very new to <code>R</code>?</a></li>
+  <li><a href="#there-are-many-assignments-seems-like-a-lot-of-work" id="toc-there-are-many-assignments-seems-like-a-lot-of-work" class="nav-link" data-scroll-target="#there-are-many-assignments-seems-like-a-lot-of-work">There are many assignments, seems like a lot of work?</a></li>
+  </ul></li>
   <li><a href="#course-topics-schedule" id="toc-course-topics-schedule" class="nav-link" data-scroll-target="#course-topics-schedule">Course Topics / Schedule</a></li>
   <li><a href="#textbooksreference-material" id="toc-textbooksreference-material" class="nav-link" data-scroll-target="#textbooksreference-material">Textbooks/Reference material</a>
   <ul class="collapse">
   <li><a href="#open-textbooks-on-r-and-statistics" id="toc-open-textbooks-on-r-and-statistics" class="nav-link" data-scroll-target="#open-textbooks-on-r-and-statistics">Open textbooks on R and statistics</a></li>
   <li><a href="#open-online-courses" id="toc-open-online-courses" class="nav-link" data-scroll-target="#open-online-courses">Open online courses</a></li>
   </ul></li>
-  <li><a href="#lecture-slides" id="toc-lecture-slides" class="nav-link" data-scroll-target="#lecture-slides">Lecture slides</a></li>
   <li><a href="#classroom-policies" id="toc-classroom-policies" class="nav-link" data-scroll-target="#classroom-policies">Classroom policies</a>
   <ul class="collapse">
   <li><a href="#attendance" id="toc-attendance" class="nav-link" data-scroll-target="#attendance">Attendance</a></li>
@@ -158,34 +166,38 @@ ul.task-list li input[type="checkbox"] {
 <section id="course-logistics" class="level2">
 <h2 class="anchored" data-anchor-id="course-logistics">Course Logistics</h2>
 <p><strong>Instructor</strong>: Dr.&nbsp;Prashant Kalvapalle (he/him), Lecturer + Postdoctoral researcher, Biosciences, Rice University</p>
+<p><img src="slides/img/prashant.png" class="img-fluid" width="333"></p>
 <p><strong>Location</strong>: BRC 282 (<em>or via zoom with prior permission</em>)</p>
 <p><strong>Time</strong>: Tuesdays and Thursdays. 2:30-3:45 pm</p>
 <p><strong>Email</strong>: pbk1 [at] rice.edu</p>
 <p><strong>Office</strong>: Keck 205</p>
-<p><strong>Office hours</strong>: Friday, 3-3:45 pm (<em>in person),</em> 3:45 - 4:30 pm (<em>on zoom</em>)</p>
+<p><strong>Office hours</strong>: Friday, 3-4 pm, Keck 305 (<em>in person + zoom</em>)</p>
+<p><em>Note:</em> You will find the zoom links on the canvas website for the course</p>
 </section>
 <section id="tas" class="level2">
 <h2 class="anchored" data-anchor-id="tas">TAS</h2>
 <section id="annie-finneran" class="level3">
 <h3 class="anchored" data-anchor-id="annie-finneran">Annie Finneran</h3>
-<p>PhD student in Ecology &amp; Evolutionary Biology</p>
+<p><img src="slides/img/annie.jpg" class="img-fluid" width="333"></p>
+<p>PhD student in Ecology &amp; Evolutionary Biology (<a href="https://anniefinneran.weebly.com/">website</a>)</p>
 <p><strong>Email</strong>: af58 [at] rice.edu.</p>
-<p><strong>Office hours</strong>: Tuesdays 11:30 am – 12:30 pm, ABL 105</p>
+<p><strong>Office hours</strong>: Tuesdays 11:30 am – 12:30 pm, ABL 100 (<em>in person + zoom</em>)</p>
 </section>
 <section id="sam-schwartz" class="level3">
 <h3 class="anchored" data-anchor-id="sam-schwartz">Sam Schwartz</h3>
-<p>PhD student in Systems, Synthetic and Physical Biology</p>
+<p><img src="slides/img/sam.jpg" class="img-fluid" width="333"></p>
+<p>PhD student in Systems, Synthetic and Physical Biology (<a href="https://www.linkedin.com/in/samuel-schwartz29/">website</a>)</p>
 <p><strong>Email</strong>: Sam.Schwartz [at] rice.edu</p>
-<p><strong>Office hours</strong>: Mondays, 3 - 4 pm, Keck 305 <em>conference room</em></p>
+<p><strong>Office hours</strong>: Mondays, 3 - 4 pm, Keck 305 (<em>in person + zoom</em>)</p>
 </section>
 </section>
 <section id="assessment" class="level2">
 <h2 class="anchored" data-anchor-id="assessment">Assessment</h2>
 <table class="table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 12%">
-<col style="width: 72%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 63%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -235,6 +247,29 @@ ul.task-list li input[type="checkbox"] {
 <li>D 60-69</li>
 <li>F &lt;60</li>
 </ul>
+<section id="assignment-timelines" class="level3">
+<h3 class="anchored" data-anchor-id="assignment-timelines">Assignment timelines</h3>
+<ul>
+<li><p><em>Thursday</em>: Assignment uploaded and introduced in class</p></li>
+<li><p>Get help in office hours during the week</p></li>
+<li><p><strong><em>Friday 7 pm</em></strong>: submission</p></li>
+<li><p><em>Next Thursday</em>: Brief discussion on the previous week’s assignment, common mistakes</p></li>
+<li><p><em>Next Saturday</em>: receive your grades and feedback from TAs</p></li>
+</ul>
+<p>Again, if you need any accommodations for particular submissions please email the instructor.</p>
+</section>
+<section id="how-challenging-will-it-be-if-i-am-very-new-to-r" class="level3 smaller">
+<h3 class="smaller anchored" data-anchor-id="how-challenging-will-it-be-if-i-am-very-new-to-r">How challenging will it be if I am very new to <code>R</code>?</h3>
+<p>I believe that if you have one undergraduate level course where you <strong>learnt</strong> to code in <strong>any programming language</strong>, it should not be too challenging to pickup <code>R</code> syntax with 3 weeks of practice.</p>
+<p>That said, the examples we walk through in class and working on the assignments (<em>with help from very enthusiastic TAs</em>) will be great resources to guide the learning process.</p>
+<p>This classroom is a safe space, so no question is too simple or too “silly” to ask.</p>
+</section>
+<section id="there-are-many-assignments-seems-like-a-lot-of-work" class="level3">
+<h3 class="anchored" data-anchor-id="there-are-many-assignments-seems-like-a-lot-of-work">There are many assignments, seems like a lot of work?</h3>
+<p>The lectures are structured to be interspersed with <strong>5-10 min</strong> coding sessions where we will walk everyone through stuff. You essentially save all the work we did in class, and add to that by working on your own time for the assignments.</p>
+<p>So 25% of the assignment will already be done in class!</p>
+<p>Practicing by working through code at your own time is the only way to actually learn coding.</p>
+</section>
 </section>
 <section id="course-topics-schedule" class="level2">
 <h2 class="anchored" data-anchor-id="course-topics-schedule">Course Topics / Schedule</h2>
@@ -242,9 +277,9 @@ ul.task-list li input[type="checkbox"] {
 subject to change</em>. See <a href="https://bios-538.github.io/">course website</a> for most up to date version.</p>
 <table class="table">
 <colgroup>
-<col style="width: 3%">
-<col style="width: 22%">
-<col style="width: 74%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 63%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -272,7 +307,7 @@ subject to change</em>. See <a href="https://bios-538.github.io/">course website
 <tr class="even">
 <td>18/Jan</td>
 <td>Data wrangling in R with <code>tidyverse</code>, <code>dplyr</code></td>
-<td></td>
+<td>Load data from <code>.csv</code> or <code>excel</code> file, commands to arrange rows and columns</td>
 </tr>
 <tr class="odd">
 <td>23/Jan</td>
@@ -372,7 +407,7 @@ subject to change</em>. See <a href="https://bios-538.github.io/">course website
 <tr class="even">
 <td>4-9/Apr</td>
 <td>TBD based on feedback (2 classes)</td>
-<td></td>
+<td><em>Will push further to expand initial few topics if people are struggling..</em></td>
 </tr>
 <tr class="odd">
 <td>11/Apr</td>
@@ -440,14 +475,8 @@ subject to change</em>. See <a href="https://bios-538.github.io/">course website
 </ul></li>
 <li>Nice slides for basics of R - <a href="https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html">tinystats/teacups-giraffes-and-statistics course/module 1</a></li>
 </ul>
-</section>
-</section>
-<section id="lecture-slides" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-slides">Lecture slides</h2>
-<ul>
-<li>Uploading soon! (date : 9/Jan/24)</li>
-</ul>
 <hr>
+</section>
 </section>
 <section id="classroom-policies" class="level2">
 <h2 class="anchored" data-anchor-id="classroom-policies">Classroom policies</h2>
@@ -458,7 +487,7 @@ subject to change</em>. See <a href="https://bios-538.github.io/">course website
 </section>
 <section id="late-submissions" class="level3">
 <h3 class="anchored" data-anchor-id="late-submissions">Late submissions</h3>
-<p>You are automatically entitled to two late submissions throughout the course. Any additional late submissions have a penalty of 10% of the grade for that assignment</p>
+<p>You are automatically entitled to two late submissions throughout the course. Any additional late submissions have a penalty of 10% of the grade for that assignment. If you need any accommodations please email the instructor.</p>
 <p>In addition, the policy for religious holidays under <strong>Attendance</strong> extends into late submissions - if you have a religious holiday that occurs on the day of or the day before an assignment is due, please let me know and I can provide an additional extension.</p>
 </section>
 <section id="communication-policy" class="level3">
@@ -505,8 +534,6 @@ subject to change</em>. See <a href="https://bios-538.github.io/">course website
 <section id="attributions" class="level2">
 <h2 class="anchored" data-anchor-id="attributions">Attributions</h2>
 <p>This course was taught by Prof.&nbsp;Lydia Beadrout for 6 years and materials from the spring 2023 course were heavily relied upon to create the current course. Classroom policies for this page were verbatim borrowed from my wife, <a href="https://cafgroup.rice.edu/home/people/swethasridhar/">Swetha Sridhar</a>.</p>
-<!-- Slides for the lectures can be accessed online here -->
-<!-- - [Lecture 1](_slides/lecture01/lecture01.html) -->
 
 
 </section>
