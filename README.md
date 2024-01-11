@@ -10,6 +10,8 @@ There will be a series of problem sets posted on the course website with instruc
 
 **Instructor**: Dr. Prashant Kalvapalle (he/him), Lecturer + Postdoctoral researcher, Biosciences, Rice University
 
+![](slides/img/prashant.png){width="333"}
+
 **Location**: BRC 282 (*or via zoom with prior permission*)
 
 **Time**: Tuesdays and Thursdays. 2:30-3:45 pm
@@ -18,30 +20,36 @@ There will be a series of problem sets posted on the course website with instruc
 
 **Office**: Keck 205
 
-**Office hours**: Friday, 3-3:45 pm (*in person),* 3:45 - 4:30 pm (*on zoom*)
+**Office hours**: Friday, 3-4 pm, Keck 305 (*in person + zoom*)
+
+*Note:* You will find the zoom links on the canvas website for the course
 
 ## TAS
 
 ### Annie Finneran
 
-PhD student in Ecology & Evolutionary Biology
+![](slides/img/annie.jpg){width="333"}
+
+PhD student in Ecology & Evolutionary Biology ([website](https://anniefinneran.weebly.com/))
 
 **Email**: af58 \[at\] rice.edu.
 
-**Office hours**: Tuesdays 11:30 am -- 12:30 pm, ABL 105
+**Office hours**: Tuesdays 11:30 am -- 12:30 pm, ABL 100 (*in person + zoom*)
 
 ### Sam Schwartz
 
-PhD student in Systems, Synthetic and Physical Biology
+![](slides/img/sam.jpg){width="333"}
+
+PhD student in Systems, Synthetic and Physical Biology ([website](https://www.linkedin.com/in/samuel-schwartz29/))
 
 **Email**: Sam.Schwartz \[at\] rice.edu
 
-**Office hours**: Mondays, 3 - 4 pm, Keck 305 *conference room*
+**Office hours**: Mondays, 3 - 4 pm, Keck 305 (*in person + zoom*)
 
 ## Assessment
 
 | Assignment      | Total grade | Details                                                                      |
-|-----------------|-------------|------------------------------------------------------------------------------|
+|-------------|-------------|---------------------------------------------|
 | Attendance      | 10%         | *on zoom with permission*                                                    |
 | Participation   | 10%         | online discussion board (*ask/answer*), office hours, in-class participation |
 | Problem sets    | 40%         |                                                                              |
@@ -61,17 +69,47 @@ PhD student in Systems, Synthetic and Physical Biology
 -   D 60-69
 -   F \<60
 
+### Assignment timelines
+
+-   *Thursday*: Assignment uploaded and introduced in class
+
+-   Get help in office hours during the week
+
+-   ***Friday 7 pm***: submission
+
+-   *Next Thursday*: Brief discussion on the previous week's assignment, common mistakes
+
+-   *Next Saturday*: receive your grades and feedback from TAs
+
+Again, if you need any accommodations for particular submissions please email the instructor.
+
+### How challenging will it be if I am very new to `R`? {.smaller}
+
+I believe that if you have one undergraduate level course where you **learnt** to code in **any programming language**, it should not be too challenging to pickup `R` syntax with 3 weeks of practice.
+
+That said, the examples we walk through in class and working on the assignments (*with help from very enthusiastic TAs*) will be great resources to guide the learning process.
+
+This classroom is a safe space, so no question is too simple or too "silly" to ask.
+
+### There are many assignments, seems like a lot of work?
+
+The lectures are structured to be interspersed with **5-10 min** coding sessions where we will walk everyone through stuff. You essentially save all the work we did in class, and add to that by working on your own time for the assignments.
+
+So 25% of the assignment will already be done in class!
+
+Practicing by working through code at your own time is the only way to actually learn coding.
+
 ## Course Topics / Schedule
 
 Below is a general description of the material to be covered. *Note that topics and dates are\
 subject to change*. See [course website](https://bios-538.github.io/) for most up to date version.
 
 | Date      | Topic                                                              | Details                                                                                                                                                                                                                         |
-|-----------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-------------|-------------|----------------------------------------------|
 | 9/Jan     | Introductions and installations                                    |                                                                                                                                                                                                                                 |
 | 11/Jan    | Refresher in statistics, *hands-on activity*                       | working with distributions - *without a computer*                                                                                                                                                                               |
 | 16/Jan    | R basics, working in Rstudio                                       | navigating Rstudio, syntax, data types, functions, data frames/tibbles, debugging and looking for help.                                                                                                                         |
-| 18/Jan    | Data wrangling in R with `tidyverse`, `dplyr`                      |                                                                                                                                                                                                                                 |
+| 18/Jan    | Data wrangling in R with `tidyverse`, `dplyr`                      | Load data from `.csv` or `excel` file, commands to arrange rows and columns                                                                                                                                                     |
 | 23/Jan    | Data wrangling **workshop**                                        | re-hash concepts from the last 2 classes, get students to wrangle data to answer a question                                                                                                                                     |
 | 25/Jan    | `ggplot()` plotting                                                | `ggplot`, `geom_point()` and `geom_line()`, interactive plots with `plotly::ggplotly()`. What should you show in a plot?                                                                                                        |
 | 30/Jan    | Version control using `git`                                        | why version control? Setup git with Rstudio. Learn some command line basics : `cd`, `ls`, `git add, git commit`, `grep "function-name"`                                                                                         |
@@ -91,7 +129,7 @@ subject to change*. See [course website](https://bios-538.github.io/) for most u
 | 26/Mar    | Bootstrapping in R                                                 | *using a vectorized workflow to achieve bootstrapping and simple hypothesis testing*                                                                                                                                            |
 | 28/Mar    | Working with higher dimensional data                               | explain dimensionality reduction concept. Techniques: `PCA`, weighted techniques, clustering. *likely using sequencing microbiome datasets examples*                                                                            |
 | 2/Apr     | critique statistics from a research article, **workshop**          | using `Rmd/quarto` to recreate statistics from a published paper, finding faults, redoing analysis with better methods                                                                                                          |
-| 4-9/Apr   | TBD based on feedback (2 classes)                                  |                                                                                                                                                                                                                                 |
+| 4-9/Apr   | TBD based on feedback (2 classes)                                  | *Will push further to expand initial few topics if people are struggling..*                                                                                                                                                     |
 | 11/Apr    | Student presentations 1                                            |                                                                                                                                                                                                                                 |
 | 16/Apr    | Student presentations 2                                            |                                                                                                                                                                                                                                 |
 | 18/Apr    | Student presentations 3                                            |                                                                                                                                                                                                                                 |
@@ -143,10 +181,6 @@ There is no single textbook for the course. There will be multiple references, m
     -   Regression and tidymodels
 -   Nice slides for basics of R - [tinystats/teacups-giraffes-and-statistics course/module 1](https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html)
 
-## Lecture slides
-
--   Uploading soon! (date : 9/Jan/24)
-
 ------------------------------------------------------------------------
 
 ## Classroom policies
@@ -159,7 +193,7 @@ Aside from excused absences, you are permitted to absences for *religious holida
 
 ### Late submissions
 
-You are automatically entitled to two late submissions throughout the course. Any additional late submissions have a penalty of 10% of the grade for that assignment
+You are automatically entitled to two late submissions throughout the course. Any additional late submissions have a penalty of 10% of the grade for that assignment. If you need any accommodations please email the instructor.
 
 In addition, the policy for religious holidays under **Attendance** extends into late submissions - if you have a religious holiday that occurs on the day of or the day before an assignment is due, please let me know and I can provide an additional extension.
 
