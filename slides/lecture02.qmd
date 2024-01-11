@@ -9,8 +9,12 @@ format:
     slide-number: true # show slide number
     hide-inactive-cursor: true # hide mouse pointer unless moved?
     reference-location: document # put references at the end
+execute: 
+  echo: false
 editor: visual
 ---
+
+# Quick announcements
 
 ## Quick recap: last class
 
@@ -58,7 +62,9 @@ Please do finish the coding task at hand even if it seems too easy. *There surel
 
 . . .
 
-Try to help your peers and neighbors during the class. *if you want to do this at scale, ie) for multiple lectures / be open for other students reaching out, contact me and you will get extra credit with a micro TA designation* `r emo::ji('wink')`
+Try to help your peers and neighbors during the class.
+
+-   *if you want to do this at scale, ie) for multiple lectures / be open for other students reaching out, contact me and you will get extra credit with a micro TA designation* `r emo::ji('wink')`
 
 . . .
 
@@ -98,7 +104,7 @@ This way *for statistics*
 ::: {.column width="70%"}
 ```{mermaid}
 flowchart LR
-  A[Data population   ] --> B(Sampling  ) --> C(Distribution  ) --> D[Analyses   ]
+  A[Data population     ] --> B(Sampling    ) --> C(Distribution    ) --> D[Analyses     ]
 ```
 :::
 :::
@@ -121,7 +127,7 @@ Dice rolls
 
 ![random variable = \[1, 2, 3, 4, 5, 6\]](img/dice.png){width="406"} [^3]
 
-outcomes = \[1, 2, 3, 4, 5, 6\]
+outcomes: \[1, 2, 3, 4, 5, 6\]
 :::
 :::
 
@@ -186,7 +192,7 @@ These plots are called **histograms**. Each bar shows a **bin** of multiple data
 
 It does look uniform when a large number of points are sampled. Here I did 3,000 points
 
-```{r fairdicelarge, fig.height=6}
+```{r fairdicelarge, fig.height=4}
 # set.seed(212) # for reproducible random numbers  
 more_fair_dice <- sample(1:6, 3000, replace = T)  
 hist(more_fair_dice, breaks = 0.5:6.5, xlab = NULL)
@@ -220,6 +226,20 @@ uniform distribution has the most randomness (*maximum uncertainty*) since every
 
 ## Let us start forming teams now!
 
+Teams
+
+-   5 mins to form teams
+
+-   5 mins to get to know each other
+
+    -   Where are you from?
+
+    -   What field are you in?
+
+Data seekers
+
+-   TAs will explain the process now
+
 ## task 1. Histogram: distribute the data into bins
 
 show demo: \~ 5-10 data points
@@ -230,7 +250,7 @@ show demo: \~ 5-10 data points
 
     -   Take the marker pen from first bench and mark the topmost data and the chart paper above it as well
 
-## task 2. Find central values
+## task 2. Find central values {.smaller}
 
 A single value that can describe the whole distribution (*to an approximation*)
 
@@ -246,7 +266,7 @@ Mark each of these quantities visually on the chart below the distribution (*app
 :::
 
 ::: {.column width="50%"}
-![](img/visualisation_mode_median_mean.png){fig-alt="wikipedia visual showing mode, median and mean"}
+![](img/visualisation_mode_median_mean.png){fig-alt="wikipedia visual showing mode, median and mean" width="234"}
 :::
 :::
 
@@ -266,7 +286,7 @@ Mark each of these quantities visually on the chart below the distribution (*app
 
 -   Together both teams will assemble two histograms in the same chart (*start from any groups*) ; and mark the tops of the guest group for easy visualization
 
-## task 4.2 Hypothesis testing: are two different samples identical?
+## task 4.2 Hypothesis testing: are two different samples identical?  {.smaller}
 
 **Quantitative value**: But we need to depend on more concrete statistics than gut feeling, hence we do hypothesis testing using t.tests.
 
@@ -290,13 +310,11 @@ It was \~normally distributed, and standard deviations were all the same hence a
 ::: {.column width="50%"}
 ![](img/lec2_density.png)
 :::
-
-##  
 :::
 
 # Summary
 
-## Today's class
+## Today's class summarized
 
 -   We distribute data into **bins** to form a **histogram.**
 
@@ -305,3 +323,7 @@ It was \~normally distributed, and standard deviations were all the same hence a
     -   Mean +/- Standard Deviation
 
 -   We **compare** two (*or more..*) distributions of data using hypothesis tests, by starting with a **null hypothesis** and finding evidence against it.
+
+## Reminder: assignment 1
+
+Take the data-points and the chart with you and explore more while doing the assignment. *Note: Groups are working together, but we want each individual to turn-in their own report so they get better understanding while writing*
