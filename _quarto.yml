@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  # resources: 
+    # - "_xaringan_slides/lecture01/*" # can add resources / pre-built pages. Needs testing!
+    # - "_xaringan_slides/lecture01/img/*"
 
 execute:
   freeze: auto  # re-render only when source changes
@@ -11,7 +14,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      # - about.qmd
+      - href: slides/slides.qmd
+        text: Lecture slides
   repo-url: https://github.com/BIOS-538.github.io # links to github
   repo-actions: [edit, issue]  
     

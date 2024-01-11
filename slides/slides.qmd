@@ -5,4 +5,5 @@ editor: visual
 
 Slides for the lectures can be accessed here
 
--   [Lecture 1](_slides/lecture01.qmd)
+-   Class 1 : to be uploaded
+-   [Class 2](lecture02.qmd) : 11/Jan/24
