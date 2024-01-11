@@ -50,7 +50,7 @@ Practicing by working through code at your own time is the only way to actually 
 
 -   *Next Thursday*: Brief discussion on the previous week's assignment, common mistakes
 
--   Next Saturday: receive your grades and feedback from TAs
+-   *Next Saturday*: receive your grades and feedback from TAs
 
 ## Would I be bored in the first 2 lectures if I already know stuff? {.smaller}
 
@@ -276,9 +276,23 @@ Mark each of these quantities visually on the chart below the distribution (*app
 
     -   Also do another test comparing to another group from the same population.
 
-<!-- -->
-
 -   Rule of thumb: if the `p.value < 0.05` ; then the data-sets have very little likelihood of being sampled from the same distribution.
+
+## How does the population you sampled from look like?
+
+It was \~normally distributed, and standard deviations were all the same hence assumptions for doing `t.test` were met!
+
+::: columns
+::: {.column width="50%"}
+![](img/lec2_histogram.png)
+:::
+
+::: {.column width="50%"}
+![](img/lec2_density.png)
+:::
+
+##  
+:::
 
 # Summary
 

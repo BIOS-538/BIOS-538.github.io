@@ -48,14 +48,49 @@ histogram_plots <-
                    values_to = 'random_number') %>%  # numbers here
       
       {ggplot(aes(x = random_number, fill = series), data = .) + 
-          geom_histogram(alpha = 0.2) +
+          geom_histogram(alpha = 0.2, binwidth = 1) +
           scale_fill_manual(values = c('black', '#0072b2', '#e69f00')) # colour the distributions
       }
   )
       
 histogram_plots[[1]] / histogram_plots[[2]]
 
+# rounded-off data (final)
+histogram_plots[[2]]
+
 ```
+
+```{r functiondist}
+
+distribution_plot_wrapper <-function(.data = rounded_rands, .geom = 'histogram')
+{
+  pivot_longer(.data,
+                   cols = -c(rowid, colid), # remove id columns for this plot
+                   names_to = 'series', # bring all series into the same column: labels here
+                   values_to = 'random_number') %>%  # numbers here
+      
+      {ggplot(aes(x = random_number, fill = series), data = .) + 
+          
+          scale_fill_manual(values = c('black', '#0072b2', '#e69f00')) +  # colour the distributions
+          theme_classic()
+      }
+  
+}
+
+```
+
+
+```{r}
+
+distribution_plot_wrapper() + geom_histogram(alpha = 0.2, binwidth = 1)
+ggsave('../../slides/img/lec2_histogram.png', width = 6, height = 4)
+
+distribution_plot_wrapper() + geom_density(alpha = 0.2)
+ggsave('../../slides/img/lec2_density.png', width = 6, height = 4)
+
+
+```
+
 
 ```{r formattingdata}
 
