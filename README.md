@@ -49,7 +49,7 @@ PhD student in Systems, Synthetic and Physical Biology ([website](https://www.li
 ## Assessment
 
 | Assignment      | Total grade | Details                                                                      |
-|-------------|-------------|---------------------------------------------|
+|--------------|--------------|---------------------------------------------|
 | Attendance      | 10%         | *on zoom with permission*                                                    |
 | Participation   | 10%         | online discussion board (*ask/answer*), office hours, in-class participation |
 | Problem sets    | 40%         |                                                                              |
@@ -99,61 +99,27 @@ So 25% of the assignment will already be done in class!
 
 Practicing by working through code at your own time is the only way to actually learn coding.
 
-## Course Topics / Schedule
-
-Below is a general description of the material to be covered. *Note that topics and dates are\
-subject to change*. See [course website](https://bios-538.github.io/) for most up to date version.
-
-| Date      | Topic                                                              | Details                                                                                                                                                                                                                         |
-|-------------|-------------|----------------------------------------------|
-| 9/Jan     | Introductions and installations                                    |                                                                                                                                                                                                                                 |
-| 11/Jan    | Refresher in statistics, *hands-on activity*                       | working with distributions - *without a computer*                                                                                                                                                                               |
-| 16/Jan    | R basics, working in Rstudio                                       | navigating Rstudio, syntax, data types, functions, data frames/tibbles, debugging and looking for help.                                                                                                                         |
-| 18/Jan    | Data wrangling in R with `tidyverse`, `dplyr`                      | Load data from `.csv` or `excel` file, commands to arrange rows and columns                                                                                                                                                     |
-| 23/Jan    | Data wrangling **workshop**                                        | re-hash concepts from the last 2 classes, get students to wrangle data to answer a question                                                                                                                                     |
-| 25/Jan    | `ggplot()` plotting                                                | `ggplot`, `geom_point()` and `geom_line()`, interactive plots with `plotly::ggplotly()`. What should you show in a plot?                                                                                                        |
-| 30/Jan    | Version control using `git`                                        | why version control? Setup git with Rstudio. Learn some command line basics : `cd`, `ls`, `git add, git commit`, `grep "function-name"`                                                                                         |
-| 6/Feb     | Rmarkdown/quarto to produce reports                                | motivation for reproducible data analysis, *benefits of keeping thoughts, code and outputs in one document*                                                                                                                     |
-| 8/Feb     | Data -\> figure pipeline from a research article, **workshop**     | using `Rmd/quarto` to walk through the steps required to reproduce plots from a published paper                                                                                                                                 |
-| 13/Feb    | Normal-distributions                                               | \_understand central limit theorem intuitively + using R simulations; why \~normal is a useful default. Learn cases when it doesn't apply. Students distribution is got by sampling from a normal and calculating the mean.     |
-| 15/Feb    | Intro to hypothesis testing (*t-tests*)                            | experimental science usually involves comparisons =\> hence hypothesis testing to compare distributions / means. *Concept: Students t-distribution is got by sampling from a normal and calculating the mean.*                  |
-| 20/Feb    | Problems with p-values                                             | motivate misunderstandings people have, how p-values contribute to non-reproducible science. *Touch upon Surprise value (S-value) ; alternatives : bayesian t.test - when to use them*                                          |
-| 22/Feb    | Linear regression (*2 dimensional data*)                           | 2D data with one independent variable. *Rehash straight line equation:* `y = mx + c`. \_show an interactive tutorial on how fitting works. Show `geom_smooth()` in R.                                                           |
-| 27/Feb    | Linear regression fitting                                          | key concept is the % of variance explained by the fit. *Do `lm` and show how to interpret results and p.values*                                                                                                                 |
-| 5/Mar     | Re-capitulate t-tests using linear regression fitting              | *hypothesis testing is akin to fitting 1D data + 2nd D of categorical variable*                                                                                                                                                 |
-| 7/Mar     | Data -\> statistics pipeline from a research article, **workshop** | using `Rmd/quarto` to walk through the steps required to reproduce statistics from a published paper                                                                                                                            |
-| 9-17/Mar  | *Spring break*                                                     | no class                                                                                                                                                                                                                        |
-|           |                                                                    |                                                                                                                                                                                                                                 |
-| 19/Mar    | Non-linear regressions                                             | examples: *fitting dose-response curves and bacterial growth curves*. Explain why initial conditions matter for nls, using self starting functions. `map; safely() workflow` to avoid breaking code due to convergence issues\_ |
-| 21/Mar    | Bootstrapping                                                      | benefits: *a better non-parametric test without making any assumptions about the data distribution*                                                                                                                             |
-| 26/Mar    | Bootstrapping in R                                                 | *using a vectorized workflow to achieve bootstrapping and simple hypothesis testing*                                                                                                                                            |
-| 28/Mar    | Working with higher dimensional data                               | explain dimensionality reduction concept. Techniques: `PCA`, weighted techniques, clustering. *likely using sequencing microbiome datasets examples*                                                                            |
-| 2/Apr     | critique statistics from a research article, **workshop**          | using `Rmd/quarto` to recreate statistics from a published paper, finding faults, redoing analysis with better methods                                                                                                          |
-| 4-9/Apr   | TBD based on feedback (2 classes)                                  | *Will push further to expand initial few topics if people are struggling..*                                                                                                                                                     |
-| 11/Apr    | Student presentations 1                                            |                                                                                                                                                                                                                                 |
-| 16/Apr    | Student presentations 2                                            |                                                                                                                                                                                                                                 |
-| 18/Apr    | Student presentations 3                                            |                                                                                                                                                                                                                                 |
-| 24-30/Apr | Final exam                                                         |                                                                                                                                                                                                                                 |
-
 ## Textbooks/Reference material
 
 There is no single textbook for the course. There will be multiple references, mostly from free textbooks or materials available online. All required readings and supplementary materials will be posted on the course website. All code and data files will also be posted on the course canvas site. Code and data files will typically be made available before class meetings; slides will be posted afterwards.
 
-### Open textbooks on R and statistics
+### Textbooks on general R / data science topics
 
--   [Modern statistics with R](https://modernstatisticswithr.com/index.html)
-
--   [Statistical Thinking for the 21st Century (Poldrack)](https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Statistical_Thinking_for_the_21st_Century_(Poldrack)) : Libre text - Simulation, bayesian?
-
--   [An introduction to data analysis](https://michael-franke.github.io/intro-data-analysis/Chap-01-00-intro-learning-goals.html)
-
--   Introduction to Statistics with R : [Libre text](https://stats.libretexts.org/Courses/Cerritos_College/Introduction_to_Statistics_with_R) -- lot of basics, hypothesis testing?
+-   [R manuals](https://rstudio.github.io/r-manuals/r-intro/): *Nice manual detailing lot of R usage in a nice website format*
 
 -   [Fundamentals of data visualization](https://clauswilke.com/dataviz/index.html)
 
--   [R for Data Science](https://r4ds.hadley.nz/)
+-   [R for Data Science](https://r4ds.hadley.nz/) : *nice guide to load, transform and visualize data*. From Hadley Wickham, one of the R/Tidyverse pioneers
 
-    -   [Happy Git and GitHub for the useR](https://happygitwithr.com)
+-   [Advanced R](https://adv-r.hadley.nz/): (Hadley Wickham): *Improvement for R users/other language programmers. Functional programming, meta-programming, debugging, performance*
+
+-   [Happy Git and GitHub for the useR](https://happygitwithr.com)
+
+-   Other uses of R for graphics, reports, general automation in [R without Statistics](https://book.rwithoutstatistics.com/) *by David Keyes*
+
+### Open textbooks on R and statistics
+
+-   [Modern statistics with R](https://modernstatisticswithr.com/index.html)
 
 -   Statistical Inference via Data Science : A ModernDive into R and the Tidyverse - [moderndive](https://moderndive.com/)
 
@@ -161,12 +127,19 @@ There is no single textbook for the course. There will be multiple references, m
 
 -   Tidy Modeling with R -[Tmwr](https://www.tmwr.org/) : *how to use tidymodels packages ; develop good statistical practice*
 
+-   [An introduction to data analysis](https://michael-franke.github.io/intro-data-analysis/Chap-01-00-intro-learning-goals.html): *R-data, plots; general logic of statistical inference, assess statistical analyses from literature*
+
 -   Foundations in Statistical Reasoning (Kaslik) - [libretexts](https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Foundations_in_Statistical_Reasoning_(Kaslik))
 
--   Other uses of R for graphics, reports, general automation in [R without Statistics](https://book.rwithoutstatistics.com/) *by David Keyes*
+-   [Statistical Thinking for the 21st Century (Poldrack)](https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Statistical_Thinking_for_the_21st_Century_(Poldrack)) : Libre text - Simulation, bayesian?
+
+-   Introduction to Statistics with R : [Libre text](https://stats.libretexts.org/Courses/Cerritos_College/Introduction_to_Statistics_with_R) -- lot of basics, hypothesis testing?
 
 ### Open online courses
 
+-   [Reproducible research in R](https://r-cubed-intro.rostools.org/): Beginner 3 day workshop. *R, version control, data wrangling, reproducible documents, visualization*
+    -   Also has: [Intermediate](https://r-cubed-intermediate.rostools.org/): *focus on speed, functional programming, join data, pivots*;
+    -   And [advanced](https://r-cubed-advanced.rostools.org/) modules: *collaboration, automatic analysis pipelines, publicizing via a website*
 -   Allison horst's [Intro data analysis and stats](https://github.com/allisonhorst/esm-206-2018/) : Google slides and exercise material available
 -   [Intro to R for biologists](https://expand.iu.edu/browse/rt/courses/r-for-biologists) : Check out syllabus, \_how to get course material?
 -   Computational biology foundations - [syllabus](http://steipe.biochemistry.utoronto.ca/bio/CSB195-syllabus.html)
