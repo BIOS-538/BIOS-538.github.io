@@ -286,7 +286,7 @@ Mark each of these quantities visually on the chart below the distribution (*app
 
 -   Together both teams will assemble two histograms in the same chart (*start from any groups*) ; and mark the tops of the guest group for easy visualization
 
-## task 4.2 Hypothesis testing: are two different samples identical?  {.smaller}
+## task 4.2 Hypothesis testing: are two different samples identical? {.smaller}
 
 **Quantitative value**: But we need to depend on more concrete statistics than gut feeling, hence we do hypothesis testing using t.tests.
 
