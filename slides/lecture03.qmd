@@ -1,0 +1,202 @@
+---
+title: "class 3: R basics"
+author: "Prashant K"
+date: 18/Jan/24
+format: 
+  revealjs:
+    mouse-wheel: true # scroll through slides
+    slide-number: true # show slide number
+    hide-inactive-cursor: true # hide mouse pointer unless moved?
+    reference-location: document # put references at the end
+execute: 
+  echo: false
+editor: visual
+---
+
+# Recap
+
+-   class 2: Made our own histograms by binning data, understand mean, median and comparing 2 distributions
+
+-   class 1: installed R, Rstudio and `tidyverse` package
+
+    -   If you already had these installed, check that they are the latest versions or re-install
+
+        -   R : `version` = 4.3.2 ; Rstudio (2022 or 2023 versions) ; tidyverse (just update it if you haven't installed last week with `install.packages('tidyverse')`
+
+# Today's class {.smaller}
+
+-   Refresh: directory structure, `.Rproj`ect, `R` script
+
+-   Introduce R datatypes: {*tip: check datatype with* `class()}`
+
+    -   Simple: `numeric`, `character`. Other simple: `factor`, `logical`
+
+    -   Compound: *combination of simple datatypes*: vector = `c(x, y)`, `list(x, y)`, `data.frame()` ; \[*won't cover:* `matrix()`, `array()`\]
+
+    -   Good practices: Commenting code for documentation. `# this code does x (if I get it to work)`
+
+-   Subset compound datatypes
+
+-   Control statements: *decision making*: `if()` and *repeat steps in a loop*: `for()`
+
+Key reference : [base R cheatsheet](https://geomoer.github.io/moer-base-r/assets/data/cheatsheets/base-r.pdf).PDF
+
+## Refresh / Rstudio overview
+
+![](img/Rstudio_overview.png)
+
+## Refresh/setting up
+
+-   `.Rproj`ect file: works from the current directory, saves history of R commands, and all scripts that were open last time.
+
+-   `.R` script: A place where you save lines of R code and can run them all from top to bottom with one click or a command : `source('..R')`
+
+## Refresh / setting up  {.incremental}
+
+-   directory structure:
+
+::: columns
+::: {.column width="50%"}
+Directory structure
+
+BIOS_338-538_class/
+├── BIOS_338-538_class.Rproj
+├── scripts/
+│ └── class3.R
+├── data/
+│ └── file1.csv
+└── plots/
+└── plots_will_go_here.png
+:::
+
+::: {.column width="50%"}
+bash/terminal commands
+
+-   `mkdir`: make directory
+
+-   `cd`: change directory
+
+-   `ls`: list files and directories
+
+-   `touch x.txt`: make a empty files with any extension, ex: `x.txt`
+:::
+:::
+
+## Overview of all programming
+
+1.  Take simple datatypes: `1` ; `"apple"`, `TRUE`
+
+2.  Combine into complex data types: `c(1, 3, 5, 7)` / `c('apples', 'oranges')` ; `list( numbers, fruits..)`
+
+3.  Make decisions: `if(x > 3) "apples are too sweet"`
+
+4.  Repeat actions with only slight changes: `for(i in 1:5) do something with each i`
+
+5.  Make concise code by reusing parts as functions: `do_magic <- function(x) {"x + magic here"}`
+
+# Practice alongside me
+
+Use the script: `class3_R-basics.R` from **Canvas/files/** to follow along
+
+## Simple datatypes
+
+::: panel-tabset
+## Datatypes
+
+![](img/simple_datatypes.png)
+
+## Variable assignment
+
+![](img/variable_assignment.png)
+
+## R commands
+
+Making these datatypes in R ; assigning to a variable
+
+-   numeric: `x <- 35`
+
+-   character: `y <- 'apples'`
+
+-   logical: `a <- TRUE` ; `b <- F` ; `c <- T`
+
+-   factor:
+:::
+
+## Compound datatypes
+
+-   *combination of simple datatypes*: vector = `c(x, y)`, `list(x, y)`, `data.frame(x1 = x, x2 = y)`
+
+::: panel-tabset
+### vector
+
+![](img/creating_vectors.png)
+
+### list
+
+![](img/lists_intro.png)
+
+When printed, the list looks like this
+
+```{r}
+l <- list(x = 1:5, y = c('a', 'b'))
+l
+```
+
+### factor
+
+A vector where entries are ordered and stored as "levels"
+
+Use cases
+
+-   Order of colours assigned when plotting stuff
+
+-   Analyzing categorical questionnaires
+:::
+
+## Subset compound datatypes
+
+-   vectors: `x[3]`, `x[x>0]`,
+
+-   Lists and dataframes:
+
+    -   whole row/column `list$x1` or `dataframe$x1` or `dataframe[ , 2]`
+
+    -   Single entry: `dataframe[1,5]`
+
+## Programming = control which statements are executed
+
+-   Control statements: *decision making*: `if()` and *repeat steps in a loop*: `for()`
+
+`if..else` :
+
+```{r echo=TRUE, eval=FALSE}
+if (condition){
+  "Do something"
+} else {
+  "Do something different"
+}
+```
+
+`for()` loops
+
+```{r echo=TRUE, eval=FALSE}
+for (variable in sequence){
+  "Do something with the variable"
+}
+```
+
+## Recap: Today's class
+
+-   Refresh: directory structure, `.Rproj`ect, `R` script, directory structure
+
+-   Introduce R datatypes: {*tip: check datatype with* `class()}`
+
+    -   Simple: `numeric`, `character`. Other simple: `factor`, `logical`
+
+    -   Compound: *combination of simple datatypes*: vector = `c(x, y)`, `list(x, y)`, `data.frame()`
+
+    -   Good practices: Commenting code for documentation. `# this code does x (if I get it to work)`
+
+-   Subset/indexing compound datatypes: `x[3]`, `x[x>0]`, `dataframe[1,5]`
+
+-   Control statements: *decision making*: `if()` and *repeat steps in a loop*: `for()` or vectorize using functions
