@@ -93,8 +93,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./slides/slides.html"> 
-<span class="menu-text">Lecture slides</span></a>
+    <a class="nav-link" href="./slides/class_schedule.html"> 
+<span class="menu-text">Class schedule &amp; Lecture slides</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -127,9 +127,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#how-challenging-will-it-be-if-i-am-very-new-to-r" id="toc-how-challenging-will-it-be-if-i-am-very-new-to-r" class="nav-link" data-scroll-target="#how-challenging-will-it-be-if-i-am-very-new-to-r">How challenging will it be if I am very new to <code>R</code>?</a></li>
   <li><a href="#there-are-many-assignments-seems-like-a-lot-of-work" id="toc-there-are-many-assignments-seems-like-a-lot-of-work" class="nav-link" data-scroll-target="#there-are-many-assignments-seems-like-a-lot-of-work">There are many assignments, seems like a lot of work?</a></li>
   </ul></li>
-  <li><a href="#course-topics-schedule" id="toc-course-topics-schedule" class="nav-link" data-scroll-target="#course-topics-schedule">Course Topics / Schedule</a></li>
   <li><a href="#textbooksreference-material" id="toc-textbooksreference-material" class="nav-link" data-scroll-target="#textbooksreference-material">Textbooks/Reference material</a>
   <ul class="collapse">
+  <li><a href="#textbooks-on-general-r-data-science-topics" id="toc-textbooks-on-general-r-data-science-topics" class="nav-link" data-scroll-target="#textbooks-on-general-r-data-science-topics">Textbooks on general R / data science topics</a></li>
   <li><a href="#open-textbooks-on-r-and-statistics" id="toc-open-textbooks-on-r-and-statistics" class="nav-link" data-scroll-target="#open-textbooks-on-r-and-statistics">Open textbooks on R and statistics</a></li>
   <li><a href="#open-online-courses" id="toc-open-online-courses" class="nav-link" data-scroll-target="#open-online-courses">Open online courses</a></li>
   </ul></li>
@@ -195,9 +195,9 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="assessment">Assessment</h2>
 <table class="table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 63%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 61%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -271,192 +271,41 @@ ul.task-list li input[type="checkbox"] {
 <p>Practicing by working through code at your own time is the only way to actually learn coding.</p>
 </section>
 </section>
-<section id="course-topics-schedule" class="level2">
-<h2 class="anchored" data-anchor-id="course-topics-schedule">Course Topics / Schedule</h2>
-<p>Below is a general description of the material to be covered. <em>Note that topics and dates are<br>
-subject to change</em>. See <a href="https://bios-538.github.io/">course website</a> for most up to date version.</p>
-<table class="table">
-<colgroup>
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 63%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Date</th>
-<th>Topic</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>9/Jan</td>
-<td>Introductions and installations</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>11/Jan</td>
-<td>Refresher in statistics, <em>hands-on activity</em></td>
-<td>working with distributions - <em>without a computer</em></td>
-</tr>
-<tr class="odd">
-<td>16/Jan</td>
-<td>R basics, working in Rstudio</td>
-<td>navigating Rstudio, syntax, data types, functions, data frames/tibbles, debugging and looking for help.</td>
-</tr>
-<tr class="even">
-<td>18/Jan</td>
-<td>Data wrangling in R with <code>tidyverse</code>, <code>dplyr</code></td>
-<td>Load data from <code>.csv</code> or <code>excel</code> file, commands to arrange rows and columns</td>
-</tr>
-<tr class="odd">
-<td>23/Jan</td>
-<td>Data wrangling <strong>workshop</strong></td>
-<td>re-hash concepts from the last 2 classes, get students to wrangle data to answer a question</td>
-</tr>
-<tr class="even">
-<td>25/Jan</td>
-<td><code>ggplot()</code> plotting</td>
-<td><code>ggplot</code>, <code>geom_point()</code> and <code>geom_line()</code>, interactive plots with <code>plotly::ggplotly()</code>. What should you show in a plot?</td>
-</tr>
-<tr class="odd">
-<td>30/Jan</td>
-<td>Version control using <code>git</code></td>
-<td>why version control? Setup git with Rstudio. Learn some command line basics : <code>cd</code>, <code>ls</code>, <code>git add, git commit</code>, <code>grep "function-name"</code></td>
-</tr>
-<tr class="even">
-<td>6/Feb</td>
-<td>Rmarkdown/quarto to produce reports</td>
-<td>motivation for reproducible data analysis, <em>benefits of keeping thoughts, code and outputs in one document</em></td>
-</tr>
-<tr class="odd">
-<td>8/Feb</td>
-<td>Data -&gt; figure pipeline from a research article, <strong>workshop</strong></td>
-<td>using <code>Rmd/quarto</code> to walk through the steps required to reproduce plots from a published paper</td>
-</tr>
-<tr class="even">
-<td>13/Feb</td>
-<td>Normal-distributions</td>
-<td>_understand central limit theorem intuitively + using R simulations; why ~normal is a useful default. Learn cases when it doesn’t apply. Students distribution is got by sampling from a normal and calculating the mean.</td>
-</tr>
-<tr class="odd">
-<td>15/Feb</td>
-<td>Intro to hypothesis testing (<em>t-tests</em>)</td>
-<td>experimental science usually involves comparisons =&gt; hence hypothesis testing to compare distributions / means. <em>Concept: Students t-distribution is got by sampling from a normal and calculating the mean.</em></td>
-</tr>
-<tr class="even">
-<td>20/Feb</td>
-<td>Problems with p-values</td>
-<td>motivate misunderstandings people have, how p-values contribute to non-reproducible science. <em>Touch upon Surprise value (S-value) ; alternatives : bayesian t.test - when to use them</em></td>
-</tr>
-<tr class="odd">
-<td>22/Feb</td>
-<td>Linear regression (<em>2 dimensional data</em>)</td>
-<td>2D data with one independent variable. <em>Rehash straight line equation:</em> <code>y = mx + c</code>. _show an interactive tutorial on how fitting works. Show <code>geom_smooth()</code> in R.</td>
-</tr>
-<tr class="even">
-<td>27/Feb</td>
-<td>Linear regression fitting</td>
-<td>key concept is the % of variance explained by the fit. <em>Do <code>lm</code> and show how to interpret results and p.values</em></td>
-</tr>
-<tr class="odd">
-<td>5/Mar</td>
-<td>Re-capitulate t-tests using linear regression fitting</td>
-<td><em>hypothesis testing is akin to fitting 1D data + 2nd D of categorical variable</em></td>
-</tr>
-<tr class="even">
-<td>7/Mar</td>
-<td>Data -&gt; statistics pipeline from a research article, <strong>workshop</strong></td>
-<td>using <code>Rmd/quarto</code> to walk through the steps required to reproduce statistics from a published paper</td>
-</tr>
-<tr class="odd">
-<td>9-17/Mar</td>
-<td><em>Spring break</em></td>
-<td>no class</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>19/Mar</td>
-<td>Non-linear regressions</td>
-<td>examples: <em>fitting dose-response curves and bacterial growth curves</em>. Explain why initial conditions matter for nls, using self starting functions. <code>map; safely() workflow</code> to avoid breaking code due to convergence issues_</td>
-</tr>
-<tr class="even">
-<td>21/Mar</td>
-<td>Bootstrapping</td>
-<td>benefits: <em>a better non-parametric test without making any assumptions about the data distribution</em></td>
-</tr>
-<tr class="odd">
-<td>26/Mar</td>
-<td>Bootstrapping in R</td>
-<td><em>using a vectorized workflow to achieve bootstrapping and simple hypothesis testing</em></td>
-</tr>
-<tr class="even">
-<td>28/Mar</td>
-<td>Working with higher dimensional data</td>
-<td>explain dimensionality reduction concept. Techniques: <code>PCA</code>, weighted techniques, clustering. <em>likely using sequencing microbiome datasets examples</em></td>
-</tr>
-<tr class="odd">
-<td>2/Apr</td>
-<td>critique statistics from a research article, <strong>workshop</strong></td>
-<td>using <code>Rmd/quarto</code> to recreate statistics from a published paper, finding faults, redoing analysis with better methods</td>
-</tr>
-<tr class="even">
-<td>4-9/Apr</td>
-<td>TBD based on feedback (2 classes)</td>
-<td><em>Will push further to expand initial few topics if people are struggling..</em></td>
-</tr>
-<tr class="odd">
-<td>11/Apr</td>
-<td>Student presentations 1</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>16/Apr</td>
-<td>Student presentations 2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>18/Apr</td>
-<td>Student presentations 3</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>24-30/Apr</td>
-<td>Final exam</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</section>
 <section id="textbooksreference-material" class="level2">
 <h2 class="anchored" data-anchor-id="textbooksreference-material">Textbooks/Reference material</h2>
 <p>There is no single textbook for the course. There will be multiple references, mostly from free textbooks or materials available online. All required readings and supplementary materials will be posted on the course website. All code and data files will also be posted on the course canvas site. Code and data files will typically be made available before class meetings; slides will be posted afterwards.</p>
+<section id="textbooks-on-general-r-data-science-topics" class="level3">
+<h3 class="anchored" data-anchor-id="textbooks-on-general-r-data-science-topics">Textbooks on general R / data science topics</h3>
+<ul>
+<li><p><a href="https://rstudio.github.io/r-manuals/r-intro/">R manuals</a>: <em>Nice manual detailing lot of R usage in a nice website format</em></p></li>
+<li><p><a href="https://clauswilke.com/dataviz/index.html">Fundamentals of data visualization</a></p></li>
+<li><p><a href="https://r4ds.hadley.nz/">R for Data Science</a> : <em>nice guide to load, transform and visualize data</em>. From Hadley Wickham, one of the R/Tidyverse pioneers</p></li>
+<li><p><a href="https://adv-r.hadley.nz/">Advanced R</a>: (Hadley Wickham): <em>Improvement for R users/other language programmers. Functional programming, meta-programming, debugging, performance</em></p></li>
+<li><p><a href="https://happygitwithr.com">Happy Git and GitHub for the useR</a></p></li>
+<li><p>Other uses of R for graphics, reports, general automation in <a href="https://book.rwithoutstatistics.com/">R without Statistics</a> <em>by David Keyes</em></p></li>
+</ul>
+</section>
 <section id="open-textbooks-on-r-and-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="open-textbooks-on-r-and-statistics">Open textbooks on R and statistics</h3>
 <ul>
 <li><p><a href="https://modernstatisticswithr.com/index.html">Modern statistics with R</a></p></li>
-<li><p><a href="https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Statistical_Thinking_for_the_21st_Century_(Poldrack)">Statistical Thinking for the 21st Century (Poldrack)</a> : Libre text - Simulation, bayesian?</p></li>
-<li><p><a href="https://michael-franke.github.io/intro-data-analysis/Chap-01-00-intro-learning-goals.html">An introduction to data analysis</a></p></li>
-<li><p>Introduction to Statistics with R : <a href="https://stats.libretexts.org/Courses/Cerritos_College/Introduction_to_Statistics_with_R">Libre text</a> – lot of basics, hypothesis testing?</p></li>
-<li><p><a href="https://clauswilke.com/dataviz/index.html">Fundamentals of data visualization</a></p></li>
-<li><p><a href="https://r4ds.hadley.nz/">R for Data Science</a></p>
-<ul>
-<li><a href="https://happygitwithr.com">Happy Git and GitHub for the useR</a></li>
-</ul></li>
 <li><p>Statistical Inference via Data Science : A ModernDive into R and the Tidyverse - <a href="https://moderndive.com/">moderndive</a></p>
 <p>&gt; <em>We have intentionally minimized the number of mathematical formulas used. Instead, you’ll develop a conceptual understanding of statistics using data visualization and computer simulations. We hope this is a more intuitive experience than the way statistics has traditionally been taught in the past and how it is commonly perceived.</em></p></li>
 <li><p>Tidy Modeling with R -<a href="https://www.tmwr.org/">Tmwr</a> : <em>how to use tidymodels packages ; develop good statistical practice</em></p></li>
+<li><p><a href="https://michael-franke.github.io/intro-data-analysis/Chap-01-00-intro-learning-goals.html">An introduction to data analysis</a>: <em>R-data, plots; general logic of statistical inference, assess statistical analyses from literature</em></p></li>
 <li><p>Foundations in Statistical Reasoning (Kaslik) - <a href="https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Foundations_in_Statistical_Reasoning_(Kaslik)">libretexts</a></p></li>
-<li><p>Other uses of R for graphics, reports, general automation in <a href="https://book.rwithoutstatistics.com/">R without Statistics</a> <em>by David Keyes</em></p></li>
+<li><p><a href="https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Statistical_Thinking_for_the_21st_Century_(Poldrack)">Statistical Thinking for the 21st Century (Poldrack)</a> : Libre text - Simulation, bayesian?</p></li>
+<li><p>Introduction to Statistics with R : <a href="https://stats.libretexts.org/Courses/Cerritos_College/Introduction_to_Statistics_with_R">Libre text</a> – lot of basics, hypothesis testing?</p></li>
 </ul>
 </section>
 <section id="open-online-courses" class="level3">
 <h3 class="anchored" data-anchor-id="open-online-courses">Open online courses</h3>
 <ul>
+<li><a href="https://r-cubed-intro.rostools.org/">Reproducible research in R</a>: Beginner 3 day workshop. <em>R, version control, data wrangling, reproducible documents, visualization</em>
+<ul>
+<li>Also has: <a href="https://r-cubed-intermediate.rostools.org/">Intermediate</a>: <em>focus on speed, functional programming, join data, pivots</em>;</li>
+<li>And <a href="https://r-cubed-advanced.rostools.org/">advanced</a> modules: <em>collaboration, automatic analysis pipelines, publicizing via a website</em></li>
+</ul></li>
 <li>Allison horst’s <a href="https://github.com/allisonhorst/esm-206-2018/">Intro data analysis and stats</a> : Google slides and exercise material available</li>
 <li><a href="https://expand.iu.edu/browse/rt/courses/r-for-biologists">Intro to R for biologists</a> : Check out syllabus, _how to get course material?</li>
 <li>Computational biology foundations - <a href="http://steipe.biochemistry.utoronto.ca/bio/CSB195-syllabus.html">syllabus</a>
@@ -923,8 +772,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>&amp;copy 2024, Prashant Kalvapalle</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BIOS-538.github.io/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BIOS-538.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="./LICENSE-CC-BY-4.0.html">
+<p>Creative commons license. CC-BY-4.0</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BIOS-538.github.io/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BIOS-538.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>

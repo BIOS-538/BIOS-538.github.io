@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.4.537">
 
   <meta name="author" content="Prashant K">
-  <meta name="dcterms.date" content="2024-01-11">
-  <title>BIOS-338/538 - class 2: Statistics Review</title>
+  <meta name="dcterms.date" content="2024-01-18">
+  <title>BIOS-338/538 - class 3: R basics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -321,17 +386,13 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">class 2: Statistics Review</h1>
-  <p class="subtitle">with hands-on data analysis workshop</p>
+  <h1 class="title">class 3: R basics</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -341,309 +402,186 @@ Prashant K
 </div>
 </div>
 
-  <p class="date">2024-01-11</p>
+  <p class="date">2024-01-18</p>
 </section>
+<section id="recap" class="title-slide slide level1 center">
+<h1>Recap</h1>
+<ul>
+<li><p>class 2: Made our own histograms by binning data, understand mean, median and comparing 2 distributions</p></li>
+<li><p>class 1: installed R, Rstudio and <code>tidyverse</code> package</p>
+<ul>
+<li><p>If you already had these installed, check that they are the latest versions or re-install</p>
+<ul>
+<li>R : <code>version</code> = 4.3.2 ; Rstudio (2022 or 2023 versions) ; tidyverse (just update it if you haven’t installed last week with <code>install.packages('tidyverse')</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+
 <section>
-<section id="quick-announcements" class="title-slide slide level1 center">
-<h1>Quick announcements</h1>
-
-</section>
-<section id="quick-recap-last-class" class="slide level2">
-<h2>Quick recap: last class</h2>
+<section id="todays-class" class="title-slide slide level1 smaller center">
+<h1>Today’s class</h1>
 <ul>
-<li>Covered some logistics. Course website is here - <a href="https://bios-538.github.io/" class="uri">https://bios-538.github.io/</a></li>
-</ul>
-<p>Note:</p>
-<p><em>From the feedback we have so far and hearing from students, I see quite a few people feel overwhelmed. I hope the next 3 slides that clarify lecture format and assignments will help encourage people to stay on.</em></p>
-</section>
-<section id="how-challenging-will-it-be-if-i-am-very-new-to-r" class="slide level2 smaller">
-<h2>How challenging will it be if I am very new to <code>R</code>?</h2>
-<p>I believe that if you have one undergraduate level course where you <strong>learnt</strong> to code in <strong>any programming language</strong>, it should not be too challenging to pickup <code>R</code> syntax with 3 weeks of practice.</p>
-<div class="fragment">
-<p>That said, the examples we walk through in class and working on the assignments (<em>with help from very enthusiastic TAs</em>) will be great resources to guide the learning process.</p>
-<p>This classroom is a safe space, so no question is too simple or too “silly” to ask.</p>
-</div>
-</section>
-<section id="there-are-too-many-assignments-seems-like-a-lot-of-work" class="slide level2 smaller">
-<h2>There are too many assignments, seems like a lot of work?</h2>
-<p>The lectures are structured to be interspersed with <strong>5-10 min</strong> coding sessions where we will walk everyone through stuff. You essentially save all the work we did in class, and add to that by working on your own time for the assignments.</p>
-<p>So 25% of the assignment will already be done in class!</p>
-<div class="fragment">
-<p>Practicing by working through code at your own time is the only way to actually learn coding.</p>
-</div>
-</section>
-<section id="assignment-logistics" class="slide level2">
-<h2>Assignment logistics</h2>
+<li><p>Refresh: directory structure, <code>.Rproj</code>ect, <code>R</code> script</p></li>
+<li><p>Introduce R datatypes: {<em>tip: check datatype with</em> <code>class()}</code></p>
 <ul>
-<li><p><em>Thursday</em>: Assignment uploaded and introduced in class</p></li>
-<li><p>Get help in office hours during the week</p></li>
-<li><p><strong><em>Friday 7 pm</em></strong>: submission</p></li>
-<li><p><em>Next Thursday</em>: Brief discussion on the previous week’s assignment, common mistakes</p></li>
-<li><p><em>Next Saturday</em>: receive your grades and feedback from TAs</p></li>
-</ul>
-</section>
-<section id="would-i-be-bored-in-the-first-2-lectures-if-i-already-know-stuff" class="slide level2 smaller">
-<h2>Would I be bored in the first 2 lectures if I already know stuff?</h2>
-<p>Please do finish the coding task at hand even if it seems too easy. <em>There surely will be a thing or two you haven’t noticed before to learn!</em></p>
-<div class="fragment">
-<p>Try to help your peers and neighbors during the class.</p>
-<ul>
-<li><em>if you want to do this at scale, ie) for multiple lectures / be open for other students reaching out, contact me and you will get extra credit with a micro TA designation</em> 😉</li>
-</ul>
-</div>
-<div class="fragment">
-<p><strong>BONUS CONTENT</strong> : We will also have some bonus content that is a good challenge for you to work on during the class (<em>once you finish the regular task, of course</em>)</p>
-</div>
-</section>
-<section id="fun-fact-dont-put-full-email-ids-on-the-internet" class="slide level2">
-<h2>Fun fact: Don’t put full email IDs on the internet</h2>
-<p>Do you know why?</p>
-
-<img data-src="img/email_funfact.png" width="272" class="r-stretch"></section>
-<section id="todays-class" class="slide level2">
-<h2>Today’s class</h2>
-<p>Analyze data like in the B.C.E times (<em>before computers era!</em>)</p>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:30%;">
-<p>Not this way. <em>this is number theory</em></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="img/ancient_abacus.jpg" alt="Ancient abacus" width="188"> <a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:30%;">
-<p>This way <em>for statistics</em></p>
-</div><div class="column" style="width:70%;">
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  A[Data population     ] --&gt; B(Sampling    ) --&gt; C(Distribution    ) --&gt; D[Analyses     ]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<aside></aside></section></section>
-<section>
-<section id="some-background-terms" class="title-slide slide level1 center">
-<h1>Some background terms</h1>
-
-</section>
-<section id="what-is-a-random-number" class="slide level2">
-<h2>What is a random number?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Coin toss</p>
-<p><img data-src="img/coin_toss.jpg" alt="coin tossing hand" width="196"> <a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a></p>
-<p>outcomes: [Heads/Tails]</p>
-</div><div class="column" style="width:50%;">
-<p>Dice rolls</p>
-<p><img data-src="img/dice.png" width="406" alt="random variable = [1, 2, 3, 4, 5, 6]"> <a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a></p>
-<p>outcomes: [1, 2, 3, 4, 5, 6]</p>
-</div>
-</div>
-
-<p><em>Side point</em>: Are these truly random?</p>
-<aside><div>
-<p>Are these truly random?</p>
-<p><em>hint: most classical physics processes can be predicted using Newton’s laws!</em></p>
-</div></aside></section>
-<section id="can-it-be-more-or-less-random" class="slide level2 smaller">
-<h2>Can it be more or less random?</h2>
-<p>Yes! Depends on how often the random number takes each possible option. Visualizing this is called a <strong>distribution</strong>.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Fair dice</strong>: Each outcome is equally likely. <em>let us simulate it</em> <a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>6 3 6 5 6 2 4 5 6 3 2 4 5 4 4 5 5 2 5 6 3 1 6 6 5 6 5 2 2 4</code></pre>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture02_files/figure-revealjs/fairdicehist-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Wonky dice</strong>: Certain outcomes are more favored</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>2 5 3 1 5 5 5 5 5 5 2 3 1 5 5 5 5 1 1 1 1 5 3 1 1 1 5 4 5 1</code></pre>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture02_files/figure-revealjs/wonkydicehist-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<aside><div>
-<p>These plots are called <strong>histograms</strong>. Each bar shows a <strong>bin</strong> of multiple data-points with similar values. Bin location, <strong>bin-width</strong> (or <em>number of bins</em>) determine the shape of the distribution.</p>
-</div></aside></section>
-<section id="uniform-distribution" class="slide level2">
-<h2>Uniform distribution</h2>
-<p>It does look uniform when a large number of points are sampled. Here I did 3,000 points</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture02_files/figure-revealjs/fairdicelarge-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-
-<aside><div>
-<p>uniform distribution has the most randomness (<em>maximum uncertainty</em>) since every outcome is equally likely<em>. But in general, think of any arbitrary shape for a distribution for better understanding of the term <strong>distribution</strong>.</em></p>
-</div></aside></section></section>
-<section>
-<section id="statistics-activity" class="title-slide slide level1 smaller center">
-<h1>Statistics activity</h1>
-<p><strong>Merges into the assignment</strong>: Take a photo of your distribution chart at the end of each task. And these photos with one or two sentences that indicate your understanding are the assignment for this week!</p>
-<p><strong>Data</strong>: We generated “populations” of data from 3 different distributions. For the final task, you can compare your data with another groups data from a different population for best results.</p>
-</section>
-<section id="logistics" class="slide level2 smaller">
-<h2>Logistics</h2>
-<ul>
-<li><p>We need 9 volunteers to sample the data for the 9 groups</p></li>
-<li><p>Each group will get 30 data points ; while everyone is forming teams (5+ members/team)</p></li>
-<li><p>I will briefly demo how to arrange them into a histogram</p></li>
-</ul>
-<p><strong>How to form a good team?</strong></p>
-<ul>
-<li><p>Get to know new people in the class!</p>
-<ul>
-<li>ex: me, 2 of my friends, 2 new people</li>
+<li><p>Simple: <code>numeric</code>, <code>character</code>. Other simple: <code>factor</code>, <code>logical</code></p></li>
+<li><p>Compound: <em>combination of simple datatypes</em>: vector = <code>c(x, y)</code>, <code>list(x, y)</code>, <code>data.frame()</code> ; [<em>won’t cover:</em> <code>matrix()</code>, <code>array()</code>]</p></li>
+<li><p>Good practices: Commenting code for documentation. <code># this code does x (if I get it to work)</code></p></li>
 </ul></li>
-<li><p>If you know a tiny bit of R, make new friends who are new to R</p></li>
+<li><p>Subset compound datatypes</p></li>
+<li><p>Control statements: <em>decision making</em>: <code>if()</code> and <em>repeat steps in a loop</em>: <code>for()</code></p></li>
+</ul>
+<p>Key reference : <a href="https://geomoer.github.io/moer-base-r/assets/data/cheatsheets/base-r.pdf">base R cheatsheet</a>.PDF</p>
+</section>
+<section id="refresh-rstudio-overview" class="slide level2">
+<h2>Refresh / Rstudio overview</h2>
+
+<img data-src="img/Rstudio_overview.png" class="r-stretch"></section>
+<section id="refreshsetting-up" class="slide level2">
+<h2>Refresh/setting up</h2>
+<ul>
+<li><p><code>.Rproj</code>ect file: works from the current directory, saves history of R commands, and all scripts that were open last time.</p></li>
+<li><p><code>.R</code> script: A place where you save lines of R code and can run them all from top to bottom with one click or a command : <code>source('..R')</code></p></li>
 </ul>
 </section>
-<section id="let-us-start-forming-teams-now" class="slide level2">
-<h2>Let us start forming teams now!</h2>
-<p>Teams</p>
+<section id="refresh-setting-up" class="slide level2 incremental">
+<h2>Refresh / setting up</h2>
 <ul>
-<li><p>5 mins to form teams</p></li>
-<li><p>5 mins to get to know each other</p>
-<ul>
-<li><p>Where are you from?</p></li>
-<li><p>What field are you in?</p></li>
-</ul></li>
+<li>directory structure:</li>
 </ul>
-<p>Data seekers</p>
-<ul>
-<li>TAs will explain the process now</li>
-</ul>
-</section>
-<section id="task-1.-histogram-distribute-the-data-into-bins" class="slide level2">
-<h2>task 1. Histogram: distribute the data into bins</h2>
-<p>show demo: ~ 5-10 data points</p>
-<ul>
-<li><p>Choose bin widths for your histogram. I recommend 0.25, 0.5, 1.</p></li>
-<li><p>Once you have a histogram, mark the outlines (<em>top shape</em>) of the distribution</p>
-<ul>
-<li>Take the marker pen from first bench and mark the topmost data and the chart paper above it as well</li>
-</ul></li>
-</ul>
-</section>
-<section id="task-2.-find-central-values" class="slide level2 smaller">
-<h2>task 2. Find central values</h2>
-<p>A single value that can describe the whole distribution (<em>to an approximation</em>)</p>
-<p>Mark each of these quantities visually on the chart below the distribution (<em>approximate location works</em>)</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<ul>
-<li><p><strong>Mode</strong>: the most repeated value / bin in this case</p></li>
-<li><p><strong>Median</strong>: center most value when data is ordered</p></li>
-<li><p><strong>Mean</strong>: average (sum/ number of data points)</p></li>
-</ul>
+<p>Directory structure</p>
+<p>BIOS_338-538_class/ ├── BIOS_338-538_class.Rproj ├── scripts/ │ └── class3.R ├── data/ │ └── file1.csv └── plots/ └── plots_will_go_here.png</p>
 </div><div class="column" style="width:50%;">
-<p><img data-src="img/visualisation_mode_median_mean.png" alt="wikipedia visual showing mode, median and mean" width="234"></p>
-</div>
-</div>
-</section>
-<section id="task-3.-standard-deviation-spread-of-data-around-the-mean" class="slide level2">
-<h2>task 3. Standard Deviation: spread of data around the mean</h2>
+<p>bash/terminal commands</p>
 <ul>
-<li><p>Ask the TA or your group’s R experts to give you the <code>sd()</code> output and note it down.</p></li>
-<li><p>Visually demarcate the <code>Mean +/- SD</code> and <code>Mean +/- 2 x SD</code> locations on the chart.</p></li>
-<li><p>Count the number of points within the <code>1 SD</code> and <code>2 SD</code> intervals</p></li>
+<li><p><code>mkdir</code>: make directory</p></li>
+<li><p><code>cd</code>: change directory</p></li>
+<li><p><code>ls</code>: list files and directories</p></li>
+<li><p><code>touch x.txt</code>: make a empty files with any extension, ex: <code>x.txt</code></p></li>
 </ul>
-</section>
-<section id="task-4.1-hypothesis-testing-are-two-different-samples-identical" class="slide level2">
-<h2>task 4.1 Hypothesis testing: are two different samples identical?</h2>
-<p><strong>Merging the distributions</strong>: Is a visual way to tell if two distributions are similar or not.</p>
-<ul>
-<li><p>Befriend a neighboring group with a different colour of datapoints and merge your histograms into a single chart.</p></li>
-<li><p>Together both teams will assemble two histograms in the same chart (<em>start from any groups</em>) ; and mark the tops of the guest group for easy visualization</p></li>
-</ul>
-</section>
-<section id="task-4.2-hypothesis-testing-are-two-different-samples-identical" class="slide level2 smaller">
-<h2>task 4.2 Hypothesis testing: are two different samples identical?</h2>
-<p><strong>Quantitative value</strong>: But we need to depend on more concrete statistics than gut feeling, hence we do hypothesis testing using t.tests.</p>
-<p><strong>Null hypothesis</strong>: You start with the hypothesis that both samples are from the same distribution <em>i.e.) they are essentially identical</em>. And you try to find quantitative evidence to reject this (<em>~ disproving the null hypothesis</em>)</p>
-<ul>
-<li><p>Using <code>R</code>’s <code>t.test()</code>function: Get the TAs or your group’s R experts to calculate this for you and note down the values.</p>
-<ul>
-<li>Also do another test comparing to another group from the same population.</li>
-</ul></li>
-<li><p>Rule of thumb: if the <code>p.value &lt; 0.05</code> ; then the data-sets have very little likelihood of being sampled from the same distribution.</p></li>
-</ul>
-</section>
-<section id="how-does-the-population-you-sampled-from-look-like" class="slide level2">
-<h2>How does the population you sampled from look like?</h2>
-<p>It was ~normally distributed, and standard deviations were all the same hence assumptions for doing <code>t.test</code> were met!</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="img/lec2_histogram.png"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="img/lec2_density.png"></p>
 </div>
 </div>
+</section>
+<section id="overview-of-all-programming" class="slide level2">
+<h2>Overview of all programming</h2>
+<ol type="1">
+<li><p>Take simple datatypes: <code>1</code> ; <code>"apple"</code>, <code>TRUE</code></p></li>
+<li><p>Combine into complex data types: <code>c(1, 3, 5, 7)</code> / <code>c('apples', 'oranges')</code> ; <code>list( numbers, fruits..)</code></p></li>
+<li><p>Make decisions: <code>if(x &gt; 3) "apples are too sweet"</code></p></li>
+<li><p>Repeat actions with only slight changes: <code>for(i in 1:5) do something with each i</code></p></li>
+<li><p>Make concise code by reusing parts as functions: <code>do_magic &lt;- function(x) {"x + magic here"}</code></p></li>
+</ol>
 </section></section>
 <section>
-<section id="summary" class="title-slide slide level1 center">
-<h1>Summary</h1>
-
+<section id="practice-alongside-me" class="title-slide slide level1 center">
+<h1>Practice alongside me</h1>
+<p>Use the script: <code>class3_R-basics.R</code> from <strong>Canvas/files/</strong> to follow along</p>
 </section>
-<section id="todays-class-summarized" class="slide level2">
-<h2>Today’s class summarized</h2>
+<section id="simple-datatypes" class="slide level2">
+<h2>Simple datatypes</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Datatypes</a></li><li><a href="#tabset-1-2">Variable assignment</a></li><li><a href="#tabset-1-3">R commands</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p><img data-src="img/simple_datatypes.png"></p>
+</div>
+<div id="tabset-1-2">
+<p><img data-src="img/variable_assignment.png"></p>
+</div>
+<div id="tabset-1-3">
+<p>Making these datatypes in R ; assigning to a variable</p>
 <ul>
-<li><p>We distribute data into <strong>bins</strong> to form a <strong>histogram.</strong></p></li>
-<li><p>The complexity in each individual data can be simplified by describing it with just a central tendancy <em>+/-</em> spread (as a measure of variability).</p>
+<li><p>numeric: <code>x &lt;- 35</code></p></li>
+<li><p>character: <code>y &lt;- 'apples'</code></p></li>
+<li><p>logical: <code>a &lt;- TRUE</code> ; <code>b &lt;- F</code> ; <code>c &lt;- T</code></p></li>
+<li><p>factor:</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="compound-datatypes" class="slide level2">
+<h2>Compound datatypes</h2>
 <ul>
-<li>Mean +/- Standard Deviation</li>
+<li><em>combination of simple datatypes</em>: vector = <code>c(x, y)</code>, <code>list(x, y)</code>, <code>data.frame(x1 = x, x2 = y)</code></li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">vector</a></li><li><a href="#tabset-2-2">list</a></li><li><a href="#tabset-2-3">factor</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p><img data-src="img/creating_vectors.png"></p>
+</div>
+<div id="tabset-2-2">
+<p><img data-src="img/lists_intro.png"></p>
+<p>When printed, the list looks like this</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>$x
+[1] 1 2 3 4 5
+
+$y
+[1] "a" "b"</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-3">
+<p>A vector where entries are ordered and stored as “levels”</p>
+<p>Use cases</p>
+<ul>
+<li><p>Order of colours assigned when plotting stuff</p></li>
+<li><p>Analyzing categorical questionnaires</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="subset-compound-datatypes" class="slide level2">
+<h2>Subset compound datatypes</h2>
+<ul>
+<li><p>vectors: <code>x[3]</code>, <code>x[x&gt;0]</code>,</p></li>
+<li><p>Lists and dataframes:</p>
+<ul>
+<li><p>whole row/column <code>list$x1</code> or <code>dataframe$x1</code> or <code>dataframe[ , 2]</code></p></li>
+<li><p>Single entry: <code>dataframe[1,5]</code></p></li>
 </ul></li>
-<li><p>We <strong>compare</strong> two (<em>or more..</em>) distributions of data using hypothesis tests, by starting with a <strong>null hypothesis</strong> and finding evidence against it.</p></li>
 </ul>
 </section>
-<section id="reminder-assignment-1" class="slide level2">
-<h2>Reminder: assignment 1</h2>
-<p>Take the data-points and the chart with you and explore more while doing the assignment. <em>Note: Groups are working together, but we want each individual to turn-in their own report so they get better understanding while writing</em></p>
+<section id="programming-control-which-statements-are-executed" class="slide level2">
+<h2>Programming = control which statements are executed</h2>
+<ul>
+<li>Control statements: <em>decision making</em>: <code>if()</code> and <em>repeat steps in a loop</em>: <code>for()</code></li>
+</ul>
+<p><code>if..else</code> :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="cf">if</span> (condition){</span>
+<span id="cb2-2"><a></a>  <span class="st">"Do something"</span></span>
+<span id="cb2-3"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb2-4"><a></a>  <span class="st">"Do something different"</span></span>
+<span id="cb2-5"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>for()</code> loops</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="cf">for</span> (variable <span class="cf">in</span> sequence){</span>
+<span id="cb3-2"><a></a>  <span class="st">"Do something with the variable"</span></span>
+<span id="cb3-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="recap-todays-class" class="slide level2">
+<h2>Recap: Today’s class</h2>
+<ul>
+<li><p>Refresh: directory structure, <code>.Rproj</code>ect, <code>R</code> script, directory structure</p></li>
+<li><p>Introduce R datatypes: {<em>tip: check datatype with</em> <code>class()}</code></p>
+<ul>
+<li><p>Simple: <code>numeric</code>, <code>character</code>. Other simple: <code>factor</code>, <code>logical</code></p></li>
+<li><p>Compound: <em>combination of simple datatypes</em>: vector = <code>c(x, y)</code>, <code>list(x, y)</code>, <code>data.frame()</code></p></li>
+<li><p>Good practices: Commenting code for documentation. <code># this code does x (if I get it to work)</code></p></li>
+</ul></li>
+<li><p>Subset/indexing compound datatypes: <code>x[3]</code>, <code>x[x&gt;0]</code>, <code>dataframe[1,5]</code></p></li>
+<li><p>Control statements: <em>decision making</em>: <code>if()</code> and <em>repeat steps in a loop</em>: <code>for()</code> or vectorize using functions</p></li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -651,15 +589,6 @@ Prashant K
 </div>
 </div>
 </section></section>
-<section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Dall-E3, via MS Bing</p></li>
-<li id="fn2"><p>By ICMA Photos - Coin Toss, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=71147286</p></li>
-<li id="fn3"><p>germansektor.blogspot.com</p></li>
-<li id="fn4"><p><code>sample(1:6, 30, replace = T)</code></p></li>
-</ol>
-</section>
     </div>
   </div>
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BIOS-338/538 - Lecture slides</title>
+<title>BIOS-338/538 - Class schedule &amp; Lecture slides</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../slides/class_schedule.html"> 
+    <a class="nav-link active" href="../slides/class_schedule.html" aria-current="page"> 
 <span class="menu-text">Class schedule &amp; Lecture slides</span></a>
   </li>  
 </ul>
@@ -108,14 +108,20 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/BIOS-538.github.io/edit/main/slides/class_schedule.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BIOS-538.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lecture slides</h1>
+<h1 class="title">Class schedule &amp; Lecture slides</h1>
 </div>
 
 
@@ -132,15 +138,224 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Slides for the lectures can be accessed here</p>
-<ul>
-<li><a href="../_xaringan_slides/lecture01/lecture01.Rmd">Class 1</a> (<a href="https://github.com/BIOS-538/BIOS-538.github.io/blob/main/_xaringan_slides/lecture01/lecture01.pdf">PDF</a>) (9/Jan/24). Introductions and installations</li>
-<li><a href="../slides/lecture02.html">Class 2</a> (11/Jan/24): Refresher in statistics, <em>hands-on activity</em></li>
-<li><a href="../slides/lecture03.html">Class 3</a> (18/Jan/24): R basics, datatypes and control flow</li>
-<li><a href="lecture04_tidyverse_intro.pptx">Class 4</a> (23/Jan/24): Introduction to data wrangling in <code>tidyverse</code></li>
-</ul>
+<p>Below is a general description of the material to be covered. <em>Note that topics and dates are<br>
+subject to change</em>. See <a href="https://bios-538.github.io/">course website</a> for most up to date version.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Topic</th>
+<th>Details</th>
+<th>Resources</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>9/Jan</td>
+<td>Introductions and installations</td>
+<td><a href="../_xaringan_slides/lecture01/lecture01.Rmd">slides</a> (<a href="https://github.com/BIOS-538/BIOS-538.github.io/blob/main/_xaringan_slides/lecture01/lecture01.pdf">PDF</a>)</td>
+<td><a href="https://r-cubed-intro.rostools.org/preamble/pre-course#sec-install-programs">Setting up R and friends</a>: Win/Mac/Linux</td>
+</tr>
+<tr class="even">
+<td>11/Jan</td>
+<td>Refresher in statistics, <em>hands-on activity</em></td>
+<td>working with distributions - <em>without a computer.</em> <a href="../slides/lecture02.html">slides</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>16/Jan</td>
+<td>NO CLASS; <em>Hard freeze day</em></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>18/Jan</td>
+<td>R basics, datatypes and control flow</td>
+<td>navigating Rstudio, syntax, data types, functions, data frames/tibbles, debugging and looking for help. <a href="../slides/lecture03.html">slides</a></td>
+<td><ul>
+<li><p><a href="https://swirlstats.com/students.html">Swirl</a>: <a href="http://swirlstats.com/scn/rprog.html">R programming</a> tutorial</p></li>
+<li><p><a href="https://geomoer.github.io/moer-base-r/assets/data/cheatsheets/base-r.pdf">base R cheatsheet</a>.PDF</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>23/Jan</td>
+<td>Data wrangling in R with <code>tidyverse</code>, <code>dplyr</code></td>
+<td>Load data from <code>.csv</code> or <code>excel</code> file, commands to arrange rows and columns. <a href="lecture04_tidyverse_intro.pptx">Class 4</a> (<a href="assets/lec04_tidyverse_intro_worksheet.docx">worksheet</a>)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>25/Jan</td>
+<td>Data wrangling <strong>workshop</strong></td>
+<td>re-hash concepts from the last 2 classes, get students to wrangle data to answer a question</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>30/Jan</td>
+<td><code>ggplot()</code> plotting</td>
+<td><code>ggplot</code>, <code>geom_point()</code> and <code>geom_line()</code>, interactive plots with <code>plotly::ggplotly()</code>. What should you show in a plot?</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1/Feb</td>
+<td>Version control using <code>git</code></td>
+<td>why version control? Setup git with Rstudio. Learn some command line basics : <code>cd</code>, <code>ls</code>, <code>git add, git commit</code>, <code>grep "function-name"</code></td>
+<td>Intro to git: <a href="https://uoftcoders.github.io/studyGroup/lessons/git/intro/lesson/">lesson</a>; <a href="https://github.com/UofTCoders/studyGroup/blob/gh-pages/lessons/git/intro/philosophy_of_git.pdf">philosophy of git</a></td>
+</tr>
+<tr class="odd">
+<td>6/Feb</td>
+<td><code>Rmarkdown</code>/<code>quarto</code> to produce reports</td>
+<td>motivation for reproducible data analysis, benefits of localizing [<em>thoughts, code and outputs</em>] in one document</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>8/Feb</td>
+<td>Data -&gt; figure pipeline from a research article, <strong>workshop</strong></td>
+<td>using <code>Rmd/quarto</code> to walk through the steps required to reproduce plots from a published paper</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>13/Feb</td>
+<td>Normal-distributions</td>
+<td>_understand central limit theorem intuitively + using R simulations; why ~normal is a useful default. Learn cases when it doesn’t apply. Students distribution is got by sampling from a normal and calculating the mean.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>15/Feb</td>
+<td>Intro to hypothesis testing (<em>t-tests</em>)</td>
+<td>experimental science usually involves comparisons =&gt; hence hypothesis testing to compare distributions / means. <em>Concept: Students t-distribution is got by sampling from a normal and calculating the mean.</em></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>20/Feb</td>
+<td>Problems with p-values</td>
+<td>motivate misunderstandings people have, how p-values contribute to non-reproducible science. <em>Touch upon Surprise value (S-value) ; alternatives : bayesian t.test - when to use them</em></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>22/Feb</td>
+<td>Linear regression (<em>2 dimensional data</em>)</td>
+<td>2D data with one independent variable. <em>Rehash straight line equation:</em> <code>y = mx + c</code>. _show an interactive tutorial on how fitting works. Show <code>geom_smooth()</code> in R.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>27/Feb</td>
+<td>Linear regression fitting</td>
+<td>key concept is the % of variance explained by the fit. <em>Do <code>lm</code> and show how to interpret results and p.values</em></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>29/Feb</td>
+<td>Re-capitulate t-tests using linear regression fitting</td>
+<td><em>hypothesis testing is akin to fitting 1D data + 2nd D of categorical variable</em></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>5/Mar</td>
+<td>Review session</td>
+<td><em>Summary of key concepts by TAs + Q &amp; A</em></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>7/Mar</td>
+<td>Midterm</td>
+<td><strong>R</strong><em>: tidyverse, plots, Rmarkdown</em>; <strong>Stats</strong>: <em>t-tests, problems with p-values, linear regressions</em></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>9-17/Mar</td>
+<td><em>Spring break</em></td>
+<td>no class</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>19/Mar</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><em>19/Mar</em></td>
+<td>Data -&gt; statistics pipeline from a research article, <strong>workshop</strong></td>
+<td>using <code>Rmd/quarto</code> to walk through the steps required to reproduce statistics from a published paper</td>
+<td><em>Assignment</em>: Turn in the in-class workshop as report</td>
+</tr>
+<tr class="odd">
+<td><em>21/Mar</em></td>
+<td>Non-linear regressions</td>
+<td>examples: <em>fitting dose-response curves and bacterial growth curves</em>. Explain why initial conditions matter for nls, using self starting functions. <code>map; safely() workflow</code> to avoid breaking code due to convergence issues_</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><em>26/Mar</em></td>
+<td>Bootstrapping</td>
+<td>benefits: <em>a better non-parametric test without making any assumptions about the data distribution</em></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><em>28/Mar</em></td>
+<td>Bootstrapping in R</td>
+<td><em>using a vectorized workflow to achieve bootstrapping and simple hypothesis testing</em></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><em>2/Apr</em></td>
+<td>Working with higher dimensional data</td>
+<td>explain dimensionality reduction concept. Techniques: <code>PCA</code>, weighted techniques, clustering. <em>likely using sequencing microbiome datasets examples</em></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><em>4/Apr</em></td>
+<td>critique statistics from a research article, <strong>workshop</strong></td>
+<td>using <code>Rmd/quarto</code> to recreate statistics from a published paper, finding faults, redoing analysis with better methods</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>9/Apr</td>
+<td>Using AI based tools to speed up writing code</td>
+<td></td>
+<td><ul>
+<li><p><a href="https://www.reddit.com/r/learnprogramming/comments/1796ftz/why_is_codeium_and_github_copilot_unethical_why/">Ethics</a></p></li>
+<li><p><a href="https://intro2r.library.duke.edu/ai.html">LLMs overview</a></p></li>
+<li><p><a href="https://docs.posit.co/ide/user/ide/guide/tools/copilot.html">Github copilot on Rstudio</a></p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>11/Apr</td>
+<td>Student presentations 1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>16/Apr</td>
+<td>Student presentations 2</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>18/Apr</td>
+<td>Student presentations 3</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>24-30/Apr</td>
+<td>Final exam</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -533,7 +748,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/BIOS-538.github.io/edit/main/slides/slides.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BIOS-538.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BIOS-538.github.io/edit/main/slides/class_schedule.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BIOS-538.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
