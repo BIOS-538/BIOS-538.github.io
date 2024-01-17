@@ -1,7 +1,9 @@
 project:
   type: website
   output-dir: docs
-  # resources: 
+  resources:
+    - "slides/lecture04_tidyverse_intro.pptx"
+    - "slides/assets/lec04_tidyverse_intro_worksheet.docx"
     # - "_xaringan_slides/lecture01/*" # can add resources / pre-built pages. Needs testing!
     # - "_xaringan_slides/lecture01/img/*"
 
@@ -14,10 +16,15 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: slides/slides.qmd
-        text: Lecture slides
+      - href: slides/class_schedule.qmd
+        text: Class schedule & Lecture slides
   repo-url: https://github.com/BIOS-538.github.io # links to github
-  repo-actions: [edit, issue]  
+  repo-actions: [edit, issue]
+  page-footer: 
+    left: "&copy 2024, Prashant Kalvapalle"
+    right:
+      - text: "Creative commons license. CC-BY-4.0"
+        href: LICENSE-CC-BY-4.0.md
     
 format:
   html:
