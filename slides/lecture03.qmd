@@ -41,7 +41,7 @@ editor: visual
 
 Key reference : [base R cheatsheet](https://geomoer.github.io/moer-base-r/assets/data/cheatsheets/base-r.pdf).PDF
 
-## Complex plotting assignment  {.smaller visibility="'hidden'"}
+## Complex plotting assignment {.smaller visibility="'hidden'"}
 
 If you are well versed with R basics and are looking for some challenge, this slide is for you
 
@@ -114,6 +114,8 @@ Use the script: `class3_R-basics.R` from **Canvas/files/** to follow along
 
 ![](img/simple_datatypes.png)
 
+Missing elements marked as NA or NaN
+
 ## Variable assignment
 
 ![](img/variable_assignment.png)
@@ -133,7 +135,7 @@ Making these datatypes in R ; assigning to a variable
 
 ## Compound datatypes
 
--   *combination of simple datatypes*: vector = `c(x, y)`, `list(x, y)`, `data.frame(x1 = x, x2 = y)`
+*combination of simple datatypes*: vector = `c(x, y)`, `list(x, y)`, `data.frame(x1 = x, x2 = y)`
 
 ::: panel-tabset
 ### vector
@@ -160,11 +162,17 @@ Use cases
 -   Order of colours assigned when plotting stuff
 
 -   Analyzing categorical questionnaires
+
+## Named elements
+
+-   Named vector: `c('a' = 1, 'b' = 2)`
+
+-   List: `list(x = 1:5, y = c('a', 'b'))`
 :::
 
 ## Subset compound datatypes
 
--   vectors: `x[3]`, `x[x>0]`,
+-   vectors: single element: `x[3]`, multiple elements: `x[x>0]`, by name `x['a']`?
 
 -   Lists and dataframes:
 
