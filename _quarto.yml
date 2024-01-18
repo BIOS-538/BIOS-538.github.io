@@ -2,6 +2,7 @@ project:
   type: website
   output-dir: docs
   resources:
+    - "slides/scripts/*.R"
     - "slides/lecture04_tidyverse_intro.pptx"
     - "slides/assets/lec04_tidyverse_intro_worksheet.docx"
     # - "_xaringan_slides/lecture01/*" # can add resources / pre-built pages. Needs testing!
