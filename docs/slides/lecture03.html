@@ -501,6 +501,7 @@ Prashant K
 <div class="tab-content">
 <div id="tabset-1-1">
 <p><img data-src="img/simple_datatypes.png"></p>
+<p>Missing elements marked as NA or NaN</p>
 </div>
 <div id="tabset-1-2">
 <p><img data-src="img/variable_assignment.png"></p>
@@ -519,9 +520,7 @@ Prashant K
 </section>
 <section id="compound-datatypes" class="slide level2">
 <h2>Compound datatypes</h2>
-<ul>
-<li><em>combination of simple datatypes</em>: vector = <code>c(x, y)</code>, <code>list(x, y)</code>, <code>data.frame(x1 = x, x2 = y)</code></li>
-</ul>
+<p><em>combination of simple datatypes</em>: vector = <code>c(x, y)</code>, <code>list(x, y)</code>, <code>data.frame(x1 = x, x2 = y)</code></p>
 <div class="panel-tabset">
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">vector</a></li><li><a href="#tabset-2-2">list</a></li><li><a href="#tabset-2-3">factor</a></li></ul>
 <div class="tab-content">
@@ -548,6 +547,13 @@ $y
 <li><p>Order of colours assigned when plotting stuff</p></li>
 <li><p>Analyzing categorical questionnaires</p></li>
 </ul>
+<section id="named-elements" class="slide level2">
+<h2>Named elements</h2>
+<ul>
+<li><p>Named vector: <code>c('a' = 1, 'b' = 2)</code></p></li>
+<li><p>List: <code>list(x = 1:5, y = c('a', 'b'))</code></p></li>
+</ul>
+</section>
 </div>
 </div>
 </div>
@@ -555,7 +561,7 @@ $y
 <section id="subset-compound-datatypes" class="slide level2">
 <h2>Subset compound datatypes</h2>
 <ul>
-<li><p>vectors: <code>x[3]</code>, <code>x[x&gt;0]</code>,</p></li>
+<li><p>vectors: single element: <code>x[3]</code>, multiple elements: <code>x[x&gt;0]</code>, by name <code>x['a']</code>?</p></li>
 <li><p>Lists and dataframes:</p>
 <ul>
 <li><p>whole row/column <code>list$x1</code> or <code>dataframe$x1</code> or <code>dataframe[ , 2]</code></p></li>

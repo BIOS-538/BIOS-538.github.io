@@ -270,21 +270,28 @@
     "href": "slides/lecture03.html#simple-datatypes",
     "title": "class 3: R basics",
     "section": "Simple datatypes",
-    "text": "Simple datatypes\n\nDatatypesVariable assignmentR commands\n\n\n\n\n\n\n\n\nMaking these datatypes in R ; assigning to a variable\n\nnumeric: x &lt;- 35\ncharacter: y &lt;- 'apples'\nlogical: a &lt;- TRUE ; b &lt;- F ; c &lt;- T\nfactor:"
+    "text": "Simple datatypes\n\nDatatypesVariable assignmentR commands\n\n\n\nMissing elements marked as NA or NaN\n\n\n\n\n\nMaking these datatypes in R ; assigning to a variable\n\nnumeric: x &lt;- 35\ncharacter: y &lt;- 'apples'\nlogical: a &lt;- TRUE ; b &lt;- F ; c &lt;- T\nfactor:"
   },
   {
     "objectID": "slides/lecture03.html#compound-datatypes",
     "href": "slides/lecture03.html#compound-datatypes",
     "title": "class 3: R basics",
     "section": "Compound datatypes",
-    "text": "Compound datatypes\n\ncombination of simple datatypes: vector = c(x, y), list(x, y), data.frame(x1 = x, x2 = y)\n\n\nvectorlistfactor\n\n\n\n\n\n\nWhen printed, the list looks like this\n\n\n$x\n[1] 1 2 3 4 5\n\n$y\n[1] \"a\" \"b\"\n\n\n\n\nA vector where entries are ordered and stored as “levels”\nUse cases\n\nOrder of colours assigned when plotting stuff\nAnalyzing categorical questionnaires"
+    "text": "Compound datatypes\ncombination of simple datatypes: vector = c(x, y), list(x, y), data.frame(x1 = x, x2 = y)\n\nvectorlistfactor\n\n\n\n\n\n\nWhen printed, the list looks like this\n\n\n$x\n[1] 1 2 3 4 5\n\n$y\n[1] \"a\" \"b\"\n\n\n\n\nA vector where entries are ordered and stored as “levels”\nUse cases\n\nOrder of colours assigned when plotting stuff\nAnalyzing categorical questionnaires\n\n\nNamed elements\n\nNamed vector: c('a' = 1, 'b' = 2)\nList: list(x = 1:5, y = c('a', 'b'))"
+  },
+  {
+    "objectID": "slides/lecture03.html#named-elements",
+    "href": "slides/lecture03.html#named-elements",
+    "title": "class 3: R basics",
+    "section": "Named elements",
+    "text": "Named elements\n\nNamed vector: c('a' = 1, 'b' = 2)\nList: list(x = 1:5, y = c('a', 'b'))"
   },
   {
     "objectID": "slides/lecture03.html#subset-compound-datatypes",
     "href": "slides/lecture03.html#subset-compound-datatypes",
     "title": "class 3: R basics",
     "section": "Subset compound datatypes",
-    "text": "Subset compound datatypes\n\nvectors: x[3], x[x&gt;0],\nLists and dataframes:\n\nwhole row/column list$x1 or dataframe$x1 or dataframe[ , 2]\nSingle entry: dataframe[1,5]"
+    "text": "Subset compound datatypes\n\nvectors: single element: x[3], multiple elements: x[x&gt;0], by name x['a']?\nLists and dataframes:\n\nwhole row/column list$x1 or dataframe$x1 or dataframe[ , 2]\nSingle entry: dataframe[1,5]"
   },
   {
     "objectID": "slides/lecture03.html#programming-control-which-statements-are-executed",
