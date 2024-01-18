@@ -10,7 +10,7 @@ There will be a series of problem sets posted on the course website with instruc
 
 **Instructor**: Dr. Prashant Kalvapalle (he/him), Lecturer + Postdoctoral researcher, Biosciences, Rice University
 
-![](slides/img/prashant.png){width="333"}
+![](slides/img/prashant.png){width="200"}
 
 **Location**: BRC 282 (*or via zoom with prior permission*)
 
@@ -28,7 +28,7 @@ There will be a series of problem sets posted on the course website with instruc
 
 ### Annie Finneran
 
-![](slides/img/annie.jpg){width="333"}
+![](slides/img/annie.jpg){width="200"}
 
 PhD student in Ecology & Evolutionary Biology ([website](https://anniefinneran.weebly.com/))
 
@@ -38,7 +38,7 @@ PhD student in Ecology & Evolutionary Biology ([website](https://anniefinneran.w
 
 ### Sam Schwartz
 
-![](slides/img/sam.jpg){width="333"}
+![](slides/img/sam.jpg){width="200"}
 
 PhD student in Systems, Synthetic and Physical Biology ([website](https://www.linkedin.com/in/samuel-schwartz29/))
 
@@ -49,7 +49,7 @@ PhD student in Systems, Synthetic and Physical Biology ([website](https://www.li
 ## Assessment
 
 | Assignment      | Total grade | Details                                                                      |
-|--------------|--------------|---------------------------------------------|
+|-----------------|-------------|------------------------------------------------------------------------------|
 | Attendance      | 10%         | *on zoom with permission*                                                    |
 | Participation   | 10%         | online discussion board (*ask/answer*), office hours, in-class participation |
 | Problem sets    | 40%         |                                                                              |
@@ -83,7 +83,7 @@ PhD student in Systems, Synthetic and Physical Biology ([website](https://www.li
 
 Again, if you need any accommodations for particular submissions please email the instructor.
 
-### How challenging will it be if I am very new to `R`? {.smaller}
+### How challenging will it be if I am very new to `R`?
 
 I believe that if you have one undergraduate level course where you **learnt** to code in **any programming language**, it should not be too challenging to pickup `R` syntax with 3 weeks of practice.
 
