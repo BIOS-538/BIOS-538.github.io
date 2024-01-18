@@ -231,6 +231,13 @@
     "text": "Below is a general description of the material to be covered. Note that topics and dates are\nsubject to change. See course website for most up to date version."
   },
   {
+    "objectID": "slides/lecture03.html#complex-plotting-assignment",
+    "href": "slides/lecture03.html#complex-plotting-assignment",
+    "title": "class 3: R basics",
+    "section": "Complex plotting assignment",
+    "text": "Complex plotting assignment\nIf you are well versed with R basics and are looking for some challenge, this slide is for you\n\nDownload the code we used to generate the data for the class2 activity\nplot the individual data points from this code\nHighlight the 30 points that your team got within this plot\n\nWith a different colour / outline / shape / anything fancy\n\nThis will take you ~2 lectures to finish so keep working on it\n\nIf you got any questions, you can ask me when I come around ; or the TAs if they are free from helping others learn R basics"
+  },
+  {
     "objectID": "slides/lecture03.html#refresh-rstudio-overview",
     "href": "slides/lecture03.html#refresh-rstudio-overview",
     "title": "class 3: R basics",
@@ -249,7 +256,7 @@
     "href": "slides/lecture03.html#refresh-setting-up",
     "title": "class 3: R basics",
     "section": "Refresh / setting up",
-    "text": "Refresh / setting up\n\ndirectory structure:\n\n\n\nDirectory structure\nBIOS_338-538_class/ ├── BIOS_338-538_class.Rproj ├── scripts/ │ └── class3.R ├── data/ │ └── file1.csv └── plots/ └── plots_will_go_here.png\n\nbash/terminal commands\n\nmkdir: make directory\ncd: change directory\nls: list files and directories\ntouch x.txt: make a empty files with any extension, ex: x.txt"
+    "text": "Refresh / setting up\n\ndirectory structure:\n\n\n\nDirectory structure\n\n\nbash/terminal commands\n\nmkdir: make directory\ncd: change directory\nls: list files and directories\ntouch x.txt: make a empty files with any extension, ex: x.txt"
   },
   {
     "objectID": "slides/lecture03.html#overview-of-all-programming",
