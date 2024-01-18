@@ -51,7 +51,7 @@ Key reference : [base R cheatsheet](https://geomoer.github.io/moer-base-r/assets
 
 -   `.R` script: A place where you save lines of R code and can run them all from top to bottom with one click or a command : `source('..R')`
 
-## Refresh / setting up  {.incremental}
+## Refresh / setting up {.incremental}
 
 -   directory structure:
 
@@ -59,14 +59,7 @@ Key reference : [base R cheatsheet](https://geomoer.github.io/moer-base-r/assets
 ::: {.column width="50%"}
 Directory structure
 
-BIOS_338-538_class/
-├── BIOS_338-538_class.Rproj
-├── scripts/
-│ └── class3.R
-├── data/
-│ └── file1.csv
-└── plots/
-└── plots_will_go_here.png
+![](img/dir_structure.png)
 :::
 
 ::: {.column width="50%"}
@@ -185,7 +178,7 @@ for (variable in sequence){
 }
 ```
 
-## Recap: Today's class
+## Recap: Today's class {.smaller}
 
 -   Refresh: directory structure, `.Rproj`ect, `R` script, directory structure
 
