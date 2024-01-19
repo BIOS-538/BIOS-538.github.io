@@ -1,26 +1,38 @@
 # BIOS 338/538 Class 03 R Essentials Practice Exercises
 
+# Instructions.
+# 1. Type the commands your self into the console 
+# ...(don't copy paste, typing makes you understand better)
+# 2. Run it and write a comment next to the command in this script
+# ... to explain what the command does (first example provided in line 18)
+# 3. Ignore commands that were not yet taught in class/ try answering with vectors
+# ... how do you tell if something was not covered? data.frame questions..
+# ... Use vectors A/B/C instead of rows of dataframe D in questions [5-11, 18, ] 
+# ... Leave these for another class : [6-10, 
+# 4. Use ?function to look up the documentation in the "help" pane 
+
+
 #1 Clear all objects
 
 #2 Create a vector named A with a length of 6 that contains odd number integer values starting with 3.
+## hint: ?seq for the seq() function
 
 #3 Create a vector named B with the same values as A but using a different function 
 
 #4 Multiple B by 3 and save as a new vector called C
 
-#5 Combine objects A and C into a dataframe called D
 
-#6 Extract the second column of D
+#5 EXTRA: Combine objects A and C into a dataframe called D (try once)
+## HINT: Search for documentation using: ?data.frame
 
-#7 Extract the third row of D
+#7 Extract the third value of C
 
-#8 Extract the element of D that equals 33
+#8 Extract the element of A or B or C that equals 33
 
-#9 Extract the element of D that equals 7
+#9 Extract the element of A or B or C that equals 7
 
-#10 How many rows does D have?
+#10 How many elements does A have?
 
-#11 How many columns does D have?
 
 #12 Extract all values of B greater than 7
 
@@ -64,11 +76,12 @@
 
 #32 Is fam numeric?
 
-#33 Is fam a factor?
+#33 Is fam a factor? You can guess the function that will answer this..
 
 #34 What class is fam?
 
-#35 Convert fam2 to a factor
+#35 Convert fam2 to a factor.
+## HINT: conversion functions start with "as."
 
 #36 Create an object named age that has the age in years for each family member
 
@@ -77,6 +90,29 @@
 #38 Create an object named hobby that has each family member's hobby
 
 #39 Create an object named hours that has each family members number of weekly hobby hours
+
+
+# data.frame ----
+
+#5 Combine objects A and C into a dataframe called D
+## Search for documentation using: ?data.frame
+
+#6 Extract the second column of D
+
+#7 Extract the third row of D
+
+#8 Extract the element of D that equals 33
+
+#9 Extract the element of D that equals 7
+
+#10 How many rows does D have?
+
+#11 How many columns does D have?
+
+#18 Remove row 4 from D
+
+
+# data.frame 2  ----
 
 #40 Combine all family information into a single dataframe called fam_data
 
@@ -98,6 +134,9 @@
 
 #49 Remove the youngest family member and their associate data from fam_data
 
+
+# matrix ---------------------------------
+
 #50 Create a matrix of zeros that has 10 rows and 15 columns called mat
 
 #51 Add row names 1-10 and column names "Freshman", "Sophomore", "Junior" to the matrix
@@ -115,6 +154,9 @@
 
 #56 Create a number vector called mass that specifies the average mass in kg for each animal in species. 
 # Horse = 400 kg, Cat = 10 kg, Rattlesnake = 2.3 kg, Blue morpho = 0.003, Capuchin monkey = 2.7 kg. 
+
+
+# data.frame 3 --------
 
 #57 Create a dataframe called species_data that has abundance and mass information that corresponds to species. 
 
