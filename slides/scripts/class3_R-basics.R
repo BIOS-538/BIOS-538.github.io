@@ -24,6 +24,8 @@
 
 # if you assign it to a variable, the value will be stored for later use
 x <- 2.5 # assign a number to variable x
+y = 7 # don't use this..
+z <- 7
 
 # to show the output type 
 x
@@ -58,7 +60,7 @@ is.integer(x)
 l1 <- TRUE
 
 # This is also a logical type
-l2 <- x > 3
+l2 <- (x > 3)
 # Essentially, you are asking R logical questions requiring TRUE / FALSE responses
 
 # check the type 
@@ -95,15 +97,16 @@ as.logical(0)
 # x & y	     x AND y
 # isTRUE(x)  test if X is TRUE
 
-
+x != 2.5
 
 ## Assignment operator/extra ----
 
 # Does assignment work in reverse? [left to right]
 
 # TRY THIS
-4 -> y
-
+4 -> y -> z
+y
+z
 
 # Important things to note regarding variables:
 # case sensitive (g != G)
@@ -111,16 +114,22 @@ as.logical(0)
 # should not contain spaces (fun_games not fun games)
 # make as short and intuitive as possible
 
+This_ariable <- 6
+thisVariable
 
 ## Character ----
 
 z <- "we the people"
-
+z
+class(z)
 # check type
 is.character(z)
 
 # both single 'quotes' and "double quotes" work
-is.character('apple')
+is.character('24')
+z1 <- '24'
+
+z1
 
 
 # Compound datatypes --------------------------------------
@@ -133,6 +142,8 @@ is.character('apple')
 # Combine 'c()' values into a vector object
 
 k <- c(5, 7, 8, 10)
+class(k)
+length(k)
 
 # see output
 k
@@ -144,17 +155,27 @@ cities <- c("Houston", "New York", "Atlanta", "Seattle")
 
 # vector from 2 to 5
 2:5
+c(2, 3, 4, 5)
+2.5:5.7
 
 # Repeats
+rep(5, times = 10)
+
 rep(c(2, 5), times = 3)
-rep(c(2, 5), each = 3)
+rep(c(2, 5, '4'), each = 3) 
+
+# STOPPED HERE (18/1/24) ------------------------
 
 rep(c('cat', 'goat'), 2)
 
 ## Vectorized operators / functions ----
 
 # What happens here?
-k * 2
+k
+k * k
+
+k + 2
+k + rep(2, length(k))
 
 # This is the powerful feature called "vectorization"
 
@@ -163,17 +184,21 @@ k + k
 k + c(2, 4, 6, 8)
 
 # Explain this output
+k
 k + c(2, 4)
 
 # Now this!
 k + c(1, 2, 3)
-
+k
 
 # We can use logical operators on vectors just like values.
 k <- c(1:10)
 k > 8
+k >= 8
+
 k < 5
-k > 8 | k < 5
+k > 5 & k < 8
+
 
 # character operations
 
