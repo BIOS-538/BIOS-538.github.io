@@ -5,14 +5,12 @@
 # ...(don't copy paste, typing makes you understand better)
 # 2. Run it and write a comment next to the command in this script
 # ... to explain what the command does (first example provided in line 18)
-# 3. Ignore commands that were not yet taught in class/ try answering with vectors
-# ... how do you tell if something was not covered? data.frame questions..
-# ... Use vectors A/B/C instead of rows of dataframe D in questions [5-11, 18, ] 
-# ... Leave these for another class : [6-10, 
+# 3. Ignore commands that were not yet taught in class (DATA FRAME / MATRIX)
 # 4. Use ?function to look up the documentation in the "help" pane 
 
 
-#1 Clear all objects
+#1 Clear all objects in the environment (WILL BE YOUR FIRST searching adventure)
+# document your sources..
 
 #2 Create a vector named A with a length of 6 that contains odd number integer values starting with 3.
 ## hint: ?seq for the seq() function
