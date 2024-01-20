@@ -158,6 +158,9 @@ cities <- c("Houston", "New York", "Atlanta", "Seattle")
 c(2, 3, 4, 5)
 2.5:5.7
 
+# More flexibility with sequence operator
+seq(2, 7, by = 2)
+
 # Repeats
 rep(5, times = 10)
 
@@ -191,7 +194,7 @@ k + c(2, 4)
 k + c(1, 2, 3)
 k
 
-# We can use logical operators on vectors just like values.
+# We can use logical operators on vectors just like single values.
 k <- c(1:10)
 k > 8
 k >= 8
