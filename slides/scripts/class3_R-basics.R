@@ -202,21 +202,24 @@ k < 5
 k > 5 & k < 8 # Break this down into smaller parts to understand it
 
 
+
 # STOPPED HERE (18/1/24) ------------------------
 
-# reload k 
+# assign k vector again 
+# Why?> (R's environment is emptied every time you reopen it.)
 k <- c(5, 7, 8, 10)
 
 # Note: everything you ran last week needs to be rerun again to bring
 # .. variables into the environment again
 
 
-# character operations
-
+## character operations ----
+cities <- c("Houston", "New York", "Atlanta", "Seattle")
 cities == "Los Angeles"
 
 # What does the error say?
 cities * 2
+
 
 ## Vector to single output functions ----
 
@@ -254,8 +257,6 @@ sum(k)
 # .. including other lists
 small_list <- list(c('small', 'cats'), 4:5)
 
-# rerun old vectors again
-x <- 2.5 ; cities <- c("Houston", "New York", "Atlanta", "Seattle")
 
 # make a bigger list
 list(x, k, cities, small_list)
@@ -269,7 +270,10 @@ small_list[[1]] # two brackets: outputs a vector
 
 # check type
 class(small_list[1])
-class(small_list[[1]]) # notice
+class(small_list[[1]]) # notice the difference?
+
+# a more natural way to use any function
+small_list[1] %>% class() # using the pipe operator
 
 
 # Programming -------------------------------------------------
@@ -284,10 +288,24 @@ if(seen == 'something') {
   print('say something')
 }
 
+### single line if() definition ----
+x <- 2.5
 what_is_x <- if(!is.integer(x)) "not an integer"
 
 # check result
 what_is_x
+
+
+### if() along with else ----
+
+if(x %% 2 == 0) { # no remainder when divisible by 2
+  print('even')  # => even number
+} else print('odd') # otherwise => odd number
+
+# to understand compound code, break it down into individual parts
+y <- 5 # define a variable
+y %% 2 # check the remainder when divided by 2
+y %% 2 == 0 # is the remainder 0 (TRUE or FALSE)
 
 
 ## Looping / repeating actions ----
@@ -301,11 +319,12 @@ for(i in k) { # for every element in k
   } else print('odd')
 }
 
-k
+
 
 ## Functions ----
 
 # Functions help write re-usable code chunks
+# Philosophy: Do not ~repeat yourself > 2 times
 
 check_even_or_odd <- function(i) {
   if(i %% 2 == 0) {
@@ -314,19 +333,38 @@ check_even_or_odd <- function(i) {
 } 
 
 # How to use the function?
-for(i in k) check_even_or_odd(i)
+for(i in k) check_even_or_odd(i) 
+# the action of the function is clearer and more concise now!!
 
 # Now if I change my mind, I can change the function behavior in one place
 
-# MAKE CHANGES IN FUNCTION
+# MAKE CHANGES IN FUNCTION 
+# Hint: (need to run the function definition with "ctrl + enter" after changing it)
 # Change capitalization: 'even' to 'Even' and 'odd' ..
 # Instead of printing, try to store the output; hint, use return()
 
 # Rerun the function here
 
 
+## ACTIVITY: TRY IT YOURSELF (5 + ~5 m) ----
+# TASK: 
+# 1. Make a function that takes a character (ie. a single word) 
+# 2. Find the length of the character (how many letters/characters are in it). HINT : length()
+# 3. Check if the length is a multiple of 3 or not
+# ... where this might be useful? example: DNA sequence codons occur in multiples of 3!
+# 4. Now run this in a for() loop on 4 different words of your choice
+# ... can use: Houston, Rice, I'm hungry
+
+
+
+
 # Can we do this in a vectorized manner? => avoiding the for(..)
-# TRY IT YOURSELF
+# Cliffhanger!
+
+
+
+
+# END HERE 23/1/24 -------------------------------------------S
 
 
 # How to ask for help? ----
