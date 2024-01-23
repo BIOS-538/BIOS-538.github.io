@@ -167,7 +167,6 @@ rep(5, times = 10)
 rep(c(2, 5), times = 3)
 rep(c(2, 5, '4'), each = 3) 
 
-# STOPPED HERE (18/1/24) ------------------------
 
 rep(c('cat', 'goat'), 2)
 
@@ -175,7 +174,7 @@ rep(c('cat', 'goat'), 2)
 
 # What happens here?
 k
-k * k
+k + k
 
 k + 2
 k + rep(2, length(k))
@@ -200,7 +199,16 @@ k > 8
 k >= 8
 
 k < 5
-k > 5 & k < 8
+k > 5 & k < 8 # Break this down into smaller parts to understand it
+
+
+# STOPPED HERE (18/1/24) ------------------------
+
+# reload k 
+k <- c(5, 7, 8, 10)
+
+# Note: everything you ran last week needs to be rerun again to bring
+# .. variables into the environment again
 
 
 # character operations
@@ -240,26 +248,28 @@ sum(k)
 ?gr
 
 
-## Lists ----
+## Lists (START: 23/1/24) ----
 
 # Lists are the most general, can include everything in them
 # .. including other lists
 small_list <- list(c('small', 'cats'), 4:5)
 
+# rerun old vectors again
+x <- 2.5 ; cities <- c("Houston", "New York", "Atlanta", "Seattle")
+
+# make a bigger list
 list(x, k, cities, small_list)
 
 
 ## Subseting (indexing) vectors and lists ----
 
 # Get the first element in the list
-small_list[1]
+small_list[1] # outputs a list with only 1 element
+small_list[[1]] # two brackets: outputs a vector
 
 # check type
-small_list[1] %>% class()
-
-# hmm, what does the error say?
-
-# How do we fix it?
+class(small_list[1])
+class(small_list[[1]]) # notice
 
 
 # Programming -------------------------------------------------
@@ -283,7 +293,9 @@ what_is_x
 ## Looping / repeating actions ----
 
 # checking for even numbers
-for(i in k) {
+for(i in k) { # for every element in k
+  
+  # Print if it was even or odd
   if(i %% 2 == 0) {
     print('even')
   } else print('odd')
