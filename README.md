@@ -20,7 +20,7 @@ There will be a series of problem sets posted on the course website with instruc
 
 **Office**: Keck 205
 
-**Office hours**: Friday, 3-4 pm, Keck 305 (*in person + zoom*)
+**Office hours**: Friday, 3-4 pm, Keck 308 (*in person + zoom*)
 
 *Note:* You will find the zoom links on the canvas website for the course
 
@@ -44,7 +44,7 @@ PhD student in Systems, Synthetic and Physical Biology ([website](https://www.li
 
 **Email**: Sam.Schwartz \[at\] rice.edu
 
-**Office hours**: Mondays, 3 - 4 pm, Keck 305 (*in person + zoom*)
+**Office hours**: Mondays, 3 - 4 pm, Keck 308 (*in person + zoom*)
 
 ## Assessment
 
