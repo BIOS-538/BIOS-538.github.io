@@ -522,7 +522,7 @@ Prashant K
 <h2>Compound datatypes</h2>
 <p><em>combination of simple datatypes</em>: vector = <code>c(x, y)</code>, <code>list(x, y)</code>, <code>data.frame(x1 = x, x2 = y)</code></p>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">vector</a></li><li><a href="#tabset-2-2">list</a></li><li><a href="#tabset-2-3">factor</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">vector</a></li><li><a href="#tabset-2-2">list</a></li><li><a href="#tabset-2-3">factor</a></li><li><a href="#tabset-2-4">Named elements</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <p><img data-src="img/creating_vectors.png"></p>
@@ -547,16 +547,44 @@ $y
 <li><p>Order of colours assigned when plotting stuff</p></li>
 <li><p>Analyzing categorical questionnaires</p></li>
 </ul>
-<section id="named-elements" class="slide level2">
-<h2>Named elements</h2>
+</div>
+<div id="tabset-2-4">
 <ul>
 <li><p>Named vector: <code>c('a' = 1, 'b' = 2)</code></p></li>
 <li><p>List: <code>list(x = 1:5, y = c('a', 'b'))</code></p></li>
 </ul>
+</div>
+</div>
+</div>
 </section>
+<section id="recap-lecture-3" class="slide level2 smaller">
+<h2>Recap: Lecture 3</h2>
+<ul>
+<li><p>Refresh: directory structure, <code>.Rproj</code>ect, <code>R</code> script, directory structure</p></li>
+<li><p>Introduce R datatypes: {<em>tip: check datatype with</em> <code>class()}</code></p>
+<ul>
+<li><p>Simple: <code>numeric</code>, <code>character</code>. Other simple: <code>factor</code>, <code>logical</code></p></li>
+<li><p>Compound: <em>combination of simple datatypes</em>: vector = <code>c(x, y)</code>, <code>list(x, y)</code>, <code>data.frame()</code></p></li>
+<li><p>Good practices: Commenting code for documentation. <code># this code does x (if I get it to work)</code></p></li>
+</ul></li>
+</ul>
+<div class="fragment" data-fontcolour="gray">
+<ul>
+<li><p>Subset/indexing compound datatypes: <code>x[3]</code>, <code>x[x&gt;0]</code>, <code>dataframe[1,5]</code></p></li>
+<li><p>Control statements: <em>decision making</em>: <code>if()</code> and <em>repeat steps in a loop</em>: <code>for()</code> or vectorize using functions</p></li>
+</ul>
 </div>
-</div>
-</div>
+</section></section>
+<section>
+<section id="r-basics-continued" class="title-slide slide level1 center">
+<h1>R basics continued</h1>
+<p><em>first 20 minutes of lecture 4</em> ; Date: 23/1/24</p>
+<p>Let us quickly finish talking about</p>
+<ul>
+<li><p>Vector subsetting / indexing</p></li>
+<li><p>Programing : <code>if..else</code> ; <code>for</code> and <code>function()</code></p></li>
+</ul>
+<p><strong>Note</strong>: Download the <code>class3_R-basics.R</code> file again from the website (<em>I updated it.. You can rename last weeks file with the _old suffix <code>… _old.R</code></em>)</p>
 </section>
 <section id="subset-compound-datatypes" class="slide level2">
 <h2>Subset compound datatypes</h2>
@@ -588,20 +616,6 @@ $y
 <span id="cb3-2"><a></a>  <span class="st">"Do something with the variable"</span></span>
 <span id="cb3-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="recap-todays-class" class="slide level2 smaller">
-<h2>Recap: Today’s class</h2>
-<ul>
-<li><p>Refresh: directory structure, <code>.Rproj</code>ect, <code>R</code> script, directory structure</p></li>
-<li><p>Introduce R datatypes: {<em>tip: check datatype with</em> <code>class()}</code></p>
-<ul>
-<li><p>Simple: <code>numeric</code>, <code>character</code>. Other simple: <code>factor</code>, <code>logical</code></p></li>
-<li><p>Compound: <em>combination of simple datatypes</em>: vector = <code>c(x, y)</code>, <code>list(x, y)</code>, <code>data.frame()</code></p></li>
-<li><p>Good practices: Commenting code for documentation. <code># this code does x (if I get it to work)</code></p></li>
-</ul></li>
-<li><p>Subset/indexing compound datatypes: <code>x[3]</code>, <code>x[x&gt;0]</code>, <code>dataframe[1,5]</code></p></li>
-<li><p>Control statements: <em>decision making</em>: <code>if()</code> and <em>repeat steps in a loop</em>: <code>for()</code> or vectorize using functions</p></li>
-</ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
