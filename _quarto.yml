@@ -22,7 +22,7 @@ website:
   repo-url: https://github.com/BIOS-538.github.io # links to github
   repo-actions: [edit, issue]
   page-footer: 
-    left: "&copy 2024, Prashant Kalvapalle"
+    left: "Copyright 2024, Prashant Kalvapalle"
     right:
       - text: "Creative commons license. CC-BY-4.0"
         href: LICENSE-CC-BY-4.0.md
