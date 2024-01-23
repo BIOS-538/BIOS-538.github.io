@@ -163,12 +163,42 @@ Use cases
 
 -   Analyzing categorical questionnaires
 
-## Named elements
+### Named elements
 
 -   Named vector: `c('a' = 1, 'b' = 2)`
 
 -   List: `list(x = 1:5, y = c('a', 'b'))`
 :::
+
+## Recap: Lecture 3  {.smaller}
+
+-   Refresh: directory structure, `.Rproj`ect, `R` script, directory structure
+
+-   Introduce R datatypes: {*tip: check datatype with* `class()}`
+
+    -   Simple: `numeric`, `character`. Other simple: `factor`, `logical`
+
+    -   Compound: *combination of simple datatypes*: vector = `c(x, y)`, `list(x, y)`, `data.frame()`
+
+    -   Good practices: Commenting code for documentation. `# this code does x (if I get it to work)`
+
+::: {.fragment fontcolour="gray"}
+-   Subset/indexing compound datatypes: `x[3]`, `x[x>0]`, `dataframe[1,5]`
+
+-   Control statements: *decision making*: `if()` and *repeat steps in a loop*: `for()` or vectorize using functions
+:::
+
+# R basics continued
+
+*first 20 minutes of lecture 4* ; Date: 23/1/24
+
+Let us quickly finish talking about
+
+-   Vector subsetting / indexing
+
+-   Programing : `if..else` ; `for` and `function()`
+
+**Note**: Download the `class3_R-basics.R` file again from the website (*I updated it.. You can rename last weeks file with the \_old suffix `… _old.R`*)
 
 ## Subset compound datatypes
 
@@ -201,19 +231,3 @@ for (variable in sequence){
   "Do something with the variable"
 }
 ```
-
-## Recap: Today's class {.smaller}
-
--   Refresh: directory structure, `.Rproj`ect, `R` script, directory structure
-
--   Introduce R datatypes: {*tip: check datatype with* `class()}`
-
-    -   Simple: `numeric`, `character`. Other simple: `factor`, `logical`
-
-    -   Compound: *combination of simple datatypes*: vector = `c(x, y)`, `list(x, y)`, `data.frame()`
-
-    -   Good practices: Commenting code for documentation. `# this code does x (if I get it to work)`
-
--   Subset/indexing compound datatypes: `x[3]`, `x[x>0]`, `dataframe[1,5]`
-
--   Control statements: *decision making*: `if()` and *repeat steps in a loop*: `for()` or vectorize using functions
