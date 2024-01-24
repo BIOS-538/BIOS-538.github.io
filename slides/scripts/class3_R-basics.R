@@ -201,7 +201,10 @@ k >= 8
 k < 5
 k > 5 & k < 8 # Break this down into smaller parts to understand it
 
-
+# break down
+k > 5
+k < 8
+.. & ..
 
 # STOPPED HERE (18/1/24) ------------------------
 
@@ -256,11 +259,15 @@ sum(k)
 # Lists are the most general, can include everything in them
 # .. including other lists
 small_list <- list(c('small', 'cats'), 4:5)
-
+small_list # look at the reuslt
 
 # make a bigger list
+x <- 2.5
 list(x, k, cities, small_list)
 
+
+c(1, 3, 7)
+list(1, 3, 7)
 
 ## Subseting (indexing) vectors and lists ----
 
@@ -274,6 +281,55 @@ class(small_list[[1]]) # notice the difference?
 
 # a more natural way to use any function
 small_list[1] %>% class() # using the pipe operator
+ # %>% # Ctrl + Shitf + M : %>% 
+
+library(tidyverse) # install.packages('tidyverse')
+
+c('3', '1', '5')
+class(2.5:7)
+2.5:7
+
+# pipe operator
+1:5 %>% class()
+1:5 %>% as.character() %>% class()  
+
+f(g(h(4)))
+4 %>% h() %>% g() %>% f()
+
+class(as.character(1:5))
+
+
+# Subsetting vector
+
+k[4]
+k[c(1, 4)]
+c(2:1) %>% k[.]
+
+
+
+# side point
+c(2, 1) %>% sum(.)
+
+
+## Data.frames ----
+
+# remake list with names
+another_list <- 
+  list(
+    words = c('big', 'mouse', 'possum'),
+    nums = c(6, 8, 9)
+)
+
+# subsetting lists have more wayts to do it
+another_list[[2]]
+another_list['words']
+another_list$nums # ==> another_list[[2]] or another_list[['nums']]
+
+# Converting a list into a data frame (or tibble for tidyverse fans)
+a_dataframe <- 
+  another_list %>% 
+  # as.data.frame()
+  as_tibble()
 
 
 # Programming -------------------------------------------------
@@ -287,6 +343,19 @@ seen <- "something"
 if(seen == 'something') {
   print('say something')
 }
+
+if(x < 4) print('done') else print("didn't go indide")
+
+if(x < 4) { 
+  print('done')
+  print('kashdf')
+  return(x)
+  
+  } else { 
+    print("didn't go indide")
+  }
+
+# ENDED HERE. 23/1/24 -----
 
 ### single line if() definition ----
 x <- 2.5
