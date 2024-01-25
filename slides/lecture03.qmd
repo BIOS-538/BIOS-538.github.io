@@ -170,7 +170,7 @@ Use cases
 -   List: `list(x = 1:5, y = c('a', 'b'))`
 :::
 
-## Recap: Lecture 3  {.smaller}
+## Recap: Lecture 3 {.smaller}
 
 -   Refresh: directory structure, `.Rproj`ect, `R` script, directory structure
 
