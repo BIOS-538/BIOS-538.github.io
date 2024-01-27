@@ -1,0 +1,34 @@
+---
+title: "lecture5"
+author: "Prashant K"
+format: revealjs
+editor: visual
+---
+
+# Checking-in
+
+-   How is the assignment 2 going so far?
+
+-   Does everyone know were to access the link for attendance (*same link every class*)
+
+    -   Word of the day: write `Zoom` if attending the lecture on zoom :)
+
+## Note
+
+-   Please use the pre-fix `BIOS-538:` or `BIOS-338:` when emailing me about the course
+
+-   Please do reach out if you are having any difficulties or need accomodations
+
+    -   Understanding the course material
+
+    -   Assignment : need extension
+
+# Logistics for today's class
+
+-   Please download the files for today into your `scripts/` directory in your project folder
+
+    -   `lecture5_demo`.R
+
+    -   `lecture5_practice.R`
+
+-   We will have lot more practice sessions in today's class
