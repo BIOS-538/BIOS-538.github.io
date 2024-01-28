@@ -299,5 +299,131 @@
     "title": "class 3: R basics",
     "section": "Programming = control which statements are executed",
     "text": "Programming = control which statements are executed\n\nControl statements: decision making: if() and repeat steps in a loop: for()\n\nif..else :\n\nif (condition){\n  \"Do something\"\n} else {\n  \"Do something different\"\n}\n\nfor() loops\n\nfor (variable in sequence){\n  \"Do something with the variable\"\n}"
+  },
+  {
+    "objectID": "slides/lecture08.html#why-does-this-matter",
+    "href": "slides/lecture08.html#why-does-this-matter",
+    "title": "lecture08",
+    "section": "Why does this matter?",
+    "text": "Why does this matter?\n\nAllow other scientists to easily interpret and reproduce your work\nOrganize your thoughts intertwined with code, graphs, tables, stats\nHelp your future self!\n\nYou very quickly forget what you were working on once you take a break from it."
+  },
+  {
+    "objectID": "slides/lecture08.html#quarto-vs.-rmarkdown",
+    "href": "slides/lecture08.html#quarto-vs.-rmarkdown",
+    "title": "lecture08",
+    "section": "Quarto vs. RMarkdown",
+    "text": "Quarto vs. RMarkdown\n\nQuarto (named after the word for a book/pamphlet created in a certain way) enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/.\nSome of you may have heard of RMarkdown, which is similar to Quarto, except Quarto has more outputs and built in capabilities, so we will focus on Quarto for this lesson."
+  },
+  {
+    "objectID": "slides/lecture08.html#wait-what-is-a-markup-language",
+    "href": "slides/lecture08.html#wait-what-is-a-markup-language",
+    "title": "lecture08",
+    "section": "Wait what is a markup language?",
+    "text": "Wait what is a markup language?\n\n“A markup language is a text-encoding system which specifies the structure and formatting of a document and potentially the relationship between its part” (google AI is the source lol)\n\nBasically annotating a text, like you would with pen and paper\n\nExamples: LaTeX, HTML\nWhat about Microsoft Word or Google Docs?\n\nThese are NOT markup languages. These are word processors with visual formatting. However they have markup languages working behind the scenes."
+  },
+  {
+    "objectID": "slides/lecture08.html#lets-get-quarto-set-up",
+    "href": "slides/lecture08.html#lets-get-quarto-set-up",
+    "title": "lecture08",
+    "section": "Let’s get Quarto set up",
+    "text": "Let’s get Quarto set up\n\nDownload for your system https://quarto.org/docs/get-started/\nClick the white paper with the green plus sign and create new Quarto document\nSave the file as well using the save icon on the toolbar"
+  },
+  {
+    "objectID": "slides/lecture08.html#new-document",
+    "href": "slides/lecture08.html#new-document",
+    "title": "lecture08",
+    "section": "New Document",
+    "text": "New Document\n\nOutput types –&gt; leave HTML for now, you can download LaTeX if you want later\nYou can change these things later! Quarto is a mix of visual interfaces you are likely used to and more command-line style as well."
+  },
+  {
+    "objectID": "slides/lecture08.html#how-do-i-drive-this-spaceship",
+    "href": "slides/lecture08.html#how-do-i-drive-this-spaceship",
+    "title": "lecture08",
+    "section": "How do I drive this spaceship??",
+    "text": "How do I drive this spaceship??"
+  },
+  {
+    "objectID": "slides/lecture08.html#quarto-is-more-user-friendly-than-you-may-realize",
+    "href": "slides/lecture08.html#quarto-is-more-user-friendly-than-you-may-realize",
+    "title": "lecture08",
+    "section": "Quarto is more user friendly than you may realize",
+    "text": "Quarto is more user friendly than you may realize\n\nSource vs. Visual -&gt; upper left hand corner\n\nIt can helpful to switch between the two as you go\n\nYou are basically just mixing formats and choosing what to include\nhttps://rstudio.github.io/cheatsheets/quarto.pdf"
+  },
+  {
+    "objectID": "slides/lecture08.html#a-feel-for-the-basics",
+    "href": "slides/lecture08.html#a-feel-for-the-basics",
+    "title": "lecture08",
+    "section": "A feel for the basics",
+    "text": "A feel for the basics\n\nNew .qmd files have a few tips to help you get started.\nRendering (blue –&gt; in toolbar) is basically synthesis\n\nCan automatically save on rendering (I find this a little annoying)\nLets us preview the final output"
+  },
+  {
+    "objectID": "slides/lecture08.html#authoring",
+    "href": "slides/lecture08.html#authoring",
+    "title": "lecture08",
+    "section": "Authoring",
+    "text": "Authoring\n\nPDFs need LaTex\n\nin terminal: quarto install tinytex\n\nyou can make multiple formats as well by adding to the YAML lines\nformat: revealjs –&gt; creates a presentation, just need to reload\nAdding citations can be a little annoying –&gt; Link to Zotero/Mendeley\n\n(Abrams 2022)\nInsert, @ citation, choose from sources,"
+  },
+  {
+    "objectID": "slides/lecture08.html#yaml-header-yet-another-markup-language",
+    "href": "slides/lecture08.html#yaml-header-yet-another-markup-language",
+    "title": "lecture08",
+    "section": "YAML header (yet another markup language)",
+    "text": "YAML header (yet another markup language)\n\n\nHowever, for some documents, you may want to hide all of the code and just show the output. To do so, specify echo: false within the execute option in the YAML. Or you can do this just for specific cells of code."
+  },
+  {
+    "objectID": "slides/lecture08.html#code-chunks",
+    "href": "slides/lecture08.html#code-chunks",
+    "title": "lecture08",
+    "section": "Code chunks",
+    "text": "Code chunks\n\nMore ways to finesse how your code is showed in the final output: https://quarto.org/docs/get-started/computations/rstudio.html"
+  },
+  {
+    "objectID": "slides/lecture08.html#markdown-text",
+    "href": "slides/lecture08.html#markdown-text",
+    "title": "lecture08",
+    "section": "Markdown text",
+    "text": "Markdown text\nBack to the visual vs. source view, you can use a Microsoft world style approach for formatting (Visual) or look up cheat sheets to learn the command-line (source). You can also easily add images by clicking image icon and linking either URL or directory for image."
+  },
+  {
+    "objectID": "slides/lecture08.html#putting-it-all-together",
+    "href": "slides/lecture08.html#putting-it-all-together",
+    "title": "lecture08",
+    "section": "Putting it all together",
+    "text": "Putting it all together\nThis is where we render to our final presentation."
+  },
+  {
+    "objectID": "slides/lecture08.html#some-data-for-today",
+    "href": "slides/lecture08.html#some-data-for-today",
+    "title": "lecture08",
+    "section": "Some data for today",
+    "text": "Some data for today\ninstall.packages(\"tidyverse\")\ninstall.packages(\"palmerpenguins\")\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\nThe data from the palmerpenguins package contains size measurements for penguins from three species observed on three islands in the Palmer Archipelago, Antarctica."
+  },
+  {
+    "objectID": "slides/lecture08.html#onto-to-our-data",
+    "href": "slides/lecture08.html#onto-to-our-data",
+    "title": "lecture08",
+    "section": "Onto to our data",
+    "text": "Onto to our data\nThe plot below shows the relationship between flipper and bill lengths of these penguins.\n\nggplot(penguins, \n       aes(x = flipper_length_mm, y = bill_length_mm)) +\n  geom_point(aes(color = species, shape = species)) +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(\n    title = \"Flipper and bill length\",\n    subtitle = \"Dimensions for penguins at Palmer Station LTER\",\n    x = \"Flipper length (mm)\", y = \"Bill length (mm)\",\n    color = \"Penguin species\", shape = \"Penguin species\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/lecture08.html#plot",
+    "href": "slides/lecture08.html#plot",
+    "title": "lecture08",
+    "section": "Plot",
+    "text": "Plot"
+  },
+  {
+    "objectID": "slides/lecture08.html#okay-your-turn",
+    "href": "slides/lecture08.html#okay-your-turn",
+    "title": "lecture08",
+    "section": "Okay your turn!",
+    "text": "Okay your turn!\n\nExplore the penguins data. Visualize the data and run some basic statistics. Show both the code and the results. Explain the results with text, not with comments. Try rendering a file output.\nTry to create a quarto presentation with your results, this time hiding your code and only showing the results. Can you include a image from the internet as well?"
+  },
+  {
+    "objectID": "slides/lecture08.html#references",
+    "href": "slides/lecture08.html#references",
+    "title": "lecture08",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n\n\nAbrams, Peter A. 2022. Competition Theory in Ecology. Oxford University Press."
   }
 ]
