@@ -1,5 +1,6 @@
 ---
 title: "Class schedule & Lecture slides"
+format: html
 editor: visual
 ---
 

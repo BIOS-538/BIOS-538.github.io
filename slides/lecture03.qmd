@@ -2,14 +2,7 @@
 title: "class 3: R basics"
 author: "Prashant K"
 date: 18/Jan/24
-format: 
-  revealjs:
-    mouse-wheel: true # scroll through slides
-    slide-number: true # show slide number
-    hide-inactive-cursor: true # hide mouse pointer unless moved?
-    reference-location: document # put references at the end
-execute: 
-  echo: false
+format: revealjs
 editor: visual
 ---
 
