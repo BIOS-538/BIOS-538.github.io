@@ -8,10 +8,9 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.543">
+  <meta name="generator" content="quarto-1.4.537">
 
   <meta name="author" content="Annie Finneran">
-  <meta name="dcterms.date" content="2024-01-28">
   <title>BIOS-338/538 - lecture08</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -422,7 +421,6 @@ Annie Finneran
 </div>
 </div>
 
-  <p class="date">2024-01-28</p>
 </section>
 <section id="why-does-this-matter" class="slide level2">
 <h2>Why does this matter?</h2>
@@ -435,7 +433,7 @@ Annie Finneran
 </ul></li>
 </ul>
 
-<img data-src="coding.png" class="quarto-figure quarto-figure-right r-stretch" width="394"></section>
+<img data-src="img/coding.png" class="quarto-figure quarto-figure-right r-stretch" width="394"></section>
 <section id="quarto-vs.-rmarkdown" class="slide level2">
 <h2>Quarto vs.&nbsp;RMarkdown</h2>
 <ul>
@@ -472,11 +470,11 @@ Annie Finneran
 <li><p>You can change these things later! Quarto is a mix of visual interfaces you are likely used to and more command-line style as well.</p></li>
 </ul>
 
-<img data-src="NewQuarto.png" class="quarto-figure quarto-figure-right r-stretch" width="373"></section>
+<img data-src="img/NewQuarto.png" class="quarto-figure quarto-figure-right r-stretch" width="373"></section>
 <section id="how-do-i-drive-this-spaceship" class="slide level2">
 <h2>How do I drive this spaceship??</h2>
 
-<img data-src="spaceship.jpeg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="img/spaceship.jpeg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="quarto-is-more-user-friendly-than-you-may-realize" class="slide level2">
 <h2>Quarto is more user friendly than you may realize</h2>
 <ul>
@@ -518,7 +516,7 @@ Annie Finneran
 <section id="yaml-header-yet-another-markup-language" class="slide level2">
 <h2>YAML header (yet another markup language)</h2>
 
-<img data-src="YAMLheader.png" class="r-stretch"><ul>
+<img data-src="img/YAMLheader.png" class="r-stretch"><ul>
 <li>However, for some documents, you may want to hide all of the code and just show the output. To do so, specify&nbsp;<code>echo: false</code>&nbsp;within the&nbsp;<code>execute</code>&nbsp;option in the YAML. Or you can do this just for specific cells of code.</li>
 </ul>
 </section>
@@ -562,11 +560,11 @@ Annie Finneran
 <span id="cb1-11"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lecture08_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture10_files/figure-html/unnamed-chunk-2-1.png" width="672" class="r-stretch"></section>
 <section id="plot" class="slide level2">
 <h2>Plot</h2>
 
-<img data-src="lecture08_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture10_files/figure-html/unnamed-chunk-3-1.png" width="672" class="r-stretch"></section>
 <section id="okay-your-turn" class="slide level2">
 <h2>Okay your turn!</h2>
 <ol type="1">
@@ -798,44 +796,6 @@ Abrams, Peter A. 2022. <em>Competition Theory in Ecology</em>. Oxford University
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
