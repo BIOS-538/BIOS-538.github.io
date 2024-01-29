@@ -5,11 +5,12 @@ project:
     - "slides/scripts/*.R"
     - "slides/lecture04_tidyverse_intro.pptx"
     - "slides/assets/lec04_tidyverse_intro_worksheet.docx"
-    # - "_xaringan_slides/lecture01/*" # can add resources / pre-built pages. Needs testing!
-    # - "_xaringan_slides/lecture01/img/*"
+    - "_xaringan_slides/lecture01/lecture01.html" # can add resources / pre-built pages. Needs testing!
+    - "_xaringan_slides/lecture01/img/*"
 
 execute:
-  freeze: auto  # re-render only when source changes
+  freeze: auto  # re-render R chunks only when source changes
+  echo: false # hide code by default
 
 website:
   title: "BIOS-338/538"
@@ -28,10 +29,17 @@ website:
         href: LICENSE-CC-BY-4.0.md
     
 format:
-  html:
+  html: 
+    default: true
     theme: cosmo
     css: styles.css
     toc: true
-
+  
+  revealjs:
+    mouse-wheel: true # scroll through slides
+    slide-number: true # show slide number
+    hide-inactive-cursor: true # hide mouse pointer unless moved?
+    reference-location: document # put references at the end
+    from: markdown+emoji
 
 

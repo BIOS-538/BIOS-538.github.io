@@ -1,6 +1,6 @@
 ---
-# ---
 # title: "BIOS 338/538 slides"
+format: html
 ---
 
 {{< include README.md >}}
