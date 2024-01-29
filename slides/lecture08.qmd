@@ -23,7 +23,7 @@ bibliography: references.bib
 
     -   You very quickly forget what you were working on once you take a break from it.
 
-![](coding.png){fig-align="right" width="394"}
+![](img/coding.png){fig-align="right" width="394"}
 
 ## Quarto vs. RMarkdown
 
@@ -57,11 +57,11 @@ bibliography: references.bib
 
 -   You can change these things later! Quarto is a mix of visual interfaces you are likely used to and more command-line style as well.
 
-![](NewQuarto.png){fig-align="right" width="373"}
+![](img/NewQuarto.png){fig-align="right" width="373"}
 
 ## How do I drive this spaceship??
 
-![](spaceship.jpeg){fig-align="center"}
+![](img/spaceship.jpeg){fig-align="center"}
 
 ## Quarto is more user friendly than you may realize
 
@@ -98,7 +98,7 @@ bibliography: references.bib
 
 ## YAML header (yet another markup language)
 
-![](YAMLheader.png)
+![](img/YAMLheader.png)
 
 -   However, for some documents, you may want to hide all of the code and just show the output. To do so, specify `echo: false` within the `execute` option in the YAML. Or you can do this just for specific cells of code.
 
