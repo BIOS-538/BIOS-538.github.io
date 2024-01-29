@@ -10,7 +10,7 @@ format:
     theme: serif
 editor: source
 echo: true
-bibliography: references.bib
+bibliography: assets/references.bib
 ---
 
 ## Why does this matter?
