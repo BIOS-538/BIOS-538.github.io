@@ -30,7 +30,18 @@ for (n in k) {# for every element in k
   print(" years old")  
 }
 
+# same loop but better written! 
 for (n in k) cat('I was', n, 'years old\n')
+
+# Definitions: 
+# n = iterator variable. Use this inside the loop
+# k = iterated vector. DON'T use this inside the loop!
+# inside the flower brackets {..} = body of the loop
+# .. brackets are optional for a one-liner but recommended
+# .. as a best practice for readability
+
+# The best indentation/formatting for readability
+
 
 
 # calculate something with each number in a vector
@@ -82,13 +93,38 @@ get_mean <- function(x) sum(x)/length(x) # function to get average
 ## 2.1.a Without functions -------------------------------------------
 
 # We shall do a simple calculation but repetitively
-# simple example: I like to think of functions as algebra
+# I like to think of functions as algebra with variable x
 
-x <- 5 ; 
+# Doing some calculations without a function (~ algebra word problem)
+
+# mom was 28 when child was born
+# what is mom's age when child is 5, 10, 25 years old?
+
+x <- 0
+(x + 28)
 
 
 
 ## 2.1.b. With function() ----
+
+
+
+# Define things in the function: body, variables
+
+my_fun2 <- function(x) cat('input was:', x, '\n  Output', (x + 2) * k)
+
+# what variables does a function see and show?
+
+
+
+# simple example: I like to think of functions as algebra with variable x
+my_fun <- function(x) cat('input was:', x, '\n') 
+
+# x can take on any value by calling the function with that value
+my_fun('10 cats') ; my_fun(5.3) ; my_fun(TRUE)
+
+
+my_fun2 <- function(x) cat('input was:', x, '\n  Output', (x + 2) * k) 
 
 
 # Practice solutions? ----
