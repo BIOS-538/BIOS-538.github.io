@@ -1,5 +1,9 @@
 # class5_practice_loops-functions.R
 
+# Loading libraries ----
+library(tidyverse)
+
+
 # Recap/previous class? ---------------------------------------
 
 # what was covered? 
@@ -18,26 +22,66 @@
 # ... of each word within a vector
 
 
-# 1.0: Store a vector of words
+# 1.0: Store a vector of 5 words
+words <- c('ants', 'hill goat', 'good ...')
 
-
-# 1.1: Grab the first word into a test variable
-
+# 1.1: Grab the first word into a 'test' variable
+test <- words[1]
 
 # 1.2: Find the number of letters in the test word
+# hint : stringr::str_length()
+# another function: nchar()
+nchar(test)
 
 
 # 1.3: Now write a for() loop to do find num of letters for all
 # ... words in the vector
 
+# first approach
+for (i in 1:length(words)) {
+  # print(i) # debugging
+  words[i] %>% nchar() %>% print()
+}
 
+# Second approach
+for (w in words) {
+  # print(w)
+  nchar(w) %>% print()
+}
 
 ## 2. functions() as reusable-modules ----------------------------
+
+
+# 2.0: Write an if() command that checks if a number (ex 7) is 
+# ... even or odd and print("even") or "odd" accordingly
+
+# hint: (x %% n) gives you the remainder when x is divided by n
+
+# check basic components
+x %% 2 ; 5 %% 2
+7 %% 2 == 0
+
+if (x %% 2 == 0) print('even') else print('odd')
+
 
 # 2.1: Create a function that checks if the number is even or odd
 # ... and prints "even" or "odd" accordingly
 
-# hint: (x %% n) gives you the remainder when x is divided by n
+# STOPPED HERE 25/1 ----
+
+even_or_odd <- function(x)
+{
+  if (x %% 2 == 0) {
+    print('even')
+  } else {print('odd')}
+}
+
+even_or_odd(4)
+
+for(n in k) {
+  even_or_odd(n)  
+}
+
 
 # 2.2: Run this function on a test number
 

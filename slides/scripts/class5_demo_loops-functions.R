@@ -21,14 +21,26 @@ do_mathematical_stuff(input1 = vector) # vector: c(x1, x2, x3)
 
 ## 1. Iteration/repeating actions --------------------------------
 
+k <- 3:6
 
 # print text along with each number in the vector
 for (n in k) {# for every element in k
- print("I was ", n, " years old")  
+ print("I was ")
+  print(n)
+  print(" years old")  
 }
+
+for (n in k) cat('I was', n, 'years old\n')
 
 
 # calculate something with each number in a vector
+x <- 6
+(x + 5)^2
+
+for (number in k) {
+  print((number + 6)^2)
+}
+
 
 
 ## 2. functions() as reusable-modules ----------------------------
@@ -38,18 +50,21 @@ for (n in k) {# for every element in k
 # ... write a function the third time you copy-paste code!
 
 #' this function calculates the average of the numbers in a vector
+#' @param `x` is a vector of numbers. If you give words, R will be angry
+#' @returns the average of all the numbers in the vector
 get_mean <- function(x) {
   
-  s = sum(x) # add all values in x
-  n = length(x) # get the number of elements in x
-  mean = s / n # divide the sum by the number of elements
+  s <- sum(x) # add all values in x
+  n <- length(x) # get the number of elements in x
+  avg <- s / n # divide the sum by the number of elements
+  return(avg)
 }
 
 # use the function
 get_mean(1:5) 
-get_mean(x = 1:5) # more informative when there are > 1 inputs
+get_mean(x = k) # more informative when there are > 1 inputs
 
-# simple functions can be written consisely (one liners)..
+# simple functions can be written concisely (one liners)..
 get_mean <- function(x) sum(x)/length(x) # function to get average
 
 
@@ -62,7 +77,18 @@ get_mean <- function(x) sum(x)/length(x) # function to get average
 
 
 
+## START class 6 : 30/1/24 -------------------------------------------
 
+## 2.1.a Without functions -------------------------------------------
+
+# We shall do a simple calculation but repetitively
+# simple example: I like to think of functions as algebra
+
+x <- 5 ; 
+
+
+
+## 2.1.b. With function() ----
 
 
 # Practice solutions? ----
@@ -75,3 +101,5 @@ for (i in k) { # for every element in k
     print('even')
   } else print('odd')
 }
+
+
