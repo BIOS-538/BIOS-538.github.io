@@ -27,19 +27,16 @@ website:
     right:
       - text: "Creative commons license. CC-BY-4.0"
         href: LICENSE-CC-BY-4.0.md
-    
+  
+  # comments using hypothesis
+  comments: 
+    hypothesis:
+      theme: clean
+      openSidebar: false
+      
 format:
   html: 
     default: true
     theme: cosmo
     css: styles.css
     toc: true
-  
-  revealjs:
-    mouse-wheel: true # scroll through slides
-    slide-number: true # show slide number
-    hide-inactive-cursor: true # hide mouse pointer unless moved?
-    reference-location: document # put references at the end
-    from: markdown+emoji
-
-

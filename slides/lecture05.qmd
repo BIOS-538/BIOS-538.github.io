@@ -1,7 +1,7 @@
 ---
 title: "lecture5"
 author: "Prashant K"
-format: revealjs
+# format: revealjs
 editor: visual
 ---
 

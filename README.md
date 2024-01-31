@@ -46,10 +46,14 @@ PhD student in Systems, Synthetic and Physical Biology ([website](https://www.li
 
 **Office hours**: Mondays, 3 - 4 pm, Keck 308 (*in person + zoom*)
 
+## Course schedule 
+
+\[Find the schedule here\](slides/class_schedule.qmd)
+
 ## Assessment
 
 | Assignment      | Total grade | Details                                                                      |
-|-----------------|-------------|------------------------------------------------------------------------------|
+|-------------|-------------|----------------------------------------------|
 | Attendance      | 10%         | *on zoom with permission*                                                    |
 | Participation   | 10%         | online discussion board (*ask/answer*), office hours, in-class participation |
 | Problem sets    | 40%         |                                                                              |

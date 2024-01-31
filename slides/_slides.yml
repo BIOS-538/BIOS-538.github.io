@@ -1,0 +1,10 @@
+format: 
+  revealjs:
+    mouse-wheel: true # scroll through slides
+    slide-number: true # show slide number
+    hide-inactive-cursor: true # hide mouse pointer unless moved?
+    reference-location: document # put references at the end
+execute: 
+  echo: false
+editor: visual
+from: markdown+emoji

@@ -2,8 +2,10 @@
 title: "class 3: R basics"
 author: "Prashant K"
 date: 18/Jan/24
+metadata-files: 
+  - '_slides.yml'
 format: revealjs
-editor: visual
+# editor: visual
 ---
 
 # Recap

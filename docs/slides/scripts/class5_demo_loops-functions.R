@@ -22,6 +22,7 @@ do_mathematical_stuff(input1 = vector) # vector: c(x1, x2, x3)
 ## 1. Iteration/repeating actions --------------------------------
 
 k <- 3:6
+k <- c('kings', 'queens', 'gods')
 
 # print text along with each number in the vector
 for (n in k) {# for every element in k
@@ -31,7 +32,22 @@ for (n in k) {# for every element in k
 }
 
 # same loop but better written! 
-for (n in k) cat('I was', n, 'years old\n')
+for (n in k) {
+  cat('I was', n, 'years old\n')
+}
+
+for (i in 1:length(k)) cat('I was', i, 'years old\n') 
+
+for (i in seq_along(k)) cat(i, '\n')
+
+seq_along(k)
+
+k1 <- c()
+seq_along(k1)
+
+1:length(k1)
+3:7
+7:4
 
 # Definitions: 
 # n = iterator variable. Use this inside the loop
@@ -100,13 +116,39 @@ get_mean <- function(x) sum(x)/length(x) # function to get average
 # mom was 28 when child was born
 # what is mom's age when child is 5, 10, 25 years old?
 
-x <- 0
-(x + 28)
+x <- 0 # age of the child newborn
+mom <- (x + 28)
+mom
 
+x <- 5
+mom <- x + 28
+mom
+
+x <- 10
+mom <- x + 28
+mom
+
+x <- 25
+mom <- x + 28
+mom
+
+childs_ages <- c(0, 5, 10, 25)
+
+for (x in childs_ages) cat('mom is:', x + 28, '\n')
 
 
 ## 2.1.b. With function() ----
 
+get_moms_age <- function(x) { # x is the input variable
+  
+  # body of the function {.. body.. }
+  cat("When child is: ", x, 'years old. Mom is :', x + 28, '\n')
+  return()
+  #
+}
+
+get_moms_age() # missing argument error
+get_moms_age(x = c(0, 5, 10, 25))
 
 
 # Define things in the function: body, variables
@@ -127,6 +169,23 @@ my_fun('10 cats') ; my_fun(5.3) ; my_fun(TRUE)
 my_fun2 <- function(x) cat('input was:', x, '\n  Output', (x + 2) * k) 
 
 
+## 3.1. Vectorized function ----
+
+# A function that takes a vector ; operates on each element of this
+# vector gives another vector as the output..  
+# (same size as the input vector)
+
+moms_age_vectorized <- 
+  function(x) {
+    stringr::str_c("When child is: ", 
+                   x, 
+                   ' years old. Mom is :', 
+                   x + 28)
+  }
+
+
+moms_age_vectorized(childs_ages)
+    
 # Practice solutions? ----
 
 # ...
