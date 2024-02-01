@@ -1,5 +1,7 @@
 ---
 title: "Class schedule & Lecture slides"
+execute:
+  freeze: false # always execute the R code
 editor: visual
 ---
 
