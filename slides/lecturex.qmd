@@ -1,0 +1,20 @@
+---
+title: "lecture_x"
+author: "Prashant K"
+date: x/Feb/24
+format: revealjs
+metadata-files: 
+  - '_slides.yml'
+---
+
+# Recap?
+
+# Today's class
+
+topic name
+- outline
+- ..
+
+## Slides..
+
+

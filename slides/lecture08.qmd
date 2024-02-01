@@ -1,0 +1,28 @@
+---
+title: "lecture08"
+format: revealjs
+metadata-files: 
+  - '_slides.yml'
+---
+
+# Recap?
+
+# Today's class
+
+-   What is `ggplot()` and why is it awesome?
+
+-   Think of a plot / graph as having multiple layers
+
+-   ..
+
+# Building a plot layer by layer
+
+![ggplot syntax](img/ggplot_syntax.png){width="360"}
+
+Source: [blog/sharpsightlabs.com](https://www.sharpsightlabs.com/blog/ggplot2-tutorial/#syntax-of-ggplot2):
+
+## Geom layers
+
+![](img/geom_types.png){fig-alt="types of geoms" width="394"}
+
+Source: [blog/sharpsightlabs.com](https://www.sharpsightlabs.com/blog/ggplot2-tutorial/#syntax-of-ggplot2):

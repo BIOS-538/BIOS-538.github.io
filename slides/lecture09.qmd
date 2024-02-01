@@ -1,0 +1,22 @@
+---
+title: "lecture_x"
+author: "Prashant K"
+date: x/Feb/24
+format: revealjs
+metadata-files: 
+  - '_slides.yml'
+---
+
+# Recap?
+
+# Today's class
+
+git version control - Why do we need version control? - ..
+
+## Slides..
+
+the three main sections of a Git project: the working tree, the staging area, and the Git directory
+
+[![Working tree, staging area, and Git directory](img/git_stage-commit.png)](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
+
+> Source: [Fig 6/git-book](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
