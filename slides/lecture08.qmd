@@ -3,6 +3,8 @@ title: "lecture08"
 format: revealjs
 metadata-files: 
   - '_slides.yml'
+execute: 
+  echo: true # doesn't work?  
 ---
 
 # Recap?
@@ -15,9 +17,9 @@ metadata-files:
 
 -   ..
 
-# Building a plot layer by layer
+## Building a plot layer by layer
 
-![ggplot syntax](img/ggplot_syntax.png){width="360"}
+![Overview of the `ggplot()` syntax](img/ggplot_syntax.png){width="360"}
 
 Source: [blog/sharpsightlabs.com](https://www.sharpsightlabs.com/blog/ggplot2-tutorial/#syntax-of-ggplot2):
 
@@ -26,3 +28,51 @@ Source: [blog/sharpsightlabs.com](https://www.sharpsightlabs.com/blog/ggplot2-tu
 ![](img/geom_types.png){fig-alt="types of geoms" width="394"}
 
 Source: [blog/sharpsightlabs.com](https://www.sharpsightlabs.com/blog/ggplot2-tutorial/#syntax-of-ggplot2):
+
+There's many more geoms in the [ggplot cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)!
+
+Let us quickly see an animation of empty plot, adding axes, adding data for the histogram
+
+## Empty plot: `ggplot()` call
+
+```{r demo1, echo=TRUE}
+library(tidyverse)
+data("mtcars")
+
+ggplot(data = mtcars)
+
+```
+
+## Adding axes: `mapping = aes()`
+
+```{r demo2, echo=TRUE}
+ggplot(data = mtcars,
+       mapping = aes(x = cyl, y = mpg))
+```
+
+## Adding points: `geom_point()`
+
+```{r demo3, echo=TRUE}
+ggplot(data = mtcars,
+       mapping = aes(x = cyl, y = mpg)) + 
+  geom_point()
+```
+
+## Adding line: `geom_line()`
+
+```{r demo4, echo=TRUE}
+ggplot(data = mtcars,
+       mapping = aes(x = cyl, y = mpg)) + 
+  geom_point() + 
+  geom_line()
+```
+
+# Onto the worksheet now
+
+Please download the \_class8_ggplot_worksheet.Rmd or the `.R` file with the same name from the syllabus website
+
+-   the `.Rmd` will make it easier to read the prompts and run code by clicking on the "play" button (*run current chunk*) for each chunk
+
+-   If you are not comfortable with this, you can use the `.R` file instead with the same content
+
+# Design principles for graphics

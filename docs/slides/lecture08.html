@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -348,6 +413,7 @@
 
 </section>
 
+<section>
 <section id="todays-class" class="title-slide slide level1 center">
 <h1>Today’s class</h1>
 <ul>
@@ -356,24 +422,73 @@
 <li><p>..</p></li>
 </ul>
 </section>
+<section id="building-a-plot-layer-by-layer" class="slide level2">
+<h2>Building a plot layer by layer</h2>
 
-<section>
-<section id="building-a-plot-layer-by-layer" class="title-slide slide level1 center">
-<h1>Building a plot layer by layer</h1>
-
-<img data-src="img/ggplot_syntax.png" width="360" class="r-stretch quarto-figure-center"><p class="caption">ggplot syntax</p><p>Source: <a href="https://www.sharpsightlabs.com/blog/ggplot2-tutorial/#syntax-of-ggplot2">blog/sharpsightlabs.com</a>:</p>
+<img data-src="img/ggplot_syntax.png" width="360" class="r-stretch quarto-figure-center"><p class="caption">Overview of the <code>ggplot()</code> syntax</p><p>Source: <a href="https://www.sharpsightlabs.com/blog/ggplot2-tutorial/#syntax-of-ggplot2">blog/sharpsightlabs.com</a>:</p>
 </section>
 <section id="geom-layers" class="slide level2">
 <h2>Geom layers</h2>
 
 <img data-src="img/geom_types.png" alt="types of geoms" width="394" class="r-stretch"><p>Source: <a href="https://www.sharpsightlabs.com/blog/ggplot2-tutorial/#syntax-of-ggplot2">blog/sharpsightlabs.com</a>:</p>
+<p>There’s many more geoms in the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot cheatsheet</a>!</p>
+<p>Let us quickly see an animation of empty plot, adding axes, adding data for the histogram</p>
+</section>
+<section id="empty-plot-ggplot-call" class="slide level2">
+<h2>Empty plot: <code>ggplot()</code> call</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a><span class="fu">data</span>(<span class="st">"mtcars"</span>)</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture08_files/figure-revealjs/demo1-1.png" width="960" class="r-stretch"></section>
+<section id="adding-axes-mapping-aes" class="slide level2">
+<h2>Adding axes: <code>mapping = aes()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars,</span>
+<span id="cb2-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture08_files/figure-revealjs/demo2-1.png" width="960" class="r-stretch"></section>
+<section id="adding-points-geom_point" class="slide level2">
+<h2>Adding points: <code>geom_point()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars,</span>
+<span id="cb3-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg)) <span class="sc">+</span> </span>
+<span id="cb3-3"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture08_files/figure-revealjs/demo3-1.png" width="960" class="r-stretch"></section>
+<section id="adding-line-geom_line" class="slide level2">
+<h2>Adding line: <code>geom_line()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars,</span>
+<span id="cb4-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg)) <span class="sc">+</span> </span>
+<span id="cb4-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb4-4"><a></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture08_files/figure-revealjs/demo4-1.png" width="960" class="r-stretch"></section></section>
+<section id="onto-the-worksheet-now" class="title-slide slide level1 center">
+<h1>Onto the worksheet now</h1>
+<p>Please download the _class8_ggplot_worksheet.Rmd or the <code>.R</code> file with the same name from the syllabus website</p>
+<ul>
+<li><p>the <code>.Rmd</code> will make it easier to read the prompts and run code by clicking on the “play” button (<em>run current chunk</em>) for each chunk</p></li>
+<li><p>If you are not comfortable with this, you can use the <code>.R</code> file instead with the same content</p></li>
+</ul>
+</section>
+
+<section id="design-principles-for-graphics" class="title-slide slide level1 center">
+<h1>Design principles for graphics</h1>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
@@ -584,6 +699,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
