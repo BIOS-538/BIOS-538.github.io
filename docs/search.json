@@ -7,11 +7,165 @@
     "text": "Slides.."
   },
   {
-    "objectID": "slides/lecture09.html#slides..",
-    "href": "slides/lecture09.html#slides..",
-    "title": "lecture_x",
-    "section": "Slides..",
-    "text": "Slides..\nthe three main sections of a Git project: the working tree, the staging area, and the Git directory\n\n\n\nWorking tree, staging area, and Git directory\n\n\n\nSource: Fig 6/git-book"
+    "objectID": "slides/lecture09.html#why-does-this-matter",
+    "href": "slides/lecture09.html#why-does-this-matter",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Why does this matter?",
+    "text": "Why does this matter?\n\nAllow other scientists to easily interpret and reproduce your work\nOrganize your thoughts intertwined with code, graphs, tables, stats\nHelp your future self!\n\nYou very quickly forget what you were working on once you take a break from it."
+  },
+  {
+    "objectID": "slides/lecture09.html#quarto-vs.-rmarkdown",
+    "href": "slides/lecture09.html#quarto-vs.-rmarkdown",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Quarto vs. RMarkdown",
+    "text": "Quarto vs. RMarkdown\n\nQuarto (named after the word for a book/pamphlet created in a certain way) enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/.\nSome of you may have heard of RMarkdown, which is similar to Quarto, except Quarto has more outputs and built in capabilities, so we will focus on Quarto for this lesson."
+  },
+  {
+    "objectID": "slides/lecture09.html#wait-what-is-a-markup-language",
+    "href": "slides/lecture09.html#wait-what-is-a-markup-language",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Wait what is a markup language?",
+    "text": "Wait what is a markup language?\n\n“A markup language is a text-encoding system which specifies the structure and formatting of a document and potentially the relationship between its part” (google AI is the source lol)\n\nBasically annotating a text, like you would with pen and paper\n\nExamples: LaTeX, HTML\nWhat about Microsoft Word or Google Docs?\n\nThese are NOT markup languages. These are word processors with visual formatting. However they have markup languages working behind the scenes."
+  },
+  {
+    "objectID": "slides/lecture09.html#plain-text-only-notepad-.txt",
+    "href": "slides/lecture09.html#plain-text-only-notepad-.txt",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Plain text only = Notepad (.txt)",
+    "text": "Plain text only = Notepad (.txt)"
+  },
+  {
+    "objectID": "slides/lecture09.html#formatted-text-wordgoogle-docs",
+    "href": "slides/lecture09.html#formatted-text-wordgoogle-docs",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Formatted text = Word/google docs",
+    "text": "Formatted text = Word/google docs\nWhat you see is what you get"
+  },
+  {
+    "objectID": "slides/lecture09.html#markdown-format-w-plain-text",
+    "href": "slides/lecture09.html#markdown-format-w-plain-text",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Markdown = format w plain text!",
+    "text": "Markdown = format w plain text!\nneeds a renderer to convert the plain text to formatted one"
+  },
+  {
+    "objectID": "slides/lecture09.html#raw-vs-visual-mode-in-rstudio",
+    "href": "slides/lecture09.html#raw-vs-visual-mode-in-rstudio",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Raw vs visual mode in Rstudio",
+    "text": "Raw vs visual mode in Rstudio"
+  },
+  {
+    "objectID": "slides/lecture09.html#markdown-syntax-cheatsheet",
+    "href": "slides/lecture09.html#markdown-syntax-cheatsheet",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Markdown syntax : cheatsheet",
+    "text": "Markdown syntax : cheatsheet\nSource: markdownguide.org"
+  },
+  {
+    "objectID": "slides/lecture09.html#lets-get-quarto-set-up",
+    "href": "slides/lecture09.html#lets-get-quarto-set-up",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Let’s get Quarto set up",
+    "text": "Let’s get Quarto set up\n\nDownload for your system https://quarto.org/docs/get-started/\nClick the white paper with the green plus sign and create new Quarto document\nSave the file as well using the save icon on the toolbar"
+  },
+  {
+    "objectID": "slides/lecture09.html#new-document",
+    "href": "slides/lecture09.html#new-document",
+    "title": "lecture 9: Quarto markdown",
+    "section": "New Document",
+    "text": "New Document\n\nOutput types –&gt; leave HTML for now, you can download LaTeX if you want later\nYou can change these things later! Quarto is a mix of visual interfaces you are likely used to and more command-line style as well."
+  },
+  {
+    "objectID": "slides/lecture09.html#how-do-i-drive-this-spaceship",
+    "href": "slides/lecture09.html#how-do-i-drive-this-spaceship",
+    "title": "lecture 9: Quarto markdown",
+    "section": "How do I drive this spaceship??",
+    "text": "How do I drive this spaceship??"
+  },
+  {
+    "objectID": "slides/lecture09.html#quarto-is-more-user-friendly-than-you-may-realize",
+    "href": "slides/lecture09.html#quarto-is-more-user-friendly-than-you-may-realize",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Quarto is more user friendly than you may realize",
+    "text": "Quarto is more user friendly than you may realize\n\nSource vs. Visual -&gt; upper left hand corner\n\nIt can helpful to switch between the two as you go\n\nYou are basically just mixing formats and choosing what to include\nhttps://rstudio.github.io/cheatsheets/quarto.pdf"
+  },
+  {
+    "objectID": "slides/lecture09.html#a-feel-for-the-basics",
+    "href": "slides/lecture09.html#a-feel-for-the-basics",
+    "title": "lecture 9: Quarto markdown",
+    "section": "A feel for the basics",
+    "text": "A feel for the basics\n\nNew .qmd files have a few tips to help you get started.\nRendering (blue –&gt; in toolbar) is basically synthesis\n\nCan automatically save on rendering (I find this a little annoying)\nLets us preview the final output"
+  },
+  {
+    "objectID": "slides/lecture09.html#authoring",
+    "href": "slides/lecture09.html#authoring",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Authoring",
+    "text": "Authoring\n\nPDFs need LaTex\n\nin terminal: quarto install tinytex\n\nyou can make multiple formats as well by adding to the YAML lines\nformat: revealjs –&gt; creates a presentation, just need to reload\nAdding citations can be a little annoying –&gt; Link to Zotero/Mendeley\n\n(Abrams 2022)\nInsert, @ citation, choose from sources,"
+  },
+  {
+    "objectID": "slides/lecture09.html#yaml-header-yet-another-markup-language",
+    "href": "slides/lecture09.html#yaml-header-yet-another-markup-language",
+    "title": "lecture 9: Quarto markdown",
+    "section": "YAML header (yet another markup language)",
+    "text": "YAML header (yet another markup language)\n\n\nHowever, for some documents, you may want to hide all of the code and just show the output. To do so, specify echo: false within the execute option in the YAML. Or you can do this just for specific cells of code."
+  },
+  {
+    "objectID": "slides/lecture09.html#code-chunks",
+    "href": "slides/lecture09.html#code-chunks",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Code chunks",
+    "text": "Code chunks\n\nMore ways to finesse how your code is showed in the final output: https://quarto.org/docs/get-started/computations/rstudio.html"
+  },
+  {
+    "objectID": "slides/lecture09.html#markdown-text",
+    "href": "slides/lecture09.html#markdown-text",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Markdown text",
+    "text": "Markdown text\nBack to the visual vs. source view, you can use a Microsoft world style approach for formatting (Visual) or look up cheat sheets to learn the command-line (source). You can also easily add images by clicking image icon and linking either URL or directory for image."
+  },
+  {
+    "objectID": "slides/lecture09.html#putting-it-all-together",
+    "href": "slides/lecture09.html#putting-it-all-together",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Putting it all together",
+    "text": "Putting it all together\nThis is where we render to our final presentation."
+  },
+  {
+    "objectID": "slides/lecture09.html#some-data-for-today",
+    "href": "slides/lecture09.html#some-data-for-today",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Some data for today",
+    "text": "Some data for today\ninstall.packages(\"tidyverse\")\ninstall.packages(\"palmerpenguins\")\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\nThe data from the palmerpenguins package contains size measurements for penguins from three species observed on three islands in the Palmer Archipelago, Antarctica."
+  },
+  {
+    "objectID": "slides/lecture09.html#onto-to-our-data",
+    "href": "slides/lecture09.html#onto-to-our-data",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Onto to our data",
+    "text": "Onto to our data\nThe plot below shows the relationship between flipper and bill lengths of these penguins.\n\nggplot(penguins, \n       aes(x = flipper_length_mm, y = bill_length_mm)) +\n  geom_point(aes(color = species, shape = species)) +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(\n    title = \"Flipper and bill length\",\n    subtitle = \"Dimensions for penguins at Palmer Station LTER\",\n    x = \"Flipper length (mm)\", y = \"Bill length (mm)\",\n    color = \"Penguin species\", shape = \"Penguin species\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/lecture09.html#plot",
+    "href": "slides/lecture09.html#plot",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Plot",
+    "text": "Plot"
+  },
+  {
+    "objectID": "slides/lecture09.html#okay-your-turn",
+    "href": "slides/lecture09.html#okay-your-turn",
+    "title": "lecture 9: Quarto markdown",
+    "section": "Okay your turn!",
+    "text": "Okay your turn!\n\nExplore the penguins data. Visualize the data and run some basic statistics. Show both the code and the results. Explain the results with text, not with comments. Try rendering a file output.\nTry to create a quarto presentation with your results, this time hiding your code and only showing the results. Can you include a image from the internet as well?"
+  },
+  {
+    "objectID": "slides/lecture09.html#references",
+    "href": "slides/lecture09.html#references",
+    "title": "lecture 9: Quarto markdown",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n\n\nAbrams, Peter A. 2022. Competition Theory in Ecology. Oxford University Press."
   },
   {
     "objectID": "slides/lecture05.html",
@@ -256,7 +410,7 @@
     "href": "slides/class_schedule.html",
     "title": "Class schedule & Lecture slides",
     "section": "",
-    "text": "Below is a general description of the material to be covered. Note that topics and dates are\nsubject to change as the course progresses.\n\n\n\n\n\nLec\nDate\nTopic\nDetails\nResources\n\n\n\n\n1\n09/Jan\nIntroductions and installations\nslides(PDF)\nSetting up R and friends: Win/Mac/Linux\n\n\n2\n11/Jan\nRefresher in statistics, hands-on activity\nworking with distributions - without a computer. slides\n\n\n\n-\n16/Jan\nNo class\nHard freeze day\n\n\n\n3\n18/Jan\nR basics, datatypes\nnavigating Rstudio, syntax, data types, functions, data frames/tibbles, debugging and looking for help. slides (worksheet, practice)\nSwirl: R programming tutorial. base R cheatsheet.PDF; vectors quick ref.\n\n\n4\n23/Jan\nR basics 2\nList, subsetting, data.frame, if()..else\n\n\n\n5\n25/Jan\nR basics 3\nfor() ; function(). announcements; .R scripts: lec5_demo, lec5_practice\nfunctions: fundamentals. practical use.Environments, withillustrations\n\n\n6\n30/Jan\nBasics 4 + Data wrangling in R with tidyverse, dplyr\nMore function(), vectorization ; Simple manipulation of data.frames/tibbles = data wrangling. slides\nWhy vectorize?; Merits of tibbles\n\n\n7\n01/Feb\nData wrangling workshop\nLoad data from .csv or excel file, commands to arrange rows and columns.; re-hash concepts, get students to wrangle data to answer a question. worksheet\ndplyr cheatsheet\n\n\n8\n06/Feb\nggplot() plotting\nggplot, geom_point() and geom_line(), interactive plots with plotly::ggplotly(). Principles of “What should you show in a plot?”. [slides](lecture08.qmd]; worksheet / R sheet ; histdata, pointsdata\nggplot aesthetics/mapping. cheatsheet\n\n\n-\n08/Feb\nNo class\nMONDAY SCHEDULE TODAY\n\n\n\n9\n13/Feb\nVersion control using git\nwhy version control? Setup git with Rstudio. Learn some command line basics : cd, ls, git add, git commit, grep \"function-name\"\nIntro to git: lesson; philosophy of git\n\n\n10\n15/Feb\nquarto/Rmarkdown to produce reports\nmotivation for reproducible data analysis, benefits of localizing (thoughts, code and outputs) in one document. slides\nWhat is Markdown?, it’s syntaxquarto introduction.\n\n\n11\n20/Feb\nData -&gt; figure pipeline from a research article, workshop\nusing Rmd/quarto to walk through the steps required to reproduce plots from a published paper\n\n\n\n12\n22/Feb\nNormal-distributions\nunderstand central limit theorem intuitively + using R simulations; why ~normal is a useful default. Learn cases when it doesn’t apply. Students distribution is got by sampling from a normal and calculating the mean.\n\n\n\n13\n27/Feb\nIntro to hypothesis testing (t-tests)\nexperimental science usually involves comparisons =&gt; hence hypothesis testing to compare distributions / means. Concept: Students t-distribution is got by sampling from a normal and calculating the mean.\n\n\n\n14\n29/Feb\nProblems with p-values\nmotivate misunderstandings people have, how p-values contribute to non-reproducible science. Touch upon Surprise value (S-value) ; alternatives : bayesian t.test - when to use them\n\n\n\n15\n05/Mar\nLinear regression (2 dimensional data)\n2D data with one independent variable. Rehash straight line equation: y = mx + c. _show an interactive tutorial on how fitting works. Show geom_smooth() in R.\n\n\n\n\n\n\n\n\n\n\n-\n4th or 5th/Mar\nReview session\nSummary of key concepts by TAs + Q & A\n\n\n\n16\n07/Mar\nMidterm\nR: tidyverse, plots, Rmarkdown; Stats: t-tests, problems with p-values, linear regressions\n\n\n\n-\n9-17/Mar\nSpring break\nno class\n\n\n\n\n\n\n\n\n\n\n17\n19/Mar\nLinear regression fitting\nkey concept is the % of variance explained by the fit. Do lm and show how to interpret results and p.values\n\n\n\n18\n21/Mar\nRe-capitulate t-tests using linear regression fitting\nhypothesis testing is akin to fitting 1D data + 2nd D of categorical variable\n\n\n\n19\n26/Mar\nData -&gt; statistics pipeline from a research article, workshop\nusing Rmd/quarto to walk through the steps required to reproduce statistics from a published paper\nAssignment: Turn in the in-class workshop as report\n\n\n20\n28/Mar\nNon-linear regressions\nexamples: fitting dose-response curves and bacterial growth curves. Explain why initial conditions matter for nls, using self starting functions. map; safely() workflow to avoid breaking code due to convergence issues\n\n\n\n21\n02/Apr\nBootstrapping\nbenefits: a better non-parametric test without making any assumptions about the data distribution; cost: low powered; using a vectorized workflow to achieve bootstrapping and simple hypothesis testing\nBootstrapping intro\n\n\n22\n04/Apr\nWorking with higher dimensional data\nexplain dimensionality reduction concept. Techniques: PCA, weighted techniques, clustering. likely using sequencing microbiome datasets examples\n\n\n\n23\n09/Apr\ncritique statistics from a research article, workshop\nusing Rmd/quarto to recreate statistics from a published paper, finding faults, redoing analysis with better methods\n\n\n\n24\n11/Apr\nUsing AI based tools to speed up writing code\n\n\n\n\n25\n16/Apr\nStudent presentations 1\nBring your own dataset, apply statistical analysis, present written report and presentation\nEthics ; LLMs overview\n\n\n26\n18/Apr\nStudent presentations 2\n“\n\n\n\n?\n?\nmore presentations?\n\n\n\n\n\n\n\n\n\n\n\n-\n24-30/Apr\nFinal exam"
+    "text": "Below is a general description of the material to be covered. Note that topics and dates are\nsubject to change as the course progresses.\n\n\n\n\n\nLec\nDate\nTopic\nDetails\nResources\n\n\n\n\n1\n09/Jan\nIntroductions and installations\nslides(PDF)\nSetting up R and friends: Win/Mac/Linux\n\n\n2\n11/Jan\nRefresher in statistics, hands-on activity\nworking with distributions - without a computer. slides\n\n\n\n-\n16/Jan\nNo class\nHard freeze day\n\n\n\n3\n18/Jan\nR basics, datatypes\nnavigating Rstudio, syntax, data types, functions, data frames/tibbles, debugging and looking for help. slides (worksheet, practice)\nSwirl: R programming tutorial. base R cheatsheet.PDF; vectors quick ref.\n\n\n4\n23/Jan\nR basics 2\nList, subsetting, data.frame, if()..else\n\n\n\n5\n25/Jan\nR basics 3\nfor() ; function(). announcements; .R scripts: lec5_demo, lec5_practice\nfunctions: fundamentals. practical use.Environments, withillustrations\n\n\n6\n30/Jan\nBasics 4 + Data wrangling in R with tidyverse, dplyr\nMore function(), vectorization ; Simple manipulation of data.frames/tibbles = data wrangling. slides\nWhy vectorize?; Merits of tibbles\n\n\n7\n01/Feb\nData wrangling workshop\nLoad data from .csv or excel file, commands to arrange rows and columns.; re-hash concepts, get students to wrangle data to answer a question. worksheet\ndplyr cheatsheet\n\n\n8\n06/Feb\nggplot() plotting\nggplot, geom_point() and geom_line(), interactive plots with plotly::ggplotly(). Principles of “What should you show in a plot?”. slides; worksheet / R sheet ; histdata, pointsdata\nggplot aesthetics/mapping. cheatsheet\n\n\n-\n08/Feb\nNo class\nMONDAY SCHEDULE TODAY\n\n\n\n9\n13/Feb\nquarto/Rmarkdown to produce reports\nmotivation for reproducible data analysis, benefits of localizing (thoughts, code and outputs) in one document. slides\nWhat is Markdown?, it’s syntax. quarto introduction.\n\n\n10\n15/Feb\nbrief: version control using git ; How to train your ggplots?\nwhy version control? Best ways to represent graphical information. Setup git with Rstudio. Learn some command line basics : cd, ls, git add, git commit, grep \"function-name\"\nIntro to git: lesson; philosophy of git\n\n\n11\n20/Feb\nData -&gt; figure pipeline from a research article, workshop\nusing Rmd/quarto to walk through the steps required to reproduce plots from a published paper\n\n\n\n12\n22/Feb\nNormal-distributions\nunderstand central limit theorem intuitively + using R simulations; why ~normal is a useful default. Learn cases when it doesn’t apply. Students distribution is got by sampling from a normal and calculating the mean.\n\n\n\n13\n27/Feb\nIntro to hypothesis testing (t-tests)\nexperimental science usually involves comparisons =&gt; hence hypothesis testing to compare distributions / means. Concept: Students t-distribution is got by sampling from a normal and calculating the mean.\n\n\n\n14\n29/Feb\nProblems with p-values\nmotivate misunderstandings people have, how p-values contribute to non-reproducible science. Touch upon Surprise value (S-value) ; alternatives : bayesian t.test - when to use them\n\n\n\n15\n05/Mar\nLinear regression (2 dimensional data)\n2D data with one independent variable. Rehash straight line equation: y = mx + c. _show an interactive tutorial on how fitting works. Show geom_smooth() in R.\n\n\n\n\n\n\n\n\n\n\n-\n4th or 5th/Mar\nReview session\nSummary of key concepts by TAs + Q & A\n\n\n\n16\n07/Mar\nMidterm\nR: tidyverse, plots, Rmarkdown; Stats: t-tests, problems with p-values, linear regressions\n\n\n\n-\n9-17/Mar\nSpring break\nno class\n\n\n\n\n\n\n\n\n\n\n17\n19/Mar\nLinear regression fitting\nkey concept is the % of variance explained by the fit. Do lm and show how to interpret results and p.values\n\n\n\n18\n21/Mar\nRe-capitulate t-tests using linear regression fitting\nhypothesis testing is akin to fitting 1D data + 2nd D of categorical variable\n\n\n\n19\n26/Mar\nData -&gt; statistics pipeline from a research article, workshop\nusing Rmd/quarto to walk through the steps required to reproduce statistics from a published paper\nAssignment: Turn in the in-class workshop as report\n\n\n20\n28/Mar\nNon-linear regressions\nexamples: fitting dose-response curves and bacterial growth curves. Explain why initial conditions matter for nls, using self starting functions. map; safely() workflow to avoid breaking code due to convergence issues\n\n\n\n21\n02/Apr\nBootstrapping\nbenefits: a better non-parametric test without making any assumptions about the data distribution; cost: low powered; using a vectorized workflow to achieve bootstrapping and simple hypothesis testing\nBootstrapping intro\n\n\n22\n04/Apr\nWorking with higher dimensional data\nexplain dimensionality reduction concept. Techniques: PCA, weighted techniques, clustering. likely using sequencing microbiome datasets examples\n\n\n\n23\n09/Apr\ncritique statistics from a research article, workshop\nusing Rmd/quarto to recreate statistics from a published paper, finding faults, redoing analysis with better methods\n\n\n\n24\n11/Apr\nUsing AI based tools to speed up writing code\n\nEthics ; LLMs overview\n\n\n25\n16/Apr\nStudent presentations 1\nBring an interesting question on your own data, apply statistical analysis to answer it, present written report and presentation with visualizations and explanations\n\n\n\n26\n18/Apr\nStudent presentations 2\n“\n\n\n\n?\n?\nmore presentations?\n\n\n\n\n\n\n\n\n\n\n\n-\n24-30/Apr\nFinal exam"
   },
   {
     "objectID": "slides/lecture03.html#complex-plotting-assignment",
@@ -371,129 +525,10 @@
     "text": "Adding line: geom_line()\n\nggplot(data = mtcars,\n       mapping = aes(x = cyl, y = mpg)) + \n  geom_point() + \n  geom_line()"
   },
   {
-    "objectID": "slides/lecture10.html#why-does-this-matter",
-    "href": "slides/lecture10.html#why-does-this-matter",
-    "title": "lecture08",
-    "section": "Why does this matter?",
-    "text": "Why does this matter?\n\nAllow other scientists to easily interpret and reproduce your work\nOrganize your thoughts intertwined with code, graphs, tables, stats\nHelp your future self!\n\nYou very quickly forget what you were working on once you take a break from it."
-  },
-  {
-    "objectID": "slides/lecture10.html#quarto-vs.-rmarkdown",
-    "href": "slides/lecture10.html#quarto-vs.-rmarkdown",
-    "title": "lecture08",
-    "section": "Quarto vs. RMarkdown",
-    "text": "Quarto vs. RMarkdown\n\nQuarto (named after the word for a book/pamphlet created in a certain way) enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/.\nSome of you may have heard of RMarkdown, which is similar to Quarto, except Quarto has more outputs and built in capabilities, so we will focus on Quarto for this lesson."
-  },
-  {
-    "objectID": "slides/lecture10.html#wait-what-is-a-markup-language",
-    "href": "slides/lecture10.html#wait-what-is-a-markup-language",
-    "title": "lecture08",
-    "section": "Wait what is a markup language?",
-    "text": "Wait what is a markup language?\n\n“A markup language is a text-encoding system which specifies the structure and formatting of a document and potentially the relationship between its part” (google AI is the source lol)\n\nBasically annotating a text, like you would with pen and paper\n\nExamples: LaTeX, HTML\nWhat about Microsoft Word or Google Docs?\n\nThese are NOT markup languages. These are word processors with visual formatting. However they have markup languages working behind the scenes."
-  },
-  {
-    "objectID": "slides/lecture10.html#lets-get-quarto-set-up",
-    "href": "slides/lecture10.html#lets-get-quarto-set-up",
-    "title": "lecture08",
-    "section": "Let’s get Quarto set up",
-    "text": "Let’s get Quarto set up\n\nDownload for your system https://quarto.org/docs/get-started/\nClick the white paper with the green plus sign and create new Quarto document\nSave the file as well using the save icon on the toolbar"
-  },
-  {
-    "objectID": "slides/lecture10.html#new-document",
-    "href": "slides/lecture10.html#new-document",
-    "title": "lecture08",
-    "section": "New Document",
-    "text": "New Document\n\nOutput types –&gt; leave HTML for now, you can download LaTeX if you want later\nYou can change these things later! Quarto is a mix of visual interfaces you are likely used to and more command-line style as well."
-  },
-  {
-    "objectID": "slides/lecture10.html#how-do-i-drive-this-spaceship",
-    "href": "slides/lecture10.html#how-do-i-drive-this-spaceship",
-    "title": "lecture08",
-    "section": "How do I drive this spaceship??",
-    "text": "How do I drive this spaceship??"
-  },
-  {
-    "objectID": "slides/lecture10.html#quarto-is-more-user-friendly-than-you-may-realize",
-    "href": "slides/lecture10.html#quarto-is-more-user-friendly-than-you-may-realize",
-    "title": "lecture08",
-    "section": "Quarto is more user friendly than you may realize",
-    "text": "Quarto is more user friendly than you may realize\n\nSource vs. Visual -&gt; upper left hand corner\n\nIt can helpful to switch between the two as you go\n\nYou are basically just mixing formats and choosing what to include\nhttps://rstudio.github.io/cheatsheets/quarto.pdf"
-  },
-  {
-    "objectID": "slides/lecture10.html#a-feel-for-the-basics",
-    "href": "slides/lecture10.html#a-feel-for-the-basics",
-    "title": "lecture08",
-    "section": "A feel for the basics",
-    "text": "A feel for the basics\n\nNew .qmd files have a few tips to help you get started.\nRendering (blue –&gt; in toolbar) is basically synthesis\n\nCan automatically save on rendering (I find this a little annoying)\nLets us preview the final output"
-  },
-  {
-    "objectID": "slides/lecture10.html#authoring",
-    "href": "slides/lecture10.html#authoring",
-    "title": "lecture08",
-    "section": "Authoring",
-    "text": "Authoring\n\nPDFs need LaTex\n\nin terminal: quarto install tinytex\n\nyou can make multiple formats as well by adding to the YAML lines\nformat: revealjs –&gt; creates a presentation, just need to reload\nAdding citations can be a little annoying –&gt; Link to Zotero/Mendeley\n\n(Abrams 2022)\nInsert, @ citation, choose from sources,"
-  },
-  {
-    "objectID": "slides/lecture10.html#yaml-header-yet-another-markup-language",
-    "href": "slides/lecture10.html#yaml-header-yet-another-markup-language",
-    "title": "lecture08",
-    "section": "YAML header (yet another markup language)",
-    "text": "YAML header (yet another markup language)\n\n\nHowever, for some documents, you may want to hide all of the code and just show the output. To do so, specify echo: false within the execute option in the YAML. Or you can do this just for specific cells of code."
-  },
-  {
-    "objectID": "slides/lecture10.html#code-chunks",
-    "href": "slides/lecture10.html#code-chunks",
-    "title": "lecture08",
-    "section": "Code chunks",
-    "text": "Code chunks\n\nMore ways to finesse how your code is showed in the final output: https://quarto.org/docs/get-started/computations/rstudio.html"
-  },
-  {
-    "objectID": "slides/lecture10.html#markdown-text",
-    "href": "slides/lecture10.html#markdown-text",
-    "title": "lecture08",
-    "section": "Markdown text",
-    "text": "Markdown text\nBack to the visual vs. source view, you can use a Microsoft world style approach for formatting (Visual) or look up cheat sheets to learn the command-line (source). You can also easily add images by clicking image icon and linking either URL or directory for image."
-  },
-  {
-    "objectID": "slides/lecture10.html#putting-it-all-together",
-    "href": "slides/lecture10.html#putting-it-all-together",
-    "title": "lecture08",
-    "section": "Putting it all together",
-    "text": "Putting it all together\nThis is where we render to our final presentation."
-  },
-  {
-    "objectID": "slides/lecture10.html#some-data-for-today",
-    "href": "slides/lecture10.html#some-data-for-today",
-    "title": "lecture08",
-    "section": "Some data for today",
-    "text": "Some data for today\ninstall.packages(\"tidyverse\")\ninstall.packages(\"palmerpenguins\")\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\nThe data from the palmerpenguins package contains size measurements for penguins from three species observed on three islands in the Palmer Archipelago, Antarctica."
-  },
-  {
-    "objectID": "slides/lecture10.html#onto-to-our-data",
-    "href": "slides/lecture10.html#onto-to-our-data",
-    "title": "lecture08",
-    "section": "Onto to our data",
-    "text": "Onto to our data\nThe plot below shows the relationship between flipper and bill lengths of these penguins.\n\nggplot(penguins, \n       aes(x = flipper_length_mm, y = bill_length_mm)) +\n  geom_point(aes(color = species, shape = species)) +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(\n    title = \"Flipper and bill length\",\n    subtitle = \"Dimensions for penguins at Palmer Station LTER\",\n    x = \"Flipper length (mm)\", y = \"Bill length (mm)\",\n    color = \"Penguin species\", shape = \"Penguin species\"\n  ) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "slides/lecture10.html#plot",
-    "href": "slides/lecture10.html#plot",
-    "title": "lecture08",
-    "section": "Plot",
-    "text": "Plot"
-  },
-  {
-    "objectID": "slides/lecture10.html#okay-your-turn",
-    "href": "slides/lecture10.html#okay-your-turn",
-    "title": "lecture08",
-    "section": "Okay your turn!",
-    "text": "Okay your turn!\n\nExplore the penguins data. Visualize the data and run some basic statistics. Show both the code and the results. Explain the results with text, not with comments. Try rendering a file output.\nTry to create a quarto presentation with your results, this time hiding your code and only showing the results. Can you include a image from the internet as well?"
-  },
-  {
-    "objectID": "slides/lecture10.html#references",
-    "href": "slides/lecture10.html#references",
-    "title": "lecture08",
-    "section": "References",
-    "text": "References\n\n\n\n\n\n\n\n\nAbrams, Peter A. 2022. Competition Theory in Ecology. Oxford University Press."
+    "objectID": "slides/lecture0x_git.html#slides..",
+    "href": "slides/lecture0x_git.html#slides..",
+    "title": "lecture_x",
+    "section": "Slides..",
+    "text": "Slides..\nthe three main sections of a Git project: the working tree, the staging area, and the Git directory\n\n\n\nWorking tree, staging area, and Git directory\n\n\n\nSource: Fig 6/git-book"
   }
 ]

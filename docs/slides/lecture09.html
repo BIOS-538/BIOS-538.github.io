@@ -10,9 +10,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.537">
 
-  <meta name="author" content="Prashant K">
-  <meta name="dcterms.date" content="2001-02-24">
-  <title>BIOS-338/538 - lecture_x</title>
+  <meta name="author" content="Annie Finneran">
+  <title>BIOS-338/538 - lecture 9: Quarto markdown</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,7 +29,92 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -339,47 +423,204 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">lecture_x</h1>
+  <h1 class="title">lecture 9: Quarto markdown</h1>
+  <p class="subtitle">Intertwine R code along with narrative, and outputs</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Prashant K 
+Annie Finneran 
 </div>
 </div>
 </div>
 
-  <p class="date">2001-02-24</p>
 </section>
-<section id="recap" class="title-slide slide level1 center">
-<h1>Recap?</h1>
+<section id="why-does-this-matter" class="slide level2">
+<h2>Why does this matter?</h2>
+<ul>
+<li><p>Allow other scientists to easily interpret and reproduce your work</p></li>
+<li><p>Organize your thoughts intertwined with code, graphs, tables, stats</p></li>
+<li><p>Help your future self!</p>
+<ul>
+<li>You very quickly forget what you were working on once you take a break from it.</li>
+</ul></li>
+</ul>
 
+<img data-src="img/coding.png" class="quarto-figure quarto-figure-right r-stretch" width="394"></section>
+<section id="quarto-vs.-rmarkdown" class="slide level2">
+<h2>Quarto vs.&nbsp;RMarkdown</h2>
+<ul>
+<li><p>Quarto (named after the word for a book/pamphlet created in a certain way) enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <a href="https://quarto.org/docs/presentations/" class="uri">https://quarto.org/docs/presentations/</a>.</p></li>
+<li><p>Some of you may have heard of RMarkdown, which is similar to Quarto, except Quarto has more outputs and built in capabilities, so we will focus on Quarto for this lesson.</p></li>
+</ul>
 </section>
+<section id="wait-what-is-a-markup-language" class="slide level2 smaller">
+<h2>Wait what is a markup language?</h2>
+<ul>
+<li><p>“A markup language is a <strong><em>text-encoding system which specifies the structure and formatting of a document and</em></strong> potentially the relationship between its part” (google AI is the source lol)</p>
+<ul>
+<li>Basically annotating a text, like you would with pen and paper</li>
+</ul></li>
+<li><p>Examples: LaTeX, HTML</p></li>
+<li><p>What about Microsoft Word or Google Docs?</p>
+<ul>
+<li>These are NOT markup languages. These are word processors with visual formatting. However they have markup languages working behind the scenes.</li>
+</ul></li>
+</ul>
+</section>
+<section id="plain-text-only-notepad-.txt" class="slide level2">
+<h2>Plain text only = Notepad (.txt)</h2>
 
-<section>
-<section id="todays-class" class="title-slide slide level1 center">
-<h1>Today’s class</h1>
-<p>git version control - Why do we need version control? - ..</p>
+<img data-src="img/plain_text.png" class="r-stretch"></section>
+<section id="formatted-text-wordgoogle-docs" class="slide level2 smaller">
+<h2>Formatted text = Word/google docs</h2>
+<p><em>What you see is what you get</em></p>
+
+<img data-src="img/plain_and_word.png" class="r-stretch"></section>
+<section id="markdown-format-w-plain-text" class="slide level2 smaller">
+<h2>Markdown = format w plain text!</h2>
+<p><em>needs a renderer to convert the plain text to formatted one</em></p>
+
+<img data-src="img/plain_md_word.png" class="r-stretch"></section>
+<section id="raw-vs-visual-mode-in-rstudio" class="slide level2">
+<h2>Raw vs visual mode in Rstudio</h2>
+
+<img data-src="img/qmd_source_vs_visual.png" class="r-stretch"></section>
+<section id="markdown-syntax-cheatsheet" class="slide level2">
+<h2>Markdown syntax : cheatsheet</h2>
+<p>Source: <a href="https://www.markdownguide.org/cheat-sheet/">markdownguide.org</a> <img data-src="img/markdown_cheatsheet.png"></p>
 </section>
-<section id="slides.." class="slide level2">
-<h2>Slides..</h2>
-<p>the three main sections of a Git project: the working tree, the staging area, and the Git directory</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F"><img data-src="img/git_stage-commit.png" alt="Working tree, staging area, and Git directory"></a></p>
-<figcaption>Working tree, staging area, and Git directory</figcaption>
-</figure>
+<section id="lets-get-quarto-set-up" class="slide level2">
+<h2>Let’s get Quarto set up</h2>
+<ul>
+<li><p>Download for your system <a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a></p></li>
+<li><p>Click the white paper with the green plus sign and create new Quarto document</p></li>
+<li><p>Save the file as well using the save icon on the toolbar</p></li>
+</ul>
+</section>
+<section id="new-document" class="slide level2">
+<h2>New Document</h2>
+<ul>
+<li><p>Output types –&gt; leave HTML for now, you can download LaTeX if you want later</p></li>
+<li><p>You can change these things later! Quarto is a mix of visual interfaces you are likely used to and more command-line style as well.</p></li>
+</ul>
+
+<img data-src="img/NewQuarto.png" class="quarto-figure quarto-figure-right r-stretch" width="373"></section>
+<section id="how-do-i-drive-this-spaceship" class="slide level2">
+<h2>How do I drive this spaceship??</h2>
+
+<img data-src="img/spaceship.jpeg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="quarto-is-more-user-friendly-than-you-may-realize" class="slide level2">
+<h2>Quarto is more user friendly than you may realize</h2>
+<ul>
+<li>Source vs.&nbsp;Visual -&gt; upper left hand corner
+<ul>
+<li>It can helpful to switch between the two as you go</li>
+</ul></li>
+<li>You are basically just mixing formats and choosing what to include</li>
+<li><a href="https://rstudio.github.io/cheatsheets/quarto.pdf" class="uri">https://rstudio.github.io/cheatsheets/quarto.pdf</a></li>
+</ul>
+</section>
+<section id="a-feel-for-the-basics" class="slide level2">
+<h2>A feel for the basics</h2>
+<ul>
+<li><p>New .qmd files have a few tips to help you get started.</p></li>
+<li><p>Rendering (blue –&gt; in toolbar) is basically synthesis</p>
+<ul>
+<li><p>Can automatically save on rendering (I find this a little annoying)</p></li>
+<li><p>Lets us preview the final output</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="authoring" class="slide level2">
+<h2>Authoring</h2>
+<ul>
+<li><p>PDFs need LaTex</p>
+<ul>
+<li>in terminal: quarto install tinytex</li>
+</ul></li>
+<li><p>you can make multiple formats as well by adding to the YAML lines</p></li>
+<li><p>format: revealjs –&gt; creates a presentation, just need to reload</p></li>
+<li><p>Adding citations can be a little annoying –&gt; Link to Zotero/Mendeley</p>
+<ul>
+<li><p><span class="citation" data-cites="abrams2022">(<a href="#/references" role="doc-biblioref" onclick="">Abrams 2022</a>)</span></p></li>
+<li><p>Insert, @ citation, choose from sources,</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="yaml-header-yet-another-markup-language" class="slide level2">
+<h2>YAML header (yet another markup language)</h2>
+
+<img data-src="img/YAMLheader.png" class="r-stretch"><ul>
+<li>However, for some documents, you may want to hide all of the code and just show the output. To do so, specify&nbsp;<code>echo: false</code>&nbsp;within the&nbsp;<code>execute</code>&nbsp;option in the YAML. Or you can do this just for specific cells of code.</li>
+</ul>
+</section>
+<section id="code-chunks" class="slide level2">
+<h2>Code chunks</h2>
+<ul>
+<li>More ways to finesse how your code is showed in the final output: <a href="https://quarto.org/docs/get-started/computations/rstudio.html" class="uri">https://quarto.org/docs/get-started/computations/rstudio.html</a></li>
+</ul>
+</section>
+<section id="markdown-text" class="slide level2">
+<h2>Markdown text</h2>
+<p>Back to the visual vs.&nbsp;source view, you can use a Microsoft world style approach for formatting (Visual) or look up cheat sheets to learn the command-line (source). You can also easily add images by clicking image icon and linking either URL or directory for image.</p>
+</section>
+<section id="putting-it-all-together" class="slide level2">
+<h2>Putting it all together</h2>
+<p>This is where we render to our final presentation.</p>
+</section>
+<section id="some-data-for-today" class="slide level2">
+<h2>Some data for today</h2>
+<p><code>install.packages("tidyverse")</code></p>
+<p><code>install.packages("palmerpenguins")</code></p>
+<p><code>library(tidyverse)</code></p>
+<p><code>library(palmerpenguins)</code></p>
+
+<img data-src="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png" style="float:right;" alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="401" class="r-stretch"><p>The data from the <a href="https://allisonhorst.github.io/palmerpenguins" title="palmerpenguins R package"><strong>palmerpenguins</strong></a> package contains size measurements for penguins from three species observed on three islands in the Palmer Archipelago, Antarctica.</p>
+</section>
+<section id="onto-to-our-data" class="slide level2">
+<h2>Onto to our data</h2>
+<p>The plot below shows the relationship between flipper and bill lengths of these penguins.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">ggplot</span>(penguins, </span>
+<span id="cb1-2"><a></a>       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb1-3"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb1-4"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
+<span id="cb1-5"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-6"><a></a>    <span class="at">title =</span> <span class="st">"Flipper and bill length"</span>,</span>
+<span id="cb1-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"Dimensions for penguins at Palmer Station LTER"</span>,</span>
+<span id="cb1-8"><a></a>    <span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Bill length (mm)"</span>,</span>
+<span id="cb1-9"><a></a>    <span class="at">color =</span> <span class="st">"Penguin species"</span>, <span class="at">shape =</span> <span class="st">"Penguin species"</span></span>
+<span id="cb1-10"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb1-11"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-<blockquote>
-<p>Source: <a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">Fig 6/git-book</a></p>
-</blockquote>
+<img data-src="lecture09_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="plot" class="slide level2">
+<h2>Plot</h2>
+
+<img data-src="lecture09_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="okay-your-turn" class="slide level2">
+<h2>Okay your turn!</h2>
+<ol type="1">
+<li><p>Explore the penguins data. Visualize the data and run some basic statistics. Show both the code and the results. Explain the results with text, not with comments. Try rendering a file output.</p></li>
+<li><p>Try to create a quarto presentation with your results, this time hiding your code and only showing the results. Can you include a image from the internet as well?</p></li>
+</ol>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section></section>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-abrams2022" class="csl-entry" role="listitem">
+Abrams, Peter A. 2022. <em>Competition Theory in Ecology</em>. Oxford University Press.
+</div>
+</div>
+</section>
     </div>
   </div>
 
@@ -590,6 +831,44 @@ Prashant K
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
