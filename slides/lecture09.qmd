@@ -1,5 +1,6 @@
 ---
-title: "lecture08"
+title: "lecture 9: Quarto markdown"
+subtitle: "Intertwine R code along with narrative, and outputs"
 author: "Annie Finneran"
 format: 
   revealjs:
@@ -31,7 +32,7 @@ bibliography: assets/references.bib
 
 -   Some of you may have heard of RMarkdown, which is similar to Quarto, except Quarto has more outputs and built in capabilities, so we will focus on Quarto for this lesson.
 
-## Wait what is a markup language?
+## Wait what is a markup language?  {.smaller}
 
 -   "A markup language is a ***text-encoding system which specifies the structure and formatting of a document and*** potentially the relationship between its part" (google AI is the source lol)
 
@@ -43,6 +44,30 @@ bibliography: assets/references.bib
 
     -   These are NOT markup languages. These are word processors with visual formatting. However they have markup languages working behind the scenes.
 
+## Plain text only = Notepad (.txt)
+
+![](img/plain_text.png)
+
+## Formatted text = Word/google docs  {.smaller}
+
+*What you see is what you get*
+
+![](img/plain_and_word.png)
+
+## Markdown = format w plain text!  {.smaller}
+
+*needs a renderer to convert the plain text to formatted one*
+
+![](img/plain_md_word.png)
+
+## Raw vs visual mode in Rstudio
+
+![](img/qmd_source_vs_visual.png)
+
+## Markdown syntax : cheatsheet
+
+Source: [markdownguide.org](https://www.markdownguide.org/cheat-sheet/) ![](img/markdown_cheatsheet.png)
+
 ## Let's get Quarto set up
 
 -   Download for your system <https://quarto.org/docs/get-started/>
@@ -53,7 +78,7 @@ bibliography: assets/references.bib
 
 ## New Document
 
--   Output types –\> leave HTML for now, you can download LaTeX if you want later
+-   Output types --\> leave HTML for now, you can download LaTeX if you want later
 
 -   You can change these things later! Quarto is a mix of visual interfaces you are likely used to and more command-line style as well.
 
@@ -74,7 +99,7 @@ bibliography: assets/references.bib
 
 -   New .qmd files have a few tips to help you get started.
 
--   Rendering (blue –\> in toolbar) is basically synthesis
+-   Rendering (blue --\> in toolbar) is basically synthesis
 
     -   Can automatically save on rendering (I find this a little annoying)
 
@@ -88,9 +113,9 @@ bibliography: assets/references.bib
 
 -   you can make multiple formats as well by adding to the YAML lines
 
--   format: revealjs –\> creates a presentation, just need to reload
+-   format: revealjs --\> creates a presentation, just need to reload
 
--   Adding citations can be a little annoying –\> Link to Zotero/Mendeley
+-   Adding citations can be a little annoying --\> Link to Zotero/Mendeley
 
     -   [@abrams2022]
 
