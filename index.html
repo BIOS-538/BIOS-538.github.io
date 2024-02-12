@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.537">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>BIOS-338/538</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">BIOS-338/538</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./slides/class_schedule.html"> 
+<span class="menu-text">Class schedule &amp; Lecture slides</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#bios-338538-syllabus-analysis-and-visualization-of-biological-data-spring-2024" id="toc-bios-338538-syllabus-analysis-and-visualization-of-biological-data-spring-2024" class="nav-link active" data-scroll-target="#bios-338538-syllabus-analysis-and-visualization-of-biological-data-spring-2024">BIOS 338/538 Syllabus: Analysis and Visualization of Biological Data, Spring 2024</a>
+  <ul class="collapse">
+  <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description">Course Description</a></li>
+  <li><a href="#course-logistics" id="toc-course-logistics" class="nav-link" data-scroll-target="#course-logistics">Course Logistics</a></li>
+  <li><a href="#tas" id="toc-tas" class="nav-link" data-scroll-target="#tas">TAS</a>
+  <ul class="collapse">
+  <li><a href="#annie-finneran" id="toc-annie-finneran" class="nav-link" data-scroll-target="#annie-finneran">Annie Finneran</a></li>
+  <li><a href="#sam-schwartz" id="toc-sam-schwartz" class="nav-link" data-scroll-target="#sam-schwartz">Sam Schwartz</a></li>
+  </ul></li>
+  <li><a href="#course-schedule" id="toc-course-schedule" class="nav-link" data-scroll-target="#course-schedule">Course schedule</a></li>
+  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a>
+  <ul class="collapse">
+  <li><a href="#assignment-timelines" id="toc-assignment-timelines" class="nav-link" data-scroll-target="#assignment-timelines">Assignment timelines</a></li>
+  <li><a href="#how-challenging-will-it-be-if-i-am-very-new-to-r" id="toc-how-challenging-will-it-be-if-i-am-very-new-to-r" class="nav-link" data-scroll-target="#how-challenging-will-it-be-if-i-am-very-new-to-r">How challenging will it be if I am very new to <code>R</code>?</a></li>
+  <li><a href="#there-are-many-assignments-seems-like-a-lot-of-work" id="toc-there-are-many-assignments-seems-like-a-lot-of-work" class="nav-link" data-scroll-target="#there-are-many-assignments-seems-like-a-lot-of-work">There are many assignments, seems like a lot of work?</a></li>
+  </ul></li>
+  <li><a href="#textbooksreference-material" id="toc-textbooksreference-material" class="nav-link" data-scroll-target="#textbooksreference-material">Textbooks/Reference material</a>
+  <ul class="collapse">
+  <li><a href="#textbooks-on-general-r-data-science-topics" id="toc-textbooks-on-general-r-data-science-topics" class="nav-link" data-scroll-target="#textbooks-on-general-r-data-science-topics">Textbooks on general R / data science topics</a></li>
+  <li><a href="#open-textbooks-on-r-and-statistics" id="toc-open-textbooks-on-r-and-statistics" class="nav-link" data-scroll-target="#open-textbooks-on-r-and-statistics">Open textbooks on R and statistics</a></li>
+  <li><a href="#open-online-courses" id="toc-open-online-courses" class="nav-link" data-scroll-target="#open-online-courses">Open online courses</a></li>
+  </ul></li>
+  <li><a href="#classroom-policies" id="toc-classroom-policies" class="nav-link" data-scroll-target="#classroom-policies">Classroom policies</a>
+  <ul class="collapse">
+  <li><a href="#attendance" id="toc-attendance" class="nav-link" data-scroll-target="#attendance">Attendance</a></li>
+  <li><a href="#late-submissions" id="toc-late-submissions" class="nav-link" data-scroll-target="#late-submissions">Late submissions</a></li>
+  <li><a href="#communication-policy" id="toc-communication-policy" class="nav-link" data-scroll-target="#communication-policy">Communication policy</a></li>
+  <li><a href="#names-and-pronouns" id="toc-names-and-pronouns" class="nav-link" data-scroll-target="#names-and-pronouns">Names and pronouns</a></li>
+  <li><a href="#etiquette." id="toc-etiquette." class="nav-link" data-scroll-target="#etiquette.">Etiquette.</a></li>
+  <li><a href="#needs" id="toc-needs" class="nav-link" data-scroll-target="#needs">Needs</a></li>
+  <li><a href="#inclement-weather-policy" id="toc-inclement-weather-policy" class="nav-link" data-scroll-target="#inclement-weather-policy">Inclement weather policy</a></li>
+  <li><a href="#academic-honesty" id="toc-academic-honesty" class="nav-link" data-scroll-target="#academic-honesty">Academic honesty</a></li>
+  <li><a href="#accessibility" id="toc-accessibility" class="nav-link" data-scroll-target="#accessibility">Accessibility</a></li>
+  </ul></li>
+  <li><a href="#attributions" id="toc-attributions" class="nav-link" data-scroll-target="#attributions">Attributions</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/BIOS-538.github.io/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BIOS-538.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="bios-338538-syllabus-analysis-and-visualization-of-biological-data-spring-2024" class="level1">
+<h1>BIOS 338/538 Syllabus: Analysis and Visualization of Biological Data, Spring 2024</h1>
+<section id="course-description" class="level2">
+<h2 class="anchored" data-anchor-id="course-description">Course Description</h2>
+<p>This course addresses how to analyze, visualize and draw conclusions from biological data. It introduces basic concepts in statistics and the intuition behind them interwoven with training in data analysis using the <code>R</code> computing environment. Students will learn to identify underlying data structures and wrangle data. Students will also learn to effectively convey results using statistical graphics. Topics include basic <code>R</code> programming, data wrangling using modern <a href="https://www.tidyverse.org/"><code>tidyverse</code></a> packages, t-tests, statistical modeling (<em>linear regression, dose response curves)</em>. This class is targeted towards biologists, hence focuses on biological data for examples and omits rigorous statistical formulas. No prior experience with <code>R</code> required.</p>
+<p>There will be a series of problem sets posted on the course website with instructions a week before they are due. You are encouraged to work with other students or use any outside resources when completing problem sets, but each student must submit their own written responses unless otherwise explicitly indicated in the problem set. Any group submissions or work should include attribution section detailing who did what. Students enrolled at the graduate level will produce a final project report detailing a specific biological research question, statistical methods and results and will present their final project to the class at the end of the semester.</p>
+</section>
+<section id="course-logistics" class="level2">
+<h2 class="anchored" data-anchor-id="course-logistics">Course Logistics</h2>
+<p><strong>Instructor</strong>: Dr.&nbsp;Prashant Kalvapalle (he/him), Lecturer + Postdoctoral researcher, Biosciences, Rice University</p>
+<p><img src="slides/img/prashant.png" class="img-fluid" width="200"></p>
+<p><strong>Location</strong>: BRC 282 (<em>or via zoom with prior permission</em>)</p>
+<p><strong>Time</strong>: Tuesdays and Thursdays. 2:30-3:45 pm</p>
+<p><strong>Email</strong>: pbk1 [at] rice.edu</p>
+<p><strong>Office</strong>: Keck 205</p>
+<p><strong>Office hours</strong>: Friday, 3-4 pm, Keck 308 (<em>in person + zoom</em>)</p>
+<p><em>Note:</em> You will find the zoom links on the canvas website for the course</p>
+</section>
+<section id="tas" class="level2">
+<h2 class="anchored" data-anchor-id="tas">TAS</h2>
+<section id="annie-finneran" class="level3">
+<h3 class="anchored" data-anchor-id="annie-finneran">Annie Finneran</h3>
+<p><img src="slides/img/annie.jpg" class="img-fluid" width="200"></p>
+<p>PhD student in Ecology &amp; Evolutionary Biology (<a href="https://anniefinneran.weebly.com/">website</a>)</p>
+<p><strong>Email</strong>: af58 [at] rice.edu.</p>
+<p><strong>Office hours</strong>: Tuesdays 11:30 am – 12:30 pm, ABL 100 (<em>in person + zoom</em>)</p>
+</section>
+<section id="sam-schwartz" class="level3">
+<h3 class="anchored" data-anchor-id="sam-schwartz">Sam Schwartz</h3>
+<p><img src="slides/img/sam.jpg" class="img-fluid" width="200"></p>
+<p>PhD student in Systems, Synthetic and Physical Biology (<a href="https://www.linkedin.com/in/samuel-schwartz29/">website</a>)</p>
+<p><strong>Email</strong>: Sam.Schwartz [at] rice.edu</p>
+<p><strong>Office hours</strong>: Mondays, 3 - 4 pm, Keck 308 (<em>in person + zoom</em>)</p>
+</section>
+</section>
+<section id="course-schedule" class="level2">
+<h2 class="anchored" data-anchor-id="course-schedule">Course schedule</h2>
+<p>Find the schedule <a href="./slides/class_schedule.html">here</a></p>
+</section>
+<section id="assessment" class="level2">
+<h2 class="anchored" data-anchor-id="assessment">Assessment</h2>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 12%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Assignment</th>
+<th>Total grade</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Attendance</td>
+<td>10%</td>
+<td><em>on zoom with permission</em></td>
+</tr>
+<tr class="even">
+<td>Participation</td>
+<td>10%</td>
+<td>online discussion board (<em>ask/answer</em>), office hours, in-class participation</td>
+</tr>
+<tr class="odd">
+<td>Problem sets</td>
+<td>40%</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Midterm</td>
+<td>20%</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Final / project</td>
+<td>20%</td>
+<td>For BIOS 538 : Final project presentation : <code>10%</code> and report <code>10%</code></td>
+</tr>
+</tbody>
+</table>
+<p><em>Grading Scale</em></p>
+<ul>
+<li>A 93-100</li>
+<li>A- 90-92</li>
+<li>B+ 87-89</li>
+<li>B 83-86</li>
+<li>B- 80-82</li>
+<li>C+ 77-79</li>
+<li>C 73-76</li>
+<li>C- 70-72</li>
+<li>D 60-69</li>
+<li>F &lt;60</li>
+</ul>
+<section id="assignment-timelines" class="level3">
+<h3 class="anchored" data-anchor-id="assignment-timelines">Assignment timelines</h3>
+<ul>
+<li><p><em>Thursday</em>: Assignment uploaded and introduced in class</p></li>
+<li><p>Get help in office hours during the week</p></li>
+<li><p><strong><em>Friday 7 pm</em></strong>: submission</p></li>
+<li><p><em>Next Thursday</em>: Brief discussion on the previous week’s assignment, common mistakes</p></li>
+<li><p><em>Next Saturday</em>: receive your grades and feedback from TAs</p></li>
+</ul>
+<p>Again, if you need any accommodations for particular submissions please email the instructor.</p>
+</section>
+<section id="how-challenging-will-it-be-if-i-am-very-new-to-r" class="level3">
+<h3 class="anchored" data-anchor-id="how-challenging-will-it-be-if-i-am-very-new-to-r">How challenging will it be if I am very new to <code>R</code>?</h3>
+<p>I believe that if you have one undergraduate level course where you <strong>learnt</strong> to code in <strong>any programming language</strong>, it should not be too challenging to pickup <code>R</code> syntax with 3 weeks of practice.</p>
+<p>That said, the examples we walk through in class and working on the assignments (<em>with help from very enthusiastic TAs</em>) will be great resources to guide the learning process.</p>
+<p>This classroom is a safe space, so no question is too simple or too “silly” to ask.</p>
+</section>
+<section id="there-are-many-assignments-seems-like-a-lot-of-work" class="level3">
+<h3 class="anchored" data-anchor-id="there-are-many-assignments-seems-like-a-lot-of-work">There are many assignments, seems like a lot of work?</h3>
+<p>The lectures are structured to be interspersed with <strong>5-10 min</strong> coding sessions where we will walk everyone through stuff. You essentially save all the work we did in class, and add to that by working on your own time for the assignments.</p>
+<p>So 25% of the assignment will already be done in class!</p>
+<p>Practicing by working through code at your own time is the only way to actually learn coding.</p>
+</section>
+</section>
+<section id="textbooksreference-material" class="level2">
+<h2 class="anchored" data-anchor-id="textbooksreference-material">Textbooks/Reference material</h2>
+<p>There is no single textbook for the course. There will be multiple references, mostly from free textbooks or materials available online. All required readings and supplementary materials will be posted on the course website. All code and data files will also be posted on the course canvas site. Code and data files will typically be made available before class meetings; slides will be posted afterwards.</p>
+<section id="textbooks-on-general-r-data-science-topics" class="level3">
+<h3 class="anchored" data-anchor-id="textbooks-on-general-r-data-science-topics">Textbooks on general R / data science topics</h3>
+<ul>
+<li><p><a href="https://rstudio.github.io/r-manuals/r-intro/">R manuals</a>: <em>Nice manual detailing lot of R usage in a nice website format</em></p></li>
+<li><p><a href="https://clauswilke.com/dataviz/index.html">Fundamentals of data visualization</a></p></li>
+<li><p><a href="https://r4ds.hadley.nz/">R for Data Science</a> : <em>nice guide to load, transform and visualize data</em>. From Hadley Wickham, one of the R/Tidyverse pioneers</p></li>
+<li><p><a href="https://adv-r.hadley.nz/">Advanced R</a>: (Hadley Wickham): <em>Improvement for R users/other language programmers. Functional programming, meta-programming, debugging, performance</em></p></li>
+<li><p><a href="https://happygitwithr.com">Happy Git and GitHub for the useR</a></p></li>
+<li><p>Other uses of R for graphics, reports, general automation in <a href="https://book.rwithoutstatistics.com/">R without Statistics</a> <em>by David Keyes</em></p></li>
+</ul>
+</section>
+<section id="open-textbooks-on-r-and-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="open-textbooks-on-r-and-statistics">Open textbooks on R and statistics</h3>
+<ul>
+<li><p><a href="https://modernstatisticswithr.com/index.html">Modern statistics with R</a></p></li>
+<li><p>Statistical Inference via Data Science : A ModernDive into R and the Tidyverse - <a href="https://moderndive.com/">moderndive</a></p>
+<p>&gt; <em>We have intentionally minimized the number of mathematical formulas used. Instead, you’ll develop a conceptual understanding of statistics using data visualization and computer simulations. We hope this is a more intuitive experience than the way statistics has traditionally been taught in the past and how it is commonly perceived.</em></p></li>
+<li><p>Tidy Modeling with R -<a href="https://www.tmwr.org/">Tmwr</a> : <em>how to use tidymodels packages ; develop good statistical practice</em></p></li>
+<li><p><a href="https://michael-franke.github.io/intro-data-analysis/Chap-01-00-intro-learning-goals.html">An introduction to data analysis</a>: <em>R-data, plots; general logic of statistical inference, assess statistical analyses from literature</em></p></li>
+<li><p>Foundations in Statistical Reasoning (Kaslik) - <a href="https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Foundations_in_Statistical_Reasoning_(Kaslik)">libretexts</a></p></li>
+<li><p><a href="https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Statistical_Thinking_for_the_21st_Century_(Poldrack)">Statistical Thinking for the 21st Century (Poldrack)</a> : Libre text - Simulation, bayesian?</p></li>
+<li><p>Introduction to Statistics with R : <a href="https://stats.libretexts.org/Courses/Cerritos_College/Introduction_to_Statistics_with_R">Libre text</a> – lot of basics, hypothesis testing?</p></li>
+</ul>
+</section>
+<section id="open-online-courses" class="level3">
+<h3 class="anchored" data-anchor-id="open-online-courses">Open online courses</h3>
+<ul>
+<li><a href="https://r-cubed-intro.rostools.org/">Reproducible research in R</a>: Beginner 3 day workshop. <em>R, version control, data wrangling, reproducible documents, visualization</em>
+<ul>
+<li>Also has: <a href="https://r-cubed-intermediate.rostools.org/">Intermediate</a>: <em>focus on speed, functional programming, join data, pivots</em>;</li>
+<li>And <a href="https://r-cubed-advanced.rostools.org/">advanced</a> modules: <em>collaboration, automatic analysis pipelines, publicizing via a website</em></li>
+</ul></li>
+<li>Allison horst’s <a href="https://github.com/allisonhorst/esm-206-2018/">Intro data analysis and stats</a> : Google slides and exercise material available</li>
+<li><a href="https://expand.iu.edu/browse/rt/courses/r-for-biologists">Intro to R for biologists</a> : Check out syllabus, _how to get course material?</li>
+<li>Computational biology foundations - <a href="http://steipe.biochemistry.utoronto.ca/bio/CSB195-syllabus.html">syllabus</a>
+<ul>
+<li>Check out any courses from this nice faculty teaching R for 10 years, <em>interested in incorporating LLMs into teaching from this <a href="https://community.rstudio.com/t/copilot-or-similar-tool-integration-in-r-studio-plans/157412">question on posit</a>.</em> Faculty : <a href="https://biochemistry.utoronto.ca/person/boris-steipe/">boris steipe</a></li>
+</ul></li>
+<li><a href="https://intro2r.library.duke.edu/outline.html">Rfun/duke</a>: Topics covered
+<ul>
+<li>Getting started: import data, data wrangling</li>
+<li>Data wrangling with dplyr</li>
+<li>Visualization with ggplot2</li>
+<li>Coding with ChatGPT</li>
+<li>Tidy data, pivot, join, and iteration (part 1)</li>
+<li>Functions &amp; {purrr}; iteration part2</li>
+<li>Regression and tidymodels</li>
+</ul></li>
+<li>Nice slides for basics of R - <a href="https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html">tinystats/teacups-giraffes-and-statistics course/module 1</a></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="classroom-policies" class="level2">
+<h2 class="anchored" data-anchor-id="classroom-policies">Classroom policies</h2>
+<section id="attendance" class="level3">
+<h3 class="anchored" data-anchor-id="attendance">Attendance</h3>
+<p>Since this course requires hands-on R use in class, and values participation, in-person attendance is highly encouraged. However, if you are unable to attend class in-person, please contact me in advance to avail the zoom option. There is no penalty for mussing upto 3 classes, additional absences will proportionally reduce the attendance part of the final grade.</p>
+<p>Aside from excused absences, you are permitted to absences for <em>religious holidays</em> that are not included in the list of Federal and Academic holidays. Please let me know if you will be absent due to a religious holiday.</p>
+</section>
+<section id="late-submissions" class="level3">
+<h3 class="anchored" data-anchor-id="late-submissions">Late submissions</h3>
+<p>You are automatically entitled to two late submissions throughout the course. Any additional late submissions have a penalty of 10% of the grade for that assignment. If you need any accommodations please email the instructor.</p>
+<p>In addition, the policy for religious holidays under <strong>Attendance</strong> extends into late submissions - if you have a religious holiday that occurs on the day of or the day before an assignment is due, please let me know and I can provide an additional extension.</p>
+</section>
+<section id="communication-policy" class="level3">
+<h3 class="anchored" data-anchor-id="communication-policy">Communication policy</h3>
+<p>You are welcome to email me at any time with your questions, concerns, and appointment requests. To ensure that I do not miss your email, please include <em>[<code>course ID</code>]-[short summary of the query]</em> in the email subject. For example, if you are requesting an additional appointment, the email subject should be: <em>[course ID]-scheduling appointment</em>.</p>
+</section>
+<section id="names-and-pronouns" class="level3">
+<h3 class="anchored" data-anchor-id="names-and-pronouns">Names and pronouns</h3>
+<p>If you prefer a different name or gender pronoun than the one displayed on Canvas, please let me know. All students are expected to refer to each other by their correct names and pronouns during class. When addressing groups of people, use gender-neutral language. Here is a resource to assist you with inclusive, respectful language: <a href="https://pronouns.org/">Pronouns</a>.</p>
+</section>
+<section id="etiquette." class="level3">
+<h3 class="anchored" data-anchor-id="etiquette.">Etiquette.</h3>
+<p>In addition, no racist vocabulary will be permitted in class in <em>any</em> capacity. Please refer to each other with respect.</p>
+</section>
+<section id="needs" class="level3">
+<h3 class="anchored" data-anchor-id="needs">Needs</h3>
+<p>If you face any challenges in securing personal or educational resources, such as a safe space and uninterrupted access to computing or the internet, and believe that these challenges may impact your performance in this class, please notify me. I will work with you to ensure that I can assist in any way possible.</p>
+</section>
+<section id="inclement-weather-policy" class="level3">
+<h3 class="anchored" data-anchor-id="inclement-weather-policy">Inclement weather policy</h3>
+<p>In the event of extreme weather conditions that impact your ability to get to class in person, please inform me and I will announce opening the zoom to everyone for that day/class</p>
+</section>
+<section id="academic-honesty" class="level3">
+<h3 class="anchored" data-anchor-id="academic-honesty">Academic honesty</h3>
+<section id="rice-honor-code" class="level4">
+<h4 class="anchored" data-anchor-id="rice-honor-code">Rice Honor Code</h4>
+<p>In this course, all students will be held to the standards of the <em>Rice Honor Code</em>, a code that you pledged to honor when you matriculated at this institution. If you are unfamiliar with the details of this code and how it is administered, you should consult the <a href="http://honor.rice.edu/honor-system-handbook/">Honor System Handbook</a>. This handbook outlines the University’s expectations for the integrity of your academic work, the procedures for resolving alleged violations of those expectations, and the rights and responsibilities of students and faculty members throughout the process.</p>
+</section>
+<section id="attribution-policy" class="level4">
+<h4 class="anchored" data-anchor-id="attribution-policy">Attribution policy</h4>
+<p>Any collaborative work or help received should be duly acknowledge in the report under attributions section. For group submissions, please detail who did what for the assignment/report.</p>
+<p>It is ideal to pre-determine how the work will be split by writing down the attribution section initially to prevent any confusion among the group.</p>
+</section>
+</section>
+<section id="accessibility" class="level3">
+<h3 class="anchored" data-anchor-id="accessibility">Accessibility</h3>
+<section id="disability-resource-center" class="level4">
+<h4 class="anchored" data-anchor-id="disability-resource-center">Disability resource center</h4>
+<p>If you have a documented disability or other condition that may affect academic performance you should: 1) make sure this documentation is on file with the Disability Resource Center (Allen Center, Room 111, adarice@rice.edu, x5841) to determine the accommodations you need; and 2) talk with me to discuss your accommodation needs.</p>
+<p>Furthermore, if you require course materials to be delivered in an alternate way to online .pdfs, please let me know.</p>
+</section>
+</section>
+</section>
+<section id="attributions" class="level2">
+<h2 class="anchored" data-anchor-id="attributions">Attributions</h2>
+<p>This course was taught by Prof.&nbsp;Lydia Beadrout for 6 years and materials from the spring 2023 course were heavily relied upon to create the current course. Classroom policies for this page were verbatim borrowed from my wife, <a href="https://cafgroup.rice.edu/home/people/swethasridhar/">Swetha Sridhar</a>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024, Prashant Kalvapalle</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BIOS-538.github.io/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BIOS-538.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="./LICENSE-CC-BY-4.0.html">
+<p>Creative commons license. CC-BY-4.0</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
