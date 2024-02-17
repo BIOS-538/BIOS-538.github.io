@@ -52,13 +52,13 @@ Find the schedule [here](slides/class_schedule.qmd)
 
 ## Assessment
 
-| Assignment      | Total grade | Details                                                                      |
-|-------------|-------------|----------------------------------------------|
-| Attendance      | 10%         | *on zoom with permission*                                                    |
-| Participation   | 10%         | online discussion board (*ask/answer*), office hours, in-class participation |
-| Problem sets    | 40%         |                                                                              |
-| Midterm         | 20%         |                                                                              |
-| Final / project | 20%         | For BIOS 538 : Final project presentation : `10%` and report `10%`           |
+| Assignment      | Total grade | Grade per instance | Details                                                                                                                                                   |
+|----------------|----------------|----------------|------------------------|
+| Attendance      | 10%         | 0.4% / class       | *on zoom with permission.* 25 lectures                                                                                                                    |
+| Participation   | 10%         | 1% / week          | online discussion board (*ask/answer*), office hours, \~in-class participation                                                                            |
+| Problem sets    | 40%         | 6.7% / assignment  | 6 problem sets total                                                                                                                                      |
+| Midterm         | 20%         |                    | *Take home, open book, collaborate*                                                                                                                       |
+| Final / project | 20%         |                    | For BIOS 538 : Final project presentation : `10%` and report `10%` ; *Undegrads/338: I will survey y'all to decide between a final project vs final exam* |
 
 *Grading Scale*
 
@@ -75,25 +75,66 @@ Find the schedule [here](slides/class_schedule.qmd)
 
 ### Assignment timelines
 
--   *Thursday*: Assignment uploaded and introduced in class
+-   *Friday*: Assignment uploaded
 
--   Get help in office hours during the week
+-   Get help in office hours during the 2 weeks
 
--   ***Friday 7 pm***: submission
-
--   *Next Thursday*: Brief discussion on the previous week's assignment, common mistakes
+-   ***Friday 7 pm***: submission. *Can ask the instructor for extension into the weekend with explanation*
 
 -   *Next Saturday*: receive your grades and feedback from TAs
 
-Again, if you need any accommodations for particular submissions please email the instructor.
+*Again, if you need any accommodations for particular submissions please email the instructor.*
+
+### Participation rubric
+
+Each week, these activities will count as participation credits. 1 credit x 9 weeks (*starting 17/Feb*) + 1 point for prior contributions = 10 points which goes to 10% of the grade allocated to participation. Bonuses can be earned by asking or answering more questions upto 15 points in total credit (*implies that a max of 5% bonus from participation can offset other grades*).
+
+#### (1 point) Activity on the discussion board
+
+##### Asking questions
+
+-   Post one **good** question on the [discussion board](https://edstem.org/us/courses/51883/discussion/) (*anonymous is ok too*). The question itself can be of any complexity so there are **no silly questions!**. Questions should be clear and concise including these things below -
+    -   Detail what you intended to do and how it didn't work
+    -   The `minimal code` that achieves the particular step *formatted as **Code snippet***
+        -   The coded section should already include data by defining an R object. You can use `dput()` command to give out a small tibble (ex: 5 rows, 3-5 columns..)
+    -   What was the error you got? *formatted as **code***
+    -   Provide a small subset of `data` to reproduce the error
+    -   show effort that you did to search the internet and a couple of links that you barked up on but maybe didn't understand how to use. *All these along with formatting the question properly would make it as easy as possible for someone to answer these questions*
+-   Partial credit for the questions: *only for the **first 2 weeks** as a training so everybody learns the correct way to ask questions*
+    -   (0.5 point) incomplete question without any reproducible data but showing effort
+    -   (0.25 point) just for attempting: (not showing effort) posting a question without showing evidence of searching up first
+
+##### Answering questions
+
+-   Answering a question *satisfactorily* with both code and explanation to enable anyone to reproduce. Enough explanation should be provided for a third party to understand (*not just the person asking the question*). Even the cause of the error message above should be explained if possible. *Validity judged by the question asker + TAs, and validated by commenting in the thread*. Multiple answers eligible for credit if different enough/ teach something new (*you should highlight and explain what is unique about your method and why it is better than previous answers*)
+-   (**bonus/1 point**) Audience choice - questions and answers with \>= 10x ❤️'s get extra credit
+    -   Adding a good resource such as a link or dataset with explanation of what subsets of it are most useful and for what purpose. Needs to be liked by \>= 10 people over the duration of the course to get credit.
+
+#### Office hour attendance
+
+-   (1 point) for showing up to office hours (*one or more/week)*
+
+#### In-class question and answers
+
+-   (*0.5 point*) Asking a question in class or answering instructors questions are encouraged. Points will be provided in a subjective manner for questions that are useful in general or insightful
+
+#### Special contributions
+
+*If you are looking for opportunities to get extra credit to up your grade towards to end of the semester, try these avenues and email the instructor pitching your contribution and you will hear back on how to show the proof of work and how much credit to expect!*
+
+-   You will get 3% extra credit if two or more of your classmates/group members mention you to be an invaluable collaborator who taught them a lot during group work (*end of course survey*)
+
+-   Add valuable edits, such as to clarify, emphasize or add examples to Wikipedia pages of statistical concepts that are relevant / even slightly adjacent to the course
+
+-   Ask any R related question on [stackoverflow](https://stackoverflow.com/) relevant to the course that gets 1 upvote
+
+## Should I take this course without any coding background?
 
 ### How challenging will it be if I am very new to `R`?
 
-I believe that if you have one undergraduate level course where you **learnt** to code in **any programming language**, it should not be too challenging to pickup `R` syntax with 3 weeks of practice.
+I believe that if you have one undergraduate level course where you **learnt** to code in **any programming language**, it should not be too challenging to pickup `R` syntax with 3 weeks of practice. That said, the examples we walk through in class and working on the assignments (*with help from very enthusiastic TAs*) will be great resources to guide the learning process.
 
-That said, the examples we walk through in class and working on the assignments (*with help from very enthusiastic TAs*) will be great resources to guide the learning process.
-
-This classroom is a safe space, so no question is too simple or too "silly" to ask.
+This classroom is a safe space, so no question is too simple or too "silly" to ask. And you would definitely have to put in the work outside of class to pickup the basics of programming quickly and attend office hours/use the discussion board to get help when you are stuck for too long on one thing.
 
 ### There are many assignments, seems like a lot of work?
 
@@ -176,7 +217,7 @@ In addition, the policy for religious holidays under **Attendance** extends into
 
 ### Communication policy
 
-You are welcome to email me at any time with your questions, concerns, and appointment requests. To ensure that I do not miss your email, please include *\[`course ID`\]-\[short summary of the query\]* in the email subject. For example, if you are requesting an additional appointment, the email subject should be: *\[course ID\]-scheduling appointment*.
+You are welcome to email me at any time with your questions, concerns, and appointment requests. To ensure that I do not miss your email, please include *\[`course ID`\]-\[short summary of the query\]* in the email subject. For example, if you are requesting an additional appointment, the **email subject** should be: **BIOS 538: scheduling appointment.**
 
 ### Names and pronouns
 
