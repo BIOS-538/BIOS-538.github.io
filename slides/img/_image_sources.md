@@ -2,4 +2,6 @@
 
 # ggplot
 
+Example of a direct labelling
+
 ![Source: Silverado Policy Accelerator, Global Trade Tracker, UN Comtrade, ASEANstats, and national statistics offices \| Data through the third quarter of 2023. \| By Ashley Wu/NYT](direct_labelling_example.png)
