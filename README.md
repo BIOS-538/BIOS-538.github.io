@@ -53,7 +53,7 @@ Find the schedule [here](slides/class_schedule.qmd)
 ## Assessment
 
 | Assignment      | Total grade | Grade per instance | Details                                                                                                                                                   |
-|----------------|----------------|----------------|------------------------|
+|-----------------|-----------------|-----------------|----------------------|
 | Attendance      | 10%         | 0.4% / class       | *on zoom with permission.* 25 lectures                                                                                                                    |
 | Participation   | 10%         | 1% / week          | online discussion board (*ask/answer*), office hours, \~in-class participation                                                                            |
 | Problem sets    | 40%         | 6.7% / assignment  | 6 problem sets total                                                                                                                                      |
@@ -106,13 +106,13 @@ Each week, these activities will count as participation credits. 1 credit x 9 we
 
 ##### Answering questions
 
--   Answering a question *satisfactorily* with both code and explanation to enable anyone to reproduce. Enough explanation should be provided for a third party to understand (*not just the person asking the question*). Even the cause of the error message above should be explained if possible. *Validity judged by the question asker + TAs, and validated by commenting in the thread*. Multiple answers eligible for credit if different enough/ teach something new (*you should highlight and explain what is unique about your method and why it is better than previous answers*)
+-   Answering a question *satisfactorily* with both code and explanation to enable anyone to reproduce. Enough explanation should be provided for a third party to understand (*not just the person asking the question*), and **references** should definitely be provided to backup your answer. Even the cause of the error message above should be explained if possible. *Validity judged by the question asker + TAs, and validated by `endorsement` or commenting in the thread*. Multiple answers eligible for credit if different enough/ teach something new (*you should highlight and explain what is unique about your method and why it is better than previous answers*)
 -   (**bonus/1 point**) Audience choice - questions and answers with \>= 10x ❤️'s get extra credit
     -   Adding a good resource such as a link or dataset with explanation of what subsets of it are most useful and for what purpose. Needs to be liked by \>= 10 people over the duration of the course to get credit.
 
 #### Office hour attendance
 
--   (1 point) for showing up to office hours (*one or more/week)*
+-   (1 point) for showing up to office hours with any technical questions on zoom or in-person (*one or more/week)*
 
 #### In-class question and answers
 
@@ -126,7 +126,7 @@ Each week, these activities will count as participation credits. 1 credit x 9 we
 
 -   Add valuable edits, such as to clarify, emphasize or add examples to Wikipedia pages of statistical concepts that are relevant / even slightly adjacent to the course
 
--   Ask any R related question on [stackoverflow](https://stackoverflow.com/) relevant to the course that gets 1 upvote
+-   Ask any R related question on [stackoverflow](https://stackoverflow.com/) relevant to the course that gets 1/2 upvotes (*who are not class members* 😛)
 
 ## Should I take this course without any coding background?
 
@@ -138,29 +138,38 @@ This classroom is a safe space, so no question is too simple or too "silly" to a
 
 ### There are many assignments, seems like a lot of work?
 
-The lectures are structured to be interspersed with **5-10 min** coding sessions where we will walk everyone through stuff. You essentially save all the work we did in class, and add to that by working on your own time for the assignments.
-
-So 25% of the assignment will already be done in class!
-
-Practicing by working through code at your own time is the only way to actually learn coding.
+Practicing by working through code at your own time is the only way to actually learn coding. If you are lagging behind in class, the office hours and discussion board will be quite valuable
 
 ## Textbooks/Reference material
 
 There is no single textbook for the course. There will be multiple references, mostly from free textbooks or materials available online. All required readings and supplementary materials will be posted on the course website. All code and data files will also be posted on the course canvas site. Code and data files will typically be made available before class meetings; slides will be posted afterwards.
 
+### Core textbooks or references
+
+-   Textbook to skim: [Hands on programming with R](https://rstudio-education.github.io/hopr/): For non-programmers, friendly intro to R with consistent examples of dice rolls throughout the book. *Load data, navigate R, write functions.*
+-   Use the search button to lookup data types and functions: [Advanced R](https://adv-r.hadley.nz/): (Hadley Wickham): *Improvement for R users/other language programmers. Covers Basic R stuff + Functional programming, meta-programming, debugging, performance*
+    -   The book says advanced but it is great for new R learners looking for specific concepts that are nicely explained with some illustrations.
+
+```{=html}
+<!-- -->
+```
+-   Use the search button for looking up stuff: [R for Data Science](https://r4ds.hadley.nz/) : *nice guide to load, transform and visualize data*. From Hadley Wickham, one of the R/Tidyverse pioneers
+
+-   Lookup stuff: [R cookbook](https://rc2e.com/): *Contains recipes for solving specific problems and gives insights into how they were solved. Data input, output, general stats, graphics, linear regression. "for* beginners: book will get you started faster"
+
+-   Tidyverse documentations for functions and packages such as [dplyr](https://dplyr.tidyverse.org/). These are really easy to read, and have examples too.
+
 ### Textbooks on general R / data science topics
 
 -   [R manuals](https://rstudio.github.io/r-manuals/r-intro/): *Nice manual detailing lot of R usage in a nice website format*
 
--   [Fundamentals of data visualization](https://clauswilke.com/dataviz/index.html)
+-   [Fundamentals of data visualization](https://clauswilke.com/dataviz/index.html): *guide to use visuals to accurately reflect data & tell a story. Choosing the right visualization, tailoring figure to audience.*
 
--   [R for Data Science](https://r4ds.hadley.nz/) : *nice guide to load, transform and visualize data*. From Hadley Wickham, one of the R/Tidyverse pioneers
-
--   [Advanced R](https://adv-r.hadley.nz/): (Hadley Wickham): *Improvement for R users/other language programmers. Functional programming, meta-programming, debugging, performance*
-
--   [Happy Git and GitHub for the useR](https://happygitwithr.com)
+-   [Happy Git and GitHub for the useR](https://happygitwithr.com): *Instructions to install git, integrate with github and Rstudio, usage for daily work*
 
 -   Other uses of R for graphics, reports, general automation in [R without Statistics](https://book.rwithoutstatistics.com/) *by David Keyes*
+
+-   [datavis with R](https://rkabacoff.github.io/datavis/preface.html#why-this-book): Cookbook for creating popular graphs. Suggests graphs for each scenario, high customization of graphs, best practices. *Skim particular sections for best use.* ***by Robert Kabacoff***
 
 ### Open textbooks on R and statistics
 
@@ -197,7 +206,17 @@ There is no single textbook for the course. There will be multiple references, m
     -   Tidy data, pivot, join, and iteration (part 1)
     -   Functions & {purrr}; iteration part2
     -   Regression and tidymodels
--   Nice slides for basics of R - [tinystats/teacups-giraffes-and-statistics course/module 1](https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html)
+
+Nice slides for basics of R - [tinystats/teacups-giraffes-and-statistics course/module 1](https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html)
+
+### Other resources
+
+-   Another ggplot worksheet - <https://ourcodingclub.github.io/tutorials/datavis/:> includes good visualization tips
+
+```{=html}
+<!-- -->
+```
+-   Git resources - <https://missing.csail.mit.edu/2020/version-control/> ; Saving broken git: [ohshitgit](https://ohshitgit.com/)
 
 ------------------------------------------------------------------------
 
