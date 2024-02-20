@@ -470,7 +470,55 @@
 <span id="cb4-4"><a></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lecture08_files/figure-revealjs/demo4-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="lecture08_files/figure-revealjs/demo4-1.png" width="960" class="r-stretch"></section>
+<section id="assign-the-plot-to-a-variable" class="slide level2">
+<h2>Assign the plot to a variable</h2>
+<p>This hides the plot and needs to be called with <code>print()</code></p>
+<p><em>Hey, where’s my plot gone?</em> 🤔</p>
+</section>
+<section id="call-the-plot-object-to-display-print-it" class="slide level2">
+<h2>Call the plot object to display/ <code>print</code> it</h2>
+
+<img data-src="lecture08_files/figure-revealjs/assign_and_show-1.png" width="960" class="r-stretch"></section>
+<section id="add-some-colour-col_name-in-aes" class="slide level2">
+<h2>Add some <code>colour = col_name</code> in <code>aes()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>colour_plt <span class="ot">&lt;-</span> <span class="co"># assign and print plot at the same</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> mtcars <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">vs_factor =</span> <span class="fu">as_factor</span>(vs)),</span>
+<span id="cb5-3"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg, <span class="at">colour =</span> vs_factor)) <span class="sc">+</span> </span>
+<span id="cb5-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_line</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="make-a-constant-colour-red---doesnt-work" class="slide level2">
+<h2>Make a constant <code>colour = 'red'</code> - Doesn’t work</h2>
+
+<img data-src="lecture08_files/figure-revealjs/colour_outside_aes-1.png" width="960" class="r-stretch"></section>
+<section id="did-the-colour-red-really-work" class="slide level2">
+<h2>Did the <code>colour = 'red'</code> really work?</h2>
+
+<img data-src="lecture08_files/figure-revealjs/mess_the_colour-1.png" width="960" class="r-stretch"></section>
+<section id="make-a-constant-colour-red-outside-aes" class="slide level2">
+<h2>Make a constant <code>colour = 'red'</code> outside <code>aes()</code></h2>
+<p><em>Hint: There should be no legend!</em></p>
+
+<img data-src="lecture08_files/figure-revealjs/constant_colour-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="styling-your-ggplot" class="title-slide slide level1 center">
+<h1>Styling your ggplot</h1>
+<p>How to train your <code>ggplot::</code></p>
+</section>
+<section id="making-axis-labels-great-again" class="slide level2">
+<h2>Making axis labels great again</h2>
+
+<img data-src="lecture08_files/figure-revealjs/labels-1.png" width="960" class="r-stretch"></section>
+<section id="add-text-annotations-on-the-plot" class="slide level2">
+<h2>Add text annotations on the plot</h2>
+
+<img data-src="lecture08_files/figure-revealjs/annotate-1.png" width="960" class="r-stretch"></section>
+<section id="make-broad-style-changes-based-on-theme" class="slide level2">
+<h2>Make broad style changes based on <code>theme</code></h2>
+
+<img data-src="lecture08_files/figure-revealjs/theme-1.png" width="960" class="r-stretch"></section></section>
 <section id="onto-the-worksheet-now" class="title-slide slide level1 center">
 <h1>Onto the worksheet now</h1>
 <p>Please download the _class8_ggplot_worksheet.Rmd or the <code>.R</code> file with the same name from the syllabus website</p>

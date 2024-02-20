@@ -532,6 +532,69 @@
     "text": "Adding line: geom_line()\n\nggplot(data = mtcars,\n       mapping = aes(x = cyl, y = mpg)) + \n  geom_point() + \n  geom_line()"
   },
   {
+    "objectID": "slides/lecture08.html#assign-the-plot-to-a-variable",
+    "href": "slides/lecture08.html#assign-the-plot-to-a-variable",
+    "title": "lecture08",
+    "section": "Assign the plot to a variable",
+    "text": "Assign the plot to a variable\nThis hides the plot and needs to be called with print()\nHey, where’s my plot gone? 🤔"
+  },
+  {
+    "objectID": "slides/lecture08.html#call-the-plot-object-to-display-print-it",
+    "href": "slides/lecture08.html#call-the-plot-object-to-display-print-it",
+    "title": "lecture08",
+    "section": "Call the plot object to display/ print it",
+    "text": "Call the plot object to display/ print it"
+  },
+  {
+    "objectID": "slides/lecture08.html#add-some-colour-col_name-in-aes",
+    "href": "slides/lecture08.html#add-some-colour-col_name-in-aes",
+    "title": "lecture08",
+    "section": "Add some colour = col_name in aes()",
+    "text": "Add some colour = col_name in aes()\n\ncolour_plt &lt;- # assign and print plot at the same\n  ggplot(data = mtcars %&gt;% mutate(vs_factor = as_factor(vs)),\n       mapping = aes(x = cyl, y = mpg, colour = vs_factor)) + \n  geom_point() + geom_line()"
+  },
+  {
+    "objectID": "slides/lecture08.html#make-a-constant-colour-red---doesnt-work",
+    "href": "slides/lecture08.html#make-a-constant-colour-red---doesnt-work",
+    "title": "lecture08",
+    "section": "Make a constant colour = 'red' - Doesn’t work",
+    "text": "Make a constant colour = 'red' - Doesn’t work"
+  },
+  {
+    "objectID": "slides/lecture08.html#did-the-colour-red-really-work",
+    "href": "slides/lecture08.html#did-the-colour-red-really-work",
+    "title": "lecture08",
+    "section": "Did the colour = 'red' really work?",
+    "text": "Did the colour = 'red' really work?"
+  },
+  {
+    "objectID": "slides/lecture08.html#make-a-constant-colour-red-outside-aes",
+    "href": "slides/lecture08.html#make-a-constant-colour-red-outside-aes",
+    "title": "lecture08",
+    "section": "Make a constant colour = 'red' outside aes()",
+    "text": "Make a constant colour = 'red' outside aes()\nHint: There should be no legend!"
+  },
+  {
+    "objectID": "slides/lecture08.html#making-axis-labels-great-again",
+    "href": "slides/lecture08.html#making-axis-labels-great-again",
+    "title": "lecture08",
+    "section": "Making axis labels great again",
+    "text": "Making axis labels great again"
+  },
+  {
+    "objectID": "slides/lecture08.html#add-text-annotations-on-the-plot",
+    "href": "slides/lecture08.html#add-text-annotations-on-the-plot",
+    "title": "lecture08",
+    "section": "Add text annotations on the plot",
+    "text": "Add text annotations on the plot"
+  },
+  {
+    "objectID": "slides/lecture08.html#make-broad-style-changes-based-on-theme",
+    "href": "slides/lecture08.html#make-broad-style-changes-based-on-theme",
+    "title": "lecture08",
+    "section": "Make broad style changes based on theme",
+    "text": "Make broad style changes based on theme"
+  },
+  {
     "objectID": "slides/lecture0x_git.html#slides..",
     "href": "slides/lecture0x_git.html#slides..",
     "title": "lecture_x",
