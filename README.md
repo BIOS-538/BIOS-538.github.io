@@ -53,7 +53,7 @@ Find the schedule [here](slides/class_schedule.qmd)
 ## Assessment
 
 | Assignment      | Total grade | Grade per instance | Details                                                                                                                                                   |
-|-----------------|-----------------|-----------------|----------------------|
+|-----------------|-------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Attendance      | 10%         | 0.4% / class       | *on zoom with permission.* 25 lectures                                                                                                                    |
 | Participation   | 10%         | 1% / week          | online discussion board (*ask/answer*), office hours, \~in-class participation                                                                            |
 | Problem sets    | 40%         | 6.7% / assignment  | 6 problem sets total                                                                                                                                      |
@@ -150,12 +150,11 @@ There is no single textbook for the course. There will be multiple references, m
 -   Use the search button to lookup data types and functions: [Advanced R](https://adv-r.hadley.nz/): (Hadley Wickham): *Improvement for R users/other language programmers. Covers Basic R stuff + Functional programming, meta-programming, debugging, performance*
     -   The book says advanced but it is great for new R learners looking for specific concepts that are nicely explained with some illustrations.
 
-```{=html}
 <!-- -->
-```
+
 -   Use the search button for looking up stuff: [R for Data Science](https://r4ds.hadley.nz/) : *nice guide to load, transform and visualize data*. From Hadley Wickham, one of the R/Tidyverse pioneers
 
--   Lookup stuff: [R cookbook](https://rc2e.com/): *Contains recipes for solving specific problems and gives insights into how they were solved. Data input, output, general stats, graphics, linear regression. "for* beginners: book will get you started faster"
+-   Lookup stuff: [R cookbook](https://rc2e.com/): \*Contains recipes for solving specific problems and gives insights into how they were solved. Data input, output, general stats, graphics, linear regression. "for\* beginners: book will get you started faster"
 
 -   Tidyverse documentations for functions and packages such as [dplyr](https://dplyr.tidyverse.org/). These are really easy to read, and have examples too.
 
@@ -213,9 +212,8 @@ Nice slides for basics of R - [tinystats/teacups-giraffes-and-statistics course/
 
 -   Another ggplot worksheet - <https://ourcodingclub.github.io/tutorials/datavis/:> includes good visualization tips
 
-```{=html}
 <!-- -->
-```
+
 -   Git resources - <https://missing.csail.mit.edu/2020/version-control/> ; Saving broken git: [ohshitgit](https://ohshitgit.com/)
 
 ------------------------------------------------------------------------

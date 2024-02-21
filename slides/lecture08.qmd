@@ -67,6 +67,103 @@ ggplot(data = mtcars,
   geom_line()
 ```
 
+## Assign the plot to a variable
+
+This hides the plot and needs to be called with `print()`
+
+```{r assign_plot}
+base_plt <- 
+  ggplot(data = mtcars,
+       mapping = aes(x = cyl, y = mpg)) + 
+  geom_point() + 
+  geom_line()
+
+```
+
+*Hey, where's my plot gone?* 🤔
+
+## Call the plot object to display/ `print` it
+
+```{r assign_and_show}
+base_plt
+```
+
+## Add some `colour = col_name` in `aes()`
+
+```{r colour, echo=TRUE}
+colour_plt <- # assign and print plot at the same
+  ggplot(data = mtcars %>% mutate(vs_factor = as_factor(vs)),
+       mapping = aes(x = cyl, y = mpg, colour = vs_factor)) + 
+  geom_point() + geom_line() 
+```
+
+## Make a constant `colour = 'red'` - Doesn't work
+
+```{r colour_outside_aes}
+ggplot(data = mtcars %>% mutate(vs_factor = as_factor(vs)),
+       mapping = aes(x = cyl, y = mpg, colour = 'dracula')) + 
+  geom_point() + geom_line() 
+```
+
+## Did the `colour = 'red'` really work?
+
+```{r mess_the_colour}
+ggplot(data = mtcars %>% mutate(vs_factor = as_factor(vs)),
+       mapping = aes(x = cyl, y = mpg, colour = 'blue')) + 
+  geom_point() + geom_line() 
+```
+
+## Make a constant `colour = 'red'` outside `aes()`
+
+*Hint: There should be no legend!*
+
+```{r constant_colour}
+ggplot(data = mtcars,
+       mapping = aes(x = cyl, y = mpg)) +
+  
+  geom_point(colour = 'blue') + geom_line(colour = 'blue') 
+```
+
+# Styling your ggplot
+
+How to train your `ggplot::`
+
+## Making axis labels great again
+
+```{r store_plt, echo=FALSE}
+colour_plt <- # assign and print plot at the same by piping to print()
+  {ggplot(data = mtcars %>% mutate(vs_factor = as_factor(vs)),
+       mapping = aes(x = cyl, y = mpg, colour = vs_factor)) + 
+  geom_point() + geom_line()} # %>% print() # uncomment this to print!
+
+```
+
+```{r labels}
+colour_plt + 
+  labs(
+    x = 'number of cylinders', y = 'miles per gallon',
+    title = "What's the takeaway here?",
+    subtitle = 'More cylinders => less miles per gallon'
+  )
+```
+
+![](http://127.0.0.1:16675/chunk_output/s/3D71E58D/cb0uv5xt7p3ul/000005.png)
+
+## Add text annotations on the plot
+
+```{r annotate}
+colour_plt + 
+  annotate(geom = 'text', 
+           x = 6, y = 25, colour = 'darkgreen',
+           label = 'this is interesting, eh!?')
+```
+
+## Make broad style changes based on `theme`
+
+```{r theme}
+colour_plt + theme_minimal()
+```
+
 # Onto the worksheet now
 
 Please download the \_class8_ggplot_worksheet.Rmd or the `.R` file with the same name from the syllabus website
