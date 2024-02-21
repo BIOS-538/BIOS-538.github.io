@@ -72,6 +72,7 @@ ggplot(data = mtcars,
 This hides the plot and needs to be called with `print()`
 
 ```{r assign_plot}
+#| echo: true
 base_plt <- 
   ggplot(data = mtcars,
        mapping = aes(x = cyl, y = mpg)) + 
@@ -85,12 +86,14 @@ base_plt <-
 ## Call the plot object to display/ `print` it
 
 ```{r assign_and_show}
+#| echo: true
 base_plt
 ```
 
 ## Add some `colour = col_name` in `aes()`
 
 ```{r colour, echo=TRUE}
+#| echo: true
 colour_plt <- # assign and print plot at the same
   ggplot(data = mtcars %>% mutate(vs_factor = as_factor(vs)),
        mapping = aes(x = cyl, y = mpg, colour = vs_factor)) + 
@@ -100,6 +103,7 @@ colour_plt <- # assign and print plot at the same
 ## Make a constant `colour = 'red'` - Doesn't work
 
 ```{r colour_outside_aes}
+#| echo: true
 ggplot(data = mtcars %>% mutate(vs_factor = as_factor(vs)),
        mapping = aes(x = cyl, y = mpg, colour = 'dracula')) + 
   geom_point() + geom_line() 
@@ -108,6 +112,7 @@ ggplot(data = mtcars %>% mutate(vs_factor = as_factor(vs)),
 ## Did the `colour = 'red'` really work?
 
 ```{r mess_the_colour}
+#| echo: true
 ggplot(data = mtcars %>% mutate(vs_factor = as_factor(vs)),
        mapping = aes(x = cyl, y = mpg, colour = 'blue')) + 
   geom_point() + geom_line() 
@@ -118,6 +123,7 @@ ggplot(data = mtcars %>% mutate(vs_factor = as_factor(vs)),
 *Hint: There should be no legend!*
 
 ```{r constant_colour}
+#| echo: true
 ggplot(data = mtcars,
        mapping = aes(x = cyl, y = mpg)) +
   
@@ -139,6 +145,7 @@ colour_plt <- # assign and print plot at the same by piping to print()
 ```
 
 ```{r labels}
+#| echo: true
 colour_plt + 
   labs(
     x = 'number of cylinders', y = 'miles per gallon',
@@ -152,6 +159,7 @@ colour_plt +
 ## Add text annotations on the plot
 
 ```{r annotate}
+#| echo: true
 colour_plt + 
   annotate(geom = 'text', 
            x = 6, y = 25, colour = 'darkgreen',
@@ -161,6 +169,7 @@ colour_plt +
 ## Make broad style changes based on `theme`
 
 ```{r theme}
+#| echo: true
 colour_plt + theme_minimal()
 ```
 
@@ -173,3 +182,5 @@ Please download the \_class8_ggplot_worksheet.Rmd or the `.R` file with the same
 -   If you are not comfortable with this, you can use the `.R` file instead with the same content
 
 # Design principles for graphics
+
+coming later..?
