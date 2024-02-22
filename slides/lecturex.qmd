@@ -5,6 +5,7 @@ date: x/Feb/24
 format: revealjs
 metadata-files: 
   - '_slides.yml'
+editor: visual
 ---
 
 # Recap?
@@ -18,3 +19,12 @@ topic name
 ## Slides..
 
 
+## Onto the worksheet now
+
+Please download the `…qmd` worksheet for today
+
+# Summary
+
+We discussed 
+- a
+- b..
