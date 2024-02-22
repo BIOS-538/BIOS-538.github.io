@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.4.537">
 
   <meta name="author" content="Prashant K">
-  <meta name="dcterms.date" content="2001-02-24">
-  <title>BIOS-338/538 - lecture_x</title>
+  <meta name="dcterms.date" content="2024-02-22">
+  <title>BIOS-338/538 - lecture12: Normal distribution and simulations</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -339,7 +404,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">lecture_x</h1>
+  <h1 class="title">lecture12: Normal distribution and simulations</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -349,28 +414,229 @@ Prashant K
 </div>
 </div>
 
-  <p class="date">2001-02-24</p>
+  <p class="date">2024-02-22</p>
 </section>
 <section id="recap" class="title-slide slide level1 center">
-<h1>Recap?</h1>
-
+<h1>Recap</h1>
+<p>In the first 6 weeks we covered</p>
+<ul>
+<li><p>Basic R</p></li>
+<li><p>Tidyverse <em>data manipulations</em></p></li>
+<li><p>Plotting with <code>ggplot</code></p></li>
+</ul>
+<p>Now we will bring forth these R skills to interact with data to understand the statistics behind t-tests in the next 3 lectures</p>
+<ul>
+<li>Use simulations to generate probability distributions and plot them</li>
+</ul>
 </section>
 
 <section>
 <section id="todays-class" class="title-slide slide level1 center">
 <h1>Today’s class</h1>
-<p>topic name - outline - ..</p>
+<p>The origins of normal distributions and why we see them everywhere</p>
+<ul>
+<li><p>Central limit theorem <em>visually</em></p></li>
+<li><p>Sample means make normal distributions</p></li>
+<li><p>Explore these for yourself with the worksheet (<em>last 30 mins</em>)</p></li>
+</ul>
 </section>
-<section id="slides.." class="slide level2">
-<h2>Slides..</h2>
+<section id="normal-distribution" class="slide level2">
+<h2>Normal distribution</h2>
+<p>Watch full video/ <a href="https://www.youtube.com/watch?v=zeJD6dqJ5lo">3blue1brown</a> (0 - 54 seconds)</p>
+<div class="fragment">
+<p>How to identify a normal distribution?</p>
+<ul>
+<li>Extremes are less likely than central values (closer to median)</li>
+</ul>
+</div>
+</section>
+<section id="galton-board-and-central-limit-theorem" class="slide level2">
+<h2>Galton board and central limit theorem</h2>
+<p><strong>Central limit theorem</strong> <em>in short</em>:</p>
+<p>Sum of many random variables makes a normal distribution. Mean involves a sum! (<code>mean &lt;- sum(x) / length(x)</code>)</p>
+<div class="fragment" style="font-size: 50%;">
+<blockquote>
+<p>the <strong>central limit theorem</strong> (<strong>CLT</strong>) states that, <em>under appropriate conditions</em>, the <a href="https://en.wikipedia.org/wiki/Probability_distribution" title="Probability distribution">distribution</a> of a normalized version of the sample mean converges to a <a href="https://en.wikipedia.org/wiki/Normal_distribution#Standard_normal_distribution" title="Normal distribution">standard normal distribution</a>. This holds even if the original variables themselves are not <a href="https://en.wikipedia.org/wiki/Normal_distribution" title="Normal distribution">normally distributed</a>. <strong>Source</strong>: <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Wikipedia</a>.</p>
+</blockquote>
+<p>Refer textbook for mathematical definition in <a href="https://math.libretexts.org/Courses/Queens_College/Introduction_to_Probability_and_Mathematical_Statistics">Introduction to Probability and</a><a href="https://math.libretexts.org/Courses/Queens_College/Introduction_to_Probability_and_Mathematical_Statistics/12%3A_Week_12/12.01%3A_The_Central_Limit_Theorem">Mathematical</a><a href="https://math.libretexts.org/Courses/Queens_College/Introduction_to_Probability_and_Mathematical_Statistics">Statistics</a></p>
+</div>
+<p><strong>Galton board</strong> ~ add a random variable (+1 / -1) that determines where the balls end up</p>
+<p>Watch full video/ <a href="https://www.youtube.com/watch?v=zeJD6dqJ5lo">3blue1brown</a> (1:53 - 5:22)</p>
+</section>
+<section id="why-are-so-many-things-normally-distributed" class="slide level2 smaller">
+<h2>Why are so many things normally distributed?</h2>
+<p>Because they could be expressed as a <strong>SUM</strong> of other hidden variables.</p>
+<ul>
+<li><p>Heights: We can speculate that height depends on the sum of action of multiple genes, the food/excersise you had everyday till measurement</p></li>
+<li><p>Gene expression in a bacterial/cell culture: The sum (or mean) of the expression of the millions of individual cells in the culture makes for an excellent normal distribution!</p></li>
+</ul>
+<div class="fragment">
+<p>But it is important to recognize when effects are not strictly additive, such as when feedbacks are involved.</p>
+<ul>
+<li><p>Income is famously not normally distributed. <em>Due to positive feedback across generations, and that capital gains far outweigh labor gains, there are very few very rich and many many not-very-rich people.</em></p></li>
+<li><p>If your gene has a positive/negative feedback loop (activates/represses itself), then your gene expression will not be normally distributed. You might have a bimodal distribution with 2 peaks!</p></li>
+</ul>
+</div>
+</section>
+<section id="what-is-a-simulation" class="slide level2">
+<h2>What is a simulation</h2>
+<p>Definition from the <a href="https://modernstatisticswithr.com/modchapter.html#simulation">textbook</a>: Modern stats with R</p>
+<blockquote>
+<p>A key component of modern statistical work is <em>simulation</em>, in which we <strong>generate artificial data</strong> that can be used both in the analysis of real data (..) and for assessing different (<em>statistical</em>) methods .</p>
+</blockquote>
+</section>
+<section id="ingredients-of-a-simulation-in-r" class="slide level2 smaller">
+<h2>Ingredients of a simulation in R</h2>
+<ul>
+<li>A random variable</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Pick a random variable (note: rounding is only for the presentation)</span></span>
+<span id="cb1-2"><a></a><span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="co"># Normal random variable (r.v)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.10 -1.80  0.02 -0.77  0.64</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">sample</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>], <span class="at">size =</span> <span class="dv">3</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="co"># sample from a vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "h" "e" "h"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>), <span class="at">size =</span> <span class="dv">1</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="co"># galton r.v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<ul>
+<li>Do computations on the random variables</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co">#' calculate sum of `n` random variables</span></span>
+<span id="cb7-2"><a></a>galton_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
+<span id="cb7-3"><a></a>  galton_series <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>), <span class="at">size =</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-4"><a></a>  <span class="fu">sum</span>(galton_series)</span>
+<span id="cb7-5"><a></a>}</span>
+<span id="cb7-6"><a></a></span>
+<span id="cb7-7"><a></a><span class="co"># each run gives a different outcome</span></span>
+<span id="cb7-8"><a></a><span class="fu">galton_sum</span>(<span class="dv">5</span>) ; <span class="fu">galton_sum</span>(<span class="dv">5</span>); <span class="fu">galton_sum</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+</section>
+<section id="do-the-simulation-r" class="slide level2">
+<h2>Do the simulation R</h2>
+<ul>
+<li>Iterate this many times (<em>avoid</em> <code>for()</code> <em>loops, and use</em> <code>vectorized functions</code>)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>galton_simulation <span class="ot">&lt;-</span> </span>
+<span id="cb11-2"><a></a>  <span class="fu">tibble</span>(</span>
+<span id="cb11-3"><a></a>    <span class="at">run_number =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb11-4"><a></a>    <span class="at">outcome =</span> </span>
+<span id="cb11-5"><a></a>      <span class="fu">replicate</span>(<span class="at">n =</span> <span class="fu">length</span>(run_number), </span>
+<span id="cb11-6"><a></a>                <span class="at">expr =</span> <span class="fu">galton_sum</span>(<span class="dv">6</span>))</span>
+<span id="cb11-7"><a></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-8"><a></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 2
+   run_number outcome
+        &lt;int&gt;   &lt;dbl&gt;
+ 1          1       4
+ 2          2       2
+ 3          3       0
+ 4          4       2
+ 5          5       0
+ 6          6       2
+ 7          7      -2
+ 8          8       0
+ 9          9       0
+10         10      -4</code></pre>
+</div>
+</div>
+</section>
+<section id="really-do-many-times" class="slide level2">
+<h2>Really do many times</h2>
+<p>10 is no good, let’s try 1,000?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>galton_simulation <span class="ot">&lt;-</span> </span>
+<span id="cb13-2"><a></a>  <span class="fu">tibble</span>(</span>
+<span id="cb13-3"><a></a>    <span class="at">run_number =</span> <span class="dv">1</span><span class="sc">:</span><span class="fl">1e3</span>,</span>
+<span id="cb13-4"><a></a>    <span class="at">outcome =</span> </span>
+<span id="cb13-5"><a></a>      <span class="fu">replicate</span>(<span class="at">n =</span> <span class="fu">length</span>(run_number), </span>
+<span id="cb13-6"><a></a>                <span class="at">expr =</span> <span class="fu">galton_sum</span>(<span class="dv">6</span>))</span>
+<span id="cb13-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="plot-results" class="slide level2">
+<h2>Plot results</h2>
+<ul>
+<li>Calculate summary statistics and make plots</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(galton_simulation, <span class="at">mapping =</span> <span class="fu">aes</span>(outcome)) <span class="sc">+</span></span>
+<span id="cb14-2"><a></a>  </span>
+<span id="cb14-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">center =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture12_files/figure-revealjs/plot_hist-1.png" width="960" class="r-stretch"><div class="fragment">
+<p><strong>Why are some numbers missing?</strong></p>
+<p>Because of the discrete nature of the random variables, odd numbers cannot be made by adding an even number (6) or +1/-1s (<em>if 0 was included, this would be possible</em>)</p>
+</div>
+</section>
+<section id="plot-detailed-results" class="slide level2">
+<h2>Plot detailed results</h2>
+<p>Let us plot each outcome on top of the histogram</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(galton_simulation, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> outcome)) <span class="sc">+</span></span>
+<span id="cb15-2"><a></a>  </span>
+<span id="cb15-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">center =</span> <span class="dv">0</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> </span>
+<span id="cb15-4"><a></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="sc">-</span><span class="dv">20</span>), </span>
+<span id="cb15-5"><a></a>              <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">height =</span> <span class="dv">10</span>),</span>
+<span id="cb15-6"><a></a>              <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture12_files/figure-revealjs/plot_hist_points-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(galton_simulation, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> outcome, <span class="at">y =</span> <span class="st">'?'</span>)) <span class="sc">+</span></span>
+<span id="cb16-2"><a></a>  </span>
+<span id="cb16-3"><a></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span> </span>
+<span id="cb16-4"><a></a>  <span class="co"># geom_histogram(binwidth = 1, center = 0, alpha = 0.2) + </span></span>
+<span id="cb16-5"><a></a>  <span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">height =</span> .<span class="dv">5</span>),</span>
+<span id="cb16-6"><a></a>              <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture12_files/figure-revealjs/plot_violin-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sampling-from-a-distribution" class="slide level2">
+<h2>Sampling from a distribution</h2>
+<p>Collecting a random subset of <em>samples</em> from a larger distribution is another way to begin a simulation. This is the technique behind ~<em>Bootstrapping (will get to it later)</em></p>
 </section>
 <section id="onto-the-worksheet-now" class="slide level2">
 <h2>Onto the worksheet now</h2>
-<p>Please download the <code>…qmd</code> worksheet for today</p>
+<p>Please download the <code>qmd</code> worksheet for today from github (scripts/ folder in <a href="https://github.com/BIOS-538/class-worksheets/">class-worksheets repository</a>)</p>
 </section></section>
 <section id="summary" class="title-slide slide level1 center">
 <h1>Summary</h1>
-<p>We discussed - a - b..</p>
+<ul>
+<li><p>Understanding normal distributions</p></li>
+<li><p>Sum or mean of many random variables produces a normal distribution</p></li>
+<li><p>Using R to simulate random events and explore distributions</p></li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -588,6 +854,44 @@ Prashant K
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
