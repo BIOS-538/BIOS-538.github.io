@@ -12,21 +12,21 @@ editor: visual
 
 Last class covered
 
--   How normal distributions are generated : Sum of random variables / `mean` of a random sample
+-   How normal distributions are generated: Sum of random variables / `mean` of a random sample
+
+    -   Central limit theorem
 
 -   Used R to simulate random events and explore distributions
 
 # Today's class
 
--   *Finish segment* : How do I [test](https://www.statology.org/test-for-normality-in-r/) if my data is normal? `q-q plots` and `Shapiro-Wilk` test
+-   *Finish segment*: How do I [test](https://www.statology.org/test-for-normality-in-r/) if my data is normal? `q-q plots` and `Shapiro-Wilk` test
 
--   What questions do t-tests answer?
+-   What questions do **t-tests** answer?
 
--   t-tests dissected: Layout of a general hypothesis test
+-   t-tests dissected: Layout of a general **hypothesis test**
 
--   Understand sampling distributions, Standart error of mean (SEM) and confidence intervals
-
-Worksheets on the [class-worksheets](https://github.com/BIOS-538/class-worksheets/) github: class12b_simulations-continued.qmd ; class13_sampling.qmd
+-   Understand **sampling distributions**, standard error of mean (SEM) and confidence intervals (CI)
 
 # Checking for normality
 
@@ -34,7 +34,84 @@ How to check if my data is normally distributed?
 
 -   We need metrics that give us the shape of the distribution without having to plot the distribution and staring at it
 
+```{r setup}
+library(tidyverse)  # for tibbles, and pipes
+theme_set(theme_classic()) # set theme with plain background for all plots
+gapminder <- gapminder::gapminder # get gapminder data
+```
+
+## Quantifying the shape of the normal distribution  {.smaller}
+
+::: columns
+::: {.column width="50%"}
+### Mean +/- SD
+
+![](img/normal_dist_probabilities_sd.png){width="300"}
+
+> Source: [Wikipedia](https://en.wikipedia.org/wiki/File:Standard_deviation_diagram_micro.svg)
+:::
+
+::: {.column width="50%"}
+### Median, quartiles
+
+![](img/normal_dist_quartiles.jpg){width="300"}
+
+> Source: Quartiles of Normal Distribution, [JoeCMath/youtube](https://www.youtube.com/watch?v=0uef_Bw4xfM)
+
+**quartiles** divide the probability / distribution area into 4 **quarters,** a more general way is called **quantile** (*note the spelling!*)
+:::
+:::
+
 ## Quantiles tell us about the distribution shape
+
+::: columns
+::: {.column width="50%"}
+### Quartiles (4)
+
+```{r dist_w_quantiles}
+#| fig-height: 3
+
+# Data for a simple non-normal distribution for quantile demonstration
+life_exp <- gapminder$lifeExp
+quartiles <- quantile(life_exp)
+deciles <- quantile(life_exp, probs = seq(0, 1, 0.1))
+
+dist_plt <- 
+  ggplot(mapping = aes(gapminder$lifeExp)) + 
+  geom_histogram(aes(y = after_stat(density)), alpha = 0.5) +  # scaled histogram (probability dist)
+  geom_density() # smooth dist
+
+dist_plt +  
+  # show quartiles
+  stat_summary(aes(y = 0.04, xintercept = after_stat(x)), 
+               fun = quantile, 
+               # fun.args = list(probs = c(0.025, 0.975)), 
+               geom = "vline", 
+               alpha = 0.5, linetype = 2,
+               orientation = "y")
+
+# to plot quantiles : https://stackoverflow.com/a/30569539/9049673
+```
+:::
+
+::: {.column width="50%"}
+### Deciles (10)
+
+```{r dist-w-declies}
+#| fig-height: 3 
+
+dist_plt +  
+  # show quartiles
+  stat_summary(aes(y = 0.04, xintercept = after_stat(x)), 
+               fun = quantile, 
+               fun.args = list(probs = seq(0, 1, 0.1)),
+               geom = "vline", 
+               alpha = 0.5, linetype = 2,
+               orientation = "y")
+
+```
+:::
+:::
 
 > **quantiles** are cut points dividing the [range](https://en.wikipedia.org/wiki/Range_(statistics) "Range (statistics)") of a [probability distribution](https://en.wikipedia.org/wiki/Probability_distribution "Probability distribution") into continuous intervals with equal probabilities. Source: [Wikipedia](https://en.wikipedia.org/wiki/Quantile)
 
@@ -42,9 +119,59 @@ probability distribution = `geom_density` plot. Hence quantiles divide the range
 
 ## `Q-Q` plot enables comparison of distribution shapes
 
+If they fall along the line, then it is normal.
+
+::: columns
+::: {.column width="50%"}
+### Normal distribution
+
+```{r qq-plot-normal}
+#| fig-width: 4
+rnorm(1000) %>% 
+car::qqPlot()
+```
+:::
+
+::: {.column width="50%"}
+### Non-normal distribution
+
+```{r qq-plot}
+#| fig-width: 4
+car::qqPlot(life_exp)
+```
+:::
+:::
+
+> further reading : [sthda](http://www.sthda.com/english/wiki/qq-plots-quantile-quantile-plots-r-base-graphs)
+
 ## Formal `Shapiro-Wilk` test for normality
 
 What is this testing for?
+
+-   NULL hypothesis is that data is normally distributed
+-   High p-value =\> Data is normal (*hypothesis is accepted*)
+
+::: columns
+::: {.column width="50%"}
+### Normal distribution
+
+```{r shapiro-wilk-normal}
+rnorm(1000) %>% 
+  shapiro.test()
+```
+:::
+
+::: {.column width="50%"}
+### Non-normal distribution
+
+```{r shapiro-wilk}
+
+shapiro.test(life_exp)
+```
+:::
+:::
+
+> further reading: [statology.org](https://www.statology.org/test-for-normality-in-r/)
 
 # What are t-tests for?
 
@@ -60,35 +187,100 @@ But causality is really really hard to establish, that is why we talk about [cor
 
 > "Evidence **linking** smoking and cancer appeared in the 1920s." Source: [The cigarette controversy, 2007](https://aacrjournals.org/cebp/article/16/6/1070/260310/The-Cigarette-Controversy#10539424)/section: *Smoking Causes Cancer: When Did They Know?*
 
+## What data can test the smoking hypothesis?
+
+*use fake data to generate a x-y plot with noise ; and others..*
+
+2d correlation ; num vs cat plot with 2 categories ; cat vs cat plot with counts only
+
+::: columns
+::: {.column width="50%"}
+```{r linreg}
+#| fig-width: 4
+ggplot(gapminder,
+       aes(year, lifeExp)) + 
+  geom_point() + geom_smooth(method = 'lm') + 
+  labs(x = 'smoking index', y = 'cancer risk')
+
+```
+
+### 
+:::
+
+::: {.column width="50%"}
+```{r num_cat_smoking}
+#| fig-width: 4
+
+smk <- tibble(id = 1:12, 
+              cancer_index = c(rnorm(6, mean = 2), rnorm(6, mean = 3.5)),
+              smoking_status = rep(c(F, T), each = 6)) %>% 
+  mutate(mean_cancer = mean(cancer_index), .by = smoking_status)
+
+ggplot(smk, aes(smoking_status, cancer_index)) + 
+  geom_point() + 
+  
+  # show mean
+  geom_point(aes(y = mean_cancer), shape = '_', size = 10) + 
+  geom_text(aes(y = mean_cancer + .2, label = round(mean_cancer, 2)))
+
+```
+:::
+:::
+
+## Comparing two numbers vs two samples
+
+3.62 is clearly \> 1.71, does that satisfy the hypothesis?
+
+It is straightforward to compare just the mean values of each sample, but there is no statistics involved there
+
+-   We need to account for both the mean of the samples and the spread around the mean
+
+This is what the t-statistic encompasses. The t-test tests for a hypothesis based on this statistic
+
 ## t-tests finds statistical support against a NULL hypothesis
 
-In real terms - "smoking is **NOT** associated with cancer"
+Null hypothesis in english - "smoking is **NOT** associated with cancer"
 
 In statistical terms - "the samples of smokers and non-smokers came from the **same population**"
 
 -   (*assumption)* For a t-test, this source population is normally distributed
 
--   *(Other assumptions)* Equal variance between smoker dataset and non-smoker dataset (this can be violated for the `welch t-test`)
+-   *(Other assumption for Student's t-test)* Equal variance between smoker dataset and non-smoker dataset (this can be violated for the `welch t-test`)
 
-# Sampling distributions
+## t-test is calculating difference in means / spread around mean
 
-1.  Sample multiple times from a population and plot one parameter (such as `mean`)
-2.  Plot the parameter, which is in-itself a random variable. Hence results in a different value for each sample
-3.  This results in a distribution
+![](img/t-test_formula_sketched.png)
+
+Watch full video here: "*Student's t-test*" : [Bozeman science/youtube](https://www.youtube.com/watch?v=pTmLQvMM-1M)
+
+# Sampling distributions {.incremental .smaller}
+
+::: .incremental
+1.  Sample multiple times from a population (*too expensive for a real experiment, so we imagine this*)
+2.  Calculate one statistic from the sample (such as `mean`) and record it (*for each sample)*
+3.  Plot the statistic across all samples. The statistic is a random variable too dependant on the random sample, hence results in a different value for each sample.
+4.  This results in a distribution (called **sampling distribution** of `mean`*/statistic*)
     -   `mean` is nice because it follows a normal distribution (due to the *central limit theorem*!)
-4.  The properties of this distribution are helpful to understand the population which is what we are interested in
+        -   it's mean \~ close approximation to the population mean
+        -   it's standard deviation = standard error of mean (**S.E.M.**) \~ $\sigma$
+5.  The properties of this distribution are helpful to understand the population which is what we are interested in
+:::
 
-## References
+## Sampling from a population of coloured balls
 
 We will walk through this activity to understand sampling well
 
 -   Explanation of sampling with balls in [moderndive/chap7](https://moderndive.com/7-sampling.html#what-proportion-of-this-bowls-balls-are-red)
 
-Great explanation of sample size in 7.2 (FIGURE 7.12)
+## Let us see the sampling distribution
 
-## Onto the worksheet now
+## Calculating the sample mean, SEM, CI
 
-Please download the `…qmd` worksheet for today
+## Relating this to a 1-sample t-test
+
+## References
+
+Great explanation of sample size in 7.2 (FIGURE 7.12) in [moderndive/chap7](https://moderndive.com/7-sampling.html#what-proportion-of-this-bowls-balls-are-red)
 
 # Summary
 
@@ -98,4 +290,4 @@ Please download the `…qmd` worksheet for today
 
 -   t-test = **p-value** gives the probability that the NULL hypothesis: *that both data groups were sampled from the same distribution* is `TRUE`
 
--   Understand sampling distributions, Standart error of mean (SEM) and confidence intervals
+-   Understood sampling distributions, standard error of mean (SEM) and confidence intervals (CI)
