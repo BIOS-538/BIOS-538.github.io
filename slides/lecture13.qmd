@@ -1,0 +1,101 @@
+---
+title: "lecture13"
+author: "Prashant K"
+date: 27/Feb/24
+format: revealjs
+metadata-files: 
+  - '_slides.yml'
+editor: visual
+---
+
+# Recap
+
+Last class covered
+
+-   How normal distributions are generated : Sum of random variables / `mean` of a random sample
+
+-   Used R to simulate random events and explore distributions
+
+# Today's class
+
+-   *Finish segment* : How do I [test](https://www.statology.org/test-for-normality-in-r/) if my data is normal? `q-q plots` and `Shapiro-Wilk` test
+
+-   What questions do t-tests answer?
+
+-   t-tests dissected: Layout of a general hypothesis test
+
+-   Understand sampling distributions, Standart error of mean (SEM) and confidence intervals
+
+Worksheets on the [class-worksheets](https://github.com/BIOS-538/class-worksheets/) github: class12b_simulations-continued.qmd ; class13_sampling.qmd
+
+# Checking for normality
+
+How to check if my data is normally distributed?
+
+-   We need metrics that give us the shape of the distribution without having to plot the distribution and staring at it
+
+## Quantiles tell us about the distribution shape
+
+> **quantiles** are cut points dividing the [range](https://en.wikipedia.org/wiki/Range_(statistics) "Range (statistics)") of a [probability distribution](https://en.wikipedia.org/wiki/Probability_distribution "Probability distribution") into continuous intervals with equal probabilities. Source: [Wikipedia](https://en.wikipedia.org/wiki/Quantile)
+
+probability distribution = `geom_density` plot. Hence quantiles divide the range to make equal area under the `geom_density` curve
+
+## `Q-Q` plot enables comparison of distribution shapes
+
+## Formal `Shapiro-Wilk` test for normality
+
+What is this testing for?
+
+# What are t-tests for?
+
+To make statistical conclusions of this kind based on data
+
+-   "Smoking **causes** cancer"
+
+But causality is really really hard to establish, that is why we talk about [correlation/association](https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation)
+
+-   "Smoking **is associated with** cancer"
+
+-   "Smokers are **statistically significantly** at a higher risk of having cancer"
+
+> "Evidence **linking** smoking and cancer appeared in the 1920s." Source: [The cigarette controversy, 2007](https://aacrjournals.org/cebp/article/16/6/1070/260310/The-Cigarette-Controversy#10539424)/section: *Smoking Causes Cancer: When Did They Know?*
+
+## t-tests finds statistical support against a NULL hypothesis
+
+In real terms - "smoking is **NOT** associated with cancer"
+
+In statistical terms - "the samples of smokers and non-smokers came from the **same population**"
+
+-   (*assumption)* For a t-test, this source population is normally distributed
+
+-   *(Other assumptions)* Equal variance between smoker dataset and non-smoker dataset (this can be violated for the `welch t-test`)
+
+# Sampling distributions
+
+1.  Sample multiple times from a population and plot one parameter (such as `mean`)
+2.  Plot the parameter, which is in-itself a random variable. Hence results in a different value for each sample
+3.  This results in a distribution
+    -   `mean` is nice because it follows a normal distribution (due to the *central limit theorem*!)
+4.  The properties of this distribution are helpful to understand the population which is what we are interested in
+
+## References
+
+We will walk through this activity to understand sampling well
+
+-   Explanation of sampling with balls in [moderndive/chap7](https://moderndive.com/7-sampling.html#what-proportion-of-this-bowls-balls-are-red)
+
+Great explanation of sample size in 7.2 (FIGURE 7.12)
+
+## Onto the worksheet now
+
+Please download the `…qmd` worksheet for today
+
+# Summary
+
+-   `q-q plots` and `Shapiro-Wilk` test enable checking data for normality
+
+-   t-tests answer questions of association such as '*smoking causes cancer*'
+
+-   t-test = **p-value** gives the probability that the NULL hypothesis: *that both data groups were sampled from the same distribution* is `TRUE`
+
+-   Understand sampling distributions, Standart error of mean (SEM) and confidence intervals
