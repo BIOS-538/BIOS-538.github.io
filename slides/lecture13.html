@@ -10,7 +10,9 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.537">
 
-  <title>BIOS-338/538 - lecture08</title>
+  <meta name="author" content="Prashant K">
+  <meta name="dcterms.date" content="2024-02-27">
+  <title>BIOS-338/538 - lecture13</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,71 +30,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -402,185 +339,289 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">lecture08</h1>
+  <h1 class="title">lecture13</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Prashant K 
+</div>
+</div>
 </div>
 
+  <p class="date">2024-02-27</p>
 </section>
 <section id="recap" class="title-slide slide level1 center">
-<h1>Recap?</h1>
-
+<h1>Recap</h1>
+<p>Last class covered</p>
+<ul>
+<li><p>How normal distributions are generated: Sum of random variables / <code>mean</code> of a random sample</p>
+<ul>
+<li>Central limit theorem</li>
+</ul></li>
+<li><p>Used R to simulate random events and explore distributions</p></li>
+</ul>
 </section>
 
-<section>
 <section id="todays-class" class="title-slide slide level1 center">
 <h1>Today’s class</h1>
 <ul>
-<li><p>What is <code>ggplot()</code> and why is it awesome?</p></li>
-<li><p>Think of a plot / graph as having multiple layers</p></li>
-<li><p>..</p></li>
+<li><p><em>Finish segment</em>: How do I <a href="https://www.statology.org/test-for-normality-in-r/">test</a> if my data is normal? <code>q-q plots</code> and <code>Shapiro-Wilk</code> test</p></li>
+<li><p>What questions do <strong>t-tests</strong> answer?</p></li>
+<li><p>t-tests dissected: Layout of a general <strong>hypothesis test</strong></p></li>
+<li><p>Understand <strong>sampling distributions</strong>, standard error of mean (SEM) and confidence intervals (CI)</p></li>
 </ul>
 </section>
-<section id="building-a-plot-layer-by-layer" class="slide level2">
-<h2>Building a plot layer by layer</h2>
 
-<img data-src="img/ggplot_syntax.png" width="360" class="r-stretch quarto-figure-center"><p class="caption">Overview of the <code>ggplot()</code> syntax</p><p>Source: <a href="https://www.sharpsightlabs.com/blog/ggplot2-tutorial/#syntax-of-ggplot2">blog/sharpsightlabs.com</a>:</p>
-</section>
-<section id="geom-layers" class="slide level2">
-<h2>Geom layers</h2>
-
-<img data-src="img/geom_types.png" alt="types of geoms" width="394" class="r-stretch"><p>Source: <a href="https://www.sharpsightlabs.com/blog/ggplot2-tutorial/#syntax-of-ggplot2">blog/sharpsightlabs.com</a>:</p>
-<p>There’s many more geoms in the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot cheatsheet</a>!</p>
-<p>Let us quickly see an animation of empty plot, adding axes, adding data for the histogram</p>
-</section>
-<section id="empty-plot-ggplot-call" class="slide level2">
-<h2>Empty plot: <code>ggplot()</code> call</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a></a><span class="fu">data</span>(<span class="st">"mtcars"</span>)</span>
-<span id="cb1-3"><a></a></span>
-<span id="cb1-4"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="lecture08_files/figure-revealjs/demo1-1.png" width="960" class="r-stretch"></section>
-<section id="adding-axes-mapping-aes" class="slide level2">
-<h2>Adding axes: <code>mapping = aes()</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars,</span>
-<span id="cb2-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="lecture08_files/figure-revealjs/demo2-1.png" width="960" class="r-stretch"></section>
-<section id="adding-points-geom_point" class="slide level2">
-<h2>Adding points: <code>geom_point()</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars,</span>
-<span id="cb3-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg)) <span class="sc">+</span> </span>
-<span id="cb3-3"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="lecture08_files/figure-revealjs/demo3-1.png" width="960" class="r-stretch"></section>
-<section id="adding-line-geom_line" class="slide level2">
-<h2>Adding line: <code>geom_line()</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars,</span>
-<span id="cb4-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg)) <span class="sc">+</span> </span>
-<span id="cb4-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb4-4"><a></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="lecture08_files/figure-revealjs/demo4-1.png" width="960" class="r-stretch"></section>
-<section id="assign-the-plot-to-a-variable" class="slide level2">
-<h2>Assign the plot to a variable</h2>
-<p>This hides the plot and needs to be called with <code>print()</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>base_plt <span class="ot">&lt;-</span> </span>
-<span id="cb5-2"><a></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> mtcars,</span>
-<span id="cb5-3"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg)) <span class="sc">+</span> </span>
-<span id="cb5-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb5-5"><a></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><em>Hey, where’s my plot gone?</em> 🤔</p>
-</section>
-<section id="call-the-plot-object-to-display-print-it" class="slide level2">
-<h2>Call the plot object to display/ <code>print</code> it</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>base_plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="lecture08_files/figure-revealjs/assign_and_show-1.png" width="960" class="r-stretch"></section>
-<section id="add-some-colour-col_name-in-aes" class="slide level2">
-<h2>Add some <code>colour = col_name</code> in <code>aes()</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>colour_plt <span class="ot">&lt;-</span> <span class="co"># assign and print plot at the same</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> mtcars <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">vs_factor =</span> <span class="fu">as_factor</span>(vs)),</span>
-<span id="cb7-3"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg, <span class="at">colour =</span> vs_factor)) <span class="sc">+</span> </span>
-<span id="cb7-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_line</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="make-a-constant-colour-red---doesnt-work" class="slide level2">
-<h2>Make a constant <code>colour = 'red'</code> - Doesn’t work</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">vs_factor =</span> <span class="fu">as_factor</span>(vs)),</span>
-<span id="cb8-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg, <span class="at">colour =</span> <span class="st">'dracula'</span>)) <span class="sc">+</span> </span>
-<span id="cb8-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_line</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="lecture08_files/figure-revealjs/colour_outside_aes-1.png" width="960" class="r-stretch"></section>
-<section id="did-the-colour-red-really-work" class="slide level2">
-<h2>Did the <code>colour = 'red'</code> really work?</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">vs_factor =</span> <span class="fu">as_factor</span>(vs)),</span>
-<span id="cb9-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg, <span class="at">colour =</span> <span class="st">'blue'</span>)) <span class="sc">+</span> </span>
-<span id="cb9-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_line</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="lecture08_files/figure-revealjs/mess_the_colour-1.png" width="960" class="r-stretch"></section>
-<section id="make-a-constant-colour-red-outside-aes" class="slide level2">
-<h2>Make a constant <code>colour = 'red'</code> outside <code>aes()</code></h2>
-<p><em>Hint: There should be no legend!</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars,</span>
-<span id="cb10-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
-<span id="cb10-3"><a></a>  </span>
-<span id="cb10-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">'blue'</span>) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">'blue'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="lecture08_files/figure-revealjs/constant_colour-1.png" width="960" class="r-stretch"></section></section>
 <section>
-<section id="styling-your-ggplot" class="title-slide slide level1 center">
-<h1>Styling your ggplot</h1>
-<p>How to train your <code>ggplot::</code></p>
+<section id="checking-for-normality" class="title-slide slide level1 center">
+<h1>Checking for normality</h1>
+<p>How to check if my data is normally distributed?</p>
+<ul>
+<li>We need metrics that give us the shape of the distribution without having to plot the distribution and staring at it</li>
+</ul>
 </section>
-<section id="making-axis-labels-great-again" class="slide level2">
-<h2>Making axis labels great again</h2>
+<section id="quantifying-the-shape-of-the-normal-distribution" class="slide level2 smaller">
+<h2>Quantifying the shape of the normal distribution</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="mean---sd">Mean +/- SD</h3>
+<p><img data-src="img/normal_dist_probabilities_sd.png" width="300"></p>
+<blockquote>
+<p>Source: <a href="https://en.wikipedia.org/wiki/File:Standard_deviation_diagram_micro.svg">Wikipedia</a></p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<h3 id="median-quartiles">Median, quartiles</h3>
+<p><img data-src="img/normal_dist_quartiles.jpg" width="300"></p>
+<blockquote>
+<p>Source: Quartiles of Normal Distribution, <a href="https://www.youtube.com/watch?v=0uef_Bw4xfM">JoeCMath/youtube</a></p>
+</blockquote>
+<p><strong>quartiles</strong> divide the probability / distribution area into 4 <strong>quarters,</strong> a more general way is called <strong>quantile</strong> (<em>note the spelling!</em>)</p>
+</div>
+</div>
+</section>
+<section id="quantiles-tell-us-about-the-distribution-shape" class="slide level2">
+<h2>Quantiles tell us about the distribution shape</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="quartiles-4">Quartiles (4)</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>colour_plt <span class="sc">+</span> </span>
-<span id="cb11-2"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb11-3"><a></a>    <span class="at">x =</span> <span class="st">'number of cylinders'</span>, <span class="at">y =</span> <span class="st">'miles per gallon'</span>,</span>
-<span id="cb11-4"><a></a>    <span class="at">title =</span> <span class="st">"What's the takeaway here?"</span>,</span>
-<span id="cb11-5"><a></a>    <span class="at">subtitle =</span> <span class="st">'More cylinders =&gt; less miles per gallon'</span></span>
-<span id="cb11-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture08_files/figure-revealjs/labels-1.png" width="960"></p>
+<p><img data-src="lecture13_files/figure-revealjs/dist_w_quantiles-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-<p><img data-src="http://127.0.0.1:16675/chunk_output/s/3D71E58D/cb0uv5xt7p3ul/000005.png"></p>
+</div><div class="column" style="width:50%;">
+<h3 id="deciles-10">Deciles (10)</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture13_files/figure-revealjs/dist-w-declies-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<blockquote>
+<p><strong>quantiles</strong> are cut points dividing the <a href="https://en.wikipedia.org/wiki/Range_(statistics)" title="Range (statistics)">range</a> of a <a href="https://en.wikipedia.org/wiki/Probability_distribution" title="Probability distribution">probability distribution</a> into continuous intervals with equal probabilities. Source: <a href="https://en.wikipedia.org/wiki/Quantile">Wikipedia</a></p>
+</blockquote>
+<p>probability distribution = <code>geom_density</code> plot. Hence quantiles divide the range to make equal area under the <code>geom_density</code> curve</p>
 </section>
-<section id="add-text-annotations-on-the-plot" class="slide level2">
-<h2>Add text annotations on the plot</h2>
+<section id="q-q-plot-enables-comparison-of-distribution-shapes" class="slide level2">
+<h2><code>Q-Q</code> plot enables comparison of distribution shapes</h2>
+<p>If they fall along the line, then it is normal.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="normal-distribution">Normal distribution</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>colour_plt <span class="sc">+</span> </span>
-<span id="cb12-2"><a></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">'text'</span>, </span>
-<span id="cb12-3"><a></a>           <span class="at">x =</span> <span class="dv">6</span>, <span class="at">y =</span> <span class="dv">25</span>, <span class="at">colour =</span> <span class="st">'darkgreen'</span>,</span>
-<span id="cb12-4"><a></a>           <span class="at">label =</span> <span class="st">'this is interesting, eh!?'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture13_files/figure-revealjs/qq-plot-normal-1.png" width="384"></p>
+</figure>
 </div>
-<img data-src="lecture08_files/figure-revealjs/annotate-1.png" width="960" class="r-stretch"></section>
-<section id="make-broad-style-changes-based-on-theme" class="slide level2">
-<h2>Make broad style changes based on <code>theme</code></h2>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 176 876</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<h3 id="non-normal-distribution">Non-normal distribution</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>colour_plt <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture13_files/figure-revealjs/qq-plot-1.png" width="384"></p>
+</figure>
 </div>
-<img data-src="lecture08_files/figure-revealjs/theme-1.png" width="960" class="r-stretch"></section></section>
-<section id="onto-the-worksheet-now" class="title-slide slide level1 center">
-<h1>Onto the worksheet now</h1>
-<p>Please download the _class8_ggplot_worksheet.Rmd or the <code>.R</code> file with the same name from the syllabus website</p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1293    1</code></pre>
+</div>
+</div>
+</div>
+</div>
+<blockquote>
+<p>further reading : <a href="http://www.sthda.com/english/wiki/qq-plots-quantile-quantile-plots-r-base-graphs">sthda</a></p>
+</blockquote>
+</section>
+<section id="formal-shapiro-wilk-test-for-normality" class="slide level2">
+<h2>Formal <code>Shapiro-Wilk</code> test for normality</h2>
+<p>What is this testing for?</p>
 <ul>
-<li><p>the <code>.Rmd</code> will make it easier to read the prompts and run code by clicking on the “play” button (<em>run current chunk</em>) for each chunk</p></li>
-<li><p>If you are not comfortable with this, you can use the <code>.R</code> file instead with the same content</p></li>
+<li>NULL hypothesis is that data is normally distributed</li>
+<li>High p-value =&gt; Data is normal (<em>hypothesis is accepted</em>)</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="normal-distribution-1">Normal distribution</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  .
+W = 0.99907, p-value = 0.909</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<h3 id="non-normal-distribution-1">Non-normal distribution</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  life_exp
+W = 0.95248, p-value &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</div>
+</div>
+<blockquote>
+<p>further reading: <a href="https://www.statology.org/test-for-normality-in-r/">statology.org</a></p>
+</blockquote>
+</section></section>
+<section>
+<section id="what-are-t-tests-for" class="title-slide slide level1 center">
+<h1>What are t-tests for?</h1>
+<p>To make statistical conclusions of this kind based on data</p>
+<ul>
+<li>“Smoking <strong>causes</strong> cancer”</li>
+</ul>
+<p>But causality is really really hard to establish, that is why we talk about <a href="https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation">correlation/association</a></p>
+<ul>
+<li><p>“Smoking <strong>is associated with</strong> cancer”</p></li>
+<li><p>“Smokers are <strong>statistically significantly</strong> at a higher risk of having cancer”</p></li>
+</ul>
+<blockquote>
+<p>“Evidence <strong>linking</strong> smoking and cancer appeared in the 1920s.” Source: <a href="https://aacrjournals.org/cebp/article/16/6/1070/260310/The-Cigarette-Controversy#10539424">The cigarette controversy, 2007</a>/section: <em>Smoking Causes Cancer: When Did They Know?</em></p>
+</blockquote>
+</section>
+<section id="what-data-can-test-the-smoking-hypothesis" class="slide level2">
+<h2>What data can test the smoking hypothesis?</h2>
+<p><em>use fake data to generate a x-y plot with noise ; and others..</em></p>
+<p>2d correlation ; num vs cat plot with 2 categories ; cat vs cat plot with counts only</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture13_files/figure-revealjs/linreg-1.png" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+<h3 id="section"></h3>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture13_files/figure-revealjs/num_cat_smoking-1.png" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparing-two-numbers-vs-two-samples" class="slide level2">
+<h2>Comparing two numbers vs two samples</h2>
+<p>3.62 is clearly &gt; 1.71, does that satisfy the hypothesis?</p>
+<p>It is straightforward to compare just the mean values of each sample, but there is no statistics involved there</p>
+<ul>
+<li>We need to account for both the mean of the samples and the spread around the mean</li>
+</ul>
+<p>This is what the t-statistic encompasses. The t-test tests for a hypothesis based on this statistic</p>
+</section>
+<section id="t-tests-finds-statistical-support-against-a-null-hypothesis" class="slide level2">
+<h2>t-tests finds statistical support against a NULL hypothesis</h2>
+<p>Null hypothesis in english - “smoking is <strong>NOT</strong> associated with cancer”</p>
+<p>In statistical terms - “the samples of smokers and non-smokers came from the <strong>same population</strong>”</p>
+<ul>
+<li><p>(<em>assumption)</em> For a t-test, this source population is normally distributed</p></li>
+<li><p><em>(Other assumption for Student’s t-test)</em> Equal variance between smoker dataset and non-smoker dataset (this can be violated for the <code>welch t-test</code>)</p></li>
 </ul>
 </section>
+<section id="t-test-is-calculating-difference-in-means-spread-around-mean" class="slide level2">
+<h2>t-test is calculating difference in means / spread around mean</h2>
 
-<section id="design-principles-for-graphics" class="title-slide slide level1 center">
-<h1>Design principles for graphics</h1>
-<p>coming later..?</p>
+<img data-src="img/t-test_formula_sketched.png" class="r-stretch"><p>Watch full video here: “<em>Student’s t-test</em>” : <a href="https://www.youtube.com/watch?v=pTmLQvMM-1M">Bozeman science/youtube</a></p>
+</section></section>
+<section>
+<section id="sampling-distributions" class="title-slide slide level1 incremental smaller center">
+<h1>Sampling distributions</h1>
+<div class=".incremental">
+<ol type="1">
+<li>Sample multiple times from a population (<em>too expensive for a real experiment, so we imagine this</em>)</li>
+<li>Calculate one statistic from the sample (such as <code>mean</code>) and record it (<em>for each sample)</em></li>
+<li>Plot the statistic across all samples. The statistic is a random variable too dependant on the random sample, hence results in a different value for each sample.</li>
+<li>This results in a distribution (called <strong>sampling distribution</strong> of <code>mean</code><em>/statistic</em>)
+<ul>
+<li><code>mean</code> is nice because it follows a normal distribution (due to the <em>central limit theorem</em>!)
+<ul>
+<li>it’s mean ~ close approximation to the population mean</li>
+<li>it’s standard deviation = standard error of mean (<strong>S.E.M.</strong>) ~ <span class="math inline">\(\sigma\)</span></li>
+</ul></li>
+</ul></li>
+<li>The properties of this distribution are helpful to understand the population which is what we are interested in</li>
+</ol>
+</div>
+</section>
+<section id="sampling-from-a-population-of-coloured-balls" class="slide level2">
+<h2>Sampling from a population of coloured balls</h2>
+<p>We will walk through this activity to understand sampling well</p>
+<ul>
+<li>Explanation of sampling with balls in <a href="https://moderndive.com/7-sampling.html#what-proportion-of-this-bowls-balls-are-red">moderndive/chap7</a></li>
+</ul>
+</section>
+<section id="let-us-see-the-sampling-distribution" class="slide level2">
+<h2>Let us see the sampling distribution</h2>
+</section>
+<section id="calculating-the-sample-mean-sem-ci" class="slide level2">
+<h2>Calculating the sample mean, SEM, CI</h2>
+</section>
+<section id="relating-this-to-a-1-sample-t-test" class="slide level2">
+<h2>Relating this to a 1-sample t-test</h2>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<p>Great explanation of sample size in 7.2 (FIGURE 7.12) in <a href="https://moderndive.com/7-sampling.html#what-proportion-of-this-bowls-balls-are-red">moderndive/chap7</a></p>
+</section></section>
+<section id="summary" class="title-slide slide level1 center">
+<h1>Summary</h1>
+<ul>
+<li><p><code>q-q plots</code> and <code>Shapiro-Wilk</code> test enable checking data for normality</p></li>
+<li><p>t-tests answer questions of association such as ‘<em>smoking causes cancer</em>’</p></li>
+<li><p>t-test = <strong>p-value</strong> gives the probability that the NULL hypothesis: <em>that both data groups were sampled from the same distribution</em> is <code>TRUE</code></p></li>
+<li><p>Understood sampling distributions, standard error of mean (SEM) and confidence intervals (CI)</p></li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

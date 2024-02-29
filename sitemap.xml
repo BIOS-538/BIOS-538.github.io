@@ -2,46 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://BIOS-538.github.io/slides/lecturex.html</loc>
-    <lastmod>2024-02-22T16:22:34.657Z</lastmod>
+    <lastmod>2024-02-27T18:50:33.018Z</lastmod>
   </url>
   <url>
-    <loc>https://BIOS-538.github.io/slides/lecture0x_git.html</loc>
-    <lastmod>2024-02-12T21:16:10.987Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BIOS-538.github.io/slides/lecture08.html</loc>
-    <lastmod>2024-02-21T01:21:44.667Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BIOS-538.github.io/slides/lecture03.html</loc>
-    <lastmod>2024-02-12T21:16:10.956Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BIOS-538.github.io/slides/class_schedule.html</loc>
-    <lastmod>2024-02-12T22:36:49.833Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BIOS-538.github.io/index.html</loc>
-    <lastmod>2024-02-12T21:16:10.201Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BIOS-538.github.io/LICENSE-CC-BY-4.0.html</loc>
-    <lastmod>2024-02-12T21:16:09.103Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BIOS-538.github.io/slides/lecture02.html</loc>
-    <lastmod>2024-02-12T21:16:10.761Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BIOS-538.github.io/slides/lecture05.html</loc>
-    <lastmod>2024-02-12T21:16:10.957Z</lastmod>
+    <loc>https://BIOS-538.github.io/slides/lecture12.html</loc>
+    <lastmod>2024-02-29T19:43:01.064Z</lastmod>
   </url>
   <url>
     <loc>https://BIOS-538.github.io/slides/lecture09.html</loc>
     <lastmod>2024-02-12T21:16:10.986Z</lastmod>
   </url>
   <url>
-    <loc>https://BIOS-538.github.io/slides/lecture12.html</loc>
-    <lastmod>2024-02-22T20:08:40.592Z</lastmod>
+    <loc>https://BIOS-538.github.io/slides/lecture05.html</loc>
+    <lastmod>2024-02-12T21:16:10.957Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BIOS-538.github.io/slides/lecture02.html</loc>
+    <lastmod>2024-02-12T21:16:10.761Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BIOS-538.github.io/LICENSE-CC-BY-4.0.html</loc>
+    <lastmod>2024-02-12T21:16:09.103Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BIOS-538.github.io/index.html</loc>
+    <lastmod>2024-02-12T21:16:10.201Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BIOS-538.github.io/slides/class_schedule.html</loc>
+    <lastmod>2024-02-12T22:36:49.833Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BIOS-538.github.io/slides/lecture03.html</loc>
+    <lastmod>2024-02-12T21:16:10.956Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BIOS-538.github.io/slides/lecture08.html</loc>
+    <lastmod>2024-02-21T01:21:44.667Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BIOS-538.github.io/slides/lecture0x_git.html</loc>
+    <lastmod>2024-02-12T21:16:10.987Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BIOS-538.github.io/slides/lecture13.html</loc>
+    <lastmod>2024-02-29T20:22:19.392Z</lastmod>
   </url>
 </urlset>
