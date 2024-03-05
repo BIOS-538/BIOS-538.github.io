@@ -23,6 +23,7 @@ Fits 4 paragraphs
 One line
 
 ```{r qq-plot-normal}
+#| eval: false
 #| fig-height: 4
 rnorm(1000) %>% 
 car::qqPlot()
