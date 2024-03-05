@@ -4,6 +4,7 @@ format:
     slide-number: true # show slide number
     hide-inactive-cursor: true # hide mouse pointer unless moved?
     reference-location: document # put references at the end
+    # smaller: true # make all text smaller // use on a case-by-casis per slide or presentation
 execute: 
   echo: false
 editor: visual
