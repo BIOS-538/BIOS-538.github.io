@@ -1,7 +1,7 @@
 ---
-title: "lecture_x"
+title: "lecture14: Git and the magic of version control"
 author: "Prashant K"
-date: x/Feb/24
+date: 5/Mar/24
 format: revealjs
 metadata-files: 
   - '_slides.yml'
