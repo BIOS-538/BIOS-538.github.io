@@ -5,18 +5,88 @@ date: x/Feb/24
 format: revealjs
 metadata-files: 
   - '_slides.yml'
+editor: visual
 ---
 
-# Recap?
+# Announcements  {.smaller}
+
+**Midterm exam**
+
+-   You can get help on the midterm exam in office hours/discussion board etc. *please make use of it*
+
+    -   Please make sure you are on the latest version: **Change log**:
+
+        -   2/Mar/24: 1 pm. Updated points to 60 total (previously 55) adding questions 1e2, 1f, 4.d
+
+        -   2/Mar/24: 7 pm. Fixed rendering to generate a standalone html file, clarified format
+
+-   HW4 rubric is on Canvas/files now!
 
 # Today's class
 
-git version control - Why do we need version control? - ..
+-   What is version control and why do we need it?
 
-## Slides..
+-   How does `git` do version control?
+
+    -   `git` vs (`github.com` / `gitlab.com` / ..)
+
+-   Live practice: Setup/use git through the **command line** and **Rstudio interface**
+
+## What is a version? why keep track?
+
+::: columns
+::: {.column width="50%"}
+Many many writing drafts
+
+![](img/paper_drafts.png)
+:::
+
+::: {.column width="50%"}
+Synchronizing changes in Midterm/assignment easily!
+
+![](img/midterm_changelog.png){width="1418"}
+:::
+:::
+
+## How does `git` work?
 
 the three main sections of a Git project: the working tree, the staging area, and the Git directory
 
-[![Working tree, staging area, and Git directory](img/git_stage-commit.png)](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
+[![Working tree, staging area, and Git directory](img/git_stage-commit.png){width="553"}](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
 
-> Source: [Fig 6/git-book](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
+::: aside
+Source: [Fig 6/git-book](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
+:::
+
+## Task1 : Setting up and git basics on commandline {.scrollable}
+
+-   Find a terminal : regular or console within Rstudio. *We shall use the Rstudio one to demo*
+    -   `git init`: initiate a repository
+        -   Use this command to make a git repository in the same directory as your `.Rproj` file. *check that that the working directory of the console matches before using these commands below*
+        -   What is the branch name that you see?
+        -   We want to change that to `main` using `git branch -m main` (`-m` is short for `--move`)
+        -   To change the default branch name use `git config --global init.defaultBranch main`
+    -   `touch example.txt` : make a text file to practice on
+    -   `git add`: stage files ; `git commit -m "message"` : commit files with a **short message**
+    -   add 3 lines of text : `purpose: .. ; author: ; date:`
+    -   `git diff` to see what changed
+    -   again, do: `git add`: stage files ; `git commit -m "message"` : commit files with a **short message**
+        -   Shortcut `git commit -am ".."` adds all changed files without needing to mention explicitly (`-a` = all)
+
+## Task2 : Connecting `git` with Rstudio for GUI access {.scrollable}
+
+-   Add more text / use a different file? : `purpose: .. ; author: ; date:`
+-   git mv `example.txt` `example.md` : convert to markdown, open in Rstudio and bold the keywords
+-   Now use Rstudio's git integration to visually see changes, and commit!
+
+## Task3: Connecting to a remote website for sharing/synchronization across computers {.scrollable}
+
+-   Show git organization for this class and repos - explain private repo
+-   Git clone `git_practice` repo (*already put in a simple `.qmd` file here*)
+-   Solve the ggplot question-1 and commit changes
+-   `git push`: where does this push?
+-   Make a fork on github.com ; note the url of your forked repository (different from the original)
+-   change remote url with `git remote set-url origin ..`
+-   push changes to your own repo fork online using `git push -u origin main`
+-   Solve question-2
+-   commit and push using only Rstudio now
