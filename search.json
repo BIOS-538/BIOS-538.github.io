@@ -1,10 +1,24 @@
 [
   {
-    "objectID": "slides/lecturex.html#slides..",
-    "href": "slides/lecturex.html#slides..",
+    "objectID": "slides/lecturex.html#slidelarge",
+    "href": "slides/lecturex.html#slidelarge",
     "title": "lecture_x",
-    "section": "Slides..",
-    "text": "Slides.."
+    "section": "Slidelarge",
+    "text": "Slidelarge\nFits 4 paragraphs"
+  },
+  {
+    "objectID": "slides/lecturex.html#slide",
+    "href": "slides/lecturex.html#slide",
+    "title": "lecture_x",
+    "section": "Slide",
+    "text": "Slide\nOne line\n\n\nSource:"
+  },
+  {
+    "objectID": "slides/lecturex.html#slideimg",
+    "href": "slides/lecturex.html#slideimg",
+    "title": "lecture_x",
+    "section": "Slideimg",
+    "text": "Slideimg\nimages 200 px wide in 2 columns / 400 px height?\n\ndummy"
   },
   {
     "objectID": "slides/lecturex.html#onto-the-worksheet-now",
@@ -14,81 +28,95 @@
     "text": "Onto the worksheet now\nPlease download the …qmd worksheet for today"
   },
   {
-    "objectID": "slides/lecture12.html#normal-distribution",
-    "href": "slides/lecture12.html#normal-distribution",
-    "title": "lecture12: Normal distribution and simulations",
-    "section": "Normal distribution",
-    "text": "Normal distribution\nWatch full video/ 3blue1brown (0 - 54 seconds)\n\nHow to identify a normal distribution?\n\nExtremes are less likely than central values (closer to median)\nIt is symmetric around the median value\n\nNon-symmetric distortions =&gt; skew. Ex: Thicker tails on the right =&gt; more observations than expected on the right =&gt; right-skewed / positively skewed\n\nWe will discuss the technically sound way to identify if data is normally distributed in the next lecture"
+    "objectID": "slides/lecture13.html#quantifying-the-shape-of-the-normal-distribution",
+    "href": "slides/lecture13.html#quantifying-the-shape-of-the-normal-distribution",
+    "title": "lecture13",
+    "section": "Quantifying the shape of the normal distribution",
+    "text": "Quantifying the shape of the normal distribution\n\n\nMean +/- SD\n\n\nSource: Wikipedia\n\n\nMedian, quartiles\n\n\nquartiles divide the probability / distribution area into 4 quarters, a more general way is called quantile (note the spelling!)\n\n\n\n\nSource: Quartiles of Normal Distribution, JoeCMath/youtube"
   },
   {
-    "objectID": "slides/lecture12.html#galton-board-and-central-limit-theorem",
-    "href": "slides/lecture12.html#galton-board-and-central-limit-theorem",
-    "title": "lecture12: Normal distribution and simulations",
-    "section": "Galton board and central limit theorem",
-    "text": "Galton board and central limit theorem\nCentral limit theorem in short:\nSum of many random variables makes a normal distribution. Mean involves a sum! (mean &lt;- sum(x) / length(x))\n\n\nthe central limit theorem (CLT) states that, under appropriate conditions, the distribution of a normalized version of the sample mean converges to a standard normal distribution. This holds even if the original variables themselves are not normally distributed. Source: Wikipedia.\n\nRefer textbook for mathematical definition in Introduction to Probability andMathematicalStatistics\n\nGalton board ~ add a random variable (+1 / -1) that determines where the balls end up\nWatch full video/ 3blue1brown (1:53 - 5:22)"
+    "objectID": "slides/lecture13.html#quantiles-tell-us-about-the-distribution-shape",
+    "href": "slides/lecture13.html#quantiles-tell-us-about-the-distribution-shape",
+    "title": "lecture13",
+    "section": "Quantiles tell us about the distribution shape",
+    "text": "Quantiles tell us about the distribution shape\n\n\nQuartiles (4)\n\n\n\n\n\n\n\n\n\n\nDeciles (10)\n\n\n\n\n\n\n\n\n\n\n\n\nquantiles are cut points dividing the range of a probability distribution into continuous intervals with equal probabilities. Source: Wikipedia\n\nprobability distribution = geom_density plot. Hence quantiles divide the range to make equal area under the geom_density curve"
   },
   {
-    "objectID": "slides/lecture12.html#why-are-so-many-things-normally-distributed",
-    "href": "slides/lecture12.html#why-are-so-many-things-normally-distributed",
-    "title": "lecture12: Normal distribution and simulations",
-    "section": "Why are so many things normally distributed?",
-    "text": "Why are so many things normally distributed?\nBecause they could be expressed as a SUM of other hidden variables.\n\nHeights: We can speculate that height depends on the sum of action of multiple genes, the food/excersise you had everyday till measurement\nGene expression in a bacterial/cell culture: The sum (or mean) of the expression of the millions of individual cells in the culture makes for an excellent normal distribution!\n\n\nBut it is important to recognize when effects are not strictly additive, such as when feedbacks are involved.\n\nIncome is famously not normally distributed. Due to positive feedback across generations, and that capital gains far outweigh labor gains, there are very few very rich and many many not-very-rich people.\nIf your gene has a positive/negative feedback loop (activates/represses itself), then your gene expression will not be normally distributed. You might have a bimodal distribution with 2 peaks!"
+    "objectID": "slides/lecture13.html#q-q-plot-enables-comparison-of-distribution-shapes",
+    "href": "slides/lecture13.html#q-q-plot-enables-comparison-of-distribution-shapes",
+    "title": "lecture13",
+    "section": "Q-Q plot enables comparison of distribution shapes",
+    "text": "Q-Q plot enables comparison of distribution shapes\nIf they fall along the line, then it is normal.\n\n\nNormal distribution\n\n\n\n\n\n\n\n\n\n[1] 185 486\n\n\n\nNon-normal distribution\n\n\n\n\n\n\n\n\n\n[1] 1293    1\n\n\n\n\n\n\nfurther reading : sthda"
   },
   {
-    "objectID": "slides/lecture12.html#what-is-a-simulation",
-    "href": "slides/lecture12.html#what-is-a-simulation",
-    "title": "lecture12: Normal distribution and simulations",
-    "section": "What is a simulation",
-    "text": "What is a simulation\nDefinition from the textbook: Modern stats with R\n\nA key component of modern statistical work is simulation, in which we generate artificial data that can be used both in the analysis of real data (..) and for assessing different (statistical) methods ."
+    "objectID": "slides/lecture13.html#formal-shapiro-wilk-test-for-normality",
+    "href": "slides/lecture13.html#formal-shapiro-wilk-test-for-normality",
+    "title": "lecture13",
+    "section": "Formal Shapiro-Wilk test for normality",
+    "text": "Formal Shapiro-Wilk test for normality\nWhat is this testing for?\n\nNULL hypothesis is that data is normally distributed\nHigh p-value =&gt; Data is normal (hypothesis is accepted)\n\n\n\nNormal distribution\n\n\n\n    Shapiro-Wilk normality test\n\ndata:  .\nW = 0.99854, p-value = 0.5792\n\n\n\nNon-normal distribution\n\n\n\n    Shapiro-Wilk normality test\n\ndata:  life_exp\nW = 0.95248, p-value &lt; 2.2e-16\n\n\n\n\n\nfurther reading: statology.org"
   },
   {
-    "objectID": "slides/lecture12.html#ingredients-of-a-simulation-in-r",
-    "href": "slides/lecture12.html#ingredients-of-a-simulation-in-r",
-    "title": "lecture12: Normal distribution and simulations",
-    "section": "Ingredients of a simulation in R",
-    "text": "Ingredients of a simulation in R\n\nA random variable\n\n\n# Pick a random variable (note: rounding is only for the presentation)\nrnorm(5, mean = 0, sd = 1) %&gt;% round(2) # Normal random variable (r.v)\n\n[1] -0.23  0.12  0.32  0.14  0.31\n\nsample(letters[1:10], size = 3, replace = TRUE) # sample from a vector\n\n[1] \"j\" \"e\" \"g\"\n\nsample(c(1, -1), size = 1, replace = TRUE) # galton r.v\n\n[1] 1\n\n\n\nDo computations on the random variables\n\n\n#' calculate sum of `n` random variables\ngalton_sum &lt;- function(n) {\n  galton_series &lt;- sample(c(1, -1), size = n, replace = TRUE)\n  sum(galton_series)\n}\n\n# each run gives a different outcome\ngalton_sum(5) ; galton_sum(5); galton_sum(5)\n\n[1] -1\n\n\n[1] 3\n\n\n[1] -1"
+    "objectID": "slides/lecture13.html#what-data-can-test-the-smoking-hypothesis",
+    "href": "slides/lecture13.html#what-data-can-test-the-smoking-hypothesis",
+    "title": "lecture13",
+    "section": "What data can test the smoking hypothesis?",
+    "text": "What data can test the smoking hypothesis?\nuse fake data to generate a x-y plot with noise ; and others..\n2d correlation ; num vs cat plot with 2 categories ; cat vs cat plot with counts only"
   },
   {
-    "objectID": "slides/lecture12.html#do-the-simulation-r",
-    "href": "slides/lecture12.html#do-the-simulation-r",
-    "title": "lecture12: Normal distribution and simulations",
-    "section": "Do the simulation R",
-    "text": "Do the simulation R\n\nIterate this many times (avoid for() loops, and use vectorized functions)\n\n\ngalton_simulation &lt;- \n  tibble(\n    run_number = 1:10,\n    outcome = \n      replicate(n = length(run_number), \n                expr = galton_sum(6))\n  ) %&gt;% \n  print()\n\n# A tibble: 10 × 2\n   run_number outcome\n        &lt;int&gt;   &lt;dbl&gt;\n 1          1      -2\n 2          2       0\n 3          3      -2\n 4          4       0\n 5          5      -4\n 6          6      -2\n 7          7      -2\n 8          8       6\n 9          9      -2\n10         10       0"
+    "objectID": "slides/lecture13.html#comparing-two-numbers-vs-two-samples",
+    "href": "slides/lecture13.html#comparing-two-numbers-vs-two-samples",
+    "title": "lecture13",
+    "section": "Comparing two numbers vs two samples",
+    "text": "Comparing two numbers vs two samples\n3.62 is clearly &gt; 1.71, does that satisfy the hypothesis?\nIt is straightforward to compare just the mean values of each sample, but there is no statistics involved there\n\nWe need to account for both the mean of the samples and the spread around the mean\n\nThis is what the t-statistic encompasses. The t-test tests for a hypothesis based on this statistic"
   },
   {
-    "objectID": "slides/lecture12.html#really-do-many-times",
-    "href": "slides/lecture12.html#really-do-many-times",
-    "title": "lecture12: Normal distribution and simulations",
-    "section": "Really do many times",
-    "text": "Really do many times\n10 is no good, let’s try 1,000?\n\ngalton_simulation &lt;- \n  tibble(\n    run_number = 1:1e3,\n    outcome = \n      replicate(n = length(run_number), \n                expr = galton_sum(6))\n  )"
+    "objectID": "slides/lecture13.html#t-tests-finds-statistical-support-against-a-null-hypothesis",
+    "href": "slides/lecture13.html#t-tests-finds-statistical-support-against-a-null-hypothesis",
+    "title": "lecture13",
+    "section": "t-tests finds statistical support against a NULL hypothesis",
+    "text": "t-tests finds statistical support against a NULL hypothesis\nNull hypothesis in english - “smoking is NOT associated with cancer”\nIn statistical terms - “the samples of smokers and non-smokers came from the same population”\n\n(assumption) For a t-test, this source population is normally distributed\n(Other assumption for Student’s t-test) Equal variance between smoker dataset and non-smoker dataset (this can be violated for the welch t-test)"
   },
   {
-    "objectID": "slides/lecture12.html#plot-results",
-    "href": "slides/lecture12.html#plot-results",
-    "title": "lecture12: Normal distribution and simulations",
-    "section": "Plot results",
-    "text": "Plot results\n\nCalculate summary statistics and make plots\n\n\nggplot(galton_simulation, mapping = aes(outcome)) +\n  \n  geom_histogram(binwidth = 1, center = 0)\n\n\n\nWhy are some numbers missing?\nBecause of the discrete nature of the random variables, odd numbers cannot be made by adding an even number (6) or +1/-1s (if 0 was included, this would be possible)"
+    "objectID": "slides/lecture13.html#t-test-is-calculating-difference-in-means-spread-around-mean",
+    "href": "slides/lecture13.html#t-test-is-calculating-difference-in-means-spread-around-mean",
+    "title": "lecture13",
+    "section": "t-test is calculating difference in means / spread around mean",
+    "text": "t-test is calculating difference in means / spread around mean\n\nWatch full video here: “Student’s t-test” : Bozeman science/youtube"
   },
   {
-    "objectID": "slides/lecture12.html#plot-detailed-results",
-    "href": "slides/lecture12.html#plot-detailed-results",
-    "title": "lecture12: Normal distribution and simulations",
-    "section": "Plot detailed results",
-    "text": "Plot detailed results\nLet us plot each outcome on top of the histogram\n\nggplot(galton_simulation, mapping = aes(x = outcome)) +\n  \n  geom_histogram(binwidth = 1, center = 0, alpha = 0.2) + \n  geom_jitter(aes(y = -20), \n              position = position_jitter(width = 0.5, height = 10),\n              alpha = 0.2)\n\n\n\n\n\n\n\n\n\nggplot(galton_simulation, mapping = aes(x = outcome, y = '?')) +\n  \n  geom_violin() + \n  # geom_histogram(binwidth = 1, center = 0, alpha = 0.2) + \n  geom_jitter(position = position_jitter(width = 0.5, height = .5),\n              alpha = 0.2)"
+    "objectID": "slides/lecture13.html#sampling-from-a-population-of-coloured-balls",
+    "href": "slides/lecture13.html#sampling-from-a-population-of-coloured-balls",
+    "title": "lecture13",
+    "section": "Sampling from a population of coloured balls",
+    "text": "Sampling from a population of coloured balls\nWe will walk through this activity to understand sampling well\n\nExplanation of sampling with balls in moderndive/chap7"
   },
   {
-    "objectID": "slides/lecture12.html#sampling-from-a-distribution",
-    "href": "slides/lecture12.html#sampling-from-a-distribution",
-    "title": "lecture12: Normal distribution and simulations",
-    "section": "Sampling from a distribution",
-    "text": "Sampling from a distribution\nCollecting a random subset of samples from a larger distribution is another way to begin a simulation. This is the technique behind ~Bootstrapping (will get to it later)"
+    "objectID": "slides/lecture13.html#let-us-see-the-sampling-distribution",
+    "href": "slides/lecture13.html#let-us-see-the-sampling-distribution",
+    "title": "lecture13",
+    "section": "Let us see the sampling distribution",
+    "text": "Let us see the sampling distribution"
   },
   {
-    "objectID": "slides/lecture12.html#onto-the-worksheet-now",
-    "href": "slides/lecture12.html#onto-the-worksheet-now",
-    "title": "lecture12: Normal distribution and simulations",
-    "section": "Onto the worksheet now",
-    "text": "Onto the worksheet now\nPlease download the qmd worksheet for today from github (scripts/ folder in class-worksheets repository)"
+    "objectID": "slides/lecture13.html#calculating-the-sample-mean-sem-ci",
+    "href": "slides/lecture13.html#calculating-the-sample-mean-sem-ci",
+    "title": "lecture13",
+    "section": "Calculating the sample mean, SEM, CI",
+    "text": "Calculating the sample mean, SEM, CI"
+  },
+  {
+    "objectID": "slides/lecture13.html#relating-this-to-a-1-sample-t-test",
+    "href": "slides/lecture13.html#relating-this-to-a-1-sample-t-test",
+    "title": "lecture13",
+    "section": "Relating this to a 1-sample t-test",
+    "text": "Relating this to a 1-sample t-test"
+  },
+  {
+    "objectID": "slides/lecture13.html#references",
+    "href": "slides/lecture13.html#references",
+    "title": "lecture13",
+    "section": "References",
+    "text": "References\nGreat explanation of sample size in 7.2 (FIGURE 7.12) in moderndive/chap7"
   },
   {
     "objectID": "slides/lecture09.html#why-does-this-matter",
@@ -501,7 +529,7 @@
     "href": "slides/class_schedule.html",
     "title": "Class schedule & Lecture slides",
     "section": "",
-    "text": "Below is a general description of the material to be covered. Note that topics and dates are\nsubject to change as the course progresses.\n\n\n\n\n\nLec\nDate\nTopic\nDetails\nResources\n\n\n\n\n1\n09/Jan\nIntroductions and installations\nslides(PDF)\nSetting up R and friends: Win/Mac/Linux\n\n\n2\n11/Jan\nRefresher in statistics, hands-on activity\nworking with distributions - without a computer. slides\n\n\n\n-\n16/Jan\nNo class\nHard freeze day\n\n\n\n3\n18/Jan\nR basics, datatypes\nnavigating Rstudio, syntax, data types, functions, data frames/tibbles, debugging and looking for help. slides (worksheet, practice)\nSwirl: R programming tutorial. base R cheatsheet.PDF; vectors quick ref.\n\n\n4\n23/Jan\nR basics 2\nList, subsetting, data.frame, if()..else\n\n\n\n5\n25/Jan\nR basics 3\nfor() ; function(). announcements; .R scripts: lec5_demo, lec5_practice\nfunctions: fundamentals. practical use. Environments explained with illustrations\n\n\n6\n30/Jan\nBasics 4 + Data wrangling in R with tidyverse, dplyr\nMore function(), vectorization ; Simple manipulation of data.frames/tibbles = data wrangling. slides\nWhy vectorize code; Merits of tibbles\n\n\n7\n01/Feb\nData wrangling workshop\nLoad data from .csv or excel file, commands to arrange rows and columns.; re-hash concepts, get students to wrangle data to answer a question. worksheet\ndplyr cheatsheet\n\n\n8\n06/Feb\nggplot() plotting\nggplot, geom_point() and geom_line(), interactive plots with plotly::ggplotly(). Principles of “What should you show in a plot?”. slides; worksheet / R sheet ; histdata, pointsdata\nggplot aesthetics/mapping, cheatsheet\n\n\n-\n08/Feb\nNo class\nMONDAY SCHEDULE TODAY\n\n\n\n9\n13/Feb\nquarto/Rmarkdown to produce reports\nmotivation for reproducible data analysis, benefits of localizing (thoughts, code and outputs) in one document. slides\nQuarto : intro, presentations ; What is Markdown?, it’s syntax. quarto introduction.\n\n\n10\n15/Feb\nData -&gt; figure pipeline from a research article, workshop\nusing Rmd/quarto to walk through the steps required to reproduce plots from a published paper or news article. worksheet\nreproducing figure from an NYT/COVID dashboard\n\n\n11\n20/Feb\nRevisit the pipeline; format plots/ How to train your ggplots?\nBest ways to represent graphical information. updated worksheet\nPre-requisite: Please spend ~ 1-2 h to watch the video and work through the worksheet from last class. We will quickly revisit the initial data wrangling and clarify a few misconceptions\n\n\n12\n22/Feb\nNormal-distributions\nunderstand central limit theorem intuitively + using R simulations; why ~normal is a useful default. Learn cases when it doesn’t apply. Students t-distribution is got by sampling from a normal and calculating the mean. slides ; worksheet\n\n\n\n13\n27/Feb\nIntro to hypothesis testing (t-tests)\nexperimental science usually involves comparisons =&gt; hence hypothesis testing to compare distributions / means. Concept: Students t-distribution is got by sampling from a normal and calculating the mean.\n\n\n\n14\n29/Feb\nProblems with p-values\nmotivate misunderstandings people have, how p-values contribute to non-reproducible science. Touch upon Surprise value (S-value) ; alternatives : bayesian t.test - when to use them\n\n\n\n15\n05/Mar\n(advanced lecture) Version control using git\nWhy version control? Setup git with Rstudio. Learn some command line basics : cd, ls, git add, git commit, grep \"function-name\"\nIntro to git: lesson; philosophy of git\n\n\n\n\n\n\n\n\n\n-\n4th or 5th/Mar\nReview session\nSummary of key concepts by TAs + Q & A\n\n\n\n16\n07/Mar\nDuring midterm. will decide on cancelling class\nR: * tidyverse, plots, Rmarkdown; Stats: t-tests, problems with p-values, linear regressions*\n\n\n\n-\n9-17/Mar\nSpring break\nno class\n\n\n\n\n\n\n\n\n\n\n17\n19/Mar\nLinear regression (2 dimensional data)\n2D data with one independent variable. Rehash straight line equation: y = mx + c. _show an interactive tutorial on how fitting works. Show geom_smooth() in R. Understand % of variance explained by the fit. Do lm and show how to interpret results and p.values\n\n\n\n18\n21/Mar\nRe-capitulate t-tests using linear regression fitting\nhypothesis testing is akin to fitting 1D data + 2nd D of categorical variable\n\n\n\n19\n26/Mar\nData -&gt; statistics pipeline from a research article, workshop\nusing Rmd/quarto to walk through the steps required to reproduce statistics from a published paper\nAssignment: Turn in the in-class workshop as report\n\n\n20\n28/Mar\nNon-linear regressions\nexamples: fitting dose-response curves and bacterial growth curves. Explain why initial conditions matter for nls, using self starting functions. map; safely() workflow to avoid breaking code due to convergence issues\n\n\n\n21\n02/Apr\nBootstrapping\nbenefits: a better non-parametric test without making any assumptions about the data distribution; cost: low powered; using a vectorized workflow to achieve bootstrapping and simple hypothesis testing\nBootstrapping intro\n\n\n22\n04/Apr\nWorking with higher dimensional data\nexplain dimensionality reduction concept. Techniques: PCA, weighted techniques, clustering. likely using sequencing microbiome datasets examples\n\n\n\n23\n09/Apr\ncritique statistics from a research article, workshop\nusing Rmd/quarto to recreate statistics from a published paper, finding faults, redoing analysis with better methods\n\n\n\n24\n11/Apr\nUsing AI based tools to speed up writing code\n\nEthics ; LLMs overview\n\n\n25\n16/Apr\nStudent presentations 1\nBring an interesting question on your own data, apply statistical analysis to answer it, present written report and presentation with visualizations and explanations\n\n\n\n26\n18/Apr\nStudent presentations 2\n“\n\n\n\n-\n?\nStudent presentations 3\nThis session will happen during non-class hours and is optional attendance\n\n\n\n\n\n\n\n\n\n\n-\n24-30/Apr\nFinal exam\n\n\n\n\n\n\n\n\nHow do I download the slides as PDF for writing notes?\nIf you would like to download and write notes on the slides as PDFs, you can do it with this procedure\n\nWhen the slide show is open in the browser, click on e to change to PDF export mode\nNow press ctrl + P key combination to print the page and select PDF, and you are good to go!\n\nIf you want your annotations to stay current when the slides are edited, you might want to annotate within the web version of slides itself. You can use tools such as hypothes.is for this. This link should help you get setup - https://web.hypothes.is/start/\nYou could do more drawing on the pages too if you use the edge browser as show on this page: Write on the web"
+    "text": "Below is a general description of the material to be covered. Note that topics and dates are\nsubject to change as the course progresses.\n\n\n\n\n\nLec\nDate\nTopic\nDetails\nResources\n\n\n\n\n1\n09/Jan\nIntroductions and installations\nslides(PDF)\nSetting up R and friends: Win/Mac/Linux\n\n\n2\n11/Jan\nRefresher in statistics, hands-on activity\nworking with distributions - without a computer. slides\n\n\n\n-\n16/Jan\nNo class\nHard freeze day\n\n\n\n3\n18/Jan\nR basics, datatypes\nnavigating Rstudio, syntax, data types, functions, data frames/tibbles, debugging and looking for help. slides (worksheet, practice)\nSwirl: R programming tutorial. base R cheatsheet.PDF; vectors quick ref.\n\n\n4\n23/Jan\nR basics 2\nList, subsetting, data.frame, if()..else\n\n\n\n5\n25/Jan\nR basics 3\nfor() ; function(). announcements; .R scripts: lec5_demo, lec5_practice\nfunctions: fundamentals. practical use. Environments explained with illustrations\n\n\n6\n30/Jan\nBasics 4 + Data wrangling in R with tidyverse, dplyr\nMore function(), vectorization ; Simple manipulation of data.frames/tibbles = data wrangling. slides\nWhy vectorize code; Merits of tibbles\n\n\n7\n01/Feb\nData wrangling workshop\nLoad data from .csv or excel file, commands to arrange rows and columns.; re-hash concepts, get students to wrangle data to answer a question. worksheet\ndplyr cheatsheet\n\n\n8\n06/Feb\nggplot() plotting\nggplot, geom_point() and geom_line(), interactive plots with plotly::ggplotly(). Principles of “What should you show in a plot?”. slides; worksheet / R sheet ; histdata, pointsdata\nggplot aesthetics/mapping, cheatsheet. Excellent resource showing all possible kinds of plots with ggplot. sthda by Alboukadel Kassambara\n\n\n-\n08/Feb\nNo class\nMONDAY SCHEDULE TODAY\n\n\n\n9\n13/Feb\nquarto/Rmarkdown to produce reports\nmotivation for reproducible data analysis, benefits of localizing (thoughts, code and outputs) in one document. slides\nQuarto : intro, presentations ; What is Markdown?, it’s syntax. quarto introduction.\n\n\n10\n15/Feb\nData -&gt; figure pipeline from a research article, workshop\nusing Rmd/quarto to walk through the steps required to reproduce plots from a published paper or news article. worksheet\nreproducing figure from an NYT/COVID dashboard\n\n\n11\n20/Feb\nRevisit the pipeline; format plots/ How to train your ggplots?\nFormatting your ggplots to add annotations etc.. updated worksheet\nVery elaborate resource for breaking down ggplot elements step by step as a tutorial cedricscherer. Pre-requisite: Please spend ~ 1-2 h to watch the video and work through the worksheet from last class. We will quickly revisit the initial data wrangling and clarify a few misconceptions\n\n\n12\n22/Feb\nNormal-distributions\nunderstand central limit theorem intuitively + using R simulations; why ~normal is a useful default. Learn cases when it doesn’t apply. Students t-distribution is got by sampling from a normal and calculating the mean. slides ; worksheet\n\n\n\n-\n27/Feb\nReview session\nSummary of key concepts by TAs + Q & A\nMidterm is a take home exam covering R: * tidyverse, plots, Rmarkdown; Stats: t-tests, problems with p-values, linear regressions*\n\n\n13\n29/Feb\nIntro to hypothesis testing (t-tests)\nexperimental science usually involves comparisons =&gt; hence hypothesis testing to compare distributions / means. Concept: Students t-distribution is got by sampling from a normal and calculating the mean.\n\n\n\n14\n05/Mar\n(advanced lecture) Version control using git\nWhy version control? Setup git with Rstudio. Learn some command line basics : cd, ls, git add, git commit, grep \"function-name\"\nIntro to git: lesson; philosophy of git. textbook: happygitwithr\n\n\n15\n07/Mar\nBest ways to represent graphical information\nPlots don’t lie : Show your raw data where ever possible/useful. Make every plot with a takeaway / something to focus on. Label features directly as opposed to a legend. Think about where audience eyeballs move to\nbarbarplots; horizontal bars; William Chases’ glamour of graphics talk\n\n\n-\n9-17/Mar\nSpring break\nno class\n\n\n\n\n\n\n\n\n\n\n16\n19/Mar\nLinear regression (2 dimensional data)\n2D data with one independent variable. Rehash straight line equation: y = mx + c. _show an interactive tutorial on how fitting works. Show geom_smooth() in R. Understand % of variance explained by the fit. Do lm and show how to interpret results and p.values\n\n\n\n17\n21/Mar\nRe-capitulate t-tests using linear regression fitting\nhypothesis testing is akin to fitting 1D data + 2nd D of categorical variable\n\n\n\n18\n26/Mar\nData -&gt; statistics pipeline from a research article, workshop\nusing Rmd/quarto to walk through the steps required to reproduce statistics from a published paper\nAssignment: Turn in the in-class workshop as report\n\n\n19\n28/Mar\nNon-linear regressions\nexamples: fitting dose-response curves and bacterial growth curves. Explain why initial conditions matter for nls, using self starting functions. map; safely() workflow to avoid breaking code due to convergence issues\n\n\n\n20\n02/Apr\nBootstrapping\nbenefits: a better non-parametric test without making any assumptions about the data distribution; cost: low powered; using a vectorized workflow to achieve bootstrapping and simple hypothesis testing\nBootstrapping intro\n\n\n21\n04/Apr\nWorking with higher dimensional data\nexplain dimensionality reduction concept. Techniques: PCA, weighted techniques, clustering. likely using sequencing microbiome datasets examples\n\n\n\n22\n09/Apr\ncritique statistics from a research article, workshop\nusing Rmd/quarto to recreate statistics from a published paper, finding faults, redoing analysis with better methods\n\n\n\n23\n11/Apr\nUsing AI based tools to speed up writing code\n\nEthics ; LLMs overview\n\n\n24\n16/Apr\nStudent presentations 1\nBring an interesting question on your own data, apply statistical analysis to answer it, present written report and presentation with visualizations and explanations\n\n\n\n25\n18/Apr\nStudent presentations 2\n“\n\n\n\n-\n?\nStudent presentations 3\nThis session will happen during non-class hours and is optional attendance\n\n\n\n\n\n\n\n\n\n\n-\n24-30/Apr\nFinal exam\n\n\n\n\n\n\n\n\nHow do I download the slides as PDF for writing notes?\nIf you would like to download and write notes on the slides as PDFs, you can do it with this procedure\n\nWhen the slide show is open in the browser, click on e to change to PDF export mode\nNow press ctrl + P key combination to print the page and select PDF, and you are good to go!\n\nIf you want your annotations to stay current when the slides are edited, you might want to annotate within the web version of slides itself. You can use tools such as hypothes.is for this. This link should help you get setup - https://web.hypothes.is/start/\nYou could do more drawing on the pages too if you use the edge browser as show on this page: Write on the web"
   },
   {
     "objectID": "slides/lecture03.html#complex-plotting-assignment",
@@ -679,101 +707,122 @@
     "text": "Make broad style changes based on theme\n\ncolour_plt + theme_minimal()"
   },
   {
-    "objectID": "slides/lecture0x_git.html#slides..",
-    "href": "slides/lecture0x_git.html#slides..",
+    "objectID": "slides/lecture12.html#normal-distribution",
+    "href": "slides/lecture12.html#normal-distribution",
+    "title": "lecture12: Normal distribution and simulations",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nWatch full video/ 3blue1brown (0 - 54 seconds)\n\nHow to identify a normal distribution?\n\nExtremes are less likely than central values (closer to median)\nIt is symmetric around the median value\n\nNon-symmetric distortions =&gt; skew. Ex: Thicker tails on the right =&gt; more observations than expected on the right =&gt; right-skewed / positively skewed\n\nWe will discuss the technically sound way to identify if data is normally distributed in the next lecture"
+  },
+  {
+    "objectID": "slides/lecture12.html#galton-board-and-central-limit-theorem",
+    "href": "slides/lecture12.html#galton-board-and-central-limit-theorem",
+    "title": "lecture12: Normal distribution and simulations",
+    "section": "Galton board and central limit theorem",
+    "text": "Galton board and central limit theorem\nCentral limit theorem in short:\nSum of many random variables makes a normal distribution. Mean involves a sum! (mean &lt;- sum(x) / length(x))\n\n\nthe central limit theorem (CLT) states that, under appropriate conditions, the distribution of a normalized version of the sample mean converges to a standard normal distribution. This holds even if the original variables themselves are not normally distributed. Source: Wikipedia.\n\nRefer textbook for mathematical definition in Introduction to Probability andMathematicalStatistics\n\nGalton board ~ add a random variable (+1 / -1) that determines where the balls end up\nWatch full video/ 3blue1brown (1:53 - 5:22)"
+  },
+  {
+    "objectID": "slides/lecture12.html#why-are-so-many-things-normally-distributed",
+    "href": "slides/lecture12.html#why-are-so-many-things-normally-distributed",
+    "title": "lecture12: Normal distribution and simulations",
+    "section": "Why are so many things normally distributed?",
+    "text": "Why are so many things normally distributed?\nBecause they could be expressed as a SUM of other hidden variables.\n\nHeights: We can speculate that height depends on the sum of action of multiple genes, the food/excersise you had everyday till measurement\nGene expression in a bacterial/cell culture: The sum (or mean) of the expression of the millions of individual cells in the culture makes for an excellent normal distribution!\n\n\nBut it is important to recognize when effects are not strictly additive, such as when feedbacks are involved.\n\nIncome is famously not normally distributed. Due to positive feedback across generations, and that capital gains far outweigh labor gains, there are very few very rich and many many not-very-rich people.\nIf your gene has a positive/negative feedback loop (activates/represses itself), then your gene expression will not be normally distributed. You might have a bimodal distribution with 2 peaks!"
+  },
+  {
+    "objectID": "slides/lecture12.html#what-is-a-simulation",
+    "href": "slides/lecture12.html#what-is-a-simulation",
+    "title": "lecture12: Normal distribution and simulations",
+    "section": "What is a simulation",
+    "text": "What is a simulation\nDefinition from the textbook: Modern stats with R\n\nA key component of modern statistical work is simulation, in which we generate artificial data that can be used both in the analysis of real data (..) and for assessing different (statistical) methods ."
+  },
+  {
+    "objectID": "slides/lecture12.html#ingredients-of-a-simulation-in-r",
+    "href": "slides/lecture12.html#ingredients-of-a-simulation-in-r",
+    "title": "lecture12: Normal distribution and simulations",
+    "section": "Ingredients of a simulation in R",
+    "text": "Ingredients of a simulation in R\n\nA random variable\n\n\n# Pick a random variable (note: rounding is only for the presentation)\nrnorm(5, mean = 0, sd = 1) %&gt;% round(2) # Normal random variable (r.v)\n\n[1] -0.23  0.12  0.32  0.14  0.31\n\nsample(letters[1:10], size = 3, replace = TRUE) # sample from a vector\n\n[1] \"j\" \"e\" \"g\"\n\nsample(c(1, -1), size = 1, replace = TRUE) # galton r.v\n\n[1] 1\n\n\n\nDo computations on the random variables\n\n\n#' calculate sum of `n` random variables\ngalton_sum &lt;- function(n) {\n  galton_series &lt;- sample(c(1, -1), size = n, replace = TRUE)\n  sum(galton_series)\n}\n\n# each run gives a different outcome\ngalton_sum(5) ; galton_sum(5); galton_sum(5)\n\n[1] -1\n\n\n[1] 3\n\n\n[1] -1"
+  },
+  {
+    "objectID": "slides/lecture12.html#do-the-simulation-r",
+    "href": "slides/lecture12.html#do-the-simulation-r",
+    "title": "lecture12: Normal distribution and simulations",
+    "section": "Do the simulation R",
+    "text": "Do the simulation R\n\nIterate this many times (avoid for() loops, and use vectorized functions)\n\n\ngalton_simulation &lt;- \n  tibble(\n    run_number = 1:10,\n    outcome = \n      replicate(n = length(run_number), \n                expr = galton_sum(6))\n  ) %&gt;% \n  print()\n\n# A tibble: 10 × 2\n   run_number outcome\n        &lt;int&gt;   &lt;dbl&gt;\n 1          1      -2\n 2          2       0\n 3          3      -2\n 4          4       0\n 5          5      -4\n 6          6      -2\n 7          7      -2\n 8          8       6\n 9          9      -2\n10         10       0"
+  },
+  {
+    "objectID": "slides/lecture12.html#really-do-many-times",
+    "href": "slides/lecture12.html#really-do-many-times",
+    "title": "lecture12: Normal distribution and simulations",
+    "section": "Really do many times",
+    "text": "Really do many times\n10 is no good, let’s try 1,000?\n\ngalton_simulation &lt;- \n  tibble(\n    run_number = 1:1e3,\n    outcome = \n      replicate(n = length(run_number), \n                expr = galton_sum(6))\n  )"
+  },
+  {
+    "objectID": "slides/lecture12.html#plot-results",
+    "href": "slides/lecture12.html#plot-results",
+    "title": "lecture12: Normal distribution and simulations",
+    "section": "Plot results",
+    "text": "Plot results\n\nCalculate summary statistics and make plots\n\n\nggplot(galton_simulation, mapping = aes(outcome)) +\n  \n  geom_histogram(binwidth = 1, center = 0)\n\n\n\nWhy are some numbers missing?\nBecause of the discrete nature of the random variables, odd numbers cannot be made by adding an even number (6) or +1/-1s (if 0 was included, this would be possible)"
+  },
+  {
+    "objectID": "slides/lecture12.html#plot-detailed-results",
+    "href": "slides/lecture12.html#plot-detailed-results",
+    "title": "lecture12: Normal distribution and simulations",
+    "section": "Plot detailed results",
+    "text": "Plot detailed results\nLet us plot each outcome on top of the histogram\n\nggplot(galton_simulation, mapping = aes(x = outcome)) +\n  \n  geom_histogram(binwidth = 1, center = 0, alpha = 0.2) + \n  geom_jitter(aes(y = -20), \n              position = position_jitter(width = 0.5, height = 10),\n              alpha = 0.2)\n\n\n\n\n\n\n\n\n\nggplot(galton_simulation, mapping = aes(x = outcome, y = '?')) +\n  \n  geom_violin() + \n  # geom_histogram(binwidth = 1, center = 0, alpha = 0.2) + \n  geom_jitter(position = position_jitter(width = 0.5, height = .5),\n              alpha = 0.2)"
+  },
+  {
+    "objectID": "slides/lecture12.html#sampling-from-a-distribution",
+    "href": "slides/lecture12.html#sampling-from-a-distribution",
+    "title": "lecture12: Normal distribution and simulations",
+    "section": "Sampling from a distribution",
+    "text": "Sampling from a distribution\nCollecting a random subset of samples from a larger distribution is another way to begin a simulation. This is the technique behind ~Bootstrapping (will get to it later)"
+  },
+  {
+    "objectID": "slides/lecture12.html#onto-the-worksheet-now",
+    "href": "slides/lecture12.html#onto-the-worksheet-now",
+    "title": "lecture12: Normal distribution and simulations",
+    "section": "Onto the worksheet now",
+    "text": "Onto the worksheet now\nPlease download the qmd worksheet for today from github (scripts/ folder in class-worksheets repository)"
+  },
+  {
+    "objectID": "slides/lecture14.html#sharing-code-for-reproduciblity",
+    "href": "slides/lecture14.html#sharing-code-for-reproduciblity",
     "title": "lecture_x",
-    "section": "Slides..",
-    "text": "Slides..\nthe three main sections of a Git project: the working tree, the staging area, and the Git directory\n\n\n\nWorking tree, staging area, and Git directory\n\n\n\nSource: Fig 6/git-book"
+    "section": "Sharing code for reproduciblity",
+    "text": "Sharing code for reproduciblity\n\n\nSharing source code is useful\n\nSharing your data analysis in a paper\nGetting someone to look at your code and help\n\nWhy not just share on Google drive/dropbox then?\n\nGithub interfaces very well with Git. Makes it quicker to setup and run your code"
   },
   {
-    "objectID": "slides/lecture13.html#quantifying-the-shape-of-the-normal-distribution",
-    "href": "slides/lecture13.html#quantifying-the-shape-of-the-normal-distribution",
-    "title": "lecture13",
-    "section": "Quantifying the shape of the normal distribution",
-    "text": "Quantifying the shape of the normal distribution\n\n\nMean +/- SD\n\n\nSource: Wikipedia\n\n\nMedian, quartiles\n\n\nSource: Quartiles of Normal Distribution, JoeCMath/youtube\n\nquartiles divide the probability / distribution area into 4 quarters, a more general way is called quantile (note the spelling!)"
+    "objectID": "slides/lecture14.html#what-is-a-version-why-keep-track",
+    "href": "slides/lecture14.html#what-is-a-version-why-keep-track",
+    "title": "lecture_x",
+    "section": "What is a version? why keep track?",
+    "text": "What is a version? why keep track?\n\n\nMany many writing drafts\n\n\nSynchronizing changes in Midterm/assignment/worksheets easily!\nEasy to see changes too"
   },
   {
-    "objectID": "slides/lecture13.html#quantiles-tell-us-about-the-distribution-shape",
-    "href": "slides/lecture13.html#quantiles-tell-us-about-the-distribution-shape",
-    "title": "lecture13",
-    "section": "Quantiles tell us about the distribution shape",
-    "text": "Quantiles tell us about the distribution shape\n\n\nQuartiles (4)\n\n\n\n\n\n\n\n\n\n\nDeciles (10)\n\n\n\n\n\n\n\n\n\n\n\n\nquantiles are cut points dividing the range of a probability distribution into continuous intervals with equal probabilities. Source: Wikipedia\n\nprobability distribution = geom_density plot. Hence quantiles divide the range to make equal area under the geom_density curve"
+    "objectID": "slides/lecture14.html#how-does-git-work",
+    "href": "slides/lecture14.html#how-does-git-work",
+    "title": "lecture_x",
+    "section": "How does git work?",
+    "text": "How does git work?\nthe three main sections of a Git project: the working tree, the staging area, and the Git directory\n\n\n\nWorking tree, staging area, and Git directory\n\n\n\n\nSource: Fig 6/git-book"
   },
   {
-    "objectID": "slides/lecture13.html#q-q-plot-enables-comparison-of-distribution-shapes",
-    "href": "slides/lecture13.html#q-q-plot-enables-comparison-of-distribution-shapes",
-    "title": "lecture13",
-    "section": "Q-Q plot enables comparison of distribution shapes",
-    "text": "Q-Q plot enables comparison of distribution shapes\nIf they fall along the line, then it is normal.\n\n\nNormal distribution\n\n\n\n\n\n\n\n\n\n[1] 176 876\n\n\n\nNon-normal distribution\n\n\n\n\n\n\n\n\n\n[1] 1293    1\n\n\n\n\n\nfurther reading : sthda"
+    "objectID": "slides/lecture14.html#task1-setting-up-and-git-basics-on-commandline",
+    "href": "slides/lecture14.html#task1-setting-up-and-git-basics-on-commandline",
+    "title": "lecture_x",
+    "section": "Task1 : Setting up and git basics on commandline",
+    "text": "Task1 : Setting up and git basics on commandline\n\nFind a terminal : regular or console within Rstudio. We shall use the Rstudio one to demo\n\ngit init: initiate a repository\n\nUse this command to make a git repository in the same directory as your .Rproj file. check that that the working directory of the console matches before using these commands below\nWhat is the branch name that you see?\nWe want to change that to main using git branch -m main (-m is short for --move)\nTo change the default branch name use git config --global init.defaultBranch main\n\ntouch example.txt : make a text file to practice on\ngit add: stage files ; git commit -m \"message\" : commit files with a short message\nadd 3 lines of text : purpose: .. ; author: ; date:\ngit diff to see what changed\nagain, do: git add: stage files ; git commit -m \"message\" : commit files with a short message\n\nShortcut git commit -am \"..\" adds all changed files without needing to mention explicitly (-a = all)"
   },
   {
-    "objectID": "slides/lecture13.html#formal-shapiro-wilk-test-for-normality",
-    "href": "slides/lecture13.html#formal-shapiro-wilk-test-for-normality",
-    "title": "lecture13",
-    "section": "Formal Shapiro-Wilk test for normality",
-    "text": "Formal Shapiro-Wilk test for normality\nWhat is this testing for?\n\nNULL hypothesis is that data is normally distributed\nHigh p-value =&gt; Data is normal (hypothesis is accepted)\n\n\n\nNormal distribution\n\n\n\n    Shapiro-Wilk normality test\n\ndata:  .\nW = 0.99907, p-value = 0.909\n\n\n\nNon-normal distribution\n\n\n\n    Shapiro-Wilk normality test\n\ndata:  life_exp\nW = 0.95248, p-value &lt; 2.2e-16\n\n\n\n\n\nfurther reading: statology.org"
+    "objectID": "slides/lecture14.html#task2-connecting-git-with-rstudio-for-gui-access",
+    "href": "slides/lecture14.html#task2-connecting-git-with-rstudio-for-gui-access",
+    "title": "lecture_x",
+    "section": "Task2 : Connecting git with Rstudio for GUI access",
+    "text": "Task2 : Connecting git with Rstudio for GUI access\n\nAdd more text / use a different file? : purpose: .. ; author: ; date:\ngit mv example.txt example.md : convert to markdown, open in Rstudio and bold the keywords\nNow use Rstudio’s git integration to visually see changes, and commit!"
   },
   {
-    "objectID": "slides/lecture13.html#what-data-can-test-the-smoking-hypothesis",
-    "href": "slides/lecture13.html#what-data-can-test-the-smoking-hypothesis",
-    "title": "lecture13",
-    "section": "What data can test the smoking hypothesis?",
-    "text": "What data can test the smoking hypothesis?\nuse fake data to generate a x-y plot with noise ; and others..\n2d correlation ; num vs cat plot with 2 categories ; cat vs cat plot with counts only"
-  },
-  {
-    "objectID": "slides/lecture13.html#comparing-two-numbers-vs-two-samples",
-    "href": "slides/lecture13.html#comparing-two-numbers-vs-two-samples",
-    "title": "lecture13",
-    "section": "Comparing two numbers vs two samples",
-    "text": "Comparing two numbers vs two samples\n3.62 is clearly &gt; 1.71, does that satisfy the hypothesis?\nIt is straightforward to compare just the mean values of each sample, but there is no statistics involved there\n\nWe need to account for both the mean of the samples and the spread around the mean\n\nThis is what the t-statistic encompasses. The t-test tests for a hypothesis based on this statistic"
-  },
-  {
-    "objectID": "slides/lecture13.html#t-tests-finds-statistical-support-against-a-null-hypothesis",
-    "href": "slides/lecture13.html#t-tests-finds-statistical-support-against-a-null-hypothesis",
-    "title": "lecture13",
-    "section": "t-tests finds statistical support against a NULL hypothesis",
-    "text": "t-tests finds statistical support against a NULL hypothesis\nNull hypothesis in english - “smoking is NOT associated with cancer”\nIn statistical terms - “the samples of smokers and non-smokers came from the same population”\n\n(assumption) For a t-test, this source population is normally distributed\n(Other assumption for Student’s t-test) Equal variance between smoker dataset and non-smoker dataset (this can be violated for the welch t-test)"
-  },
-  {
-    "objectID": "slides/lecture13.html#t-test-is-calculating-difference-in-means-spread-around-mean",
-    "href": "slides/lecture13.html#t-test-is-calculating-difference-in-means-spread-around-mean",
-    "title": "lecture13",
-    "section": "t-test is calculating difference in means / spread around mean",
-    "text": "t-test is calculating difference in means / spread around mean\n\nWatch full video here: “Student’s t-test” : Bozeman science/youtube"
-  },
-  {
-    "objectID": "slides/lecture13.html#sampling-from-a-population-of-coloured-balls",
-    "href": "slides/lecture13.html#sampling-from-a-population-of-coloured-balls",
-    "title": "lecture13",
-    "section": "Sampling from a population of coloured balls",
-    "text": "Sampling from a population of coloured balls\nWe will walk through this activity to understand sampling well\n\nExplanation of sampling with balls in moderndive/chap7"
-  },
-  {
-    "objectID": "slides/lecture13.html#let-us-see-the-sampling-distribution",
-    "href": "slides/lecture13.html#let-us-see-the-sampling-distribution",
-    "title": "lecture13",
-    "section": "Let us see the sampling distribution",
-    "text": "Let us see the sampling distribution"
-  },
-  {
-    "objectID": "slides/lecture13.html#calculating-the-sample-mean-sem-ci",
-    "href": "slides/lecture13.html#calculating-the-sample-mean-sem-ci",
-    "title": "lecture13",
-    "section": "Calculating the sample mean, SEM, CI",
-    "text": "Calculating the sample mean, SEM, CI"
-  },
-  {
-    "objectID": "slides/lecture13.html#relating-this-to-a-1-sample-t-test",
-    "href": "slides/lecture13.html#relating-this-to-a-1-sample-t-test",
-    "title": "lecture13",
-    "section": "Relating this to a 1-sample t-test",
-    "text": "Relating this to a 1-sample t-test"
-  },
-  {
-    "objectID": "slides/lecture13.html#references",
-    "href": "slides/lecture13.html#references",
-    "title": "lecture13",
-    "section": "References",
-    "text": "References\nGreat explanation of sample size in 7.2 (FIGURE 7.12) in moderndive/chap7"
+    "objectID": "slides/lecture14.html#task3-connecting-to-a-remote-website-for-sharingsynchronization-across-computers",
+    "href": "slides/lecture14.html#task3-connecting-to-a-remote-website-for-sharingsynchronization-across-computers",
+    "title": "lecture_x",
+    "section": "Task3: Connecting to a remote website for sharing/synchronization across computers",
+    "text": "Task3: Connecting to a remote website for sharing/synchronization across computers\n\nShow git organization for this class and repos - explain private repo\nGit clone git_practice repo (already put in a simple .qmd file here)\nSolve the ggplot question-1 and commit changes\ngit push: where does this push?\nMake a fork on github.com ; note the url of your forked repository (different from the original)\nchange remote url with git remote set-url origin ..\npush changes to your own repo fork online using git push -u origin main\nSolve question-2\ncommit and push using only Rstudio now"
   }
 ]
