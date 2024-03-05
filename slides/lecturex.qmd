@@ -12,12 +12,31 @@ editor: visual
 
 # Today's class
 
-topic name
-- outline
-- ..
+topic name - outline - ..
 
-## Slides..
+## Slidelarge 
 
+Fits 4 paragraphs
+
+## Slide  {.smaller}
+
+One line
+
+```{r qq-plot-normal}
+#| fig-height: 4
+rnorm(1000) %>% 
+car::qqPlot()
+```
+
+::: aside
+Source:
+:::
+
+## Slideimg  {.smaller}
+
+images 200 px wide in 2 columns / 400 px height?
+
+![dummy](img/normal_dist_quartiles.jpg){width="356"}
 
 ## Onto the worksheet now
 
@@ -25,6 +44,4 @@ Please download the `…qmd` worksheet for today
 
 # Summary
 
-We discussed 
-- a
-- b..
+We discussed - a - b..
