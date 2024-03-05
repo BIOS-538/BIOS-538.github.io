@@ -24,6 +24,8 @@ editor: visual
 
 # Today's class
 
+-   Why share code with others?
+
 -   What is version control and why do we need it?
 
 -   How does `git` do version control?
@@ -31,6 +33,20 @@ editor: visual
     -   `git` vs (`github.com` / `gitlab.com` / ..)
 
 -   Live practice: Setup/use git through the **command line** and **Rstudio interface**
+
+## Sharing code for reproduciblity
+
+::: incremental
+-   Sharing source code is useful
+
+    -   Sharing your data analysis in a paper
+
+    -   Getting someone to look at your code and help
+
+-   Why not just share on Google drive/dropbox then?
+
+    -   Github interfaces very well with Git. Makes it quicker to setup and run your code
+:::
 
 ## What is a version? why keep track?
 
@@ -42,7 +58,9 @@ Many many writing drafts
 :::
 
 ::: {.column width="50%"}
-Synchronizing changes in Midterm/assignment easily!
+Synchronizing changes in Midterm/assignment/worksheets easily!
+
+Easy to see [changes too](https://github.com/BIOS-538/assignments/compare/ad4bfee..3bc99d9)
 
 ![](img/midterm_changelog.png){width="1418"}
 :::
