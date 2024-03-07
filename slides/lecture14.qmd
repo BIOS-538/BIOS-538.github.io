@@ -8,7 +8,7 @@ metadata-files:
 editor: visual
 ---
 
-# Announcements  {.smaller}
+# Announcements {.smaller}
 
 **Midterm exam**
 
@@ -32,7 +32,7 @@ editor: visual
 
     -   `git` vs (`github.com` / `gitlab.com` / ..)
 
--   Live practice: Setup/use git through the **command line** and **Rstudio interface**
+-   Live practice: [Setup](https://happygitwithr.com/install-git)/use git through the **command line** and **Rstudio interface**
 
 ## Sharing code for reproduciblity
 
@@ -80,31 +80,71 @@ Source: [Fig 6/git-book](https://git-scm.com/book/en/v2/Getting-Started-What-is-
 
 -   Find a terminal : regular or console within Rstudio. *We shall use the Rstudio one to demo*
     -   `git init`: initiate a repository
+
         -   Use this command to make a git repository in the same directory as your `.Rproj` file. *check that that the working directory of the console matches before using these commands below*
         -   What is the branch name that you see?
         -   We want to change that to `main` using `git branch -m main` (`-m` is short for `--move`)
         -   To change the default branch name use `git config --global init.defaultBranch main`
+
+    -   For the first time when using git, you have to [introduce ](https://happygitwithr.com/hello-git)your name and email ID using these commands
+
+        ```{git config --global user.name "Jane Doe" # your name here}
+        git config --global user.email "jane@example.com" # your email ID
+
+        git config --global --list # check if it worked
+        ```
+
     -   `touch example.txt` : make a text file to practice on
+
     -   `git add`: stage files ; `git commit -m "message"` : commit files with a **short message**
+
     -   add 3 lines of text : `purpose: .. ; author: ; date:`
+
     -   `git diff` to see what changed
+
     -   again, do: `git add`: stage files ; `git commit -m "message"` : commit files with a **short message**
+
         -   Shortcut `git commit -am ".."` adds all changed files without needing to mention explicitly (`-a` = all)
 
 ## Task2 : Connecting `git` with Rstudio for GUI access {.scrollable}
 
--   Add more text / use a different file? : `purpose: .. ; author: ; date:`
--   git mv `example.txt` `example.md` : convert to markdown, open in Rstudio and bold the keywords
+-   Convert the text file to a qmd markdown file! `git mv example.txt` `example.qmd` : then open in Rstudio and bold the keywords
+    -   *Explanation*: `mv` command stands for *move file or directory*. When using `git mv`, git registers it as "*a file renaming change"* rather than "*an old file deleted and a new one made*"
 -   Now use Rstudio's git integration to visually see changes, and commit!
+-   Add a code chunk and one line of R code, and commit again
 
 ## Task3: Connecting to a remote website for sharing/synchronization across computers {.scrollable}
 
--   Show git organization for this class and repos - explain private repo
+-   See the git organization for this class and repositories - explain private repo vs public
 -   Git clone `git_practice` repo (*already put in a simple `.qmd` file here*)
 -   Solve the ggplot question-1 and commit changes
--   `git push`: where does this push?
--   Make a fork on github.com ; note the url of your forked repository (different from the original)
--   change remote url with `git remote set-url origin ..`
--   push changes to your own repo fork online using `git push -u origin main`
+-   Watch me make changes to the file and push it
+-   Do a `git pull` : to bring fresh changes I made
 -   Solve question-2
 -   commit and push using only Rstudio now
+
+## More things we won't cover
+
+-   Try doing a: `git push`: where does this push to? *Remember, you don't have edit access to public repositories unless you are added as a collaborator*
+-   Make a fork on github.com ; note the url of your forked repository (*different from the original*)
+    -   I recommend using the SSH method. You need to setup SSH keys for your particular computer by following this [guide in chapter 10](https://happygitwithr.com/ssh-keys.html?q=ssh#ssh-keys)
+-   Change remote url with `git remote set-url origin ..url here..`
+-   Push changes to your own repo fork online using `git push -u origin main`
+
+# Summary  {.smaller}
+
+Last class
+
+-   Why share code with others?
+
+-   What is version control and why do we need it?
+
+-   Initializing git and command line
+
+Today's class
+
+-   Learnt how to `git add` and `git commit` from the **command line** interface (CLI)
+
+-   Learnt the same with a more intuitive graphical interface (GUI) within **Rstudio**
+
+-   Using `git pull` to grab public code from `github.com`
