@@ -377,7 +377,7 @@ Prashant K
 <ul>
 <li><code>git</code> vs (<code>github.com</code> / <code>gitlab.com</code> / ..)</li>
 </ul></li>
-<li><p>Live practice: Setup/use git through the <strong>command line</strong> and <strong>Rstudio interface</strong></p></li>
+<li><p>Live practice: <a href="https://happygitwithr.com/install-git">Setup</a>/use git through the <strong>command line</strong> and <strong>Rstudio interface</strong></p></li>
 </ul>
 </section>
 <section id="sharing-code-for-reproduciblity" class="slide level2">
@@ -427,18 +427,19 @@ Prashant K
 <ul>
 <li>Find a terminal : regular or console within Rstudio. <em>We shall use the Rstudio one to demo</em>
 <ul>
-<li><code>git init</code>: initiate a repository
+<li><p><code>git init</code>: initiate a repository</p>
 <ul>
 <li>Use this command to make a git repository in the same directory as your <code>.Rproj</code> file. <em>check that that the working directory of the console matches before using these commands below</em></li>
 <li>What is the branch name that you see?</li>
 <li>We want to change that to <code>main</code> using <code>git branch -m main</code> (<code>-m</code> is short for <code>--move</code>)</li>
 <li>To change the default branch name use <code>git config --global init.defaultBranch main</code></li>
 </ul></li>
-<li><code>touch example.txt</code> : make a text file to practice on</li>
-<li><code>git add</code>: stage files ; <code>git commit -m "message"</code> : commit files with a <strong>short message</strong></li>
-<li>add 3 lines of text : <code>purpose: .. ; author: ; date:</code></li>
-<li><code>git diff</code> to see what changed</li>
-<li>again, do: <code>git add</code>: stage files ; <code>git commit -m "message"</code> : commit files with a <strong>short message</strong>
+<li><p>For the first time when using git, you have to <a href="https://happygitwithr.com/hello-git">introduce</a> your name and email ID using these commands <code>git config –global user.name ".."</code> and same for <code>user.email ".."</code></p></li>
+<li><p><code>touch example.txt</code> : make a text file to practice on</p></li>
+<li><p><code>git add</code>: stage files ; <code>git commit -m "message"</code> : commit files with a <strong>short message</strong></p></li>
+<li><p>add 3 lines of text : <code>purpose: .. ; author: ; date:</code></p></li>
+<li><p><code>git diff</code> to see what changed</p></li>
+<li><p>again, do: <code>git add</code>: stage files ; <code>git commit -m "message"</code> : commit files with a <strong>short message</strong></p>
 <ul>
 <li>Shortcut <code>git commit -am ".."</code> adds all changed files without needing to mention explicitly (<code>-a</code> = all)</li>
 </ul></li>
@@ -448,23 +449,51 @@ Prashant K
 <section id="task2-connecting-git-with-rstudio-for-gui-access" class="slide level2 scrollable">
 <h2>Task2 : Connecting <code>git</code> with Rstudio for GUI access</h2>
 <ul>
-<li>Add more text / use a different file? : <code>purpose: .. ; author: ; date:</code></li>
-<li>git mv <code>example.txt</code> <code>example.md</code> : convert to markdown, open in Rstudio and bold the keywords</li>
+<li>Convert the text file to a qmd markdown file! <code>git mv example.txt</code> <code>example.qmd</code> : then open in Rstudio and bold the keywords
+<ul>
+<li><em>Explanation</em>: <code>mv</code> command stands for <em>move file or directory</em>. When using <code>git mv</code>, git registers it as “<em>a file renaming change”</em> rather than”<em>an old file deleted and a new one made</em>”</li>
+</ul></li>
 <li>Now use Rstudio’s git integration to visually see changes, and commit!</li>
+<li>Add a code chunk and one line of R code, and commit again</li>
 </ul>
 </section>
 <section id="task3-connecting-to-a-remote-website-for-sharingsynchronization-across-computers" class="slide level2 scrollable">
 <h2>Task3: Connecting to a remote website for sharing/synchronization across computers</h2>
 <ul>
-<li>Show git organization for this class and repos - explain private repo</li>
+<li>See the git organization for this class and repositories - explain private repo vs public</li>
 <li>Git clone <code>git_practice</code> repo (<em>already put in a simple <code>.qmd</code> file here</em>)</li>
 <li>Solve the ggplot question-1 and commit changes</li>
-<li><code>git push</code>: where does this push?</li>
-<li>Make a fork on github.com ; note the url of your forked repository (different from the original)</li>
-<li>change remote url with <code>git remote set-url origin ..</code></li>
-<li>push changes to your own repo fork online using <code>git push -u origin main</code></li>
+<li>Watch me make changes to the file and push it</li>
+<li>Do a <code>git pull</code> : to bring fresh changes I made</li>
 <li>Solve question-2</li>
 <li>commit and push using only Rstudio now</li>
+</ul>
+</section>
+<section id="more-things-we-wont-cover" class="slide level2 smaller">
+<h2>More things we won’t cover</h2>
+<ul>
+<li>Try doing a: <code>git push</code>: where does this push to? <em>Remember, you don’t have edit access to public repositories unless you are added as a collaborator</em></li>
+<li>Make a fork on github.com ; note the url of your forked repository (<em>different from the original</em>)
+<ul>
+<li>I recommend using the SSH method. You need to setup SSH keys for your particular computer by following this <a href="https://happygitwithr.com/ssh-keys.html?q=ssh#ssh-keys">guide in chapter 10</a></li>
+</ul></li>
+<li>Change remote url with <code>git remote set-url origin ..url here..</code></li>
+<li>Push changes to your own repo fork online using <code>git push -u origin main</code></li>
+</ul>
+</section></section>
+<section id="summary" class="title-slide slide level1 smaller center">
+<h1>Summary</h1>
+<p>Last class</p>
+<ul>
+<li><p>Why share code with others?</p></li>
+<li><p>What is version control and why do we need it?</p></li>
+<li><p>Initializing git and command line</p></li>
+</ul>
+<p>Today’s class</p>
+<ul>
+<li><p>Learnt how to <code>git add</code> and <code>git commit</code> from the <strong>command line</strong> interface (CLI)</p></li>
+<li><p>Learnt the same with a more intuitive graphical interface (GUI) within <strong>Rstudio</strong></p></li>
+<li><p>Using <code>git pull</code> to grab public code from <code>github.com</code></p></li>
 </ul>
 
 <div class="quarto-auto-generated-content">
@@ -472,7 +501,7 @@ Prashant K
 
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
