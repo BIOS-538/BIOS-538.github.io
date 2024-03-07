@@ -86,13 +86,7 @@ Source: [Fig 6/git-book](https://git-scm.com/book/en/v2/Getting-Started-What-is-
         -   We want to change that to `main` using `git branch -m main` (`-m` is short for `--move`)
         -   To change the default branch name use `git config --global init.defaultBranch main`
 
-    -   For the first time when using git, you have to [introduce ](https://happygitwithr.com/hello-git)your name and email ID using these commands
-
-        ```{git config --global user.name "Jane Doe" # your name here}
-        git config --global user.email "jane@example.com" # your email ID
-
-        git config --global --list # check if it worked
-        ```
+    -   For the first time when using git, you have to [introduce](https://happygitwithr.com/hello-git) your name and email ID using these commands `git config –global user.name ".."` and same for `user.email ".."`
 
     -   `touch example.txt` : make a text file to practice on
 
@@ -109,13 +103,13 @@ Source: [Fig 6/git-book](https://git-scm.com/book/en/v2/Getting-Started-What-is-
 ## Task2 : Connecting `git` with Rstudio for GUI access {.scrollable}
 
 -   Convert the text file to a qmd markdown file! `git mv example.txt` `example.qmd` : then open in Rstudio and bold the keywords
-    -   *Explanation*: `mv` command stands for *move file or directory*. When using `git mv`, git registers it as "*a file renaming change"* rather than "*an old file deleted and a new one made*"
+    -   *Explanation*: `mv` command stands for *move file or directory*. When using `git mv`, git registers it as "*a file renaming change"* rather than"*an old file deleted and a new one made*"
 -   Now use Rstudio's git integration to visually see changes, and commit!
 -   Add a code chunk and one line of R code, and commit again
 
 ## Task3: Connecting to a remote website for sharing/synchronization across computers {.scrollable}
 
--   See the git organization for this class and repositories - explain private repo vs public
+-   See the github organization for this class and repositories - explain private repo vs public
 -   Git clone `git_practice` repo (*already put in a simple `.qmd` file here*)
 -   Solve the ggplot question-1 and commit changes
 -   Watch me make changes to the file and push it
@@ -123,7 +117,7 @@ Source: [Fig 6/git-book](https://git-scm.com/book/en/v2/Getting-Started-What-is-
 -   Solve question-2
 -   commit and push using only Rstudio now
 
-## More things we won't cover
+## More things we won't cover  {.smaller}
 
 -   Try doing a: `git push`: where does this push to? *Remember, you don't have edit access to public repositories unless you are added as a collaborator*
 -   Make a fork on github.com ; note the url of your forked repository (*different from the original*)
@@ -131,7 +125,7 @@ Source: [Fig 6/git-book](https://git-scm.com/book/en/v2/Getting-Started-What-is-
 -   Change remote url with `git remote set-url origin ..url here..`
 -   Push changes to your own repo fork online using `git push -u origin main`
 
-# Summary  {.smaller}
+# Summary {.smaller}
 
 Last class
 
