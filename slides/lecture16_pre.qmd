@@ -9,9 +9,9 @@ editor: visual
 
 # Announcements {.smaller}
 
--   Final project timeline and grading
+-   Final project timeline and grading [announcement](https://github.com/BIOS-538/assignments/blob/main/final_project_announcement.md)
 
--   Assignment5 and 6 will be in-class worksheets
+-   Assignment5 and 6 will be \~in-class worksheets
 
     -   Format: I will give the worksheet 3+ days in advance (+ solutions)
 
@@ -22,6 +22,10 @@ editor: visual
     -   Review the lecture video **after class** + finish working and add documentation to demonstrate understanding
 
     -   Submit the worksheet for grading
+
+## Timeline for the next month
+
+![](img/timeline_Mar-April.png)
 
 # Today's class {.incremental}
 
@@ -97,5 +101,13 @@ Anonymous Porcupine on the [discussion board](https://edstem.org/us/courses/5188
 ![](img/NYT_focus-with-colour.png)
 :::
 :::
+
+## Identify the `categorical variable` here? 
+
+::: aside
+***Hint**: Categorical variables are what you would make* `as_factor()`. They have **discrete** ordered or un-ordered levels. Can be letters/numbers etc. that are not a continuous variable
+:::
+
+![](img/categorical_variable_illustrated.png)
 
 # Onto the lecture now
