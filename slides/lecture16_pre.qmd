@@ -1,0 +1,101 @@
+---
+title: "lecture16 prologue"
+date: 19/Mar/24
+format: revealjs
+metadata-files: 
+  - '_slides.yml'
+editor: visual
+---
+
+# Announcements {.smaller}
+
+-   Final project timeline and grading
+
+-   Assignment5 and 6 will be in-class worksheets
+
+    -   Format: I will give the worksheet 3+ days in advance (+ solutions)
+
+    -   Try to work on the questions **before class**
+
+    -   We will quickly walk-through the code **in class** (hands-on work if time permits)
+
+    -   Review the lecture video **after class** + finish working and add documentation to demonstrate understanding
+
+    -   Submit the worksheet for grading
+
+# Today's class {.incremental}
+
+> With great power comes great responsibility! - Voltaire
+
+Hence today we will learn how to wield `ggplot` responsibly for best visual communication
+
+. . .
+
+We will have a guest lecture by **Swetha Sridhar**, (Grad student in SSPB, meticulous data grapher)
+
+```{r setup, echo=FALSE}
+library(tidyverse)
+set.seed(1)
+a <- tibble(a1 = 1:10, a2 = (5-a1)^2 + rnorm(10, mean = 2))
+```
+
+## Which graph is better? *To find precise co-ordinates*
+
+::: columns
+::: {.column width="50%"}
+```{r ggplt}
+#| fig-height: 4
+#| fig-width: 5
+
+plt1 <- {ggplot(a, aes(a1, a2)) + geom_point()} %>% print
+
+```
+:::
+
+::: {.column width="50%"}
+```{r classic-plt}
+#| fig-height: 4
+#| fig-width: 5
+
+plt1 + theme_classic()
+
+```
+:::
+:::
+
+## Different objective*: To emphasize trend*
+
+::: columns
+::: {.column width="50%"}
+```{r trend-default}
+
+plt_trend <- 
+  {plt1 + geom_function(fun = ~ (5 - .x)^2 + 2, alpha = 0.5)} %>% print
+```
+:::
+
+::: {.column width="50%"}
+```{r trend-classic}
+
+plt_trend + theme_minimal() + theme(panel.grid = element_blank())
+```
+:::
+:::
+
+## Identify which line is which category
+
+::: columns
+::: {.column width="50%"}
+![](img/focus_but_legend.png)
+
+::: aside
+Anonymous Porcupine on the [discussion board](https://edstem.org/us/courses/51883/discussion/4528059?answer=10467386)
+:::
+:::
+
+::: {.column width="50%"}
+![](img/NYT_focus-with-colour.png)
+:::
+:::
+
+# Onto the lecture now
