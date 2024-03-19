@@ -117,7 +117,7 @@ Source: [Fig 6/git-book](https://git-scm.com/book/en/v2/Getting-Started-What-is-
 -   Solve question-2
 -   commit and push using only Rstudio now
 
-## More things we won't cover  {.smaller}
+## More things we won't cover {.smaller}
 
 -   Try doing a: `git push`: where does this push to? *Remember, you don't have edit access to public repositories unless you are added as a collaborator*
 -   Make a fork on github.com ; note the url of your forked repository (*different from the original*)

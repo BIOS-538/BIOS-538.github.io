@@ -31,6 +31,8 @@ The origins of normal distributions and why we see them everywhere
 
 -   Explore these for yourself with the worksheet (*last 30 mins*)
 
+Worksheets on the [class-worksheets](https://github.com/BIOS-538/class-worksheets/) github
+
 ## Normal distribution
 
 Watch full video/ [3blue1brown](https://www.youtube.com/watch?v=zeJD6dqJ5lo) (0 - 54 seconds)
@@ -40,6 +42,9 @@ Watch full video/ [3blue1brown](https://www.youtube.com/watch?v=zeJD6dqJ5lo) (0 
 How to identify a normal distribution?
 
 -   Extremes are less likely than central values (closer to median)
+-   It is symmetric around the median value
+    -   Non-symmetric distortions =\> skew. Ex: Thicker tails on the right =\> more observations than expected on the right =\> *right-skewed* / *positively skewed*
+-   We will discuss the technically sound way to identify if data is normally distributed in the next lecture
 
 ## Galton board and central limit theorem
 
@@ -50,14 +55,14 @@ Sum of many random variables makes a normal distribution. Mean involves a sum! (
 ::: {.fragment style="font-size: 50%;"}
 > the **central limit theorem** (**CLT**) states that, *under appropriate conditions*, the [distribution](https://en.wikipedia.org/wiki/Probability_distribution "Probability distribution") of a normalized version of the sample mean converges to a [standard normal distribution](https://en.wikipedia.org/wiki/Normal_distribution#Standard_normal_distribution "Normal distribution"). This holds even if the original variables themselves are not [normally distributed](https://en.wikipedia.org/wiki/Normal_distribution "Normal distribution"). **Source**: [Wikipedia](https://en.wikipedia.org/wiki/Central_limit_theorem).
 
-Refer textbook for mathematical definition in [Introduction to Probability and ](https://math.libretexts.org/Courses/Queens_College/Introduction_to_Probability_and_Mathematical_Statistics)[Mathematical](https://math.libretexts.org/Courses/Queens_College/Introduction_to_Probability_and_Mathematical_Statistics/12%3A_Week_12/12.01%3A_The_Central_Limit_Theorem)[Statistics](https://math.libretexts.org/Courses/Queens_College/Introduction_to_Probability_and_Mathematical_Statistics)
+Refer textbook for mathematical definition in [Introduction to Probability and](https://math.libretexts.org/Courses/Queens_College/Introduction_to_Probability_and_Mathematical_Statistics)[Mathematical](https://math.libretexts.org/Courses/Queens_College/Introduction_to_Probability_and_Mathematical_Statistics/12%3A_Week_12/12.01%3A_The_Central_Limit_Theorem)[Statistics](https://math.libretexts.org/Courses/Queens_College/Introduction_to_Probability_and_Mathematical_Statistics)
 :::
 
 **Galton board** \~ add a random variable (+1 / -1) that determines where the balls end up
 
 Watch full video/ [3blue1brown](https://www.youtube.com/watch?v=zeJD6dqJ5lo) (1:53 - 5:22)
 
-## Why are so many things normally distributed?  {.smaller}
+## Why are so many things normally distributed? {.smaller}
 
 Because they could be expressed as a **SUM** of other hidden variables.
 
@@ -162,7 +167,7 @@ Because of the discrete nature of the random variables, odd numbers cannot be ma
 
 Let us plot each outcome on top of the histogram
 
-```{r plot_hist}
+```{r plot_hist_points}
 #| echo: true
 ggplot(galton_simulation, mapping = aes(x = outcome)) +
   

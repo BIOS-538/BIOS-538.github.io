@@ -2,7 +2,9 @@
 title: "lecture13"
 author: "Prashant K"
 date: 27/Feb/24
-format: revealjs
+format: 
+  revealjs:
+    smaller: true
 metadata-files: 
   - '_slides.yml'
 editor: visual
@@ -40,23 +42,25 @@ theme_set(theme_classic()) # set theme with plain background for all plots
 gapminder <- gapminder::gapminder # get gapminder data
 ```
 
-## Quantifying the shape of the normal distribution  {.smaller}
+## Quantifying the shape of the normal distribution {.smaller}
 
 ::: columns
 ::: {.column width="50%"}
-### Mean +/- SD
+**Mean +/- SD**
 
-![](img/normal_dist_probabilities_sd.png){width="300"}
+![](img/normal_dist_probabilities_sd.png){width="400"}
 
 > Source: [Wikipedia](https://en.wikipedia.org/wiki/File:Standard_deviation_diagram_micro.svg)
 :::
 
 ::: {.column width="50%"}
-### Median, quartiles
+**Median, quartiles**
 
-![](img/normal_dist_quartiles.jpg){width="300"}
+![](img/normal_dist_quartiles.jpg){width="355"}
 
+::: aside
 > Source: Quartiles of Normal Distribution, [JoeCMath/youtube](https://www.youtube.com/watch?v=0uef_Bw4xfM)
+:::
 
 **quartiles** divide the probability / distribution area into 4 **quarters,** a more general way is called **quantile** (*note the spelling!*)
 :::
@@ -123,26 +127,28 @@ If they fall along the line, then it is normal.
 
 ::: columns
 ::: {.column width="50%"}
-### Normal distribution
+Normal distribution
 
 ```{r qq-plot-normal}
-#| fig-width: 4
+#| fig-height: 4
 rnorm(1000) %>% 
 car::qqPlot()
 ```
 :::
 
 ::: {.column width="50%"}
-### Non-normal distribution
+Non-normal distribution
 
 ```{r qq-plot}
-#| fig-width: 4
+#| fig-height: 4
 car::qqPlot(life_exp)
 ```
 :::
 :::
 
-> further reading : [sthda](http://www.sthda.com/english/wiki/qq-plots-quantile-quantile-plots-r-base-graphs)
+::: aside
+further reading : [sthda](http://www.sthda.com/english/wiki/qq-plots-quantile-quantile-plots-r-base-graphs)
+:::
 
 ## Formal `Shapiro-Wilk` test for normality
 
@@ -196,7 +202,7 @@ But causality is really really hard to establish, that is why we talk about [cor
 ::: columns
 ::: {.column width="50%"}
 ```{r linreg}
-#| fig-width: 4
+#| fig-height: 3
 ggplot(gapminder,
        aes(year, lifeExp)) + 
   geom_point() + geom_smooth(method = 'lm') + 
@@ -209,18 +215,21 @@ ggplot(gapminder,
 
 ::: {.column width="50%"}
 ```{r num_cat_smoking}
-#| fig-width: 4
+#| fig-height: 3
 
 smk <- tibble(id = 1:12, 
               cancer_index = c(rnorm(6, mean = 2), rnorm(6, mean = 3.5)),
               smoking_status = rep(c(F, T), each = 6)) %>% 
   mutate(mean_cancer = mean(cancer_index), .by = smoking_status)
 
+
 ggplot(smk, aes(smoking_status, cancer_index)) + 
-  geom_point() + 
+  geom_point(alpha = 0.5, 
+             position = position_jitter(width = 0.2, height = 0)) + 
   
   # show mean
-  geom_point(aes(y = mean_cancer), shape = '_', size = 10) + 
+  geom_point(aes(y = mean_cancer), 
+             shape = '_', size = 20) + 
   geom_text(aes(y = mean_cancer + .2, label = round(mean_cancer, 2)))
 
 ```
@@ -255,7 +264,7 @@ Watch full video here: "*Student's t-test*" : [Bozeman science/youtube](https://
 
 # Sampling distributions {.incremental .smaller}
 
-::: .incremental
+::: incremental
 1.  Sample multiple times from a population (*too expensive for a real experiment, so we imagine this*)
 2.  Calculate one statistic from the sample (such as `mean`) and record it (*for each sample)*
 3.  Plot the statistic across all samples. The statistic is a random variable too dependant on the random sample, hence results in a different value for each sample.
