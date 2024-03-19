@@ -14,17 +14,19 @@ editor: visual
 
 topic name - outline - ..
 
-## Slidelarge 
+## Slidelarge
 
 Fits 4 paragraphs
 
-## Slide  {.smaller}
+## Slide {.smaller}
 
 One line
 
 ```{r qq-plot-normal}
 #| eval: false
 #| fig-height: 4
+
+set.seed(1)
 rnorm(1000) %>% 
 car::qqPlot()
 ```
@@ -33,7 +35,7 @@ car::qqPlot()
 Source:
 :::
 
-## Slideimg  {.smaller}
+## Slideimg {.smaller}
 
 images 200 px wide in 2 columns / 400 px height?
 
