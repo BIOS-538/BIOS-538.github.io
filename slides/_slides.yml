@@ -5,6 +5,8 @@ format:
     hide-inactive-cursor: true # hide mouse pointer unless moved?
     reference-location: document # put references at the end
     # smaller: true # make all text smaller // use on a case-by-casis per slide or presentation
+    fig-height: 4 # default for ggplot / R generated plots
+    fig-width: 5 # "s
 execute: 
   echo: false
 editor: visual
