@@ -411,7 +411,7 @@ Prashant K
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture13_files/figure-revealjs/dist_w_quantiles-1.png" width="960"></p>
+<p><img data-src="lecture13_files/figure-revealjs/dist_w_quantiles-1.png" width="480"></p>
 </figure>
 </div>
 </div>
@@ -422,7 +422,7 @@ Prashant K
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture13_files/figure-revealjs/dist-w-declies-1.png" width="960"></p>
+<p><img data-src="lecture13_files/figure-revealjs/dist-w-declies-1.png" width="480"></p>
 </figure>
 </div>
 </div>
@@ -444,12 +444,12 @@ Prashant K
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture13_files/figure-revealjs/qq-plot-normal-1.png" width="960"></p>
+<p><img data-src="lecture13_files/figure-revealjs/qq-plot-normal-1.png" width="480"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 185 486</code></pre>
+<pre><code>[1] 859 645</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -458,7 +458,7 @@ Prashant K
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture13_files/figure-revealjs/qq-plot-1.png" width="960"></p>
+<p><img data-src="lecture13_files/figure-revealjs/qq-plot-1.png" width="480"></p>
 </figure>
 </div>
 </div>
@@ -488,7 +488,7 @@ Prashant K
     Shapiro-Wilk normality test
 
 data:  .
-W = 0.99854, p-value = 0.5792</code></pre>
+W = 0.99899, p-value = 0.868</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -526,39 +526,45 @@ W = 0.95248, p-value &lt; 2.2e-16</code></pre>
 </section>
 <section id="what-data-can-test-the-smoking-hypothesis" class="slide level2">
 <h2>What data can test the smoking hypothesis?</h2>
-<p><em>use fake data to generate a x-y plot with noise ; and others..</em></p>
-<p>2d correlation ; num vs cat plot with 2 categories ; cat vs cat plot with counts only</p>
 <div class="columns">
 <div class="column" style="width:50%;">
+<p>2d data</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture13_files/figure-revealjs/linreg-1.png" width="960"></p>
+<p><img data-src="lecture13_files/figure-revealjs/linreg-1.png" width="480"></p>
 </figure>
 </div>
 </div>
 </div>
-<h3 id="section"></h3>
+<ul>
+<li><p>Correlation</p></li>
+<li><p>Regression (linear/non-linear)</p></li>
+</ul>
 </div><div class="column" style="width:50%;">
+<p>1D data</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture13_files/figure-revealjs/num_cat_smoking-1.png" width="960"></p>
+<p><img data-src="lecture13_files/figure-revealjs/num_cat_smoking-1.png" width="480"></p>
 </figure>
 </div>
 </div>
 </div>
+<ul>
+<li>t-test</li>
+</ul>
 </div>
 </div>
 </section>
 <section id="comparing-two-numbers-vs-two-samples" class="slide level2">
 <h2>Comparing two numbers vs two samples</h2>
-<p>3.62 is clearly &gt; 1.71, does that satisfy the hypothesis?</p>
-<p>It is straightforward to compare just the mean values of each sample, but there is no statistics involved there</p>
+<p>Looking at the mean only is not enough:</p>
+<p>3.54 is clearly <strong>&gt;</strong> 1.94, does that alone satisfy the hypothesis?</p>
 <ul>
-<li>We need to account for both the mean of the samples and the spread around the mean</li>
+<li>We need to account for both the mean and variability, ie) the spread around the mean</li>
 </ul>
 <p>This is what the t-statistic encompasses. The t-test tests for a hypothesis based on this statistic</p>
 </section>
@@ -583,7 +589,7 @@ W = 0.95248, p-value &lt; 2.2e-16</code></pre>
 <ol type="1">
 <li class="fragment">Sample multiple times from a population (<em>too expensive for a real experiment, so we imagine this</em>)</li>
 <li class="fragment">Calculate one statistic from the sample (such as <code>mean</code>) and record it (<em>for each sample)</em></li>
-<li class="fragment">Plot the statistic across all samples. The statistic is a random variable too dependant on the random sample, hence results in a different value for each sample.</li>
+<li class="fragment">Plot the statistic across all samples. The statistic is a random variable too dependent on the random sample, hence results in a different value for each sample.</li>
 <li class="fragment">This results in a distribution (called <strong>sampling distribution</strong> of <code>mean</code><em>/statistic</em>)
 <ul>
 <li class="fragment"><code>mean</code> is nice because it follows a normal distribution (due to the <em>central limit theorem</em>!)
