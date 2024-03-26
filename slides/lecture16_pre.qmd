@@ -102,7 +102,7 @@ Anonymous Porcupine on the [discussion board](https://edstem.org/us/courses/5188
 :::
 :::
 
-## Identify the `categorical variable` here? 
+## Identify the `categorical variable` here?
 
 ::: aside
 ***Hint**: Categorical variables are what you would make* `as_factor()`. They have **discrete** ordered or un-ordered levels. Can be letters/numbers etc. that are not a continuous variable
