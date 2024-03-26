@@ -66,11 +66,11 @@ gapminder <- gapminder::gapminder # get gapminder data
 :::
 :::
 
-## Quantiles tell us about the distribution shape
+## Quantiles tell us about the distribution shape  {.smaller}
 
 ::: columns
 ::: {.column width="50%"}
-### Quartiles (4)
+Quartiles (4)
 
 ```{r dist_w_quantiles}
 #| fig-height: 3
@@ -99,7 +99,7 @@ dist_plt +
 :::
 
 ::: {.column width="50%"}
-### Deciles (10)
+Deciles (10)
 
 ```{r dist-w-declies}
 #| fig-height: 3 
@@ -162,6 +162,7 @@ What is this testing for?
 ### Normal distribution
 
 ```{r shapiro-wilk-normal}
+set.seed = 1
 rnorm(1000) %>% 
   shapiro.test()
 ```
@@ -195,28 +196,33 @@ But causality is really really hard to establish, that is why we talk about [cor
 
 ## What data can test the smoking hypothesis?
 
-*use fake data to generate a x-y plot with noise ; and others..*
-
-2d correlation ; num vs cat plot with 2 categories ; cat vs cat plot with counts only
-
 ::: columns
 ::: {.column width="50%"}
+2d data
+
 ```{r linreg}
-#| fig-height: 3
-ggplot(gapminder,
-       aes(year, lifeExp)) + 
+set.seed = 1
+smk_2d <- 
+  tibble(smokindex = rep(1:10, each = 10),
+         cancer_risk = (3 * smokindex + rnorm(100, mean = 5, sd = 3)) %>% 
+           scales::rescale())
+
+ggplot(smk_2d,
+       aes(smokindex, cancer_risk)) + 
   geom_point() + geom_smooth(method = 'lm') + 
   labs(x = 'smoking index', y = 'cancer risk')
 
 ```
 
-### 
+-   Correlation
+
+-   Regression (linear/non-linear)
 :::
 
 ::: {.column width="50%"}
-```{r num_cat_smoking}
-#| fig-height: 3
+1D data
 
+```{r num_cat_smoking}
 smk <- tibble(id = 1:12, 
               cancer_index = c(rnorm(6, mean = 2), rnorm(6, mean = 3.5)),
               smoking_status = rep(c(F, T), each = 6)) %>% 
@@ -233,16 +239,18 @@ ggplot(smk, aes(smoking_status, cancer_index)) +
   geom_text(aes(y = mean_cancer + .2, label = round(mean_cancer, 2)))
 
 ```
+
+-   t-test
 :::
 :::
 
 ## Comparing two numbers vs two samples
 
-3.62 is clearly \> 1.71, does that satisfy the hypothesis?
+Looking at the mean only is not enough:
 
-It is straightforward to compare just the mean values of each sample, but there is no statistics involved there
+`r smk$mean_cancer[7] %>% round(2)` is clearly **\>** `r smk$mean_cancer[1] %>% round(2)`, does that alone satisfy the hypothesis?
 
--   We need to account for both the mean of the samples and the spread around the mean
+-   We need to account for both the mean and variability, ie) the spread around the mean
 
 This is what the t-statistic encompasses. The t-test tests for a hypothesis based on this statistic
 
@@ -267,7 +275,7 @@ Watch full video here: "*Student's t-test*" : [Bozeman science/youtube](https://
 ::: incremental
 1.  Sample multiple times from a population (*too expensive for a real experiment, so we imagine this*)
 2.  Calculate one statistic from the sample (such as `mean`) and record it (*for each sample)*
-3.  Plot the statistic across all samples. The statistic is a random variable too dependant on the random sample, hence results in a different value for each sample.
+3.  Plot the statistic across all samples. The statistic is a random variable too dependent on the random sample, hence results in a different value for each sample.
 4.  This results in a distribution (called **sampling distribution** of `mean`*/statistic*)
     -   `mean` is nice because it follows a normal distribution (due to the *central limit theorem*!)
         -   it's mean \~ close approximation to the population mean
