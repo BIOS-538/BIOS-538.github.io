@@ -1,0 +1,431 @@
+---
+title: "lecture 17: t-test and bootstrapping"
+author: "Prashant K"
+date: 21/Mar/24
+format: revealjs
+metadata-files: 
+  - '_slides.yml'
+editor: visual
+---
+
+# Recap
+
+-   Goal of t-tests: Establish the difference of mean values between 2 samples
+
+-   Reminder on sampling from the red and white balls pictures
+
+-   Reminder on using R to do simulations
+
+-   **Today's class**: from sampling distribution -\> p-values ; SEM ; CI
+
+## Reminder on hypothesis testing
+
+We discussed example in [lec13](https://bios-538.github.io/slides/lecture13.html#/what-data-can-test-the-smoking-hypothesis):
+
+> Smoking status is *statistically significantly* associated with higher cancer incidence
+
+**NULL hypothesis** (*for t-test*) = Sample means are **equal/** *samples belong to the same population/distribution*
+
+**Alternate hypothesis** = (*choose only 1 per t-test!)*
+
+-   Sample means are **unequal** (*two tailed t-test*)
+
+-   Sample A's mean **\>** sample B's mean *(one tailed t-test)*
+
+## Difference of mean between samples
+
+::: columns
+::: {.column width="50%"}
+2 samples = t-test
+
+```{r smokin}
+library(tidyverse)
+theme_set(theme_classic())
+
+smk <- tibble(id = 1:12, 
+              cancer_index = c(rnorm(6, mean = 2), rnorm(6, mean = 3.5)),
+              smoking_status = rep(c(F, T), each = 6)) %>% 
+  mutate(mean_cancer = mean(cancer_index), .by = smoking_status)
+
+
+ggplot(smk, aes(smoking_status, cancer_index)) + 
+  geom_point(alpha = 0.5, 
+             position = position_jitter(width = 0.2, height = 0)) + 
+  
+  # show mean
+  geom_point(aes(y = mean_cancer), 
+             shape = '_', size = 20) + 
+  geom_text(aes(y = mean_cancer + .2, label = round(mean_cancer, 2)))
+```
+:::
+
+::: {.column width="50%"}
+more samples = ANOVA
+
+```{r iris-boxplt-simple}
+iris <- iris
+
+ggplot(iris, aes(Species, Sepal.Length)) + 
+  geom_boxplot() + 
+  geom_point(position = position_jitter(width = .3), 
+             alpha = 0.3)
+```
+:::
+:::
+
+::: aside
+ANOVA = analysis of variance ([wiki](https://en.wikipedia.org/wiki/Anova)) ; [using ANOVA in R](https://statsandr.com/blog/anova-in-r/) ; *.. compares variance between different groups / variance within each group ..*
+:::
+
+## Sampling from a population
+
+::: columns
+::: {.column width="50%"}
+Population
+
+![](img/balls_population.jpg)
+:::
+
+::: {.column width="50%"}
+Sample
+
+![](img/balls_sample.jpg)
+:::
+:::
+
+::: aside
+Source: [Moderndive textbook](https://moderndive.com/7-sampling.html#what-proportion-of-this-bowls-balls-are-red)/chap 7
+:::
+
+## Re-sampling = shuffling within the sample (w replacement)
+
+::: aside
+Bootstrapping is another name for re-sampling!
+:::
+
+::: columns
+::: {.column width="50%"}
+Sample
+
+![](img/bootstrap_initial.png)
+:::
+
+::: {.column width="50%"}
+Bootstrapped sample (re-sampling, with replacement)
+
+![](img/bootstrap_resample.png)
+:::
+:::
+
+## Reminder: Recipe for simulation/[lec12](https://bios-538.github.io/slides/lecture12.html#/what-is-a-simulation)  {.smaller}
+
+Key difference is how the **randomness** comes in
+
+-   For simulation, we use `rnorm` (normal dist, random number) / `runif` (uniform dist, rv) etc. to **generate random numbers** from different distributions
+
+-   For sampling, we use `sample(population_vector, size = sample_size, replace = FALSE)` to **select a random sample** (subset) of the **population**
+
+-   For bootstrapping, we use `sample(sample_vector, size = sample_size, replace = TRUE)` to select a **random bootstrap sample** from the **sample**
+
+For repeating steps (iteration), you can use
+
+-   `for () loops`: beginner friendly
+
+-   `map()` like vectorized functions: succinct code, *needs some head breaking to get used to*
+
+# Today's class
+
+-   Doing a t-test in R
+-   Using **re-sampling distributions** to get p-values, Standard Error of Mean (SEM) and confidence intervals (CI)
+    -   How does this relate to a t-test?
+-   Watch the nice Youtube videos linked in the [course schedule](https://bios-538.github.io/slides/class_schedule.html) for lecture 17
+
+## Dataset for t-testing
+
+::: aside
+We will use `iris` data. We are interesting the `sepal.length` column, and it's difference across 2 different species
+
+Sources: [flower image](http://www.sunnysimplelife.com/2012/03/spring.html) ; [flower diagram](https://en.wikipedia.org/wiki/Sepal)
+:::
+
+::: columns
+::: {.column width="50%"}
+![](img/iris_flower.png)
+:::
+
+::: {.column width="50%"}
+![](img/flower_diagram.png)
+:::
+:::
+
+## Many flavours of t-tests
+
+-   1-sample vs 2-sample
+
+    -   *\>2 samples \~ do ANOVA*
+
+-   1-tailed vs 2-tailed
+
+-   Paired vs unpaired
+
+## Visualize before 2-sample t-test {.scrollable}
+
+Here's a plot outlining the data to use for t-test
+
+```{r iris-sepal}
+# make a plot to show boxplot below with datapoints superposed
+
+iris2 <- filter(iris, str_detect(Species, 'virginica|versicolor')) %>% 
+  mutate(msl = mean(Sepal.Length), .by = Species)
+
+plt_violin <- 
+  ggplot(iris2, aes(Species, Sepal.Length)) + 
+  geom_violin() + 
+  geom_point(position = position_jitter(width = .3), 
+             alpha = 0.3) + 
+  
+  geom_point(aes(y = msl), 
+             shape = '_', size = 10)
+
+plt_hist <- 
+  ggplot(iris2, aes(y = Sepal.Length, fill = Species)) + 
+  geom_histogram(alpha = 0.5)
+
+library(patchwork)
+plt_violin + plt_hist
+
+```
+
+::: aside
+`geom_violin()` *is a density plot (mirror imaged), that is more aesthetically pleasing for comparing multiple distributions*
+:::
+
+## 2-sample t-test in R {.scrollable}
+
+```{r irist-t-test}
+#| echo: true
+
+# Show code and do t-test for vericolor vs virginica
+t.test(Sepal.Length ~ Species, data = iris2)
+```
+
+## What is p-value?
+
+p-value is the probability that the **observed** difference of means (*or more extreme)* can occur by chance if the **NULL hypothesis is TRUE**
+
+This is calculated by
+
+-   plotting a t-distribution around the null hypothesis mean difference (typically 0)
+
+-   mark the observed mean difference
+
+-   Find the tail of the distribution beyond the observed value
+
+![](img/1-tail_sketch.png)
+
+::: aside
+cartoon [source](machinelearningplus.com)
+:::
+
+## Bootstrapping to understand t-test better {.scrollable}
+
+Bootstrapping shows us the variability around the mean, *by virtually repeating the experiment* *a bunch of times*
+
+For 1 sample, this is how the bootstrapped distribution looks like
+
+```{r make-1-sample}
+#| echo: true
+#| code-fold: true
+
+set.seed(1)
+sample_1 <- runif(n = 10, -1, 1.5) # make dataset
+sample_1 %>% sort() %>% round(2) %>% print # show dataset
+```
+
+. . .
+
+```{r boot-1-sample}
+
+# source bootstrapping functions .R script
+source('assets/bootstrapping_functions.R')
+
+# bootstrap 10,000 times
+boot_1 <- 
+  get_n_boots(.vec = sample_1, num_of_boots = 10000)
+
+bootmean_1 <- mean(boot_1)
+
+# plot
+make_bootstrap_plot <- function()
+{
+  list(
+    # bootstraps
+    geom_histogram(aes(y = ..density..), alpha = 0.4), # hist of bootstraps
+    geom_vline(aes(xintercept = bootmean_1), colour = 'blue', linetype = 2), # mean
+    annotate(geom = 'text', x = bootmean_1 + 0.15, y = 0.5, 
+             label = 'Bootstrap\nmean', colour = 'blue'),
+    
+    # show original data
+    geom_point(aes(x = sample_1, y = 0), shape = '|', size = 5), 
+    geom_point(aes(x = mean(sample_1), y = 0), shape = '|', size = 10, 
+               colour = 'blue'), 
+    
+    # show labels
+    
+    # show the NULL hypothesis = 0 difference between means
+    geom_vline(aes(xintercept = 0), colour = 'red'), 
+    annotate(geom = 'text', x = 0.15, y = 0.5, 
+             label = 'NULL\nhypothesis', colour = 'red'), 
+    
+    # add title and legend
+    labs(title = 'Bootstrap on 1 sample', 
+         subtitle = "short lines = data points and <span style = 'color:blue;'>**original mean**</span>; Vertical lines = <span style = 'color:blue;'>mean</span> and <span style = 'color:red;'>null hypothesis</span>"), 
+    theme(title = ggtext::element_markdown())
+  )
+}
+
+# make the plot
+ggplot(mapping = aes(boot_1)) + make_bootstrap_plot()
+
+```
+
+::: aside
+Watch this [video](https://youtu.be/Xz0x-8-cgaQ?si=S2dYlJb0oyK2eR6s) if you are still wondering: *What is bootstrapping?*
+:::
+
+## 1-sample t-test {.scrollable}
+
+Null hypothesis ($H_0$) \~ \[$\mu = \mu_0$\] =\> *the mean of the data is* $\mu_0$
+
+-   We will test for: $\mu = 0$ for this dataset
+
+```{r 1-sample-t}
+#| echo: true
+
+t_test_1 <- t.test(sample_1, mu = 0) %>% print
+t_tst_p <- t_test_1$p.value %>% round(2)
+str_c('p-value for t-test is: ', t_tst_p)
+```
+
+## 1-sample t-test w bootstrapping {.scrollable}
+
+To get p-value from the bootstrapping, we need to find the area of the tails. To facilitate understanding, we shift the distribution to fit the null hypothesis. *Which means, the mean of the distribution should be moved to the null hypothesis!*
+
+```{r boot-1-sample-shifted}
+
+mirror_boot_plt <- 
+  ggplot(mapping = aes(boot_1 - bootmean_1)) + 
+  
+  # mirror image mean
+  geom_vline(aes(xintercept = -bootmean_1), colour = 'blue', linetype = 2) + # mean
+    annotate(geom = 'text', x = -bootmean_1 - 0.15, y = 0.5, 
+             label = 'Mirror\nBootstrap\nmean', colour = 'blue') +
+  
+  make_bootstrap_plot() # shifted plot
+
+ggsave('img/boot_1_sample.pdf',
+       mirror_boot_plt, width = 5, height = 4)
+
+# show plot 
+mirror_boot_plt
+```
+
+## Showing the 2 tails
+
+For a 2 tailed test, the p-value corresponds to the area under these two [tails]{style="colour: red"}
+
+-   Tail 1: $\mu > \mu_0$
+
+-   Tail 2: $\mu < \mu_0$
+
+-   Both tails: $\mu != \mu_0$
+
+![](img/boot_2_tails.png)
+
+## Calculating the p-value from bootstrap dist. {.smaller}
+
+Graphically area is easy to visualize,
+
+For calculation, probability is just the number of values in the tails / total number of values
+
+```{r boot-calc-p}
+#| echo: true
+
+first_tail <- sum(boot_1 - bootmean_1 > bootmean_1)
+second_tail <- sum(boot_1 < 0)  
+
+boot_p_val <- (first_tail + second_tail)/length(boot_1)
+
+str_c('p-value for bootstrapping t-test: ', boot_p_val)
+str_c('p-value for t-test is: ', t_tst_p)
+```
+
+p-value for t-test is: `r t_tst_p`
+
+p-value for t-test is: `r boot_p_val`
+
+## Exploring SEM, CI within bootstrap dist. {.smaller}
+
+-   (SEM) Standard error of mean = std deviation of the bootstrapping distribution
+
+-   \(CI\) 95% confidence interval =\> 95% of the mean distribution area lies within this range
+
+```{r sem}
+#| eval: false
+
+boot_sem_ci_plt <- 
+  ggplot(mapping = aes(boot_1)) + 
+  
+  list(
+    # bootstraps
+    geom_histogram(aes(y = ..density..), alpha = 0.4), # hist of bootstraps
+    geom_vline(aes(xintercept = bootmean_1), colour = 'blue'), # mean
+    annotate(geom = 'text', x = bootmean_1 + 0.15, y = 0.5, 
+             label = 'Bootstrap\nmean', colour = 'blue'),
+    
+    # show original data
+    geom_point(aes(x = sample_1, y = 0), shape = '|', size = 5), 
+    geom_point(aes(x = mean(sample_1), y = 0), shape = '|', size = 10, 
+               colour = 'blue')
+  ) + 
+  
+  # show SEM interval
+  geom_vline(aes(xintercept = bootmean_1 + sd(boot_1)), linetype = 2) +
+  geom_vline(aes(xintercept = bootmean_1 - sd(boot_1)), linetype = 2) + 
+  
+  # Show CI interval
+  stat_summary(aes(y = 0, xintercept = after_stat(x)), 
+               fun = quantile, 
+               fun.args = list(probs = c(0.025, 0.975)), # 2.5 to 97.5% 
+               geom = "vline", 
+               alpha = 0.5,
+               orientation = "y")
+
+ggsave('img/boot_sem_ci.pdf', boot_sem_ci_plt, width = 6, height = 3)
+```
+
+![](img/boot_sem_ci.png)
+
+::: aside
+Explore plotting SEM, CI as [errorbars ](https://statisticseasily.com/error-bars/)in the paper: *Error bars in experimental biology*, [jcb, 2007](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2064100/)
+:::
+
+## Onto the worksheet : 2 samples t-test {.smaller}
+
+Please download/`git pull` the `class17_t-test_bootstrapping.qmd` worksheet for today from [Github](https://github.com/BIOS-538/class-worksheets/tree/main/scripts)
+
+-   Use the viridis dataset : virginica vs versicolor
+    -   \[second section: Mutate new columns to generate: versicolor (+ 0.5)\]
+-   Do t.test and record the p-value
+-   Do bootstrapping with map
+-   Plot histogram, red line with null hypothesis
+-   Calculate p value from bootstrap hist
+-   Show side by side comparison of both p-values
+-   Use automated `moderndive::` functions to get the bootstrapped p-value?
+
+# Summary
+
+-   Use `t.test()` to do t-test in R
+-   Using bootstraps/**re-sampling distributions** to get p-values and understand t-test
+    -   Standard Error of Mean (SEM)
+    -   Confidence intervals (CI)
