@@ -468,10 +468,7 @@ Prashant K
 </div>
 
 <aside><div>
-<p>ANOVA = analysis of variance (<a href="https://en.wikipedia.org/wiki/Anova">wiki</a>) ; <a href="https://statsandr.com/blog/anova-in-r/">using ANOVA in R</a></p>
-<blockquote>
-<p>.. compares variance between different groups / variance within each group ..</p>
-</blockquote>
+<p>ANOVA = analysis of variance (<a href="https://en.wikipedia.org/wiki/Anova">wiki</a>) ; <a href="https://statsandr.com/blog/anova-in-r/">using ANOVA in R</a> ; <em>.. compares variance between different groups / variance within each group ..</em></p>
 </div></aside></section>
 <section id="sampling-from-a-population" class="slide level2">
 <h2>Sampling from a population</h2>
@@ -503,7 +500,7 @@ Prashant K
 <aside><div>
 <p>Bootstrapping is another name for re-sampling!</p>
 </div></aside></section>
-<section id="reminder-recipe-for-simulationlec12" class="slide level2">
+<section id="reminder-recipe-for-simulationlec12" class="slide level2 smaller">
 <h2>Reminder: Recipe for simulation/<a href="https://bios-538.github.io/slides/lecture12.html#/what-is-a-simulation">lec12</a></h2>
 <p>Key difference is how the <strong>randomness</strong> comes in</p>
 <ul>
@@ -543,11 +540,36 @@ Prashant K
 <p>We will use <code>iris</code> data. We are interesting the <code>sepal.length</code> column, and it’s difference across 2 different species</p>
 <p>Sources: <a href="http://www.sunnysimplelife.com/2012/03/spring.html">flower image</a> ; <a href="https://en.wikipedia.org/wiki/Sepal">flower diagram</a></p>
 </div></aside></section>
-<section id="t-test-in-r" class="slide level2">
-<h2>t-test in R</h2>
-<p>Here’s a plot outlining the data to use for t-test (<code>geom_violin()</code> <em>is a density plot, that is more aesthetically pleasing</em>)</p>
+<section id="many-flavours-of-t-tests" class="slide level2">
+<h2>Many flavours of t-tests</h2>
+<ul>
+<li><p>1-sample vs 2-sample</p>
+<ul>
+<li><em>&gt;2 samples ~ do ANOVA</em></li>
+</ul></li>
+<li><p>1-tailed vs 2-tailed</p></li>
+<li><p>Paired vs unpaired</p></li>
+</ul>
+</section>
+<section id="visualize-before-2-sample-t-test" class="slide level2 scrollable">
+<h2>Visualize before 2-sample t-test</h2>
+<p>Here’s a plot outlining the data to use for t-test</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture17_files/figure-revealjs/iris-sepal-1.png" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
 
-<img data-src="lecture17_files/figure-revealjs/iris-sepal-1.png" width="480" class="r-stretch"><div class="cell">
+<aside><div>
+<p><code>geom_violin()</code> <em>is a density plot (mirror imaged), that is more aesthetically pleasing for comparing multiple distributions</em></p>
+</div></aside></section>
+<section id="sample-t-test-in-r" class="slide level2 scrollable">
+<h2>2-sample t-test in R</h2>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Show code and do t-test for vericolor vs virginica</span></span>
 <span id="cb1-2"><a></a><span class="fu">t.test</span>(Sepal.Length <span class="sc">~</span> Species, <span class="at">data =</span> iris2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -567,44 +589,131 @@ mean in group versicolor  mean in group virginica
 </section>
 <section id="what-is-p-value" class="slide level2">
 <h2>What is p-value?</h2>
-<p>P-value is the probability or likelihood that the <strong>observed</strong> difference of means can occur randomly by sampling if the <strong>NULL hypothesis is TRUE</strong></p>
-</section>
-<section id="bootstrapping-to-understand-t-test-better" class="slide level2 smaller">
+<p>p-value is the probability that the <strong>observed</strong> difference of means (<em>or more extreme)</em> can occur by chance if the <strong>NULL hypothesis is TRUE</strong></p>
+<p>This is calculated by</p>
+<ul>
+<li><p>plotting a t-distribution around the null hypothesis mean difference (typically 0)</p></li>
+<li><p>mark the observed mean difference</p></li>
+<li><p>Find the tail of the distribution beyond the observed value</p></li>
+</ul>
+<p><img data-src="img/1-tail_sketch.png"></p>
+
+<aside><div>
+<p>cartoon <a href="machinelearningplus.com">source</a></p>
+</div></aside></section>
+<section id="bootstrapping-to-understand-t-test-better" class="slide level2 scrollable">
 <h2>Bootstrapping to understand t-test better</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Do the re-sampling like this</p>
-<p><code>Code hidden! go through the worksheet</code> 😉</p>
+<p>Bootstrapping shows us the variability around the mean, <em>by virtually repeating the experiment</em> <em>a bunch of times</em></p>
+<p>For 1 sample, this is how the bootstrapped distribution looks like</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb3-2"><a></a>sample_1 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="fl">1.5</span>) <span class="co"># make dataset</span></span>
+<span id="cb3-3"><a></a>sample_1 <span class="sc">%&gt;%</span> <span class="fu">sort</span>() <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> print <span class="co"># show dataset</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 1
-  Species   
-  &lt;fct&gt;     
-1 versicolor
-2 virginica </code></pre>
+<pre><code> [1] -0.85 -0.50 -0.34 -0.07  0.43  0.57  0.65  1.25  1.27  1.36</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
-<p>Plot the sampling distribution</p>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture17_files/figure-revealjs/boot-1-sample-1.png" width="480"></p>
+</figure>
+</div>
 </div>
 </div>
 
+</div>
 <aside><div>
 <p>Watch this <a href="https://youtu.be/Xz0x-8-cgaQ?si=S2dYlJb0oyK2eR6s">video</a> if you are still wondering: <em>What is bootstrapping?</em></p>
 </div></aside></section>
-<section id="exploring-sem-ci-within-sampling-dist." class="slide level2 smaller">
-<h2>Exploring SEM, CI within sampling dist.</h2>
+<section id="sample-t-test" class="slide level2 scrollable">
+<h2>1-sample t-test</h2>
+<p>Null hypothesis (<span class="math inline">\(H_0\)</span>) ~ [<span class="math inline">\(\mu = \mu_0\)</span>] =&gt; <em>the mean of the data is</em> <span class="math inline">\(\mu_0\)</span></p>
+<ul>
+<li>We will test for: <span class="math inline">\(\mu = 0\)</span> for this dataset</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>t_test_1 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(sample_1, <span class="at">mu =</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> print</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  sample_1
+t = 1.5179, df = 9, p-value = 0.1634
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -0.1857309  0.9433002
+sample estimates:
+mean of x 
+0.3787847 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>t_tst_p <span class="ot">&lt;-</span> t_test_1<span class="sc">$</span>p.value <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb7-2"><a></a><span class="fu">str_c</span>(<span class="st">'p-value for t-test is: '</span>, t_tst_p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "p-value for t-test is: 0.16"</code></pre>
+</div>
+</div>
 </section>
-<section id="calculating-the-p-value-from-sampling-dist." class="slide level2">
-<h2>Calculating the p-value from sampling dist.</h2>
+<section id="sample-t-test-w-bootstrapping" class="slide level2 scrollable">
+<h2>1-sample t-test w bootstrapping</h2>
+<p>To get p-value from the bootstrapping, we need to find the area of the tails. To facilitate understanding, we shift the distribution to fit the null hypothesis. <em>Which means, the mean of the distribution should be moved to the null hypothesis!</em></p>
+
+<img data-src="lecture17_files/figure-revealjs/boot-1-sample-shifted-1.png" width="480" class="r-stretch"></section>
+<section id="showing-the-2-tails" class="slide level2">
+<h2>Showing the 2 tails</h2>
+<p>For a 2 tailed test, the p-value corresponds to the area under these two <span style="colour: red">tails</span></p>
+<ul>
+<li><p>Tail 1: <span class="math inline">\(\mu &gt; \mu_0\)</span></p></li>
+<li><p>Tail 2: <span class="math inline">\(\mu &lt; \mu_0\)</span></p></li>
+<li><p>Both tails: <span class="math inline">\(\mu != \mu_0\)</span></p></li>
+</ul>
+
+<img data-src="img/boot_2_tails.png" class="r-stretch"></section>
+<section id="calculating-the-p-value-from-bootstrap-dist." class="slide level2 smaller">
+<h2>Calculating the p-value from bootstrap dist.</h2>
+<p>Graphically area is easy to visualize,</p>
+<p>For calculation, probability is just the number of values in the tails / total number of values</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>first_tail <span class="ot">&lt;-</span> <span class="fu">sum</span>(boot_1 <span class="sc">-</span> bootmean_1 <span class="sc">&gt;</span> bootmean_1)</span>
+<span id="cb9-2"><a></a>second_tail <span class="ot">&lt;-</span> <span class="fu">sum</span>(boot_1 <span class="sc">&lt;</span> <span class="dv">0</span>)  </span>
+<span id="cb9-3"><a></a></span>
+<span id="cb9-4"><a></a>boot_p_val <span class="ot">&lt;-</span> (first_tail <span class="sc">+</span> second_tail)<span class="sc">/</span><span class="fu">length</span>(boot_1)</span>
+<span id="cb9-5"><a></a></span>
+<span id="cb9-6"><a></a><span class="fu">str_c</span>(<span class="st">'p-value for bootstrapping t-test: '</span>, boot_p_val)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "p-value for bootstrapping t-test: 0.1067"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">str_c</span>(<span class="st">'p-value for t-test is: '</span>, t_tst_p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "p-value for t-test is: 0.16"</code></pre>
+</div>
+</div>
+<p>p-value for t-test is: 0.16</p>
+<p>p-value for t-test is: 0.1067</p>
 </section>
-<section id="onto-the-worksheet-now" class="slide level2 smaller">
-<h2>Onto the worksheet now</h2>
-<p>Please download the <code>class17_t-test_bootstrapping.qmd</code> worksheet for today from <a href="https://github.com/BIOS-538/class-worksheets/tree/main/scripts">Github</a></p>
+<section id="exploring-sem-ci-within-bootstrap-dist." class="slide level2 smaller">
+<h2>Exploring SEM, CI within bootstrap dist.</h2>
+<ul>
+<li><p>(SEM) Standard error of mean = std deviation of the bootstrapping distribution</p></li>
+<li><p>(CI) 95% confidence interval =&gt; 95% of the mean distribution area lies within this range</p></li>
+</ul>
+<p><img data-src="img/boot_sem_ci.png"></p>
+
+<aside><div>
+<p>Explore plotting SEM, CI as <a href="https://statisticseasily.com/error-bars/">errorbars</a>in the paper: <em>Error bars in experimental biology</em>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2064100/">jcb, 2007</a></p>
+</div></aside></section>
+<section id="onto-the-worksheet-2-samples-t-test" class="slide level2 smaller">
+<h2>Onto the worksheet : 2 samples t-test</h2>
+<p>Please download/<code>git pull</code> the <code>class17_t-test_bootstrapping.qmd</code> worksheet for today from <a href="https://github.com/BIOS-538/class-worksheets/tree/main/scripts">Github</a></p>
 <ul>
 <li>Use the viridis dataset : virginica vs versicolor
 <ul>
-<li>Mutate new columns to generate: versicolor (+ 0.4, + 0.5)</li>
+<li>[second section: Mutate new columns to generate: versicolor (+ 0.5)]</li>
 </ul></li>
 <li>Do t.test and record the p-value</li>
 <li>Do bootstrapping with map</li>
@@ -616,7 +725,14 @@ mean in group versicolor  mean in group virginica
 </section></section>
 <section id="summary" class="title-slide slide level1 center">
 <h1>Summary</h1>
-<p>We discussed - a - b..</p>
+<ul>
+<li>Use <code>t.test()</code> to do t-test in R</li>
+<li>Using bootstraps/<strong>re-sampling distributions</strong> to get p-values and understand t-test
+<ul>
+<li>Standard Error of Mean (SEM)</li>
+<li>Confidence intervals (CI)</li>
+</ul></li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

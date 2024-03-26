@@ -81,14 +81,14 @@
     "href": "slides/lecture13.html#q-q-plot-enables-comparison-of-distribution-shapes",
     "title": "lecture13",
     "section": "Q-Q plot enables comparison of distribution shapes",
-    "text": "Q-Q plot enables comparison of distribution shapes\nIf they fall along the line, then it is normal.\n\n\nNormal distribution\n\n\n\n\n\n\n\n\n\n[1] 859 645\n\n\n\nNon-normal distribution\n\n\n\n\n\n\n\n\n\n[1] 1293    1\n\n\n\n\n\n\nfurther reading : sthda"
+    "text": "Q-Q plot enables comparison of distribution shapes\nIf they fall along the line, then it is normal.\n\n\nNormal distribution\n\n\n\n\n\n\n\n\n\n[1] 733 729\n\n\n\nNon-normal distribution\n\n\n\n\n\n\n\n\n\n[1] 1293    1\n\n\n\n\n\n\nfurther reading : sthda"
   },
   {
     "objectID": "slides/lecture13.html#formal-shapiro-wilk-test-for-normality",
     "href": "slides/lecture13.html#formal-shapiro-wilk-test-for-normality",
     "title": "lecture13",
     "section": "Formal Shapiro-Wilk test for normality",
-    "text": "Formal Shapiro-Wilk test for normality\nWhat is this testing for?\n\nNULL hypothesis is that data is normally distributed\nHigh p-value =&gt; Data is normal (hypothesis is accepted)\n\n\n\nNormal distribution\n\n\n\n    Shapiro-Wilk normality test\n\ndata:  .\nW = 0.99899, p-value = 0.868\n\n\n\nNon-normal distribution\n\n\n\n    Shapiro-Wilk normality test\n\ndata:  life_exp\nW = 0.95248, p-value &lt; 2.2e-16\n\n\n\n\n\nfurther reading: statology.org"
+    "text": "Formal Shapiro-Wilk test for normality\nWhat is this testing for?\n\nNULL hypothesis is that data is normally distributed\nHigh p-value =&gt; Data is normal (hypothesis is accepted)\n\n\n\nNormal distribution\n\n\n\n    Shapiro-Wilk normality test\n\ndata:  .\nW = 0.99879, p-value = 0.747\n\n\n\nNon-normal distribution\n\n\n\n    Shapiro-Wilk normality test\n\ndata:  life_exp\nW = 0.95248, p-value &lt; 2.2e-16\n\n\n\n\n\nfurther reading: statology.org"
   },
   {
     "objectID": "slides/lecture13.html#what-data-can-test-the-smoking-hypothesis",
@@ -102,7 +102,7 @@
     "href": "slides/lecture13.html#comparing-two-numbers-vs-two-samples",
     "title": "lecture13",
     "section": "Comparing two numbers vs two samples",
-    "text": "Comparing two numbers vs two samples\nLooking at the mean only is not enough:\n3.54 is clearly &gt; 1.94, does that alone satisfy the hypothesis?\n\nWe need to account for both the mean and variability, ie) the spread around the mean\n\nThis is what the t-statistic encompasses. The t-test tests for a hypothesis based on this statistic"
+    "text": "Comparing two numbers vs two samples\nLooking at the mean only is not enough:\n4 is clearly &gt; 2.98, does that alone satisfy the hypothesis?\n\nWe need to account for both the mean and variability, ie) the spread around the mean\n\nThis is what the t-statistic encompasses. The t-test tests for a hypothesis based on this statistic"
   },
   {
     "objectID": "slides/lecture13.html#t-tests-finds-statistical-support-against-a-null-hypothesis",
@@ -879,7 +879,7 @@
     "href": "slides/lecture17.html#difference-of-mean-between-samples",
     "title": "lecture 17: t-test and bootstrapping",
     "section": "Difference of mean between samples",
-    "text": "Difference of mean between samples\n\n\n2 samples = t-test\n\n\n\n\n\n\n\n\n\n\nmore samples = ANOVA\n\n\n\n\n\n\n\n\n\n\n\n\n\nANOVA = analysis of variance (wiki) ; using ANOVA in R\n\n.. compares variance between different groups / variance within each group .."
+    "text": "Difference of mean between samples\n\n\n2 samples = t-test\n\n\n\n\n\n\n\n\n\n\nmore samples = ANOVA\n\n\n\n\n\n\n\n\n\n\n\n\n\nANOVA = analysis of variance (wiki) ; using ANOVA in R ; .. compares variance between different groups / variance within each group .."
   },
   {
     "objectID": "slides/lecture17.html#sampling-from-a-population",
@@ -910,45 +910,80 @@
     "text": "Dataset for t-testing\n\n\n\n\n\n\n\n\n\nWe will use iris data. We are interesting the sepal.length column, and it’s difference across 2 different species\nSources: flower image ; flower diagram"
   },
   {
-    "objectID": "slides/lecture17.html#t-test-in-r",
-    "href": "slides/lecture17.html#t-test-in-r",
+    "objectID": "slides/lecture17.html#many-flavours-of-t-tests",
+    "href": "slides/lecture17.html#many-flavours-of-t-tests",
     "title": "lecture 17: t-test and bootstrapping",
-    "section": "t-test in R",
-    "text": "t-test in R\nHere’s a plot outlining the data to use for t-test (geom_violin() is a density plot, that is more aesthetically pleasing)\n\n\n# Show code and do t-test for vericolor vs virginica\nt.test(Sepal.Length ~ Species, data = iris2)\n\n\n    Welch Two Sample t-test\n\ndata:  Sepal.Length by Species\nt = -5.6292, df = 94.025, p-value = 1.866e-07\nalternative hypothesis: true difference in means between group versicolor and group virginica is not equal to 0\n95 percent confidence interval:\n -0.8819731 -0.4220269\nsample estimates:\nmean in group versicolor  mean in group virginica \n                   5.936                    6.588"
+    "section": "Many flavours of t-tests",
+    "text": "Many flavours of t-tests\n\n1-sample vs 2-sample\n\n&gt;2 samples ~ do ANOVA\n\n1-tailed vs 2-tailed\nPaired vs unpaired"
+  },
+  {
+    "objectID": "slides/lecture17.html#visualize-before-2-sample-t-test",
+    "href": "slides/lecture17.html#visualize-before-2-sample-t-test",
+    "title": "lecture 17: t-test and bootstrapping",
+    "section": "Visualize before 2-sample t-test",
+    "text": "Visualize before 2-sample t-test\nHere’s a plot outlining the data to use for t-test\n\n\n\n\n\n\n\n\n\n\n\ngeom_violin() is a density plot (mirror imaged), that is more aesthetically pleasing for comparing multiple distributions"
+  },
+  {
+    "objectID": "slides/lecture17.html#sample-t-test-in-r",
+    "href": "slides/lecture17.html#sample-t-test-in-r",
+    "title": "lecture 17: t-test and bootstrapping",
+    "section": "2-sample t-test in R",
+    "text": "2-sample t-test in R\n\n# Show code and do t-test for vericolor vs virginica\nt.test(Sepal.Length ~ Species, data = iris2)\n\n\n    Welch Two Sample t-test\n\ndata:  Sepal.Length by Species\nt = -5.6292, df = 94.025, p-value = 1.866e-07\nalternative hypothesis: true difference in means between group versicolor and group virginica is not equal to 0\n95 percent confidence interval:\n -0.8819731 -0.4220269\nsample estimates:\nmean in group versicolor  mean in group virginica \n                   5.936                    6.588"
   },
   {
     "objectID": "slides/lecture17.html#what-is-p-value",
     "href": "slides/lecture17.html#what-is-p-value",
     "title": "lecture 17: t-test and bootstrapping",
     "section": "What is p-value?",
-    "text": "What is p-value?\nP-value is the probability or likelihood that the observed difference of means can occur randomly by sampling if the NULL hypothesis is TRUE"
+    "text": "What is p-value?\np-value is the probability that the observed difference of means (or more extreme) can occur by chance if the NULL hypothesis is TRUE\nThis is calculated by\n\nplotting a t-distribution around the null hypothesis mean difference (typically 0)\nmark the observed mean difference\nFind the tail of the distribution beyond the observed value\n\n\n\n\ncartoon source"
   },
   {
     "objectID": "slides/lecture17.html#bootstrapping-to-understand-t-test-better",
     "href": "slides/lecture17.html#bootstrapping-to-understand-t-test-better",
     "title": "lecture 17: t-test and bootstrapping",
     "section": "Bootstrapping to understand t-test better",
-    "text": "Bootstrapping to understand t-test better\n\n\nDo the re-sampling like this\nCode hidden! go through the worksheet 😉\n\n\n# A tibble: 2 × 1\n  Species   \n  &lt;fct&gt;     \n1 versicolor\n2 virginica \n\n\n\nPlot the sampling distribution\n\n\n\n\nWatch this video if you are still wondering: What is bootstrapping?"
+    "text": "Bootstrapping to understand t-test better\nBootstrapping shows us the variability around the mean, by virtually repeating the experiment a bunch of times\nFor 1 sample, this is how the bootstrapped distribution looks like\n\n\nCode\nset.seed(1)\nsample_1 &lt;- runif(n = 10, -1, 1.5) # make dataset\nsample_1 %&gt;% sort() %&gt;% round(2) %&gt;% print # show dataset\n\n\n [1] -0.85 -0.50 -0.34 -0.07  0.43  0.57  0.65  1.25  1.27  1.36\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWatch this video if you are still wondering: What is bootstrapping?"
   },
   {
-    "objectID": "slides/lecture17.html#exploring-sem-ci-within-sampling-dist.",
-    "href": "slides/lecture17.html#exploring-sem-ci-within-sampling-dist.",
+    "objectID": "slides/lecture17.html#sample-t-test",
+    "href": "slides/lecture17.html#sample-t-test",
     "title": "lecture 17: t-test and bootstrapping",
-    "section": "Exploring SEM, CI within sampling dist.",
-    "text": "Exploring SEM, CI within sampling dist."
+    "section": "1-sample t-test",
+    "text": "1-sample t-test\nNull hypothesis (\\(H_0\\)) ~ [\\(\\mu = \\mu_0\\)] =&gt; the mean of the data is \\(\\mu_0\\)\n\nWe will test for: \\(\\mu = 0\\) for this dataset\n\n\nt_test_1 &lt;- t.test(sample_1, mu = 0) %&gt;% print\n\n\n    One Sample t-test\n\ndata:  sample_1\nt = 1.5179, df = 9, p-value = 0.1634\nalternative hypothesis: true mean is not equal to 0\n95 percent confidence interval:\n -0.1857309  0.9433002\nsample estimates:\nmean of x \n0.3787847 \n\nt_tst_p &lt;- t_test_1$p.value %&gt;% round(2)\nstr_c('p-value for t-test is: ', t_tst_p)\n\n[1] \"p-value for t-test is: 0.16\""
   },
   {
-    "objectID": "slides/lecture17.html#calculating-the-p-value-from-sampling-dist.",
-    "href": "slides/lecture17.html#calculating-the-p-value-from-sampling-dist.",
+    "objectID": "slides/lecture17.html#sample-t-test-w-bootstrapping",
+    "href": "slides/lecture17.html#sample-t-test-w-bootstrapping",
     "title": "lecture 17: t-test and bootstrapping",
-    "section": "Calculating the p-value from sampling dist.",
-    "text": "Calculating the p-value from sampling dist."
+    "section": "1-sample t-test w bootstrapping",
+    "text": "1-sample t-test w bootstrapping\nTo get p-value from the bootstrapping, we need to find the area of the tails. To facilitate understanding, we shift the distribution to fit the null hypothesis. Which means, the mean of the distribution should be moved to the null hypothesis!"
   },
   {
-    "objectID": "slides/lecture17.html#onto-the-worksheet-now",
-    "href": "slides/lecture17.html#onto-the-worksheet-now",
+    "objectID": "slides/lecture17.html#showing-the-2-tails",
+    "href": "slides/lecture17.html#showing-the-2-tails",
     "title": "lecture 17: t-test and bootstrapping",
-    "section": "Onto the worksheet now",
-    "text": "Onto the worksheet now\nPlease download the class17_t-test_bootstrapping.qmd worksheet for today from Github\n\nUse the viridis dataset : virginica vs versicolor\n\nMutate new columns to generate: versicolor (+ 0.4, + 0.5)\n\nDo t.test and record the p-value\nDo bootstrapping with map\nPlot histogram, red line with null hypothesis\nCalculate p value from bootstrap hist\nShow side by side comparison of both p-values\nUse automated moderndive:: functions to get the bootstrapped p-value?"
+    "section": "Showing the 2 tails",
+    "text": "Showing the 2 tails\nFor a 2 tailed test, the p-value corresponds to the area under these two tails\n\nTail 1: \\(\\mu &gt; \\mu_0\\)\nTail 2: \\(\\mu &lt; \\mu_0\\)\nBoth tails: \\(\\mu != \\mu_0\\)"
+  },
+  {
+    "objectID": "slides/lecture17.html#calculating-the-p-value-from-bootstrap-dist.",
+    "href": "slides/lecture17.html#calculating-the-p-value-from-bootstrap-dist.",
+    "title": "lecture 17: t-test and bootstrapping",
+    "section": "Calculating the p-value from bootstrap dist.",
+    "text": "Calculating the p-value from bootstrap dist.\nGraphically area is easy to visualize,\nFor calculation, probability is just the number of values in the tails / total number of values\n\nfirst_tail &lt;- sum(boot_1 - bootmean_1 &gt; bootmean_1)\nsecond_tail &lt;- sum(boot_1 &lt; 0)  \n\nboot_p_val &lt;- (first_tail + second_tail)/length(boot_1)\n\nstr_c('p-value for bootstrapping t-test: ', boot_p_val)\n\n[1] \"p-value for bootstrapping t-test: 0.1067\"\n\nstr_c('p-value for t-test is: ', t_tst_p)\n\n[1] \"p-value for t-test is: 0.16\"\n\n\np-value for t-test is: 0.16\np-value for t-test is: 0.1067"
+  },
+  {
+    "objectID": "slides/lecture17.html#exploring-sem-ci-within-bootstrap-dist.",
+    "href": "slides/lecture17.html#exploring-sem-ci-within-bootstrap-dist.",
+    "title": "lecture 17: t-test and bootstrapping",
+    "section": "Exploring SEM, CI within bootstrap dist.",
+    "text": "Exploring SEM, CI within bootstrap dist.\n\n(SEM) Standard error of mean = std deviation of the bootstrapping distribution\n(CI) 95% confidence interval =&gt; 95% of the mean distribution area lies within this range\n\n\n\n\nExplore plotting SEM, CI as errorbarsin the paper: Error bars in experimental biology, jcb, 2007"
+  },
+  {
+    "objectID": "slides/lecture17.html#onto-the-worksheet-2-samples-t-test",
+    "href": "slides/lecture17.html#onto-the-worksheet-2-samples-t-test",
+    "title": "lecture 17: t-test and bootstrapping",
+    "section": "Onto the worksheet : 2 samples t-test",
+    "text": "Onto the worksheet : 2 samples t-test\nPlease download/git pull the class17_t-test_bootstrapping.qmd worksheet for today from Github\n\nUse the viridis dataset : virginica vs versicolor\n\n[second section: Mutate new columns to generate: versicolor (+ 0.5)]\n\nDo t.test and record the p-value\nDo bootstrapping with map\nPlot histogram, red line with null hypothesis\nCalculate p value from bootstrap hist\nShow side by side comparison of both p-values\nUse automated moderndive:: functions to get the bootstrapped p-value?"
   }
 ]
