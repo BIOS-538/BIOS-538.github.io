@@ -1,0 +1,73 @@
+---
+title: "lecture 19: Linear regression"
+author: "Prashant K"
+date: 28/Feb/24
+format: revealjs
+metadata-files: 
+  - '_slides.yml'
+editor: visual
+---
+
+# Bootstrapping [worksheet](https://github.com/BIOS-538/class-worksheets/blob/main/scripts/class17_t-test_bootstrapping.qmd) time (40 m)
+
+-   (3 m) Go over the bootstrapping algorithm (*not code!*)
+
+-   (10 m) Work on bootstrapping code
+
+-   (10 m) Go over bootstrapping `code`
+
+-   (15 m) Work on p-values from bootstrapping data
+
+# Today's class
+
+-   Understanding (*linear)* relationships between 2 or more dimensions of data
+
+    -   Correlation
+
+    -   Linear regression
+
+-   Linear regression is also useful for prediction of `y` (*dependent variable)* for new values of `x` (*independent variable*)
+
+-   Using the `lm(y ~ x, data = ?)` function in R
+
+    -   Interpreting the result and p-values
+
+## Correlation vs linear regression
+
+::: columns
+::: {.column width="50%"}
+![](img/correlation_coefficient.png)
+
+Correlation coefficient ($\rho$) quantifies the linearity of y \~ x (*Pearson)\
+Spearman's rank* correlation coefficient quantifies the monotonicity (*y increases when x increases*)
+:::
+
+::: {.column width="50%"}
+
+Linear regression quantifies the slope of the linearity as well as the degree of fit ($R^2$)
+:::
+:::
+
+## Many flavours of linear regression {.smaller}
+
+-   Simple linear regression : $y = \alpha + \beta x + \eta(0, \sigma)$
+
+-   Multiple linear regression: $y = \alpha + \beta_1 x_1 + \beta_2 x_2 + ..+ \eta(0, \sigma)$
+
+    -   regressor is non-linear, ex: *polynomial regression:* $y = \alpha + \beta_1 x_1 + \beta_2 x_1^2 + ..+ \eta(0, \sigma)$
+
+-   Multivariate .. : multiple y values that are correlated (*not statistically independent*)
+
+::: aside
+Source: [wikipedia](https://en.wikipedia.org/wiki/Linear_regression)
+:::
+
+## Fitting a straight line with noise {.smaller}
+
+Fitting a straight line between any 2 points should be easy
+
+But we have noise in y, that makes this task not as straightforward
+
+## Quick worksheet
+
+Follow this [guide](https://modernstatisticswithr.com/regression.html#linearmodels) to try `lm()` on the mtcars data
