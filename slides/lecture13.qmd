@@ -66,7 +66,7 @@ gapminder <- gapminder::gapminder # get gapminder data
 :::
 :::
 
-## Quantiles tell us about the distribution shape  {.smaller}
+## Quantiles tell us about the distribution shape {.smaller}
 
 ::: columns
 ::: {.column width="50%"}

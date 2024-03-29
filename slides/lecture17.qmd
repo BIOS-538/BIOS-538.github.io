@@ -117,7 +117,7 @@ Bootstrapped sample (re-sampling, with replacement)
 :::
 :::
 
-## Reminder: Recipe for simulation/[lec12](https://bios-538.github.io/slides/lecture12.html#/what-is-a-simulation)  {.smaller}
+## Reminder: Recipe for simulation/[lec12](https://bios-538.github.io/slides/lecture12.html#/what-is-a-simulation) {.smaller}
 
 Key difference is how the **randomness** comes in
 
@@ -407,7 +407,7 @@ ggsave('img/boot_sem_ci.pdf', boot_sem_ci_plt, width = 6, height = 3)
 ![](img/boot_sem_ci.png)
 
 ::: aside
-Explore plotting SEM, CI as [errorbars ](https://statisticseasily.com/error-bars/)in the paper: *Error bars in experimental biology*, [jcb, 2007](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2064100/)
+Explore plotting SEM, CI as [errorbars](https://statisticseasily.com/error-bars/)in the paper: *Error bars in experimental biology*, [jcb, 2007](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2064100/)
 :::
 
 ## Onto the worksheet : 2 samples t-test {.smaller}
