@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.4.537">
 
   <meta name="author" content="Prashant K">
-  <meta name="dcterms.date" content="2024-02-27">
-  <title>BIOS-338/538 - lecture13</title>
+  <meta name="dcterms.date" content="2024-02-28">
+  <title>BIOS-338/538 - lecture 19: Linear regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -339,7 +339,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">lecture13</h1>
+  <h1 class="title">lecture 19: Linear regression</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -349,294 +349,71 @@ Prashant K
 </div>
 </div>
 
-  <p class="date">2024-02-27</p>
+  <p class="date">2024-02-28</p>
 </section>
-<section id="recap" class="title-slide slide level1 center">
-<h1>Recap</h1>
-<p>Last class covered</p>
+<section id="bootstrapping-worksheet-time-40-m" class="title-slide slide level1 center">
+<h1>Bootstrapping <a href="https://github.com/BIOS-538/class-worksheets/blob/main/scripts/class17_t-test_bootstrapping.qmd">worksheet</a> time (40 m)</h1>
 <ul>
-<li><p>How normal distributions are generated: Sum of random variables / <code>mean</code> of a random sample</p>
-<ul>
-<li>Central limit theorem</li>
-</ul></li>
-<li><p>Used R to simulate random events and explore distributions</p></li>
+<li><p>(3 m) Go over the bootstrapping algorithm (<em>not code!</em>)</p></li>
+<li><p>(10 m) Work on bootstrapping code</p></li>
+<li><p>(10 m) Go over bootstrapping <code>code</code></p></li>
+<li><p>(15 m) Work on p-values from bootstrapping data</p></li>
 </ul>
 </section>
 
+<section>
 <section id="todays-class" class="title-slide slide level1 center">
 <h1>Today’s class</h1>
 <ul>
-<li><p><em>Finish segment</em>: How do I <a href="https://www.statology.org/test-for-normality-in-r/">test</a> if my data is normal? <code>q-q plots</code> and <code>Shapiro-Wilk</code> test</p></li>
-<li><p>What questions do <strong>t-tests</strong> answer?</p></li>
-<li><p>t-tests dissected: Layout of a general <strong>hypothesis test</strong></p></li>
-<li><p>Understand <strong>sampling distributions</strong>, standard error of mean (SEM) and confidence intervals (CI)</p></li>
-</ul>
-</section>
-
-<section>
-<section id="checking-for-normality" class="title-slide slide level1 center">
-<h1>Checking for normality</h1>
-<p>How to check if my data is normally distributed?</p>
-<ul>
-<li>We need metrics that give us the shape of the distribution without having to plot the distribution and staring at it</li>
-</ul>
-</section>
-<section id="quantifying-the-shape-of-the-normal-distribution" class="slide level2 smaller">
-<h2>Quantifying the shape of the normal distribution</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Mean +/- SD</strong></p>
-<p><img data-src="img/normal_dist_probabilities_sd.png" width="400"></p>
-<blockquote>
-<p>Source: <a href="https://en.wikipedia.org/wiki/File:Standard_deviation_diagram_micro.svg">Wikipedia</a></p>
-</blockquote>
-</div><div class="column" style="width:50%;">
-<p><strong>Median, quartiles</strong></p>
-<p><img data-src="img/normal_dist_quartiles.jpg" width="355"></p>
-
-<p><strong>quartiles</strong> divide the probability / distribution area into 4 <strong>quarters,</strong> a more general way is called <strong>quantile</strong> (<em>note the spelling!</em>)</p>
-</div>
-</div>
-<aside><div>
-<blockquote>
-<p>Source: Quartiles of Normal Distribution, <a href="https://www.youtube.com/watch?v=0uef_Bw4xfM">JoeCMath/youtube</a></p>
-</blockquote>
-</div></aside></section>
-<section id="quantiles-tell-us-about-the-distribution-shape" class="slide level2 smaller">
-<h2>Quantiles tell us about the distribution shape</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Quartiles (4)</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture13_files/figure-revealjs/dist_w_quantiles-1.png" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<p>Deciles (10)</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture13_files/figure-revealjs/dist-w-declies-1.png" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<blockquote>
-<p><strong>quantiles</strong> are cut points dividing the <a href="https://en.wikipedia.org/wiki/Range_(statistics)" title="Range (statistics)">range</a> of a <a href="https://en.wikipedia.org/wiki/Probability_distribution" title="Probability distribution">probability distribution</a> into continuous intervals with equal probabilities. Source: <a href="https://en.wikipedia.org/wiki/Quantile">Wikipedia</a></p>
-</blockquote>
-<p>probability distribution = <code>geom_density</code> plot. Hence quantiles divide the range to make equal area under the <code>geom_density</code> curve</p>
-</section>
-<section id="q-q-plot-enables-comparison-of-distribution-shapes" class="slide level2">
-<h2><code>Q-Q</code> plot enables comparison of distribution shapes</h2>
-<p>If they fall along the line, then it is normal.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Normal distribution</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture13_files/figure-revealjs/qq-plot-normal-1.png" width="480"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 881 665</code></pre>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<p>Non-normal distribution</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture13_files/figure-revealjs/qq-plot-1.png" width="480"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1293    1</code></pre>
-</div>
-</div>
-</div>
-</div>
-
-<aside><div>
-<p>further reading : <a href="http://www.sthda.com/english/wiki/qq-plots-quantile-quantile-plots-r-base-graphs">sthda</a></p>
-</div></aside></section>
-<section id="formal-shapiro-wilk-test-for-normality" class="slide level2">
-<h2>Formal <code>Shapiro-Wilk</code> test for normality</h2>
-<p>What is this testing for?</p>
-<ul>
-<li>NULL hypothesis is that data is normally distributed</li>
-<li>High p-value =&gt; Data is normal (<em>hypothesis is accepted</em>)</li>
-</ul>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="normal-distribution">Normal distribution</h3>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Shapiro-Wilk normality test
-
-data:  .
-W = 0.99807, p-value = 0.315</code></pre>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<h3 id="non-normal-distribution">Non-normal distribution</h3>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Shapiro-Wilk normality test
-
-data:  life_exp
-W = 0.95248, p-value &lt; 2.2e-16</code></pre>
-</div>
-</div>
-</div>
-</div>
-<blockquote>
-<p>further reading: <a href="https://www.statology.org/test-for-normality-in-r/">statology.org</a></p>
-</blockquote>
-</section></section>
-<section>
-<section id="what-are-t-tests-for" class="title-slide slide level1 center">
-<h1>What are t-tests for?</h1>
-<p>To make statistical conclusions of this kind based on data</p>
-<ul>
-<li>“Smoking <strong>causes</strong> cancer”</li>
-</ul>
-<p>But causality is really really hard to establish, that is why we talk about <a href="https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation">correlation/association</a></p>
-<ul>
-<li><p>“Smoking <strong>is associated with</strong> cancer”</p></li>
-<li><p>“Smokers are <strong>statistically significantly</strong> at a higher risk of having cancer”</p></li>
-</ul>
-<blockquote>
-<p>“Evidence <strong>linking</strong> smoking and cancer appeared in the 1920s.” Source: <a href="https://aacrjournals.org/cebp/article/16/6/1070/260310/The-Cigarette-Controversy#10539424">The cigarette controversy, 2007</a>/section: <em>Smoking Causes Cancer: When Did They Know?</em></p>
-</blockquote>
-</section>
-<section id="what-data-can-test-the-smoking-hypothesis" class="slide level2">
-<h2>What data can test the smoking hypothesis?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>2d data</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture13_files/figure-revealjs/linreg-1.png" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
+<li><p>Understanding (<em>linear)</em> relationships between 2 or more dimensions of data</p>
 <ul>
 <li><p>Correlation</p></li>
-<li><p>Regression (linear/non-linear)</p></li>
+<li><p>Linear regression</p></li>
+</ul></li>
+<li><p>Linear regression is also useful for prediction of <code>y</code> (<em>dependent variable)</em> for new values of <code>x</code> (<em>independent variable</em>)</p></li>
+<li><p>Using the <code>lm(y ~ x, data = ?)</code> function in R</p>
+<ul>
+<li>Interpreting the result and p-values</li>
+</ul></li>
 </ul>
+</section>
+<section id="correlation-vs-linear-regression" class="slide level2">
+<h2>Correlation vs linear regression</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/correlation_coefficient.png"></p>
+<p>Correlation coefficient (<span class="math inline">\(\rho\)</span>) quantifies the linearity of y ~ x (<em>Pearson)<br>
+Spearman’s rank</em> correlation coefficient quantifies the monotonicity (<em>y increases when x increases</em>)</p>
 </div><div class="column" style="width:50%;">
-<p>1D data</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture13_files/figure-revealjs/num_cat_smoking-1.png" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>t-test</li>
-</ul>
+<p>Linear regression quantifies the slope of the linearity as well as the degree of fit (<span class="math inline">\(R^2\)</span>)</p>
 </div>
 </div>
 </section>
-<section id="comparing-two-numbers-vs-two-samples" class="slide level2">
-<h2>Comparing two numbers vs two samples</h2>
-<p>Looking at the mean only is not enough:</p>
-<p>3.15 is clearly <strong>&gt;</strong> 2.46, does that alone satisfy the hypothesis?</p>
+<section id="many-flavours-of-linear-regression" class="slide level2 smaller">
+<h2>Many flavours of linear regression</h2>
 <ul>
-<li>We need to account for both the mean and variability, ie) the spread around the mean</li>
-</ul>
-<p>This is what the t-statistic encompasses. The t-test tests for a hypothesis based on this statistic</p>
-</section>
-<section id="t-tests-finds-statistical-support-against-a-null-hypothesis" class="slide level2">
-<h2>t-tests finds statistical support against a NULL hypothesis</h2>
-<p>Null hypothesis in english - “smoking is <strong>NOT</strong> associated with cancer”</p>
-<p>In statistical terms - “the samples of smokers and non-smokers came from the <strong>same population</strong>”</p>
+<li><p>Simple linear regression : <span class="math inline">\(y = \alpha + \beta x + \eta(0, \sigma)\)</span></p></li>
+<li><p>Multiple linear regression: <span class="math inline">\(y = \alpha + \beta_1 x_1 + \beta_2 x_2 + ..+ \eta(0, \sigma)\)</span></p>
 <ul>
-<li><p>(<em>assumption)</em> For a t-test, this source population is normally distributed</p></li>
-<li><p><em>(Other assumption for Student’s t-test)</em> Equal variance between smoker dataset and non-smoker dataset (this can be violated for the <code>welch t-test</code>)</p></li>
+<li>regressor is non-linear, ex: <em>polynomial regression:</em> <span class="math inline">\(y = \alpha + \beta_1 x_1 + \beta_2 x_1^2 + ..+ \eta(0, \sigma)\)</span></li>
+</ul></li>
+<li><p>Multivariate .. : multiple y values that are correlated (<em>not statistically independent</em>)</p></li>
 </ul>
-</section>
-<section id="t-test-is-calculating-difference-in-means-spread-around-mean" class="slide level2">
-<h2>t-test is calculating difference in means / spread around mean</h2>
 
-<img data-src="img/t-test_formula_sketched.png" class="r-stretch"><p>Watch full video here: “<em>Student’s t-test</em>” : <a href="https://www.youtube.com/watch?v=pTmLQvMM-1M">Bozeman science/youtube</a></p>
-</section></section>
-<section>
-<section id="sampling-distributions" class="title-slide slide level1 incremental smaller center">
-<h1>Sampling distributions</h1>
-<div>
-<ol type="1">
-<li class="fragment">Sample multiple times from a population (<em>too expensive for a real experiment, so we imagine this</em>)</li>
-<li class="fragment">Calculate one statistic from the sample (such as <code>mean</code>) and record it (<em>for each sample)</em></li>
-<li class="fragment">Plot the statistic across all samples. The statistic is a random variable too dependent on the random sample, hence results in a different value for each sample.</li>
-<li class="fragment">This results in a distribution (called <strong>sampling distribution</strong> of <code>mean</code><em>/statistic</em>)
-<ul>
-<li class="fragment"><code>mean</code> is nice because it follows a normal distribution (due to the <em>central limit theorem</em>!)
-<ul>
-<li class="fragment">it’s mean ~ close approximation to the population mean</li>
-<li class="fragment">it’s standard deviation = standard error of mean (<strong>S.E.M.</strong>) ~ <span class="math inline">\(\sigma\)</span></li>
-</ul></li>
-</ul></li>
-<li class="fragment">The properties of this distribution are helpful to understand the population which is what we are interested in</li>
-</ol>
-</div>
-</section>
-<section id="sampling-from-a-population-of-coloured-balls" class="slide level2">
-<h2>Sampling from a population of coloured balls</h2>
-<p>We will walk through this activity to understand sampling well</p>
-<ul>
-<li>Explanation of sampling with balls in <a href="https://moderndive.com/7-sampling.html#what-proportion-of-this-bowls-balls-are-red">moderndive/chap7</a></li>
-</ul>
-</section>
-<section id="let-us-see-the-sampling-distribution" class="slide level2">
-<h2>Let us see the sampling distribution</h2>
-</section>
-<section id="calculating-the-sample-mean-sem-ci" class="slide level2">
-<h2>Calculating the sample mean, SEM, CI</h2>
-</section>
-<section id="relating-this-to-a-1-sample-t-test" class="slide level2">
-<h2>Relating this to a 1-sample t-test</h2>
-</section>
-<section id="references" class="slide level2">
-<h2>References</h2>
-<p>Great explanation of sample size in 7.2 (FIGURE 7.12) in <a href="https://moderndive.com/7-sampling.html#what-proportion-of-this-bowls-balls-are-red">moderndive/chap7</a></p>
-</section></section>
-<section id="summary" class="title-slide slide level1 center">
-<h1>Summary</h1>
-<ul>
-<li><p><code>q-q plots</code> and <code>Shapiro-Wilk</code> test enable checking data for normality</p></li>
-<li><p>t-tests answer questions of association such as ‘<em>smoking causes cancer</em>’</p></li>
-<li><p>t-test = <strong>p-value</strong> gives the probability that the NULL hypothesis: <em>that both data groups were sampled from the same distribution</em> is <code>TRUE</code></p></li>
-<li><p>Understood sampling distributions, standard error of mean (SEM) and confidence intervals (CI)</p></li>
-</ul>
+<aside><div>
+<p>Source: <a href="https://en.wikipedia.org/wiki/Linear_regression">wikipedia</a></p>
+</div></aside></section>
+<section id="fitting-a-straight-line-with-noise" class="slide level2 smaller">
+<h2>Fitting a straight line with noise</h2>
+<p>Fitting a straight line between any 2 points should be easy</p>
+<p>But we have noise in y, that makes this task not as straightforward</p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -668,7 +445,7 @@ W = 0.95248, p-value &lt; 2.2e-16</code></pre>
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': true,
+'smaller': false,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -847,44 +624,6 @@ W = 0.95248, p-value &lt; 2.2e-16</code></pre>
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
