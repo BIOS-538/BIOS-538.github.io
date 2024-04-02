@@ -1,5 +1,5 @@
 ---
-title: "lecture 19: Linear regression"
+title: "lecture 20: Linear regression"
 author: "Prashant K"
 date: 28/Feb/24
 format: revealjs
@@ -7,16 +7,6 @@ metadata-files:
   - '_slides.yml'
 editor: visual
 ---
-
-# Bootstrapping [worksheet](https://github.com/BIOS-538/class-worksheets/blob/main/scripts/class17_t-test_bootstrapping.qmd) time (40 m)
-
--   (3 m) Go over the bootstrapping algorithm (*not code!*)
-
--   (10 m) Work on bootstrapping code
-
--   (10 m) Go over bootstrapping `code`
-
--   (15 m) Work on p-values from bootstrapping data
 
 # Today's class
 
@@ -30,7 +20,7 @@ editor: visual
 
 -   Using the `lm(y ~ x, data = ?)` function in R
 
-    -   Interpreting the result and p-values
+-   Interpreting the results : Coefficients, goodness of fit, p-values
 
 ## Correlation vs linear regression
 
@@ -43,7 +33,6 @@ Spearman's rank* correlation coefficient quantifies the monotonicity (*y increas
 :::
 
 ::: {.column width="50%"}
-
 Linear regression quantifies the slope of the linearity as well as the degree of fit ($R^2$)
 :::
 :::
@@ -62,12 +51,71 @@ Linear regression quantifies the slope of the linearity as well as the degree of
 Source: [wikipedia](https://en.wikipedia.org/wiki/Linear_regression)
 :::
 
-## Fitting a straight line with noise {.smaller}
+## Fitting a straight line perfectly {.smaller}
 
 Fitting a straight line between any 2 points should be easy
 
+![](img/line_fitting.jpg)
+
 But we have noise in y, that makes this task not as straightforward
 
-## Quick worksheet
+## Fitting a straight line with noise {.smaller}
 
-Follow this [guide](https://modernstatisticswithr.com/regression.html#linearmodels) to try `lm()` on the mtcars data
+Need R to fit this [numerically](https://en.wikipedia.org/wiki/Numerical_methods_for_linear_least_squares), using this [algorithm](https://stats.libretexts.org/Bookshelves/Introductory_Statistics/OpenIntro_Statistics_(Diez_et_al)./07%3A_Introduction_to_Linear_Regression/7.03%3A_Fitting_a_Line_by_Least_Squares_Regression); [in R](http://madrury.github.io/jekyll/update/statistics/2016/07/20/lm-in-R.html).
+
+`geom_smooth(method = 'lm')` does this in the background and plots the result!
+
+```{r show-fit-lm}
+library(tidyverse)
+anscombe <- datasets::anscombe
+
+ggplot(anscombe, aes(x1, y1)) + geom_point() + 
+  geom_smooth(method = 'lm', size = 0.5)
+```
+
+## Doing linear regression in R
+
+```{r anscombe-lm}
+#| echo: true
+
+m <- lm(y1 ~ x1, data = anscombe) %>% print
+```
+
+## Interpreting results of `lm()`  {.smaller}
+
+Coefficients, t-tests & goodness of fit metrics
+
+*For each coefficient, the p-values are for t-tests with null hypotheses that coefficient = 0*
+
+```{r lm-summ}
+
+summary(m)
+```
+
+## How far are the data from fitted line?
+
+Residuals are used to see how far data is from the fitted line
+
+QC : residuals should be normally distributed (*assumption of the linear regression equation!*)
+
+Residual = observed - predicted value = $Y_i - Y^f_i$
+
+![](img/lm-residual.jpg)
+
+::: .aside
+Source: [statology.org](https://www.statology.org/standardized-residuals-in-r/)
+:::
+
+## Goodness of fit metrics
+
+-   Aggregate distance of data from regression line measured by **S** = Std error of regression / Residual standard error = stdev(residuals)
+
+    -   [Better metric](https://statisticsbyjim.com/regression/standard-error-regression-vs-r-squared/). Comparable across linear and non-linear regressions!
+
+-   $R^2$ = % of y variance that the model explains
+
+## Let's try these out in the worksheet
+
+[worksheet](https://github.com/BIOS-538/class-worksheets/blob/main/scripts/class20-solution_linear_regression.qmd) : `class20-solution_linear_regression.qmd`
+
+We will follow this [guide](https://modernstatisticswithr.com/regression.html#linearmodels) to try `lm()` on the mtcars data
