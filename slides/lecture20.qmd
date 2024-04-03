@@ -81,7 +81,7 @@ ggplot(anscombe, aes(x1, y1)) + geom_point() +
 m <- lm(y1 ~ x1, data = anscombe) %>% print
 ```
 
-## Interpreting results of `lm()`  {.smaller}
+## Interpreting results of `lm()` {.smaller}
 
 Coefficients, t-tests & goodness of fit metrics
 
@@ -91,6 +91,10 @@ Coefficients, t-tests & goodness of fit metrics
 
 summary(m)
 ```
+
+::: aside
+Useful [reference](https://www.statology.org/interpret-regression-output-in-r/) : Interpreting regression output in R/ Statology.org
+:::
 
 ## How far are the data from fitted line?
 
@@ -102,7 +106,7 @@ Residual = observed - predicted value = $Y_i - Y^f_i$
 
 ![](img/lm-residual.jpg)
 
-::: .aside
+::: aside
 Source: [statology.org](https://www.statology.org/standardized-residuals-in-r/)
 :::
 
@@ -113,6 +117,10 @@ Source: [statology.org](https://www.statology.org/standardized-residuals-in-r/)
     -   [Better metric](https://statisticsbyjim.com/regression/standard-error-regression-vs-r-squared/). Comparable across linear and non-linear regressions!
 
 -   $R^2$ = % of y variance that the model explains
+
+::: aside
+Video illustrating S calculation from residuals / [Khanacademy](https://www.youtube.com/watch?v=zMFdb__sUpw).
+:::
 
 ## Let's try these out in the worksheet
 
