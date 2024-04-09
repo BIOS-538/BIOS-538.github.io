@@ -509,17 +509,20 @@ Multiple R-squared:  0.6665,    Adjusted R-squared:  0.6295
 F-statistic: 17.99 on 1 and 9 DF,  p-value: 0.00217</code></pre>
 </div>
 </div>
-</section>
+
+<aside><div>
+<p>Useful <a href="https://www.statology.org/interpret-regression-output-in-r/">reference</a> : Interpreting regression output in R/ Statology.org</p>
+</div></aside></section>
 <section id="how-far-are-the-data-from-fitted-line" class="slide level2">
 <h2>How far are the data from fitted line?</h2>
 <p>Residuals are used to see how far data is from the fitted line</p>
 <p>QC : residuals should be normally distributed (<em>assumption of the linear regression equation!</em>)</p>
 <p>Residual = observed - predicted value = <span class="math inline">\(Y_i - Y^f_i\)</span></p>
+<p><img data-src="img/lm-residual.jpg"></p>
 
-<img data-src="img/lm-residual.jpg" class="r-stretch"><div class=".aside">
+<aside><div>
 <p>Source: <a href="https://www.statology.org/standardized-residuals-in-r/">statology.org</a></p>
-</div>
-</section>
+</div></aside></section>
 <section id="goodness-of-fit-metrics" class="slide level2">
 <h2>Goodness of fit metrics</h2>
 <ul>
@@ -529,7 +532,10 @@ F-statistic: 17.99 on 1 and 9 DF,  p-value: 0.00217</code></pre>
 </ul></li>
 <li><p><span class="math inline">\(R^2\)</span> = % of y variance that the model explains</p></li>
 </ul>
-</section>
+
+<aside><div>
+<p>Video illustrating S calculation from residuals / <a href="https://www.youtube.com/watch?v=zMFdb__sUpw">Khanacademy</a>.</p>
+</div></aside></section>
 <section id="lets-try-these-out-in-the-worksheet" class="slide level2">
 <h2>Let’s try these out in the worksheet</h2>
 <p><a href="https://github.com/BIOS-538/class-worksheets/blob/main/scripts/class20-solution_linear_regression.qmd">worksheet</a> : <code>class20-solution_linear_regression.qmd</code></p>
