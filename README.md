@@ -46,14 +46,18 @@ PhD student in Systems, Synthetic and Physical Biology ([website](https://www.li
 
 **Office hours**: Wednesdays, 4 - 5 pm, *tables outside* Keck 308 (*in person + zoom*)
 
-## Course schedule
+## Course schedule and supporting material
 
-Find the schedule [here](slides/class_schedule.qmd)
+-   Find the schedule [here](slides/class_schedule.qmd)
+
+-   You will find the class-worksheets [here](https://github.com/BIOS-538/class-worksheets/blob/main/scripts/) on Github
+
+-   Assignments are located in this Github [repository](https://github.com/BIOS-538/assignments/)
 
 ## Assessment
 
 | Assignment      | Total grade | Grade per instance | Details                                                                                                                                                   |
-|-----------------|-------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+|----------|----------|----------|--------------------------------------------|
 | Attendance      | 10%         | 0.4% / class       | *on zoom with permission.* 25 lectures                                                                                                                    |
 | Participation   | 10%         | 1% / week          | online discussion board (*ask/answer*), office hours, \~in-class participation                                                                            |
 | Problem sets    | 40%         | 6.7% / assignment  | 6 problem sets total                                                                                                                                      |
